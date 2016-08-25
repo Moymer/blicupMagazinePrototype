@@ -1,0 +1,9 @@
+/* 
+  InfoPlist.strings
+  Blicup
+
+  Created by Guilherme Braga on 25/07/16.
+  Copyright © 2016 Moymer. All rights reserved.
+*/
+
+NSLocationWhenInUseUsageDescription = "Blicup necesita tu permiso para acceder a tu localización y mostrar tu nuevo chat en el mapa.";

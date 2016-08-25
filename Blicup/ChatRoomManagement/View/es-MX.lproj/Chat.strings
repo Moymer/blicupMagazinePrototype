@@ -1,0 +1,111 @@
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "3AV-gR-Gbg"; */
+"3AV-gR-Gbg.text" = "Label";
+
+/* Class = "UILabel"; text = "1,549"; ObjectID = "3IY-fq-gRk"; */
+"3IY-fq-gRk.text" = "1,549";
+
+/* Class = "UILabel"; text = "Facebook"; ObjectID = "6m5-GF-Qb1"; */
+"6m5-GF-Qb1.text" = "Facebook";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "7lL-4s-HQb"; */
+"7lL-4s-HQb.text" = "Label";
+
+/* Class = "UILabel"; text = "1,549"; ObjectID = "8oo-Yc-pu9"; */
+"8oo-Yc-pu9.text" = "1,549";
+
+/* Class = "UILabel"; text = " "; ObjectID = "AZA-nu-fph"; */
+"AZA-nu-fph.text" = " ";
+
+/* Class = "UILabel"; text = "1.312"; ObjectID = "B1u-aG-pvC"; */
+"B1u-aG-pvC.text" = "1.312";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "CXi-I4-MDc"; */
+"CXi-I4-MDc.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "DD0-64-rWK"; */
+"DD0-64-rWK.text" = "Label";
+
+/* Class = "UITabBarItem"; title = "Item 1"; ObjectID = "FVt-Cw-hNC"; */
+"FVt-Cw-hNC.title" = "Ítem 1";
+
+/* Class = "UILabel"; text = "Chat room name"; ObjectID = "HUS-Ti-iP8"; */
+"HUS-Ti-iP8.text" = "Chat room name";
+
+/* Class = "UILabel"; text = "Twitter "; ObjectID = "Hee-z9-isB"; */
+"Hee-z9-isB.text" = "Twitter ";
+
+/* Class = "UIButton"; normalTitle = "Create chat"; ObjectID = "ILK-hx-BUm"; */
+"ILK-hx-BUm.normalTitle" = "Crear chat";
+
+/* Class = "UILabel"; text = "1,435,678 👍"; ObjectID = "LO6-Q0-nay"; */
+"LO6-Q0-nay.text" = "1,435,678 👍";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Lv5-09-Ooc"; */
+"Lv5-09-Ooc.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "NbK-ZZ-9QP"; */
+"NbK-ZZ-9QP.text" = "Label";
+
+/* Class = "UILabel"; text = "#hashtags"; ObjectID = "PBT-f7-JdX"; */
+"PBT-f7-JdX.text" = "#hashtags";
+
+/* Class = "UILabel"; text = "12:36"; ObjectID = "S4J-Yd-3ud"; */
+"S4J-Yd-3ud.text" = "12:36";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "ScU-uy-wd3"; */
+"ScU-uy-wd3.text" = "Label";
+
+/* Class = "UILabel"; text = "Chat room name"; ObjectID = "T16-wN-ffM"; */
+"T16-wN-ffM.text" = "Chat room name";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Uup-qb-oaw"; */
+"Uup-qb-oaw.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Blocked"; ObjectID = "VRT-py-hf3"; */
+"VRT-py-hf3.normalTitle" = "Bloqueado";
+
+/* Class = "UILabel"; text = "#surf #bla #awesome"; ObjectID = "XJY-d7-CDo"; */
+"XJY-d7-CDo.text" = "#surf #bla #awesome";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Zgy-tB-EUG"; */
+"Zgy-tB-EUG.text" = "Label";
+
+/* Class = "UILabel"; text = "Blocked"; ObjectID = "cWk-6s-M9r"; */
+"cWk-6s-M9r.text" = "Bloqueado";
+
+/* Class = "UILabel"; text = "@Jack 💎"; ObjectID = "exV-jJ-ctq"; */
+"exV-jJ-ctq.text" = "@Jack 💎";
+
+/* Class = "UILabel"; text = "Say something..."; ObjectID = "fO1-U0-4MR"; */
+"fO1-U0-4MR.text" = "Di alguna cosa...";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "gBf-jx-Bqm"; */
+"gBf-jx-Bqm.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "gR0-a4-POZ"; */
+"gR0-a4-POZ.text" = "Label";
+
+/* Class = "UILabel"; text = "#surf #bla #awesome #foo #brasil #blicup"; ObjectID = "hsw-Ne-g7u"; */
+"hsw-Ne-g7u.text" = "#surf #bla #awesome #foo #brasil #blicup";
+
+/* Class = "UILabel"; text = "This user blocked you"; ObjectID = "i81-m6-W5j"; */
+"i81-m6-W5j.text" = "Este usuario te bloqueo";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "iQX-cW-KAb"; */
+"iQX-cW-KAb.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "1,549"; ObjectID = "lho-Lv-cWf"; */
+"lho-Lv-cWf.text" = "1,549";
+
+/* Class = "UILabel"; text = "@user is blocked"; ObjectID = "mfd-lj-blK"; */
+"mfd-lj-blK.text" = "@user está bloqueado";
+
+/* Class = "UIButton"; normalTitle = "Enter chat..."; ObjectID = "plF-EJ-Xro"; */
+"plF-EJ-Xro.normalTitle" = "Entrar al chat...";
+
+/* Class = "UILabel"; text = "US Presidential Elections"; ObjectID = "rLL-qt-2u8"; */
+"rLL-qt-2u8.text" = "US Presidential Elections";
+
+/* Class = "UILabel"; text = "@Jack 💎"; ObjectID = "vcq-Dn-E6C"; */
+"vcq-Dn-E6C.text" = "@Jack 💎";

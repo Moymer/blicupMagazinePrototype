@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="SF-UI-Text-Bold.otf">
+            <string>SFUIText-Bold</string>
+        </mutableArray>
+        <mutableArray key="SF-UI-Text-Regular.otf">
+            <string>SFUIText-Regular</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clipsSubviews="YES" contentMode="scaleToFill" id="iN0-l3-epB" customClass="CoverMessageView" customModule="Blicup">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="57"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sEv-y2-Wr9">
+                    <rect key="frame" x="0.0" y="0.0" width="57" height="57"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="57" id="Qu3-dG-cWw"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hzr-UW-COo">
+                    <rect key="frame" x="62" y="7" width="528" height="18"/>
+                    <fontDescription key="fontDescription" name="SFUIText-Bold" family="SF UI Text" pointSize="15"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XNm-Do-1ls">
+                    <rect key="frame" x="62" y="30" width="528" height="20"/>
+                    <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI Text" pointSize="15"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Hzr-UW-COo" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" priority="999" constant="7" id="BkU-CG-Bep"/>
+                <constraint firstItem="XNm-Do-1ls" firstAttribute="leading" secondItem="sEv-y2-Wr9" secondAttribute="trailing" constant="5" id="EZv-kh-3Ur"/>
+                <constraint firstItem="XNm-Do-1ls" firstAttribute="top" secondItem="Hzr-UW-COo" secondAttribute="bottom" priority="998" constant="5" id="Lbq-SE-DzK"/>
+                <constraint firstItem="sEv-y2-Wr9" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="O3g-vm-qrX"/>
+                <constraint firstItem="Hzr-UW-COo" firstAttribute="leading" secondItem="sEv-y2-Wr9" secondAttribute="trailing" constant="5" id="Vx2-7F-8Yh"/>
+                <constraint firstAttribute="trailing" secondItem="Hzr-UW-COo" secondAttribute="trailing" constant="10" id="Vzh-GC-AYd"/>
+                <constraint firstItem="sEv-y2-Wr9" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Wpp-kL-Nec"/>
+                <constraint firstAttribute="bottom" secondItem="sEv-y2-Wr9" secondAttribute="bottom" id="bEO-Cq-Bzj"/>
+                <constraint firstAttribute="trailing" secondItem="XNm-Do-1ls" secondAttribute="trailing" constant="10" id="gMZ-xX-AI7"/>
+                <constraint firstAttribute="bottom" secondItem="XNm-Do-1ls" secondAttribute="bottom" priority="997" constant="7" id="tKO-fQ-fXY"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="ivPhoto" destination="sEv-y2-Wr9" id="7g2-zK-abt"/>
+                <outlet property="lblMessage" destination="XNm-Do-1ls" id="yjs-tE-9lg"/>
+                <outlet property="lblUserName" destination="Hzr-UW-COo" id="vyj-G6-Ykr"/>
+            </connections>
+            <point key="canvasLocation" x="452" y="40.5"/>
+        </view>
+    </objects>
+</document>

@@ -1,0 +1,105 @@
+
+/* Class = "UILabel"; text = "Terms of Service"; ObjectID = "2nw-fY-EB4"; */
+"2nw-fY-EB4.text" = "Termos de Uso";
+
+/* Class = "UIButton"; normalTitle = "Save Profile"; ObjectID = "3t5-gZ-Nlu"; */
+"3t5-gZ-Nlu.normalTitle" = "Salvar Perfil";
+
+/* Class = "UILabel"; text = "Following"; ObjectID = "4oI-Li-Vx4"; */
+"4oI-Li-Vx4.text" = "Seguindo";
+
+/* Class = "UILabel"; text = "Type and tap "enter" to add Tags to you List of Favorites! 🙌"; ObjectID = "6o2-pn-t1M"; */
+"6o2-pn-t1M.text" = "Escreva e aperte \"Enviar\" para adicionar Tags a sua Lista de Favoritos! 🙌";
+
+/* Class = "UILabel"; text = "Tell a Friend"; ObjectID = "7qc-NG-KcR"; */
+"7qc-NG-KcR.text" = "Convide um amigo";
+
+/* Class = "UILabel"; text = "Settings and Info"; ObjectID = "8ju-gw-Pbl"; */
+"8ju-gw-Pbl.text" = "Ajustes";
+
+/* Class = "UILabel"; text = "Likes 👍"; ObjectID = "9PJ-IC-4gk"; */
+"9PJ-IC-4gk.text" = "Likes 👍";
+
+/* Class = "UIButton"; normalTitle = "@username"; ObjectID = "AM6-X8-U1y"; */
+"AM6-X8-U1y.normalTitle" = "@username";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Dt0-WQ-OX5"; */
+"Dt0-WQ-OX5.text" = "Label";
+
+/* Class = "UILabel"; text = "Blocked"; ObjectID = "E9O-4x-tN7"; */
+"E9O-4x-tN7.text" = "Bloqueados";
+
+/* Class = "UIButton"; normalTitle = "Block"; ObjectID = "FcN-BI-uVn"; */
+"FcN-BI-uVn.normalTitle" = "Bloquear";
+
+/* Class = "UIButton"; selectedTitle = "Blocked"; ObjectID = "FcN-BI-uVn"; */
+"FcN-BI-uVn.selectedTitle" = "Bloqueado";
+
+/* Class = "UITextField"; text = "username"; ObjectID = "Hgv-Bg-d3f"; */
+"Hgv-Bg-d3f.text" = "username";
+
+/* Class = "UILabel"; text = "Likes 👍"; ObjectID = "IPR-97-2qD"; */
+"IPR-97-2qD.text" = "Likes 👍";
+
+/* Class = "UILabel"; text = "Followers"; ObjectID = "KLe-Uu-rJt"; */
+"KLe-Uu-rJt.text" = "Seguidores";
+
+/* Class = "UIButton"; normalTitle = "Keep at least 3 tags to continue"; ObjectID = "NNZ-a1-ouz"; */
+"NNZ-a1-ouz.normalTitle" = "Mantenha pelo menos 3 tags para continuar";
+
+/* Class = "UILabel"; text = "#testetestetestetesteteste"; ObjectID = "OfA-Mn-Naa"; */
+"OfA-Mn-Naa.text" = "#testetestetestetesteteste";
+
+/* Class = "UITableViewController"; title = "Settings and Info"; ObjectID = "RRn-Zp-eq2"; */
+"RRn-Zp-eq2.title" = "Ajuste";
+
+/* Class = "UILabel"; text = "Contact us"; ObjectID = "ToY-oI-MBL"; */
+"ToY-oI-MBL.text" = "Contato";
+
+/* Class = "UIButton"; normalTitle = "Blocked"; ObjectID = "VSB-vw-k5j"; */
+"VSB-vw-k5j.normalTitle" = "Bloqueado";
+
+/* Class = "UITextField"; placeholder = "addtags..."; ObjectID = "Z3Z-qK-glO"; */
+"Z3Z-qK-glO.placeholder" = "tags...";
+
+/* Class = "UIButton"; normalTitle = "Edit"; ObjectID = "jlC-F4-3RP"; */
+"jlC-F4-3RP.normalTitle" = "Editar";
+
+/* Class = "UIButton"; selectedTitle = " "; ObjectID = "jlC-F4-3RP"; */
+"jlC-F4-3RP.selectedTitle" = " ";
+
+/* Class = "UILabel"; text = "List of Favorites"; ObjectID = "mVf-nO-xtr"; */
+"mVf-nO-xtr.text" = "Lista de Favoritos";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "q5f-vX-bOz"; */
+"q5f-vX-bOz.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Follow"; ObjectID = "qMh-yy-XkK"; */
+"qMh-yy-XkK.normalTitle" = "Seguir";
+
+/* Class = "UIButton"; selectedTitle = "Following"; ObjectID = "qMh-yy-XkK"; */
+"qMh-yy-XkK.selectedTitle" = "Seguindo";
+
+/* Class = "UILabel"; text = "(Write a short description about you)"; ObjectID = "qgz-32-KNp"; */
+"qgz-32-KNp.text" = "(Descreva brevemente você)";
+
+/* Class = "UILabel"; text = "Privacy Policy"; ObjectID = "rit-yG-uwD"; */
+"rit-yG-uwD.text" = "Política de Privacidade";
+
+/* Class = "UILabel"; text = "Notifications"; ObjectID = "udR-kH-0QG"; */
+"udR-kH-0QG.text" = "Notificações";
+
+/* Class = "UILabel"; text = "Log out"; ObjectID = "yxj-iK-ecm"; */
+"yxj-iK-ecm.text" = "Sair";
+
+/* Class = "UIButton"; normalTitle = "Connect with Facebook"; ObjectID = "e57-he-DCi"; */
+"e57-he-DCi.normalTitle" = "Conectar com Facebook";
+
+/* Class = "UIButton"; normalTitle = "Connect with Twitter"; ObjectID = "CmP-jk-N8e"; */
+"CmP-jk-N8e.normalTitle" = "Conectar com Twitter";
+
+/* Class = "UIButton"; normalTitle = "Invite Friends"; ObjectID = "kJB-5v-pzB"; */
+"kJB-5v-pzB.normalTitle" = "Convidar Amigos";
+
+/* Class = "UILabel"; text = "Find Friends"; ObjectID = "Jle-sO-geZ"; */
+"Jle-sO-geZ.text" = "Encontrar Amigos";

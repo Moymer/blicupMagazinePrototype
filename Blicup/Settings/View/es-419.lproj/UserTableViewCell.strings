@@ -1,0 +1,12 @@
+
+/* Class = "UILabel"; text = "@user"; ObjectID = "04p-rJ-qfc"; */
+"04p-rJ-qfc.text" = "@user";
+
+/* Class = "UIButton"; normalTitle = "Blocked"; ObjectID = "52Z-cW-0Yg"; */
+"52Z-cW-0Yg.normalTitle" = "Bloqueado";
+
+/* Class = "UIButton"; normalTitle = "Follow"; ObjectID = "fr0-6h-MmB"; */
+"fr0-6h-MmB.normalTitle" = "Seguir";
+
+/* Class = "UIButton"; selectedTitle = "Following"; ObjectID = "fr0-6h-MmB"; */
+"fr0-6h-MmB.selectedTitle" = "Siguiendo";

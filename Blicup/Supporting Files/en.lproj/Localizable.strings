@@ -1,0 +1,269 @@
+/* 
+  Localizable.strings
+  Blicup
+
+  Created by Guilherme Braga on 08/03/16.
+  Copyright © 2016 Moymer. All rights reserved.
+*/
+
+// MARK: Push Notifications
+"push_interest_for_chat" = "You might be interested in \"%@\" by \@%@";
+"push_msg_chatroom" = "\"%@\"\n \@%@: %@";
+"push_msg_img_chatroom" = "\"%@\"\n \@%@: sent a GIF 🎥";
+"push_new_chat_from_follower" = "Join \@%@\'s new chat: \"%@\"";
+"push_new_follower" = "\@%@ started following you!";
+"push_mentioned_on_chat" = "You were mentioned in \"%@\"";
+//deleted
+"push_msg_chat_one" = "There is 1 new message in \"%@\"";
+"push_msg_chat_more" = "There are %@ new messages in \"%@\"";
+
+// MARK: Login Flow
+"LoginCanceledTitle" = "Login Cancelled";
+"LoginCanceledMessage" = "You need to login to use Blicup.";
+
+"NoInternetTitle" = "No Internet";
+"NoInternetMessage" = "Check your network connection and try again";
+
+
+// MARK: - Default From APP
+
+"No internet" = "No internet";
+
+"Next" = "Next";
+
+"Load More" = "Load More";
+
+"No users" = "No users";
+
+"Save Chat" = "Save Chat";
+
+"More" = "More";
+
+"Enter Chat" = "Enter Chat";
+
+"Profile" = "Profile";
+
+"Blocked" = "Blocked";
+
+"ShareLater" = "Later";
+
+// MARK: LongPress Menu
+"LongPressMenuShare" = "Share";
+
+
+// MARK: - Create Chat
+"CRM_LocationPermissions_Title" = "Location Permissions Required";
+"CRM_LocationPermissions_Message" = "Blicup needs permission to access your location just to show your brand new chat on the map. Click the Settings button, then go to Location and select the While Using the App option.";
+"Settings" = "Settings";
+
+
+// MARK: - Signup Flow
+
+"Signup" = "Signup";
+
+"Welcome" = "Welcome";
+
+"UM_signupTermsPrivacyVc_terms&privacy" = "Check the box to confirm you agree to our <a href='https://www.blicup.com/#en/terms'  style='text-decoration:none;'> Terms of Use</a> and acknowledge you have read the  <a href='https://www.blicup.com/#en/privacy'  style='text-decoration:none;'> Privacy Policy</a>.";
+
+// MARK: - WelcomeViewController
+
+"UM_welcomeVC_Ok_Come_in" = "Ok, come in!";
+
+"UM_welcomeVC_favoritesTitle" = "List of Favorites";
+"UM_welcomeVC_favoritesSubtitle" = "Your list of favorites is where\nyou can save tags that interest you!";
+
+"UM_welcomeVC_hashtags" = "#surf #politics #food #adventures...";
+"UM_welcomeVC_hashtags_description" = "Whenever someone creates a chat with\none of your tags you'll be notified! 🙌";
+
+// MARK: - InterestListViewController
+
+"UM_interestListVC_title" = "List of Favorites";
+"UM_interestListVC_added_blank" = "Type and tap \"send\" to add Tags to you List of Favorites! Or you can tap on some on the following suggestions! 🙌";
+
+
+// MARK: - InterestPresenter
+
+"UM_interestPresenter_continuebtn_case0_parte1" = "Save at least";
+"UM_interestPresenter_continuebtn_case0_parte2" = "tags to continue";
+
+
+"UM_interestPresenter_continuebtn_case1_parte1" = "Save";
+"UM_interestPresenter_continuebtn_case1_parte2" = "more tags to continue";
+
+
+"UM_interestPresenter_continuebtn_case2_parte1" = "Save";
+"UM_interestPresenter_continuebtn_case2_parte2" = "more tag to continue";
+"UM_interestPresenter_continuebtn" = "Save tags and continue";
+
+"Savebtn_at_least" = "Add at least";
+"Savebtn_at_least_2" = "tags do save";
+"Savebtn_add_more" = "Add";
+"Savebtn_add_more_2" = "more tags to save";
+"Savebtn_enable" = "Save new tags";
+
+// MARK: - CreateChatRoomViewController
+
+"CRM_createChatRoomVC_chat_title" = "Chat Title";
+"CRM_createChatRoomVC_chat_#tags" = "#tags";
+
+"Photo Library" = "Photo Library";
+"Create chat" = "Create chat";
+"Cancel" = "Cancel";
+
+"FacebookSharePermissionCanceledTitle" = "Couldn’t share on Facebook";
+"FacebookSharePermissionCanceledMessage" = "To share your chat with your friends you have to connect to Facebook.";
+"TwitterSharePermissionCanceledTitle" = "Couldn’t share on Twitter";
+"TwitterSharePermissionCanceledMessage" = "To share your chat with your friends you have to connect to Twitter.";
+
+// MARK: WebImageSearch
+
+"No GIFs to show" = "No GIFs to show";
+"No images to show" = "No images to show";
+"Web Search" = "Web Search";
+"Search Images or GIFs" = "Search Images or GIFs";
+
+// MARK: ChatRoom
+"Message_Placeholder" = "Say something...";
+
+"Message_First_Chat" = "You have created your first chat! 😄🎉";
+"Message_First_Chat_1" = "All chats disappear in 24h after people stop chatting...";
+"Message_First_Chat_2" = "As the chat creator you can immediately remove people from the conversation. 🙊";
+
+"Message_Greetings" = "Welcome! 😊";
+"Message_Greetings_1" = "Happy chat! 😊";
+"Message_Greetings_2" = "Have a great chat! 😄";
+"Message_Greetings_3" = "Let’s chat! 👍";
+"Message_Greetings_4" = "Welcome! 🤗";
+"Message_Greetings_5" = "It’s chat time! ⏰";
+"Message_Greetings_6" = "Chat! Chat! Chat! 🐙";
+"Message_Greetings_7" = "Have an awesome chat! 🙌";
+
+// MARK: Publish Social Media
+"publish_Description" = "Let's talk about: ";
+
+// MARK: Search Chat Rooms
+"NoChatsWithTagTitle" = "There are no chats with the tag:";
+"NoChatsWithTagDesc_fist_text" = "Do you want to add";
+"NoChatsWithTagDesc_last_text" = "to your List of Favorites? Whenever someone create a new chat about it you'll be notifyed!";
+"NoChatsWithTagDesc_alreadyInTagList" = "is in your List of Favorites! Whenever someone create a new chat about it you'll be notifyed!";
+"NoChatsWithTagBtnTitle" = "Add this tag";
+
+// MARK: Search Users
+"NoUsersWithSearchTermTitle" = "No users found with:";
+"CRM_ChatRoomsAndUsersTextFieldSearchPlaceholder" = "Search for chats or @users";
+"CRM_ChatRoomsAndUsersTextFieldSearchPlaceholder_smaller_screen" = "Chats or @users";
+"Following" = "Following";
+"Followers" = "Followers";
+"Follow" = "Follow";
+"Unfollow" = "Unfollow";
+"Unblock" = "Unblock";
+
+// MARK: Block
+"Block" = "Block";
+"Unblock" = "Unblock";
+
+// MARK: Block Dialog
+"BlockMessage" = " won’t be able to see the chats you create, your profile or the content of your messages and you won’t be able to see chats or messages from ";
+"BlockUserPlaceholder" = "this user";
+
+//Mark: Report
+"Report" = "Report";
+
+//Mark: Report Dialog User
+"ReportUserDialogTitle" = "Report user";
+"ReportUserPlaceholder" = "this user";
+"ReportUserMessage" = "if you think this user is violating our Terms of Service.";
+
+//MARK: Report Dialog Chat
+"ReportChatDialogTitle" = "Report chat";
+"ReportChatPlaceholder" = "this chat";
+"ReportChatMessage" = "if you think its content is violating our Terms of Use.";
+
+"ThanksForReportingTitle" = "Thank your for reporting";
+"ThanksForReportingMessage" = "We're working hard to keep content and people that harm our community away. If what you have reported goes against our Terms of Services it will be immediatly removed and the user will be banned.";
+
+//MARK: Dead Dialog chat
+"DeadChatAlertTitle" = "The chat is over";
+"DeadChatAlertMessage" = "It's been 24 hours and the chat is over. Search for another chat or create a new one!";
+"DeadChatOverlayText" = "Over";
+
+//MARK: Removed Dialog chat
+"RemovedChatAlertTitle" = "You were removed";
+"RemovedChatAlertMessage" = "You were removed from the chat";
+"RemovedChatOverlayText" = "Removed";
+
+//MARK: Chat Banned
+"BannedChatTitle" = "This chat was removed for inappropriate content";
+"BannedChatOwnerTitle" = "Your chat was reported and permanently deleted";
+
+"BannedChatMessage" = "Watch out for people and chats that goes against our Terms of Service. If you see something innapropriate, please report it.";
+"BannedChatOwnerMessage" = "Your chat goes against our Terms of Use. Be polite and respect other users. If you create another chat that goes against our terms you'll be banned.";
+
+
+//MARK: Remove and block Dialog
+"RemoveAndBlockDialogTitle" = "Remove and Block";
+"RemoveAndBlockDialogMessage" = "will leave the chat and won't be able to see the chats you create, your profile or the content of your messages.\nYou also won't be able to see chats or messages from";
+"RemoveAndBlockUserPlaceholder" = "this user";
+
+//MARK: Remove Chat of interest
+"removeChatRoomOfInterestDialogTitle" = "Leave Chat";
+"removeChatRoomOfInterestDialogMessagePart1" = "Do you want to leave";
+"removeChatRoomOfInterestDialogMessagePart2" = "It will be removed from \"My Chats\" and you won't receive any further updates or notifications.";
+"Leave Chat" = "Leave Chat";
+"Leave" = "Leave";
+"removeChatRoomOfInterestPlaceholder" = "this chat";
+
+// MARK: Tell a friend
+"Tell_A_Friend_Message" = "Hey, I found this cool app called Blicup! You can get it from blicup.com/download. We can chat with people from all around the world! My username is";
+"Tell_A_Friend_Message_Twitter" = "Hey, I found this cool app called Blicup! You can get it from blicup.com/download";
+
+//MARK: Privacy and Policy
+"Blicup_Privacy" = "https://www.blicup.com/#en/privacy";
+"Blicup_Terms" = "https://www.blicup.com/#en/terms";
+
+// MARK: Contact US
+"ContactUs_mail_Body" = "<p><b style=\"color: rgb(69, 69, 69); font-family: arial, sans-serif; font-size: 13px;\">Tell us what do you think about Blicup! :)</b></p><div style=\"font-family: arial, sans-serif; font-size: 13px; margin: 0px; line-height: normal; color: rgb(69, 69, 69);min-height: 14px;\">&nbsp;</div><div style=\"font-family: arial, sans-serif; font-size: 13px; margin: 0px; line-height: normal; color: rgb(69, 69, 69);\">What I like most about Blicup:</div><div style=\"font-family: arial, sans-serif; font-size: 13px; margin: 0px;line-height: normal; color: rgb(69, 69, 69);\">1.</div><div style=\"font-family: arial, sans-serif; font-size: 13px; margin: 0px; line-height: normal; color: rgb(69, 69, 69);\">2.</div><div style=\"font-family: arial, sans-serif; font-size: 13px; margin: 0px;line-height: normal; color: rgb(69, 69, 69);\">3.</div><div style=\"font-family: arial, sans-serif; font-size: 13px; margin: 0px; line-height: normal; color: rgb(69, 69, 69); min-height: 14px;\">&nbsp;</div><div style=\"font-family: arial, sans-serif; font-size: 13px;margin: 0px; line-height: normal; color: rgb(69, 69, 69);\">How Blicup can improve?</div><div style=\"font-family: arial, sans-serif; font-size: 13px; margin: 0px; line-height: normal; color: rgb(69, 69, 69);\">1.</div><div style=\"font-family: arial, sans-serif;font-size: 13px; margin: 0px; line-height: normal; color: rgb(69, 69, 69);\">2.</div><div style=\"font-family: arial, sans-serif; font-size: 13px; margin: 0px; line-height: normal; color: rgb(69, 69, 69);\">3.</div><div style=\"font-family: arial, sans-serif;font-size: 13px; margin: 0px; line-height: normal; color: rgb(69, 69, 69); min-height: 14px;\">&nbsp;</div><div style=\"font-family: arial, sans-serif; font-size: 13px; margin: 0px; line-height: normal; color: rgb(69, 69, 69); min-height: 14px;\">&nbsp;</div><div style=\"font-family: arial, sans-serif; font-size: 13px; margin: 0px; line-height: normal; color: rgb(69, 69, 69);\"><i>Please, don&rsquo;t delete the information below.</i></div>";
+
+//MARK: ChatRoom Share
+"ChatRoomShare_Message_Twitter" = "Hey! Check it out @blicupapp";
+"ShareChat_ChatRoom" = "Share your chat with your friends! 😋";
+
+//MARK: Tips
+"Mention_Tip" = "Type @ and the username to mention! 🐥";
+"GIF_Tip" = "Type / to search for GIFs! 🐒";
+"PressChat_Tip" = "Press and hold a chat to see more options! ☝️";
+"Create_Chat_Tip" = "Let's create your first chat now? 😄";
+"Create_Tip" = "Create";
+"PressUser_Tip" = "Press and hold messages to see more options! ☝️";
+
+// MARK: Logout
+"Logout" = "Log out";
+"Logout_Message" = "Are you sure you want to log out?";
+"General_Logout" = "Log out from all devices";
+"General_Logout_Message" = "You will be disconnected from all devices to which your account is currently connect.";
+
+// MARK: Banned
+"BannedOverlayText" = "Banned";
+"Banned" = "You are banned";
+"Banned_Message" = "You breached our Terms of Use and can no longer use the app.";
+"See_Terms" = "See Terms";
+
+// MARK: Warning
+"Warning" = "You have been reported";
+"Warning_Message" = "This is an alert for inappropriate behavior. Be polite and respect other users. Read our Terms of Use. If you break the rules you're gonna be banned permanently.";
+
+//MARK: Settings
+"Settings and Info" = "Settings and Info";
+"(Write a short description about you)" = "(Write a short description about you)";
+
+// MARK: Social Post
+"ON" = "ON";
+"OFF" = "OFF";
+"Facebook_post" = "Facebook Post";
+"Twitter_post" = "Twitter Post";
+
+// MARK: TAGS
+"default_tags" = "default_tags_en";
+
+// MARK: Find Friends
+"findFriends" = "Find Friends";

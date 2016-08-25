@@ -1,0 +1,60 @@
+
+/* Class = "UILabel"; text = "#testetestetestetesteteste"; ObjectID = "9V1-3h-CAF"; */
+"9V1-3h-CAF.text" = "#testetestetestetesteteste";
+
+/* Class = "UIBarButtonItem"; title = " "; ObjectID = "ECo-NP-Ogd"; */
+"ECo-NP-Ogd.title" = " ";
+
+/* Class = "UITextView"; text = "Check the box to confirm you agree to our Terms of Use and acknowledge you have read the Privacy Policy."; ObjectID = "EIO-ME-vyo"; */
+"EIO-ME-vyo.text" = "Selecione a caixa abaixo para confirmar que você concorda com os nossos Termos de Uso e a nossa Política de Privacidade.";
+
+/* Class = "UIBarButtonItem"; title = " "; ObjectID = "HEn-VO-onr"; */
+"HEn-VO-onr.title" = " ";
+
+/* Class = "UILabel"; text = "Signup"; ObjectID = "HcA-vK-mZm"; */
+"HcA-vK-mZm.text" = "Criar conta";
+
+/* Class = "UILabel"; text = "Create your username"; ObjectID = "JAL-hf-FLY"; */
+"JAL-hf-FLY.text" = "Crie um nome de usuário";
+
+/* Class = "UILabel"; text = "Type and tap "enter" to add Tags to you List of Favorites! Or you can tap on some on the following suggestions! 🙌"; ObjectID = "PF9-5R-fTr"; */
+"PF9-5R-fTr.text" = "Escreva e aperte \"Enviar\" para adicionar tags a sua Lista de Favoritos! Ou você pode escolher alguma das seguintes sugestões! 🙌";
+
+/* Class = "UITextField"; placeholder = "addtags..."; ObjectID = "TVJ-6P-Fzf"; */
+"TVJ-6P-Fzf.placeholder" = "adicione tags...";
+
+/* Class = "UILabel"; text = "List of Favorites"; ObjectID = "JRR-wP-A2Q"; */
+"JRR-wP-A2Q.text" = "Lista de Favoritos";
+
+/* Class = "UILabel"; text = "1/3"; ObjectID = "cGn-mL-enE"; */
+"cGn-mL-enE.text" = "1/3";
+
+/* Class = "UIButton"; normalTitle = "Next"; ObjectID = "dIK-hi-395"; */
+"dIK-hi-395.normalTitle" = "Próximo";
+
+/* Class = "UIButton"; normalTitle = "Save at least 3 tags to continue"; ObjectID = "l0h-g7-gzG"; */
+"l0h-g7-gzG.normalTitle" = "Salve pelo menos 3 tags para continuar";
+
+/* Class = "UIButton"; normalTitle = "Let's do it!"; ObjectID = "moL-oL-Vgx"; */
+"moL-oL-Vgx.normalTitle" = "Vamos lá!";
+
+/* Class = "UIBarButtonItem"; title = " "; ObjectID = "sIB-Pr-WBY"; */
+"sIB-Pr-WBY.title" = " ";
+
+/* Class = "UILabel"; text = "Username taken"; ObjectID = "u5e-55-Koh"; */
+"u5e-55-Koh.text" = "Nome de usuário em uso";
+
+/* Class = "UILabel"; text = "Choose your profile picture"; ObjectID = "uzL-7X-H83"; */
+"uzL-7X-H83.text" = "Escolha sua foto de perfil";
+
+/* Class = "UILabel"; text = "Your account is verified!; ObjectID = "pWj-b2-bGh";" */
+"pWj-b2-bGh.text" = "Sua conta é verificada!";
+
+/* Class = "UIButton"; normalTitle = "Continue"; ObjectID = "grG-2A-ykt"; */
+"grG-2A-ykt.normalTitle" = "Continuar";
+
+/* Class = "UILabel"; text = "People to Follow"; ObjectID = "Xr0-B0-Ddo"; */
+"Xr0-B0-Ddo.text" = "Pessoas para seguir";
+
+/* Class = "UILabel"; text = "Follow the people who like the same things you do and check what they've been chatting about! 👫"; ObjectID = "4fb-EA-rfi"; */
+"4fb-EA-rfi.text" = "Siga as pessoas que gostam das mesmas coisas que você e descubra sobre o que elas estão conversando! 👫";

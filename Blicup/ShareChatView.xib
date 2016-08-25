@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="SF-UI-Text-Bold.otf">
+            <string>SFUIText-Bold</string>
+            <string>SFUIText-Bold</string>
+            <string>SFUIText-Bold</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ShareChatView" customModule="Blicup" customModuleProvider="target">
+            <connections>
+                <outlet property="btnLater" destination="WEs-9Q-Fpv" id="Lai-vY-g08"/>
+                <outlet property="btnShare" destination="VfV-Df-se9" id="RFY-gC-VgZ"/>
+                <outlet property="lblShare" destination="tta-zi-bWT" id="u23-1q-KxW"/>
+                <outlet property="vLayerLaterBtn" destination="o3A-jW-lqg" id="OyG-bw-LHB"/>
+                <outlet property="vLayerShareBtn" destination="dLF-tF-UiS" id="vxi-qk-bSv"/>
+                <outlet property="view" destination="iN0-l3-epB" id="NL1-gh-Oqo"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="89"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Share your chat with your friends! 😋" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tta-zi-bWT">
+                    <rect key="frame" x="10" y="10" width="580" height="20"/>
+                    <fontDescription key="fontDescription" name="SFUIText-Bold" family="SF UI Text" pointSize="16"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WvZ-sR-yoa">
+                    <rect key="frame" x="178" y="40" width="245" height="36"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VfV-Df-se9">
+                            <rect key="frame" x="0.0" y="0.0" width="120" height="36"/>
+                            <color key="backgroundColor" red="1" green="0.0" blue="0.40784313725490196" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="120" id="ELh-Sh-bIZ"/>
+                                <constraint firstAttribute="height" constant="36" id="eAr-5W-0ox"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="SFUIText-Bold" family="SF UI Text" pointSize="16"/>
+                            <inset key="contentEdgeInsets" minX="4" minY="2" maxX="4" maxY="2"/>
+                            <size key="titleShadowOffset" width="2.2250738585072014e-308" height="0.0"/>
+                            <state key="normal" title="Share">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="btnSharePressed:" destination="-1" eventType="touchUpInside" id="bgV-dt-l1L"/>
+                                <action selector="dragEnterShare:" destination="-1" eventType="touchDown" id="a0N-iA-eCV"/>
+                                <action selector="dragEnterShare:" destination="-1" eventType="touchDragEnter" id="rQW-8t-brS"/>
+                                <action selector="dragExitShare:" destination="-1" eventType="touchCancel" id="CIf-kt-ZPu"/>
+                                <action selector="dragExitShare:" destination="-1" eventType="touchDragExit" id="gDb-ik-nDn"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WEs-9Q-Fpv">
+                            <rect key="frame" x="125" y="0.0" width="120" height="36"/>
+                            <color key="backgroundColor" red="0.0" green="0.5725490196078431" blue="0.78431372549019607" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="36" id="5vp-9u-jSc"/>
+                                <constraint firstAttribute="width" constant="120" id="VMd-ey-4ii"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="SFUIText-Bold" family="SF UI Text" pointSize="16"/>
+                            <inset key="contentEdgeInsets" minX="4" minY="2" maxX="4" maxY="2"/>
+                            <state key="normal" title="Depois">
+                                <color key="titleColor" red="0.63921568627450975" green="0.80392156862745101" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="btnLaterPressed:" destination="-1" eventType="touchUpInside" id="DOT-gJ-tGW"/>
+                                <action selector="dragEnterLater:" destination="-1" eventType="touchDragEnter" id="3Lv-4y-eTQ"/>
+                                <action selector="dragEnterLater:" destination="-1" eventType="touchDown" id="p8M-8W-Hwt"/>
+                                <action selector="dragExitLater:" destination="-1" eventType="touchCancel" id="ABE-tq-Ggm"/>
+                                <action selector="dragExitLater:" destination="-1" eventType="touchDragExit" id="BfO-cD-2uw"/>
+                            </connections>
+                        </button>
+                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dLF-tF-UiS">
+                            <rect key="frame" x="0.0" y="0.0" width="120" height="36"/>
+                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
+                        </view>
+                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o3A-jW-lqg">
+                            <rect key="frame" x="125" y="0.0" width="120" height="36"/>
+                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="WEs-9Q-Fpv" firstAttribute="leading" secondItem="o3A-jW-lqg" secondAttribute="leading" id="6Li-Hh-t4o"/>
+                        <constraint firstItem="WEs-9Q-Fpv" firstAttribute="trailing" secondItem="o3A-jW-lqg" secondAttribute="trailing" id="90M-ZM-kr7"/>
+                        <constraint firstItem="VfV-Df-se9" firstAttribute="top" secondItem="WvZ-sR-yoa" secondAttribute="top" id="9ik-TT-rJ5"/>
+                        <constraint firstItem="VfV-Df-se9" firstAttribute="leading" secondItem="WvZ-sR-yoa" secondAttribute="leading" id="CFh-ca-WBB"/>
+                        <constraint firstAttribute="bottom" secondItem="VfV-Df-se9" secondAttribute="bottom" id="Dsu-6r-RAG"/>
+                        <constraint firstItem="WEs-9Q-Fpv" firstAttribute="top" secondItem="o3A-jW-lqg" secondAttribute="top" id="F2l-21-4rd"/>
+                        <constraint firstItem="dLF-tF-UiS" firstAttribute="bottom" secondItem="VfV-Df-se9" secondAttribute="bottom" id="QNG-c1-YBc"/>
+                        <constraint firstItem="WEs-9Q-Fpv" firstAttribute="bottom" secondItem="o3A-jW-lqg" secondAttribute="bottom" id="XAX-WA-bBI"/>
+                        <constraint firstAttribute="trailing" secondItem="WEs-9Q-Fpv" secondAttribute="trailing" id="YPp-LM-DcI"/>
+                        <constraint firstItem="dLF-tF-UiS" firstAttribute="leading" secondItem="VfV-Df-se9" secondAttribute="leading" id="abE-vD-3cj"/>
+                        <constraint firstItem="dLF-tF-UiS" firstAttribute="top" secondItem="VfV-Df-se9" secondAttribute="top" id="bpe-Ks-BvI"/>
+                        <constraint firstAttribute="height" constant="36" id="e5u-Yt-094"/>
+                        <constraint firstItem="WEs-9Q-Fpv" firstAttribute="leading" secondItem="VfV-Df-se9" secondAttribute="trailing" constant="5" id="fP1-VO-oUl"/>
+                        <constraint firstItem="dLF-tF-UiS" firstAttribute="trailing" secondItem="VfV-Df-se9" secondAttribute="trailing" id="gfy-Qt-z0i"/>
+                        <constraint firstItem="WEs-9Q-Fpv" firstAttribute="top" secondItem="WvZ-sR-yoa" secondAttribute="top" id="hxs-8D-iVZ"/>
+                        <constraint firstAttribute="bottom" secondItem="WEs-9Q-Fpv" secondAttribute="bottom" id="l0y-Ig-KMx"/>
+                        <constraint firstAttribute="width" constant="245" id="tmc-N9-bc6"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.72941176470000002" blue="1" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="tta-zi-bWT" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="2Xt-03-7Ta"/>
+                <constraint firstAttribute="trailing" secondItem="tta-zi-bWT" secondAttribute="trailing" constant="10" id="9P8-V2-x95"/>
+                <constraint firstItem="WvZ-sR-yoa" firstAttribute="top" secondItem="tta-zi-bWT" secondAttribute="bottom" constant="10" id="QeP-fB-UWI"/>
+                <constraint firstItem="tta-zi-bWT" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="nY0-bn-jCF"/>
+                <constraint firstItem="WvZ-sR-yoa" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="vVJ-qX-nJd"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+</document>

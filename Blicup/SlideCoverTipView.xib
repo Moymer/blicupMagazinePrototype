@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SlideCoverTipView" customModule="Blicup" customModuleProvider="target">
+            <connections>
+                <outlet property="ivHand" destination="mor-sc-Pae" id="zXt-3j-s6e"/>
+                <outlet property="view" destination="iN0-l3-epB" id="Chc-1t-243"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view userInteractionEnabled="NO" contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="YfW-am-3h4">
+                    <rect key="frame" x="242" y="278" width="116" height="45"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="9vL-fq-S4e"/>
+                        <constraint firstAttribute="width" constant="115.5" id="LRM-ys-PQH"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hand" translatesAutoresizingMaskIntoConstraints="NO" id="mor-sc-Pae">
+                    <rect key="frame" x="301" y="296" width="87" height="87"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="87" id="MMY-Vi-JTs"/>
+                        <constraint firstAttribute="height" constant="87" id="h1A-XQ-IeJ"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="YfW-am-3h4" firstAttribute="trailing" secondItem="mor-sc-Pae" secondAttribute="trailing" constant="-30" id="Qq3-ad-emt"/>
+                <constraint firstItem="YfW-am-3h4" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="dSV-By-4cT"/>
+                <constraint firstItem="YfW-am-3h4" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="irZ-h1-SyT"/>
+                <constraint firstItem="mor-sc-Pae" firstAttribute="top" secondItem="YfW-am-3h4" secondAttribute="top" constant="18" id="yHG-9b-7pT"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="429.5" y="328.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="arrow" width="115" height="45"/>
+        <image name="hand" width="87" height="87"/>
+    </resources>
+</document>

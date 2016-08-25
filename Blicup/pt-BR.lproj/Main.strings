@@ -1,0 +1,24 @@
+
+/* Class = "UIButton"; normalTitle = "Continue with Facebook"; ObjectID = "eq9-FK-p15"; */
+"eq9-FK-p15.normalTitle" = "Entrar com Facebook";
+
+/* Class = "UIButton"; normalTitle = "Why do I have to have Facebook or Twitter?"; ObjectID = "tn1-B7-Yjy"; */
+"tn1-B7-Yjy.normalTitle" = "Por que Facebook ou Twitter?";
+
+/* Class = "UILabel"; text = "Let’s share ideas with the world"; ObjectID = "vf8-nv-l8e"; */
+"vf8-nv-l8e.text" = "Vamos compartilhar ideias com o mundo";
+
+/* Class = "UIButton"; normalTitle = "Continue with Twitter"; ObjectID = "vfj-EP-M1x"; */
+"vfj-EP-M1x.normalTitle" = "Entrar com Twitter";
+
+/* Class = "UILabel"; text = "We take your privacy seriously"; ObjectID = "6aw-yN-Yzy"; */
+"6aw-yN-Yzy.text" = "Nós levamos sua privacidade a sério";
+
+/* Class = "UILabel"; text = "We just want to make sure you're gonna meet real people"; ObjectID = "JJn-KK-tcL"; */
+"JJn-KK-tcL.text" = "Queremos garantir que você irá conhecer pessoas reais";
+
+/* Class = "UILabel"; text = "We won't post anything unless you want to share something nice with your friends"; ObjectID = "ASU-9q-Nvf"; */
+"ASU-9q-Nvf.text" = "Não postaremos nada sem a sua permissão";
+
+/* Class = "UILabel"; text = "People can only contact you if you're both in the same chat"; ObjectID = "yEz-Bt-h5g"; */
+"yEz-Bt-h5g.text" = "Outros usuários só podem te contactar se vocês estiverem no mesmo chat";

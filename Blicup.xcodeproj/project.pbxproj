@@ -1,0 +1,2203 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		37FE25DE3809C4EC19567A0F /* Pods_BlicupTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF26484AFE99A6BEF179E264 /* Pods_BlicupTests.framework */; };
+		4F486663CBAA5DD10B5208C9 /* Pods_Blicup.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A2A2D25812332F51F390540 /* Pods_Blicup.framework */; };
+		7D0525921CB437470010961E /* CreateChatRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0525911CB437470010961E /* CreateChatRoomViewController.swift */; };
+		7D0525941CB443F30010961E /* CreateChatRoomPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0525931CB443F30010961E /* CreateChatRoomPresenter.swift */; };
+		7D0525961CB44D8B0010961E /* UIPlaceHolderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0525951CB44D8B0010961E /* UIPlaceHolderTextView.swift */; };
+		7D1006C01C84ADFB0076561E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D1006BE1C84ADFB0076561E /* Main.storyboard */; };
+		7D1006C51C84ADFB0076561E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D1006C41C84ADFB0076561E /* Assets.xcassets */; };
+		7D1006C81C84ADFB0076561E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D1006C61C84ADFB0076561E /* LaunchScreen.storyboard */; };
+		7D1006D31C84ADFB0076561E /* BlicupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1006D21C84ADFB0076561E /* BlicupTests.swift */; };
+		7D1006DE1C84ADFB0076561E /* BlicupUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1006DD1C84ADFB0076561E /* BlicupUITests.swift */; };
+		7D1006FC1C85D5B80076561E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1006FB1C85D5B80076561E /* LoginViewController.swift */; };
+		7D10070B1C8604BA0076561E /* SF-UI-Text-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7D1006FF1C8604BA0076561E /* SF-UI-Text-Bold.otf */; };
+		7D10070C1C8604BA0076561E /* SF-UI-Text-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7D1007001C8604BA0076561E /* SF-UI-Text-BoldItalic.otf */; };
+		7D10070D1C8604BA0076561E /* SF-UI-Text-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7D1007011C8604BA0076561E /* SF-UI-Text-Heavy.otf */; };
+		7D10070E1C8604BA0076561E /* SF-UI-Text-HeavyItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7D1007021C8604BA0076561E /* SF-UI-Text-HeavyItalic.otf */; };
+		7D10070F1C8604BA0076561E /* SF-UI-Text-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7D1007031C8604BA0076561E /* SF-UI-Text-Light.otf */; };
+		7D1007101C8604BA0076561E /* SF-UI-Text-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7D1007041C8604BA0076561E /* SF-UI-Text-LightItalic.otf */; };
+		7D1007111C8604BA0076561E /* SF-UI-Text-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7D1007051C8604BA0076561E /* SF-UI-Text-Medium.otf */; };
+		7D1007121C8604BA0076561E /* SF-UI-Text-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7D1007061C8604BA0076561E /* SF-UI-Text-MediumItalic.otf */; };
+		7D1007131C8604BA0076561E /* SF-UI-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7D1007071C8604BA0076561E /* SF-UI-Text-Regular.otf */; };
+		7D1007141C8604BA0076561E /* SF-UI-Text-RegularItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7D1007081C8604BA0076561E /* SF-UI-Text-RegularItalic.otf */; };
+		7D1007151C8604BA0076561E /* SF-UI-Text-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7D1007091C8604BA0076561E /* SF-UI-Text-Semibold.otf */; };
+		7D1007161C8604BA0076561E /* SF-UI-Text-SemiboldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7D10070A1C8604BA0076561E /* SF-UI-Text-SemiboldItalic.otf */; };
+		7D1007221C86059A0076561E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D10071E1C86059A0076561E /* AppDelegate.swift */; };
+		7D1007231C86059A0076561E /* Blicup.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7D10071F1C86059A0076561E /* Blicup.xcdatamodeld */; };
+		7D1EC71C1CC83CE7006689B3 /* default_tags_pt.json in Resources */ = {isa = PBXBuildFile; fileRef = 7D1EC71B1CC83CE7006689B3 /* default_tags_pt.json */; };
+		7D1EC71E1CC91721006689B3 /* MD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1EC71D1CC91721006689B3 /* MD5.swift */; };
+		7D27FCD41D217E0B008B5021 /* AlphaVerticalSlideTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D27FCD31D217E0B008B5021 /* AlphaVerticalSlideTransition.swift */; };
+		7D2DBDB11CF7A1170018510A /* ChatRoomGiphySearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2DBDB01CF7A1170018510A /* ChatRoomGiphySearchPresenter.swift */; };
+		7D3337A51D1C7AEA00D2EB55 /* FollowListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3337A41D1C7AEA00D2EB55 /* FollowListPresenter.swift */; };
+		7D37A2DE1CC01BF90045F2EB /* BCRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D37A2DD1CC01BF90045F2EB /* BCRefreshControl.swift */; };
+		7D37A3011CC122890045F2EB /* BCRefreshControlView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D37A3001CC122890045F2EB /* BCRefreshControlView.xib */; };
+		7D50A6761D5A71A7009739F2 /* FindFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D50A6751D5A71A7009739F2 /* FindFriendsViewController.swift */; };
+		7D50A6781D5B584C009739F2 /* FindFriendsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D50A6771D5B584C009739F2 /* FindFriendsPresenter.swift */; };
+		7D50A67A1D5B5DB9009739F2 /* UserWithLikeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D50A6791D5B5DB9009739F2 /* UserWithLikeTableViewCell.swift */; };
+		7D50A67C1D5B5DD4009739F2 /* UserWithLikeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D50A67B1D5B5DD4009739F2 /* UserWithLikeTableViewCell.xib */; };
+		7D5220AD1D537DAD0041FE46 /* SuggestedUsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5220AC1D537DAD0041FE46 /* SuggestedUsersViewController.swift */; };
+		7D5220AF1D538C360041FE46 /* SuggestUsersPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5220AE1D538C360041FE46 /* SuggestUsersPresenter.swift */; };
+		7D563E421C9A0E9C002D5E4E /* InterestListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D563E411C9A0E9C002D5E4E /* InterestListViewController.swift */; };
+		7D563E441C9ACC1A002D5E4E /* InterestTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D563E431C9ACC1A002D5E4E /* InterestTagCollectionViewCell.swift */; };
+		7D595B301CC7FC63009E994D /* BlicupAppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D595B2F1CC7FC63009E994D /* BlicupAppColors.swift */; };
+		7D7C73A81CAB1A7C00DC1164 /* Macro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7C73A71CAB1A7C00DC1164 /* Macro.swift */; };
+		7D7C73B41CAB208F00DC1164 /* BCProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7C73AF1CAB208F00DC1164 /* BCProgress.swift */; };
+		7D7C73B51CAB208F00DC1164 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7C73B01CAB208F00DC1164 /* CustomTextField.swift */; };
+		7D7C73B71CAB208F00DC1164 /* FlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7C73B21CAB208F00DC1164 /* FlowLayout.swift */; };
+		7D7C73B81CAB208F00DC1164 /* TextFieldNoTextOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7C73B31CAB208F00DC1164 /* TextFieldNoTextOptions.swift */; };
+		7D7C73BE1CAC477600DC1164 /* ChatRoomsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7C73BD1CAC477600DC1164 /* ChatRoomsListViewController.swift */; };
+		7D7C73C21CAC47E300DC1164 /* CHTCollectionViewWaterfallLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7C73C11CAC47E300DC1164 /* CHTCollectionViewWaterfallLayout.swift */; };
+		7D7C73C61CAC4C9900DC1164 /* CollectionViewTransitionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7C73C51CAC4C9900DC1164 /* CollectionViewTransitionProtocol.swift */; };
+		7D7C73CA1CAC4E3300DC1164 /* CollectionViewTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7C73C91CAC4E3300DC1164 /* CollectionViewTransition.swift */; };
+		7D7C73CC1CAC4F1F00DC1164 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7C73CB1CAC4F1F00DC1164 /* Extension.swift */; };
+		7D7C73CE1CAC556400DC1164 /* ChatRoomListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7C73CD1CAC556400DC1164 /* ChatRoomListCollectionViewCell.swift */; };
+		7D7C73ED1CAC5ADB00DC1164 /* ChatRoomsListHorizontalPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7C73EC1CAC5ADB00DC1164 /* ChatRoomsListHorizontalPageViewController.swift */; };
+		7D7C73F11CAC617E00DC1164 /* ChatRoomListNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7C73F01CAC617E00DC1164 /* ChatRoomListNavigationController.swift */; };
+		7D8626531C9B261D00D87E87 /* InterestPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8626521C9B261D00D87E87 /* InterestPresenter.swift */; };
+		7D8626551C9B48FA00D87E87 /* InterestListAddedBlankCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8626541C9B48FA00D87E87 /* InterestListAddedBlankCollectionViewCell.swift */; };
+		7D8C66141CE3F378000CA40A /* WebImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8C660A1CE3F378000CA40A /* WebImage.swift */; };
+		7D8C66151CE3F378000CA40A /* WebImageSearchBS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8C660B1CE3F378000CA40A /* WebImageSearchBS.swift */; };
+		7D8C66161CE3F378000CA40A /* WebImageSearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8C660D1CE3F378000CA40A /* WebImageSearchPresenter.swift */; };
+		7D8C66171CE3F378000CA40A /* WebImageSearch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D8C660F1CE3F378000CA40A /* WebImageSearch.storyboard */; };
+		7D8C66181CE3F378000CA40A /* WebImageSearchCollectionFooterReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8C66101CE3F378000CA40A /* WebImageSearchCollectionFooterReusableView.swift */; };
+		7D8C66191CE3F378000CA40A /* WebImageSearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8C66111CE3F378000CA40A /* WebImageSearchCollectionViewCell.swift */; };
+		7D8C661B1CE3F378000CA40A /* WebImageSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8C66131CE3F378000CA40A /* WebImageSearchViewController.swift */; };
+		7D8C661D1CE3F3D4000CA40A /* BCGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8C661C1CE3F3D4000CA40A /* BCGradientView.swift */; };
+		7D8C661F1CE3F413000CA40A /* CoverPhotoCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8C661E1CE3F413000CA40A /* CoverPhotoCollectionReusableView.swift */; };
+		7DA5A86E1CAF05040019B32D /* ChatRoom+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA5A86C1CAF05040019B32D /* ChatRoom+CoreDataProperties.swift */; };
+		7DA5A86F1CAF05040019B32D /* ChatRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA5A86D1CAF05040019B32D /* ChatRoom.swift */; };
+		7DA80C181CBF0E14006151E1 /* Photo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA80C161CBF0E14006151E1 /* Photo+CoreDataProperties.swift */; };
+		7DA80C191CBF0E14006151E1 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA80C171CBF0E14006151E1 /* Photo.swift */; };
+		7DA80C1B1CC00977006151E1 /* BCGradientImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA80C1A1CC00977006151E1 /* BCGradientImageView.swift */; };
+		7DABC2DC1D34796300D7903C /* ChatRoomContextMenuProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DABC2DB1D34796300D7903C /* ChatRoomContextMenuProtocol.swift */; };
+		7DB019081D15C4C00077F7CB /* UserProfileCardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB019071D15C4C00077F7CB /* UserProfileCardPresenter.swift */; };
+		7DB0190C1D15E01D0077F7CB /* FollowerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB0190B1D15E01D0077F7CB /* FollowerViewController.swift */; };
+		7DB5C7C71CF098B200A5EFF2 /* UserSearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB5C7C61CF098B200A5EFF2 /* UserSearchCollectionViewCell.swift */; };
+		7DB5C7C91CF0B90600A5EFF2 /* CollectionViewListFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB5C7C81CF0B90600A5EFF2 /* CollectionViewListFlowLayout.swift */; };
+		7DB6329A1CF4A34C00921AFF /* UserSearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB632991CF4A34C00921AFF /* UserSearchPresenter.swift */; };
+		7DC2B3561C933A4B000112B4 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC2B3551C933A4B000112B4 /* WelcomeViewController.swift */; };
+		7DCC30DE1D400148001202F4 /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7DCC30E01D400148001202F4 /* UserTableViewCell.xib */; };
+		7DCC30E81D4004B6001202F4 /* UserBlockCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7DCC30E61D4004B6001202F4 /* UserBlockCell.xib */; };
+		7DCC30EB1D400EF5001202F4 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DCC30ED1D400EF5001202F4 /* Settings.storyboard */; };
+		7DCC30F01D4013B1001202F4 /* MyChats.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DCC30F21D4013B1001202F4 /* MyChats.storyboard */; };
+		7DCC30F51D4013E5001202F4 /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DCC30F71D4013E5001202F4 /* Chat.storyboard */; };
+		7DCF1D091CFE08280020BF08 /* ChatRoomUserMentionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCF1D081CFE08280020BF08 /* ChatRoomUserMentionCollectionViewCell.swift */; };
+		7DCF1D0B1CFE1DC10020BF08 /* ChatRoomsAndUsersSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCF1D0A1CFE1DC10020BF08 /* ChatRoomsAndUsersSearchViewController.swift */; };
+		7DCF1D0D1CFF89460020BF08 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCF1D0C1CFF89460020BF08 /* StringExtensions.swift */; };
+		7DCFA7291D1044C00043CEA1 /* CreateChatRoomInputAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCFA7281D1044C00043CEA1 /* CreateChatRoomInputAccessoryView.swift */; };
+		7DCFA72B1D1220040043CEA1 /* FolloweeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCFA72A1D1220030043CEA1 /* FolloweeViewController.swift */; };
+		7DCFA72D1D122C6A0043CEA1 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCFA72C1D122C6A0043CEA1 /* UserTableViewCell.swift */; };
+		7DCFA72F1D144F720043CEA1 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCFA72E1D144F720043CEA1 /* UserProfileViewController.swift */; };
+		7DD0F7D61C886F36001E5780 /* SignupUsernameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD0F7D51C886F36001E5780 /* SignupUsernameViewController.swift */; };
+		7DD0F7E11C89DEA9001E5780 /* SignupPictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD0F7E01C89DEA9001E5780 /* SignupPictureViewController.swift */; };
+		7DD527A61D1C673000D8B73B /* FollowUnfollowPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD527A51D1C673000D8B73B /* FollowUnfollowPresenter.swift */; };
+		7DD7C88F1D41645B003454A7 /* Signup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DD7C8911D41645B003454A7 /* Signup.storyboard */; };
+		7DD7C8951D41704C003454A7 /* default_tags_en.json in Resources */ = {isa = PBXBuildFile; fileRef = 7DD7C8941D41704C003454A7 /* default_tags_en.json */; };
+		7DDADD511CC1A7470097A86B /* BCBlurredTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DDADD501CC1A7470097A86B /* BCBlurredTabBar.swift */; };
+		7DDADD551CC268730097A86B /* GHContextMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DDADD541CC268730097A86B /* GHContextMenuView.m */; };
+		7DE759981D2ABE5F004BAFF9 /* AlertControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE759971D2ABE5F004BAFF9 /* AlertControllerProtocol.swift */; };
+		7DF0EC5B1D42B24500DEF902 /* default_tags_es.json in Resources */ = {isa = PBXBuildFile; fileRef = 7DF0EC5A1D42B24500DEF902 /* default_tags_es.json */; };
+		7DF397981D4692C800E279D7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7DF3979A1D4692C800E279D7 /* InfoPlist.strings */; };
+		7DF3BB9A1D38284E002CC8B2 /* BlicupAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF3BB991D38284E002CC8B2 /* BlicupAnalytics.swift */; };
+		7DF3BB9C1D396A13002CC8B2 /* ChatRoomShareCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF3BB9B1D396A13002CC8B2 /* ChatRoomShareCard.swift */; };
+		7DF6C7861D0756D800B1866D /* BCButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF6C7851D0756D800B1866D /* BCButton.swift */; };
+		7DF8FD9C1C8F0C220058F877 /* SignupTermsPrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF8FD9B1C8F0C220058F877 /* SignupTermsPrivacyViewController.swift */; };
+		7DF8FDA51C8F6A470058F877 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7DF8FDA71C8F6A470058F877 /* Localizable.strings */; };
+		7DF8FDAE1C90B3CE0058F877 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF8FDAD1C90B3CE0058F877 /* SignupViewController.swift */; };
+		7DF8FDB01C90B4690058F877 /* SignupPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF8FDAF1C90B4690058F877 /* SignupPageViewController.swift */; };
+		7DF8FDB21C90D9C60058F877 /* SignupPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF8FDB11C90D9C60058F877 /* SignupPresenter.swift */; };
+		7DFD1DFF1C862F4200CF5C94 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFD1DFE1C862F4200CF5C94 /* LoginPresenter.swift */; };
+		7DFD1E011C86438700CF5C94 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFD1E001C86438700CF5C94 /* LoginController.swift */; };
+		7DFD1E081C874F1200CF5C94 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFD1E041C874F1200CF5C94 /* User+CoreDataProperties.swift */; };
+		7DFD1E091C874F1200CF5C94 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFD1E051C874F1200CF5C94 /* User.swift */; };
+		A456F30A1C999009008CF87D /* LDTProtocolImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A456F3091C999009008CF87D /* LDTProtocolImpl.swift */; };
+		A4D97E211CB9758900E13678 /* UserBS.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D97E201CB9758900E13678 /* UserBS.swift */; };
+		C91B36641CC6AED3002D77BF /* LDTProtocolImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A456F3091C999009008CF87D /* LDTProtocolImpl.swift */; };
+		C91B36661CC6B14F002D77BF /* BlicupServicesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91B36651CC6B14F002D77BF /* BlicupServicesTests.swift */; };
+		C91B36681CC7FF54002D77BF /* LDTPWebSocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91B36671CC7FF54002D77BF /* LDTPWebSocketManager.swift */; };
+		C91B366A1CC800A0002D77BF /* LDTPMessageBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91B36691CC800A0002D77BF /* LDTPMessageBuilder.swift */; };
+		C91B366C1CC824BB002D77BF /* BlicupOnlineServicesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91B366B1CC824BB002D77BF /* BlicupOnlineServicesTests.swift */; };
+		C91B366D1CC82A04002D77BF /* LDTPWebSocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91B36671CC7FF54002D77BF /* LDTPWebSocketManager.swift */; };
+		C91B366E1CC82A07002D77BF /* LDTPMessageBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91B36691CC800A0002D77BF /* LDTPMessageBuilder.swift */; };
+		C934B2851CD93BF9006B3EF4 /* LDTPTaskQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = C934B2841CD93BF9006B3EF4 /* LDTPTaskQueue.swift */; };
+		C93AC3ED1D256D8E00ED8046 /* ChatRoomsListProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93AC3EC1D256D8E00ED8046 /* ChatRoomsListProtocol.swift */; };
+		C93AC3EF1D25961400ED8046 /* MyChatsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93AC3EE1D25961400ED8046 /* MyChatsPresenter.swift */; };
+		C93AC3F11D25C93600ED8046 /* ChatRoomFetchResultPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93AC3F01D25C93600ED8046 /* ChatRoomFetchResultPresenter.swift */; };
+		C93AC3F41D26F81D00ED8046 /* ChatRoomMainListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93AC3F31D26F81D00ED8046 /* ChatRoomMainListPresenter.swift */; };
+		C93AC3F61D26F86900ED8046 /* ChatRoomSearchListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93AC3F51D26F86900ED8046 /* ChatRoomSearchListPresenter.swift */; };
+		C93AC3F81D26F94800ED8046 /* MapChatRoomListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93AC3F71D26F94800ED8046 /* MapChatRoomListPresenter.swift */; };
+		C93AC3FA1D26F9A000ED8046 /* CoverChatRoomsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93AC3F91D26F9A000ED8046 /* CoverChatRoomsListPresenter.swift */; };
+		C93AC3FC1D27132E00ED8046 /* ChatListToCoverTrasition.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93AC3FB1D27132E00ED8046 /* ChatListToCoverTrasition.swift */; };
+		C93E1C191CD278AB00E0E7ED /* LDTPWebSocketReceiverManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93E1C181CD278AB00E0E7ED /* LDTPWebSocketReceiverManager.swift */; };
+		C9437A9C1CFC8E73008425A0 /* BlicupAsyncHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9437A9B1CFC8E73008425A0 /* BlicupAsyncHandler.swift */; };
+		C947A3321CE6421C00D810D3 /* ChatRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C947A3311CE6421C00D810D3 /* ChatRoomViewController.swift */; };
+		C947A3341CE6423600D810D3 /* ChatRoomPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C947A3331CE6423600D810D3 /* ChatRoomPresenter.swift */; };
+		C9525DED1CCEBABD0035DE0E /* ChatRoomCoverCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9525DEC1CCEBABD0035DE0E /* ChatRoomCoverCell.swift */; };
+		C9525DEF1CDA3F3F0035DE0E /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9525DEE1CDA3F3F0035DE0E /* Map.storyboard */; };
+		C9525DF11CDA5CC60035DE0E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9525DF01CDA5CC60035DE0E /* MapKit.framework */; };
+		C9525DF31CDA79AD0035DE0E /* ChatRoomMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9525DF21CDA79AD0035DE0E /* ChatRoomMapViewController.swift */; };
+		C9525DF61CDA911D0035DE0E /* ChatAddress+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9525DF41CDA911D0035DE0E /* ChatAddress+CoreDataProperties.swift */; };
+		C9525DF71CDA911D0035DE0E /* ChatAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9525DF51CDA911D0035DE0E /* ChatAddress.swift */; };
+		C9525DF91CDA99BA0035DE0E /* ChatMapPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9525DF81CDA99BA0035DE0E /* ChatMapPresenter.swift */; };
+		C9525DFB1CDBCD7B0035DE0E /* ChatRoomAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9525DFA1CDBCD7B0035DE0E /* ChatRoomAnnotationView.swift */; };
+		C9525DFD1CE122580035DE0E /* MapChatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9525DFC1CE122580035DE0E /* MapChatListViewController.swift */; };
+		C95B14DD1D21636800D4DA0F /* UserListFollowBlockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95B14DC1D21636800D4DA0F /* UserListFollowBlockViewController.swift */; };
+		C973E0751CE22059008591FD /* ChatRoomMessage+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C973E0731CE22059008591FD /* ChatRoomMessage+CoreDataProperties.swift */; };
+		C973E0761CE22059008591FD /* ChatRoomMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C973E0741CE22059008591FD /* ChatRoomMessage.swift */; };
+		C97C005C1D1821E400C16541 /* SettingsTablePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97C005B1D1821E400C16541 /* SettingsTablePresenter.swift */; };
+		C97C005E1D182D9700C16541 /* InfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97C005D1D182D9700C16541 /* InfoTableViewController.swift */; };
+		C97C00601D18705E00C16541 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97C005F1D18705E00C16541 /* FavoritesViewController.swift */; };
+		C97C00621D18754D00C16541 /* FavoritesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97C00611D18754D00C16541 /* FavoritesPresenter.swift */; };
+		C97C00641D1B090000C16541 /* BlockedListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97C00631D1B090000C16541 /* BlockedListViewController.swift */; };
+		C97C00661D1B097900C16541 /* BlockListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97C00651D1B097900C16541 /* BlockListPresenter.swift */; };
+		C97C006A1D1C651300C16541 /* ChatRoomTalkInfoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97C00691D1C651300C16541 /* ChatRoomTalkInfoPresenter.swift */; };
+		C97C006E1D1DD93300C16541 /* BlockFollowUserListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97C006D1D1DD93300C16541 /* BlockFollowUserListPresenter.swift */; };
+		C97C01C71D11F00B00E5C5AC /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97C01C61D11F00B00E5C5AC /* SettingsViewController.swift */; };
+		C98575E11D0B0C190045CD9D /* BlicupClock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98575E01D0B0C190045CD9D /* BlicupClock.swift */; };
+		C98C14031D24646400BAD95C /* MyChatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98C14021D24646400BAD95C /* MyChatsViewController.swift */; };
+		C99D36041CEF600E00B0F889 /* ChatRoomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99D36031CEF600E00B0F889 /* ChatRoomCell.swift */; };
+		C99D36061CEF840F00B0F889 /* ChatRoomInputAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99D36051CEF840F00B0F889 /* ChatRoomInputAccessoryView.swift */; };
+		C9B9DDCB1D2ECAC500B57F62 /* BlicupRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B9DDCA1D2ECAC500B57F62 /* BlicupRouter.swift */; };
+		C9BCFF0D1CF7656F00D498FA /* LDTPNSNotificationCenterControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BCFF0C1CF7656F00D498FA /* LDTPNSNotificationCenterControl.swift */; };
+		C9BCFF0F1CF7721100D498FA /* ToStringArrayTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BCFF0E1CF7721100D498FA /* ToStringArrayTransformer.swift */; };
+		C9BCFF121CF783BF00D498FA /* UserInfo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BCFF101CF783BF00D498FA /* UserInfo+CoreDataProperties.swift */; };
+		C9BCFF131CF783BF00D498FA /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BCFF111CF783BF00D498FA /* UserInfo.swift */; };
+		C9C606891D06187500F39B15 /* GiphyViewerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C606881D06187500F39B15 /* GiphyViewerController.swift */; };
+		C9E464921CB83CF60034853B /* ChatRoomBS.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E464911CB83CF60034853B /* ChatRoomBS.swift */; };
+		C9E464971CB8592C0034853B /* CoverPhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E464961CB8592C0034853B /* CoverPhotosCollectionViewController.swift */; };
+		C9E464991CB8599C0034853B /* CoverPhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E464981CB8599C0034853B /* CoverPhotoCollectionViewCell.swift */; };
+		C9EAF94B1D3834AE00D59752 /* UserStatus+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EAF9491D3834AE00D59752 /* UserStatus+CoreDataProperties.swift */; };
+		C9EAF94C1D3834AE00D59752 /* UserStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EAF94A1D3834AE00D59752 /* UserStatus.swift */; };
+		C9EBFF511D401C6200B7A211 /* push_blicup.aif in Resources */ = {isa = PBXBuildFile; fileRef = C9EBFF501D401C6200B7A211 /* push_blicup.aif */; };
+		C9F8B8551D0F443200DD6A57 /* CoverMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F8B8541D0F443200DD6A57 /* CoverMessageView.swift */; };
+		C9F8B8571D0F444700DD6A57 /* CoverMessageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9F8B8561D0F444700DD6A57 /* CoverMessageView.xib */; };
+		C9F8B85E1D11E3B200DD6A57 /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F8B85D1D11E3B200DD6A57 /* SettingsPresenter.swift */; };
+		C9FD9CFD1CBD7D5E004E2C04 /* LDTPMockImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FD9CFC1CBD7D5E004E2C04 /* LDTPMockImpl.swift */; };
+		CFABAED7F615667044D6B3B0 /* Pods_BlicupUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C081D62BE3B3B2EFFE7025B /* Pods_BlicupUITests.framework */; };
+		E506A0A01D4BEA9800CCD728 /* TipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E506A09F1D4BEA9800CCD728 /* TipsView.swift */; };
+		E506A0A21D4BFF0B00CCD728 /* TipsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E506A0A11D4BFF0B00CCD728 /* TipsView.xib */; };
+		E525592B1D36A39600E323C3 /* BCCloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E525592A1D36A39500E323C3 /* BCCloseButton.swift */; };
+		E52791721CEF4EFD00F5E727 /* FollowCustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52791711CEF4EFD00F5E727 /* FollowCustomButton.swift */; };
+		E535CE031D3FF4860059EFC4 /* CustomLabelChatOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E535CE021D3FF4840059EFC4 /* CustomLabelChatOver.swift */; };
+		E53D40A31CEE4355000CAC49 /* ChatRoomTalkInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53D40A21CEE4355000CAC49 /* ChatRoomTalkInfoViewController.swift */; };
+		E5401B191D30065D0011C647 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5401B181D30065D0011C647 /* PaddingLabel.swift */; };
+		E54340E01D3D45DF003866EB /* SearchLocationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54340DF1D3D45DF003866EB /* SearchLocationTableViewController.swift */; };
+		E54EBDD51D5B5CAD002EE541 /* SlideCoverTipView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E54EBDD41D5B5CAD002EE541 /* SlideCoverTipView.xib */; };
+		E54EBDD71D5B604A002EE541 /* SlideCoverTipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54EBDD61D5B604A002EE541 /* SlideCoverTipView.swift */; };
+		E54EBDD91D5B86AF002EE541 /* SwipeCoverImagesTipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54EBDD81D5B86AF002EE541 /* SwipeCoverImagesTipView.swift */; };
+		E54EBDDB1D5B86BB002EE541 /* SwipeCoverImagesTipView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E54EBDDA1D5B86BB002EE541 /* SwipeCoverImagesTipView.xib */; };
+		E574EE481D5904FB006571FE /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = E574EE471D5904FB006571FE /* Image.swift */; };
+		E574EE4B1D5A24B4006571FE /* ShareChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E574EE4A1D5A24B4006571FE /* ShareChatView.swift */; };
+		E574EE4D1D5A24C7006571FE /* ShareChatView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E574EE4C1D5A24C7006571FE /* ShareChatView.xib */; };
+		E5C1FAB11CC514010015F3E6 /* AmazonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C1FAB01CC514010015F3E6 /* AmazonManager.swift */; };
+		E5CC0CFE1CE225B900C1D8CB /* OHCircleSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CC0CFD1CE225B900C1D8CB /* OHCircleSegue.swift */; };
+		E5D4854E1D215C9500692B36 /* CCHCenterOfMassMapClusterer.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D485361D215C9500692B36 /* CCHCenterOfMassMapClusterer.m */; };
+		E5D4854F1D215C9500692B36 /* CCHFadeInOutMapAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D485381D215C9500692B36 /* CCHFadeInOutMapAnimator.m */; };
+		E5D485501D215C9500692B36 /* CCHMapClusterAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D4853B1D215C9500692B36 /* CCHMapClusterAnnotation.m */; };
+		E5D485511D215C9500692B36 /* CCHMapClusterController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D4853D1D215C9500692B36 /* CCHMapClusterController.m */; };
+		E5D485521D215C9500692B36 /* CCHMapClusterControllerDebugPolygon.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D4853F1D215C9500692B36 /* CCHMapClusterControllerDebugPolygon.m */; };
+		E5D485531D215C9500692B36 /* CCHMapClusterControllerUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D485421D215C9500692B36 /* CCHMapClusterControllerUtils.m */; };
+		E5D485541D215C9500692B36 /* CCHMapClusterOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D485451D215C9500692B36 /* CCHMapClusterOperation.m */; };
+		E5D485551D215C9500692B36 /* CCHMapTree.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D485471D215C9500692B36 /* CCHMapTree.m */; };
+		E5D485561D215C9500692B36 /* CCHMapTreeUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D485491D215C9500692B36 /* CCHMapTreeUtils.m */; };
+		E5D485571D215C9500692B36 /* CCHMapViewDelegateProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D4854B1D215C9500692B36 /* CCHMapViewDelegateProxy.m */; };
+		E5D485581D215C9500692B36 /* CCHNearCenterMapClusterer.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D4854D1D215C9500692B36 /* CCHNearCenterMapClusterer.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7D1006CF1C84ADFB0076561E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7D1006AF1C84ADFB0076561E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7D1006B61C84ADFB0076561E;
+			remoteInfo = Blicup;
+		};
+		7D1006DA1C84ADFB0076561E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7D1006AF1C84ADFB0076561E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7D1006B61C84ADFB0076561E;
+			remoteInfo = Blicup;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0C081D62BE3B3B2EFFE7025B /* Pods_BlicupUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlicupUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A2A2D25812332F51F390540 /* Pods_Blicup.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Blicup.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C6229356D54D5F6A97C77D4 /* Pods-Blicup.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Blicup.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Blicup/Pods-Blicup.debug.xcconfig"; sourceTree = "<group>"; };
+		66DC606130C51AA94AC5ADE8 /* Pods-BlicupUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlicupUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BlicupUITests/Pods-BlicupUITests.release.xcconfig"; sourceTree = "<group>"; };
+		6E2D80ABB821D1DEDFBF9E84 /* Pods-BlicupTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlicupTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BlicupTests/Pods-BlicupTests.release.xcconfig"; sourceTree = "<group>"; };
+		7D0525911CB437470010961E /* CreateChatRoomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateChatRoomViewController.swift; path = ChatRoomManagement/View/CreateChatRoomViewController.swift; sourceTree = "<group>"; };
+		7D0525931CB443F30010961E /* CreateChatRoomPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateChatRoomPresenter.swift; path = ChatRoomManagement/Presenter/CreateChatRoomPresenter.swift; sourceTree = "<group>"; };
+		7D0525951CB44D8B0010961E /* UIPlaceHolderTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIPlaceHolderTextView.swift; path = Utils/UIPlaceHolderTextView.swift; sourceTree = "<group>"; };
+		7D1006B71C84ADFB0076561E /* Blicup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Blicup.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D1006BF1C84ADFB0076561E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7D1006C41C84ADFB0076561E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7D1006C71C84ADFB0076561E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7D1006CE1C84ADFB0076561E /* BlicupTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BlicupTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D1006D21C84ADFB0076561E /* BlicupTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlicupTests.swift; sourceTree = "<group>"; };
+		7D1006D41C84ADFB0076561E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7D1006D91C84ADFB0076561E /* BlicupUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BlicupUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D1006DD1C84ADFB0076561E /* BlicupUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlicupUITests.swift; sourceTree = "<group>"; };
+		7D1006DF1C84ADFB0076561E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7D1006FB1C85D5B80076561E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = UserManagement/View/LoginViewController.swift; sourceTree = "<group>"; };
+		7D1006FF1C8604BA0076561E /* SF-UI-Text-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Text-Bold.otf"; sourceTree = "<group>"; };
+		7D1007001C8604BA0076561E /* SF-UI-Text-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Text-BoldItalic.otf"; sourceTree = "<group>"; };
+		7D1007011C8604BA0076561E /* SF-UI-Text-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Text-Heavy.otf"; sourceTree = "<group>"; };
+		7D1007021C8604BA0076561E /* SF-UI-Text-HeavyItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Text-HeavyItalic.otf"; sourceTree = "<group>"; };
+		7D1007031C8604BA0076561E /* SF-UI-Text-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Text-Light.otf"; sourceTree = "<group>"; };
+		7D1007041C8604BA0076561E /* SF-UI-Text-LightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Text-LightItalic.otf"; sourceTree = "<group>"; };
+		7D1007051C8604BA0076561E /* SF-UI-Text-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Text-Medium.otf"; sourceTree = "<group>"; };
+		7D1007061C8604BA0076561E /* SF-UI-Text-MediumItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Text-MediumItalic.otf"; sourceTree = "<group>"; };
+		7D1007071C8604BA0076561E /* SF-UI-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Text-Regular.otf"; sourceTree = "<group>"; };
+		7D1007081C8604BA0076561E /* SF-UI-Text-RegularItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Text-RegularItalic.otf"; sourceTree = "<group>"; };
+		7D1007091C8604BA0076561E /* SF-UI-Text-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Text-Semibold.otf"; sourceTree = "<group>"; };
+		7D10070A1C8604BA0076561E /* SF-UI-Text-SemiboldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Text-SemiboldItalic.otf"; sourceTree = "<group>"; };
+		7D10071E1C86059A0076561E /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "Supporting Files/AppDelegate.swift"; sourceTree = "<group>"; };
+		7D1007201C86059A0076561E /* Blicup.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Blicup.xcdatamodel; sourceTree = "<group>"; };
+		7D1007251C8611460076561E /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Bridging-Header.h"; path = "Supporting Files/Bridging-Header.h"; sourceTree = "<group>"; };
+		7D1EC71B1CC83CE7006689B3 /* default_tags_pt.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = default_tags_pt.json; sourceTree = "<group>"; };
+		7D1EC71D1CC91721006689B3 /* MD5.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MD5.swift; path = Extensions/MD5.swift; sourceTree = "<group>"; };
+		7D27FCD31D217E0B008B5021 /* AlphaVerticalSlideTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlphaVerticalSlideTransition.swift; path = Transition/AlphaVerticalSlideTransition.swift; sourceTree = "<group>"; };
+		7D2DBDB01CF7A1170018510A /* ChatRoomGiphySearchPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatRoomGiphySearchPresenter.swift; path = ChatRoomManagement/Presenter/ChatRoomGiphySearchPresenter.swift; sourceTree = "<group>"; };
+		7D3337A41D1C7AEA00D2EB55 /* FollowListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FollowListPresenter.swift; path = Settings/Presenter/FollowListPresenter.swift; sourceTree = "<group>"; };
+		7D37A2DD1CC01BF90045F2EB /* BCRefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BCRefreshControl.swift; path = Utils/BCRefreshControl.swift; sourceTree = "<group>"; };
+		7D37A3001CC122890045F2EB /* BCRefreshControlView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BCRefreshControlView.xib; path = Utils/BCRefreshControlView.xib; sourceTree = "<group>"; };
+		7D50A6751D5A71A7009739F2 /* FindFriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FindFriendsViewController.swift; path = Settings/View/FindFriendsViewController.swift; sourceTree = "<group>"; };
+		7D50A6771D5B584C009739F2 /* FindFriendsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FindFriendsPresenter.swift; path = Settings/Presenter/FindFriendsPresenter.swift; sourceTree = "<group>"; };
+		7D50A6791D5B5DB9009739F2 /* UserWithLikeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserWithLikeTableViewCell.swift; path = Settings/View/UserWithLikeTableViewCell.swift; sourceTree = "<group>"; };
+		7D50A67B1D5B5DD4009739F2 /* UserWithLikeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UserWithLikeTableViewCell.xib; path = Settings/View/UserWithLikeTableViewCell.xib; sourceTree = "<group>"; };
+		7D5220AC1D537DAD0041FE46 /* SuggestedUsersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SuggestedUsersViewController.swift; path = UserManagement/View/SuggestedUsersViewController.swift; sourceTree = "<group>"; };
+		7D5220AE1D538C360041FE46 /* SuggestUsersPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SuggestUsersPresenter.swift; path = UserManagement/Presenter/SuggestUsersPresenter.swift; sourceTree = "<group>"; };
+		7D563E411C9A0E9C002D5E4E /* InterestListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InterestListViewController.swift; path = UserManagement/View/InterestListViewController.swift; sourceTree = "<group>"; };
+		7D563E431C9ACC1A002D5E4E /* InterestTagCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InterestTagCollectionViewCell.swift; path = UserManagement/View/InterestTagCollectionViewCell.swift; sourceTree = "<group>"; };
+		7D595B2F1CC7FC63009E994D /* BlicupAppColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BlicupAppColors.swift; path = Extensions/BlicupAppColors.swift; sourceTree = "<group>"; };
+		7D7C73A71CAB1A7C00DC1164 /* Macro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Macro.swift; path = Utils/Macro.swift; sourceTree = "<group>"; };
+		7D7C73AF1CAB208F00DC1164 /* BCProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BCProgress.swift; path = Utils/BCProgress.swift; sourceTree = "<group>"; };
+		7D7C73B01CAB208F00DC1164 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomTextField.swift; path = Utils/CustomTextField.swift; sourceTree = "<group>"; };
+		7D7C73B21CAB208F00DC1164 /* FlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FlowLayout.swift; path = Utils/FlowLayout.swift; sourceTree = "<group>"; };
+		7D7C73B31CAB208F00DC1164 /* TextFieldNoTextOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextFieldNoTextOptions.swift; path = Utils/TextFieldNoTextOptions.swift; sourceTree = "<group>"; };
+		7D7C73BD1CAC477600DC1164 /* ChatRoomsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatRoomsListViewController.swift; path = ChatRoomManagement/View/ChatRoomsListViewController.swift; sourceTree = "<group>"; };
+		7D7C73C11CAC47E300DC1164 /* CHTCollectionViewWaterfallLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CHTCollectionViewWaterfallLayout.swift; path = ThirdParty/Layout/CHTCollectionViewWaterfallLayout.swift; sourceTree = "<group>"; };
+		7D7C73C51CAC4C9900DC1164 /* CollectionViewTransitionProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CollectionViewTransitionProtocol.swift; path = Transition/Protocol/CollectionViewTransitionProtocol.swift; sourceTree = "<group>"; };
+		7D7C73C91CAC4E3300DC1164 /* CollectionViewTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CollectionViewTransition.swift; path = Transition/CollectionViewTransition.swift; sourceTree = "<group>"; };
+		7D7C73CB1CAC4F1F00DC1164 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extension.swift; path = Extensions/Extension.swift; sourceTree = "<group>"; };
+		7D7C73CD1CAC556400DC1164 /* ChatRoomListCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatRoomListCollectionViewCell.swift; path = ChatRoomManagement/View/ChatRoomListCollectionViewCell.swift; sourceTree = "<group>"; };
+		7D7C73EC1CAC5ADB00DC1164 /* ChatRoomsListHorizontalPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatRoomsListHorizontalPageViewController.swift; path = ChatRoomManagement/View/ChatRoomsListHorizontalPageViewController.swift; sourceTree = "<group>"; };
+		7D7C73F01CAC617E00DC1164 /* ChatRoomListNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatRoomListNavigationController.swift; path = ChatRoomManagement/View/ChatRoomListNavigationController.swift; sourceTree = "<group>"; };
+		7D8626521C9B261D00D87E87 /* InterestPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InterestPresenter.swift; path = UserManagement/Presenter/InterestPresenter.swift; sourceTree = "<group>"; };
+		7D8626541C9B48FA00D87E87 /* InterestListAddedBlankCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InterestListAddedBlankCollectionViewCell.swift; path = UserManagement/View/InterestListAddedBlankCollectionViewCell.swift; sourceTree = "<group>"; };
+		7D8C660A1CE3F378000CA40A /* WebImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebImage.swift; sourceTree = "<group>"; };
+		7D8C660B1CE3F378000CA40A /* WebImageSearchBS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebImageSearchBS.swift; sourceTree = "<group>"; };
+		7D8C660D1CE3F378000CA40A /* WebImageSearchPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebImageSearchPresenter.swift; sourceTree = "<group>"; };
+		7D8C660F1CE3F378000CA40A /* WebImageSearch.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WebImageSearch.storyboard; sourceTree = "<group>"; };
+		7D8C66101CE3F378000CA40A /* WebImageSearchCollectionFooterReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebImageSearchCollectionFooterReusableView.swift; sourceTree = "<group>"; };
+		7D8C66111CE3F378000CA40A /* WebImageSearchCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebImageSearchCollectionViewCell.swift; sourceTree = "<group>"; };
+		7D8C66131CE3F378000CA40A /* WebImageSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebImageSearchViewController.swift; sourceTree = "<group>"; };
+		7D8C661C1CE3F3D4000CA40A /* BCGradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BCGradientView.swift; path = Utils/BCGradientView.swift; sourceTree = "<group>"; };
+		7D8C661E1CE3F413000CA40A /* CoverPhotoCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoverPhotoCollectionReusableView.swift; path = ChatRoomManagement/View/CoverPhotoCollectionReusableView.swift; sourceTree = "<group>"; };
+		7DA5A86C1CAF05040019B32D /* ChatRoom+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ChatRoom+CoreDataProperties.swift"; path = "ChatRoomManagement/Model/ChatRoom+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		7DA5A86D1CAF05040019B32D /* ChatRoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatRoom.swift; path = ChatRoomManagement/Model/ChatRoom.swift; sourceTree = "<group>"; };
+		7DA80C161CBF0E14006151E1 /* Photo+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Photo+CoreDataProperties.swift"; path = "ChatRoomManagement/Model/Photo+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		7DA80C171CBF0E14006151E1 /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Photo.swift; path = ChatRoomManagement/Model/Photo.swift; sourceTree = "<group>"; };
+		7DA80C1A1CC00977006151E1 /* BCGradientImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BCGradientImageView.swift; path = Utils/BCGradientImageView.swift; sourceTree = "<group>"; };
+		7DABC2DB1D34796300D7903C /* ChatRoomContextMenuProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatRoomContextMenuProtocol.swift; path = ChatRoomManagement/Presenter/ChatRoomContextMenuProtocol.swift; sourceTree = "<group>"; };
+		7DB019071D15C4C00077F7CB /* UserProfileCardPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserProfileCardPresenter.swift; path = Settings/Presenter/UserProfileCardPresenter.swift; sourceTree = "<group>"; };
+		7DB0190B1D15E01D0077F7CB /* FollowerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FollowerViewController.swift; path = Settings/View/FollowerViewController.swift; sourceTree = "<group>"; };
+		7DB5C7C61CF098B200A5EFF2 /* UserSearchCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserSearchCollectionViewCell.swift; path = ChatRoomManagement/View/UserSearchCollectionViewCell.swift; sourceTree = "<group>"; };
+		7DB5C7C81CF0B90600A5EFF2 /* CollectionViewListFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CollectionViewListFlowLayout.swift; path = Utils/CollectionViewListFlowLayout.swift; sourceTree = "<group>"; };
+		7DB632991CF4A34C00921AFF /* UserSearchPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserSearchPresenter.swift; path = UserManagement/Presenter/UserSearchPresenter.swift; sourceTree = "<group>"; };
+		7DC2B3551C933A4B000112B4 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WelcomeViewController.swift; path = UserManagement/View/WelcomeViewController.swift; sourceTree = "<group>"; };
+		7DCC30DF1D400148001202F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/UserTableViewCell.xib; sourceTree = "<group>"; };
+		7DCC30E21D400181001202F4 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/UserTableViewCell.strings"; sourceTree = "<group>"; };
+		7DCC30E91D4004C1001202F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Settings/View/Base.lproj/UserBlockCell.xib; sourceTree = "<group>"; };
+		7DCC30EA1D4004C8001202F4 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "Settings/View/pt-BR.lproj/UserBlockCell.strings"; sourceTree = "<group>"; };
+		7DCC30EC1D400EF5001202F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Settings.storyboard; sourceTree = "<group>"; };
+		7DCC30EF1D400EFA001202F4 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Settings.strings"; sourceTree = "<group>"; };
+		7DCC30F11D4013B1001202F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MyChats.storyboard; sourceTree = "<group>"; };
+		7DCC30F41D4013B6001202F4 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/MyChats.strings"; sourceTree = "<group>"; };
+		7DCC30F61D4013E5001202F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Chat.storyboard; sourceTree = "<group>"; };
+		7DCC30F91D4013EB001202F4 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Chat.strings"; sourceTree = "<group>"; };
+		7DCF1D081CFE08280020BF08 /* ChatRoomUserMentionCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatRoomUserMentionCollectionViewCell.swift; path = ChatRoomManagement/View/ChatRoomUserMentionCollectionViewCell.swift; sourceTree = "<group>"; };
+		7DCF1D0A1CFE1DC10020BF08 /* ChatRoomsAndUsersSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatRoomsAndUsersSearchViewController.swift; path = ChatRoomManagement/View/ChatRoomsAndUsersSearchViewController.swift; sourceTree = "<group>"; };
+		7DCF1D0C1CFF89460020BF08 /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringExtensions.swift; path = Extensions/StringExtensions.swift; sourceTree = "<group>"; };
+		7DCFA7281D1044C00043CEA1 /* CreateChatRoomInputAccessoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateChatRoomInputAccessoryView.swift; path = ChatRoomManagement/View/CreateChatRoomInputAccessoryView.swift; sourceTree = "<group>"; };
+		7DCFA72A1D1220030043CEA1 /* FolloweeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FolloweeViewController.swift; path = Settings/View/FolloweeViewController.swift; sourceTree = "<group>"; };
+		7DCFA72C1D122C6A0043CEA1 /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserTableViewCell.swift; path = Settings/View/UserTableViewCell.swift; sourceTree = "<group>"; };
+		7DCFA72E1D144F720043CEA1 /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserProfileViewController.swift; path = Settings/View/UserProfileViewController.swift; sourceTree = "<group>"; };
+		7DD0F7D51C886F36001E5780 /* SignupUsernameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignupUsernameViewController.swift; path = UserManagement/View/SignupUsernameViewController.swift; sourceTree = "<group>"; };
+		7DD0F7E01C89DEA9001E5780 /* SignupPictureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignupPictureViewController.swift; path = UserManagement/View/SignupPictureViewController.swift; sourceTree = "<group>"; };
+		7DD527A51D1C673000D8B73B /* FollowUnfollowPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FollowUnfollowPresenter.swift; path = Settings/Presenter/FollowUnfollowPresenter.swift; sourceTree = "<group>"; };
+		7DD7C8901D41645B003454A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Signup.storyboard; sourceTree = "<group>"; };
+		7DD7C8931D41645E003454A7 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Signup.strings"; sourceTree = "<group>"; };
+		7DD7C8941D41704C003454A7 /* default_tags_en.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = default_tags_en.json; sourceTree = "<group>"; };
+		7DDADD501CC1A7470097A86B /* BCBlurredTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BCBlurredTabBar.swift; path = Utils/BCBlurredTabBar.swift; sourceTree = "<group>"; };
+		7DDADD531CC268730097A86B /* GHContextMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHContextMenuView.h; sourceTree = "<group>"; };
+		7DDADD541CC268730097A86B /* GHContextMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHContextMenuView.m; sourceTree = "<group>"; };
+		7DE759971D2ABE5F004BAFF9 /* AlertControllerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlertControllerProtocol.swift; path = Extensions/AlertControllerProtocol.swift; sourceTree = "<group>"; };
+		7DF0EC5A1D42B24500DEF902 /* default_tags_es.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = default_tags_es.json; sourceTree = "<group>"; };
+		7DF0EC5C1D42B34900DEF902 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
+		7DF0EC5D1D42B34900DEF902 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Signup.strings; sourceTree = "<group>"; };
+		7DF0EC5E1D42B34900DEF902 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Chat.strings; sourceTree = "<group>"; };
+		7DF0EC5F1D42B34900DEF902 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/MyChats.strings; sourceTree = "<group>"; };
+		7DF0EC601D42B34900DEF902 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/UserTableViewCell.strings; sourceTree = "<group>"; };
+		7DF0EC611D42B34A00DEF902 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = Settings/View/es.lproj/UserBlockCell.strings; sourceTree = "<group>"; };
+		7DF0EC621D42B34A00DEF902 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Settings.strings; sourceTree = "<group>"; };
+		7DF0EC631D42B34A00DEF902 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		7DF0EC641D42B34A00DEF902 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		7DF0EC651D42B35600DEF902 /* es-MX */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-MX"; path = "es-MX.lproj/Main.strings"; sourceTree = "<group>"; };
+		7DF0EC661D42B35700DEF902 /* es-MX */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-MX"; path = "es-MX.lproj/Signup.strings"; sourceTree = "<group>"; };
+		7DF0EC671D42B35700DEF902 /* es-MX */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-MX"; path = "es-MX.lproj/Chat.strings"; sourceTree = "<group>"; };
+		7DF0EC681D42B35700DEF902 /* es-MX */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-MX"; path = "es-MX.lproj/MyChats.strings"; sourceTree = "<group>"; };
+		7DF0EC691D42B35700DEF902 /* es-MX */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-MX"; path = "es-MX.lproj/UserTableViewCell.strings"; sourceTree = "<group>"; };
+		7DF0EC6A1D42B35700DEF902 /* es-MX */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-MX"; path = "Settings/View/es-MX.lproj/UserBlockCell.strings"; sourceTree = "<group>"; };
+		7DF0EC6B1D42B35700DEF902 /* es-MX */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-MX"; path = "es-MX.lproj/Settings.strings"; sourceTree = "<group>"; };
+		7DF0EC6C1D42B35800DEF902 /* es-MX */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-MX"; path = "es-MX.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		7DF0EC6D1D42BC0400DEF902 /* es-MX */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-MX"; path = "es-MX.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		7DF0EC6E1D42DE2C00DEF902 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Main.strings"; sourceTree = "<group>"; };
+		7DF0EC6F1D42DE2C00DEF902 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Signup.strings"; sourceTree = "<group>"; };
+		7DF0EC701D42DE2D00DEF902 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Chat.strings"; sourceTree = "<group>"; };
+		7DF0EC711D42DE2E00DEF902 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/MyChats.strings"; sourceTree = "<group>"; };
+		7DF0EC721D42DE2E00DEF902 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/UserTableViewCell.strings"; sourceTree = "<group>"; };
+		7DF0EC731D42DE2E00DEF902 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "Settings/View/es-419.lproj/UserBlockCell.strings"; sourceTree = "<group>"; };
+		7DF0EC741D42DE2F00DEF902 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Settings.strings"; sourceTree = "<group>"; };
+		7DF0EC751D42DE3200DEF902 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		7DF0EC761D42DE3500DEF902 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		7DF3978E1D46647900E279D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Base; path = Base.lproj/Info.plist; sourceTree = "<group>"; };
+		7DF397901D46647C00E279D7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/Info.plist; sourceTree = "<group>"; };
+		7DF397911D46647D00E279D7 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "pt-BR"; path = "pt-BR.lproj/Info.plist"; sourceTree = "<group>"; };
+		7DF397921D46647F00E279D7 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = es; path = es.lproj/Info.plist; sourceTree = "<group>"; };
+		7DF397931D46648000E279D7 /* es-MX */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "es-MX"; path = "es-MX.lproj/Info.plist"; sourceTree = "<group>"; };
+		7DF397941D46648100E279D7 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "es-419"; path = "es-419.lproj/Info.plist"; sourceTree = "<group>"; };
+		7DF397991D4692C800E279D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7DF3979B1D4692CB00E279D7 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		7DF3979C1D4692CD00E279D7 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7DF3979D1D4692CF00E279D7 /* es-MX */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-MX"; path = "es-MX.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		7DF3979E1D4692D100E279D7 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		7DF3BB991D38284E002CC8B2 /* BlicupAnalytics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BlicupAnalytics.swift; path = BlicupAPI/BlicupAnalytics.swift; sourceTree = "<group>"; };
+		7DF3BB9B1D396A13002CC8B2 /* ChatRoomShareCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatRoomShareCard.swift; path = ChatRoomManagement/Presenter/ChatRoomShareCard.swift; sourceTree = "<group>"; };
+		7DF6A7C81D51233A007515CE /* Blicup 1.0.1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Blicup 1.0.1.xcdatamodel"; sourceTree = "<group>"; };
+		7DF6C7851D0756D800B1866D /* BCButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BCButton.swift; path = Utils/BCButton.swift; sourceTree = "<group>"; };
+		7DF8FD9B1C8F0C220058F877 /* SignupTermsPrivacyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignupTermsPrivacyViewController.swift; path = UserManagement/View/SignupTermsPrivacyViewController.swift; sourceTree = "<group>"; };
+		7DF8FD9F1C8F69C50058F877 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Main.strings"; sourceTree = "<group>"; };
+		7DF8FDA01C8F69C50058F877 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		7DF8FDA21C8F69E60058F877 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		7DF8FDA81C8F6A4B0058F877 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		7DF8FDA91C8F6A4C0058F877 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		7DF8FDAD1C90B3CE0058F877 /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignupViewController.swift; path = UserManagement/View/SignupViewController.swift; sourceTree = "<group>"; };
+		7DF8FDAF1C90B4690058F877 /* SignupPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignupPageViewController.swift; path = UserManagement/View/SignupPageViewController.swift; sourceTree = "<group>"; };
+		7DF8FDB11C90D9C60058F877 /* SignupPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignupPresenter.swift; path = UserManagement/Presenter/SignupPresenter.swift; sourceTree = "<group>"; };
+		7DFD1DFE1C862F4200CF5C94 /* LoginPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginPresenter.swift; path = UserManagement/Presenter/LoginPresenter.swift; sourceTree = "<group>"; };
+		7DFD1E001C86438700CF5C94 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginController.swift; path = UserManagement/Presenter/LoginController.swift; sourceTree = "<group>"; };
+		7DFD1E041C874F1200CF5C94 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "User+CoreDataProperties.swift"; path = "UserManagement/Model/User+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		7DFD1E051C874F1200CF5C94 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = UserManagement/Model/User.swift; sourceTree = "<group>"; };
+		8CD0662122254125BC01CFC0 /* Pods-Blicup.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Blicup.release.xcconfig"; path = "Pods/Target Support Files/Pods-Blicup/Pods-Blicup.release.xcconfig"; sourceTree = "<group>"; };
+		91EB1788CEB99D7DA5E44B20 /* Pods-BlicupUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlicupUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BlicupUITests/Pods-BlicupUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		A456F3091C999009008CF87D /* LDTProtocolImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDTProtocolImpl.swift; sourceTree = "<group>"; };
+		A4D97E201CB9758900E13678 /* UserBS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserBS.swift; path = BlicupAPI/UserBS.swift; sourceTree = "<group>"; };
+		C91B36651CC6B14F002D77BF /* BlicupServicesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlicupServicesTests.swift; sourceTree = "<group>"; };
+		C91B36671CC7FF54002D77BF /* LDTPWebSocketManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDTPWebSocketManager.swift; sourceTree = "<group>"; };
+		C91B36691CC800A0002D77BF /* LDTPMessageBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDTPMessageBuilder.swift; sourceTree = "<group>"; };
+		C91B366B1CC824BB002D77BF /* BlicupOnlineServicesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlicupOnlineServicesTests.swift; sourceTree = "<group>"; };
+		C934B2841CD93BF9006B3EF4 /* LDTPTaskQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDTPTaskQueue.swift; sourceTree = "<group>"; };
+		C93AC3EC1D256D8E00ED8046 /* ChatRoomsListProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatRoomsListProtocol.swift; path = ChatRoomManagement/Presenter/ChatRoomsListProtocol.swift; sourceTree = "<group>"; };
+		C93AC3EE1D25961400ED8046 /* MyChatsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyChatsPresenter.swift; path = ChatRoomManagement/Presenter/MyChatsPresenter.swift; sourceTree = "<group>"; };
+		C93AC3F01D25C93600ED8046 /* ChatRoomFetchResultPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatRoomFetchResultPresenter.swift; path = ChatRoomManagement/Presenter/ChatRoomFetchResultPresenter.swift; sourceTree = "<group>"; };
+		C93AC3F31D26F81D00ED8046 /* ChatRoomMainListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatRoomMainListPresenter.swift; path = ChatRoomManagement/Presenter/ChatRoomMainListPresenter.swift; sourceTree = "<group>"; };
+		C93AC3F51D26F86900ED8046 /* ChatRoomSearchListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatRoomSearchListPresenter.swift; path = ChatRoomManagement/Presenter/ChatRoomSearchListPresenter.swift; sourceTree = "<group>"; };
+		C93AC3F71D26F94800ED8046 /* MapChatRoomListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapChatRoomListPresenter.swift; path = ChatRoomManagement/Presenter/MapChatRoomListPresenter.swift; sourceTree = "<group>"; };
+		C93AC3F91D26F9A000ED8046 /* CoverChatRoomsListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoverChatRoomsListPresenter.swift; path = ChatRoomManagement/Presenter/CoverChatRoomsListPresenter.swift; sourceTree = "<group>"; };
+		C93AC3FB1D27132E00ED8046 /* ChatListToCoverTrasition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatListToCoverTrasition.swift; path = Transition/ChatListToCoverTrasition.swift; sourceTree = "<group>"; };
+		C93E1C181CD278AB00E0E7ED /* LDTPWebSocketReceiverManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDTPWebSocketReceiverManager.swift; sourceTree = "<group>"; };
+		C9437A9B1CFC8E73008425A0 /* BlicupAsyncHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BlicupAsyncHandler.swift; path = BlicupAPI/BlicupAsyncHandler.swift; sourceTree = "<group>"; };
+		C947A3311CE6421C00D810D3 /* ChatRoomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatRoomViewController.swift; path = ChatRoomManagement/View/ChatRoomViewController.swift; sourceTree = "<group>"; };
+		C947A3331CE6423600D810D3 /* ChatRoomPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatRoomPresenter.swift; path = ChatRoomManagement/Presenter/ChatRoomPresenter.swift; sourceTree = "<group>"; };
+		C9525DEC1CCEBABD0035DE0E /* ChatRoomCoverCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatRoomCoverCell.swift; path = ChatRoomManagement/View/ChatRoomCoverCell.swift; sourceTree = "<group>"; };
+		C9525DEE1CDA3F3F0035DE0E /* Map.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Map.storyboard; path = ChatRoomManagement/View/Map.storyboard; sourceTree = "<group>"; };
+		C9525DF01CDA5CC60035DE0E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		C9525DF21CDA79AD0035DE0E /* ChatRoomMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatRoomMapViewController.swift; path = ChatRoomManagement/View/ChatRoomMapViewController.swift; sourceTree = "<group>"; };
+		C9525DF41CDA911D0035DE0E /* ChatAddress+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ChatAddress+CoreDataProperties.swift"; path = "ChatRoomManagement/Model/ChatAddress+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C9525DF51CDA911D0035DE0E /* ChatAddress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatAddress.swift; path = ChatRoomManagement/Model/ChatAddress.swift; sourceTree = "<group>"; };
+		C9525DF81CDA99BA0035DE0E /* ChatMapPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatMapPresenter.swift; path = ChatRoomManagement/Presenter/ChatMapPresenter.swift; sourceTree = "<group>"; };
+		C9525DFA1CDBCD7B0035DE0E /* ChatRoomAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatRoomAnnotationView.swift; path = ChatRoomManagement/View/ChatRoomAnnotationView.swift; sourceTree = "<group>"; };
+		C9525DFC1CE122580035DE0E /* MapChatListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapChatListViewController.swift; path = ChatRoomManagement/View/MapChatListViewController.swift; sourceTree = "<group>"; };
+		C95B14DC1D21636800D4DA0F /* UserListFollowBlockViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserListFollowBlockViewController.swift; path = Settings/View/UserListFollowBlockViewController.swift; sourceTree = "<group>"; };
+		C973E0731CE22059008591FD /* ChatRoomMessage+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ChatRoomMessage+CoreDataProperties.swift"; path = "ChatRoomManagement/Model/ChatRoomMessage+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C973E0741CE22059008591FD /* ChatRoomMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatRoomMessage.swift; path = ChatRoomManagement/Model/ChatRoomMessage.swift; sourceTree = "<group>"; };
+		C97C005B1D1821E400C16541 /* SettingsTablePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsTablePresenter.swift; path = Settings/Presenter/SettingsTablePresenter.swift; sourceTree = "<group>"; };
+		C97C005D1D182D9700C16541 /* InfoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InfoTableViewController.swift; path = Settings/View/InfoTableViewController.swift; sourceTree = "<group>"; };
+		C97C005F1D18705E00C16541 /* FavoritesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FavoritesViewController.swift; path = Settings/View/FavoritesViewController.swift; sourceTree = "<group>"; };
+		C97C00611D18754D00C16541 /* FavoritesPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FavoritesPresenter.swift; path = Settings/Presenter/FavoritesPresenter.swift; sourceTree = "<group>"; };
+		C97C00631D1B090000C16541 /* BlockedListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BlockedListViewController.swift; path = Settings/View/BlockedListViewController.swift; sourceTree = "<group>"; };
+		C97C00651D1B097900C16541 /* BlockListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BlockListPresenter.swift; path = Settings/Presenter/BlockListPresenter.swift; sourceTree = "<group>"; };
+		C97C00691D1C651300C16541 /* ChatRoomTalkInfoPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatRoomTalkInfoPresenter.swift; path = ChatRoomManagement/Presenter/ChatRoomTalkInfoPresenter.swift; sourceTree = "<group>"; };
+		C97C006D1D1DD93300C16541 /* BlockFollowUserListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BlockFollowUserListPresenter.swift; path = Settings/Presenter/BlockFollowUserListPresenter.swift; sourceTree = "<group>"; };
+		C97C01C61D11F00B00E5C5AC /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = Settings/View/SettingsViewController.swift; sourceTree = "<group>"; };
+		C98575E01D0B0C190045CD9D /* BlicupClock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BlicupClock.swift; path = Utils/BlicupClock.swift; sourceTree = "<group>"; };
+		C98C14021D24646400BAD95C /* MyChatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyChatsViewController.swift; path = ChatRoomManagement/View/MyChatsViewController.swift; sourceTree = "<group>"; };
+		C99871AA1D35905B00166F6E /* Blicup.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Blicup.entitlements; sourceTree = "<group>"; };
+		C99D36031CEF600E00B0F889 /* ChatRoomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatRoomCell.swift; path = ChatRoomManagement/View/ChatRoomCell.swift; sourceTree = "<group>"; };
+		C99D36051CEF840F00B0F889 /* ChatRoomInputAccessoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatRoomInputAccessoryView.swift; path = ChatRoomManagement/View/ChatRoomInputAccessoryView.swift; sourceTree = "<group>"; };
+		C9B9DDCA1D2ECAC500B57F62 /* BlicupRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BlicupRouter.swift; path = BlicupAPI/BlicupRouter.swift; sourceTree = "<group>"; };
+		C9BCFF0C1CF7656F00D498FA /* LDTPNSNotificationCenterControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDTPNSNotificationCenterControl.swift; sourceTree = "<group>"; };
+		C9BCFF0E1CF7721100D498FA /* ToStringArrayTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ToStringArrayTransformer.swift; path = Utils/ToStringArrayTransformer.swift; sourceTree = "<group>"; };
+		C9BCFF101CF783BF00D498FA /* UserInfo+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UserInfo+CoreDataProperties.swift"; path = "UserManagement/Model/UserInfo+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C9BCFF111CF783BF00D498FA /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserInfo.swift; path = UserManagement/Model/UserInfo.swift; sourceTree = "<group>"; };
+		C9C606881D06187500F39B15 /* GiphyViewerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GiphyViewerController.swift; path = ChatRoomManagement/View/GiphyViewerController.swift; sourceTree = "<group>"; };
+		C9E464911CB83CF60034853B /* ChatRoomBS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatRoomBS.swift; path = BlicupAPI/ChatRoomBS.swift; sourceTree = "<group>"; };
+		C9E464961CB8592C0034853B /* CoverPhotosCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoverPhotosCollectionViewController.swift; path = ChatRoomManagement/View/CoverPhotosCollectionViewController.swift; sourceTree = "<group>"; };
+		C9E464981CB8599C0034853B /* CoverPhotoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoverPhotoCollectionViewCell.swift; path = ChatRoomManagement/View/CoverPhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		C9EAF9491D3834AE00D59752 /* UserStatus+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UserStatus+CoreDataProperties.swift"; path = "UserManagement/Model/UserStatus+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C9EAF94A1D3834AE00D59752 /* UserStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserStatus.swift; path = UserManagement/Model/UserStatus.swift; sourceTree = "<group>"; };
+		C9EBFF501D401C6200B7A211 /* push_blicup.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = push_blicup.aif; sourceTree = "<group>"; };
+		C9F8B8541D0F443200DD6A57 /* CoverMessageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoverMessageView.swift; path = ChatRoomManagement/View/CoverMessageView.swift; sourceTree = "<group>"; };
+		C9F8B8561D0F444700DD6A57 /* CoverMessageView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CoverMessageView.xib; path = ChatRoomManagement/View/CoverMessageView.xib; sourceTree = "<group>"; };
+		C9F8B85D1D11E3B200DD6A57 /* SettingsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsPresenter.swift; path = Settings/Presenter/SettingsPresenter.swift; sourceTree = "<group>"; };
+		C9FD9CFC1CBD7D5E004E2C04 /* LDTPMockImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDTPMockImpl.swift; sourceTree = "<group>"; };
+		E4743E515A5B636EDD5277C8 /* Pods-BlicupTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlicupTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BlicupTests/Pods-BlicupTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E506A09F1D4BEA9800CCD728 /* TipsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipsView.swift; sourceTree = "<group>"; };
+		E506A0A11D4BFF0B00CCD728 /* TipsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TipsView.xib; sourceTree = "<group>"; };
+		E525592A1D36A39500E323C3 /* BCCloseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BCCloseButton.swift; sourceTree = "<group>"; };
+		E52791711CEF4EFD00F5E727 /* FollowCustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowCustomButton.swift; sourceTree = "<group>"; };
+		E535CE021D3FF4840059EFC4 /* CustomLabelChatOver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomLabelChatOver.swift; sourceTree = "<group>"; };
+		E53D40A21CEE4355000CAC49 /* ChatRoomTalkInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatRoomTalkInfoViewController.swift; sourceTree = "<group>"; };
+		E5401B181D30065D0011C647 /* PaddingLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
+		E54340DF1D3D45DF003866EB /* SearchLocationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchLocationTableViewController.swift; sourceTree = "<group>"; };
+		E54EBDD41D5B5CAD002EE541 /* SlideCoverTipView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SlideCoverTipView.xib; sourceTree = "<group>"; };
+		E54EBDD61D5B604A002EE541 /* SlideCoverTipView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideCoverTipView.swift; sourceTree = "<group>"; };
+		E54EBDD81D5B86AF002EE541 /* SwipeCoverImagesTipView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeCoverImagesTipView.swift; sourceTree = "<group>"; };
+		E54EBDDA1D5B86BB002EE541 /* SwipeCoverImagesTipView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SwipeCoverImagesTipView.xib; sourceTree = "<group>"; };
+		E574EE471D5904FB006571FE /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		E574EE4A1D5A24B4006571FE /* ShareChatView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareChatView.swift; sourceTree = "<group>"; };
+		E574EE4C1D5A24C7006571FE /* ShareChatView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShareChatView.xib; sourceTree = "<group>"; };
+		E5C1FAB01CC514010015F3E6 /* AmazonManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AmazonManager.swift; path = Utils/AmazonManager.swift; sourceTree = "<group>"; };
+		E5CC0CFD1CE225B900C1D8CB /* OHCircleSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OHCircleSegue.swift; sourceTree = "<group>"; };
+		E5D485351D215C9500692B36 /* CCHCenterOfMassMapClusterer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCHCenterOfMassMapClusterer.h; sourceTree = "<group>"; };
+		E5D485361D215C9500692B36 /* CCHCenterOfMassMapClusterer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCHCenterOfMassMapClusterer.m; sourceTree = "<group>"; };
+		E5D485371D215C9500692B36 /* CCHFadeInOutMapAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCHFadeInOutMapAnimator.h; sourceTree = "<group>"; };
+		E5D485381D215C9500692B36 /* CCHFadeInOutMapAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCHFadeInOutMapAnimator.m; sourceTree = "<group>"; };
+		E5D485391D215C9500692B36 /* CCHMapAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCHMapAnimator.h; sourceTree = "<group>"; };
+		E5D4853A1D215C9500692B36 /* CCHMapClusterAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCHMapClusterAnnotation.h; sourceTree = "<group>"; };
+		E5D4853B1D215C9500692B36 /* CCHMapClusterAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCHMapClusterAnnotation.m; sourceTree = "<group>"; };
+		E5D4853C1D215C9500692B36 /* CCHMapClusterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCHMapClusterController.h; sourceTree = "<group>"; };
+		E5D4853D1D215C9500692B36 /* CCHMapClusterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCHMapClusterController.m; sourceTree = "<group>"; };
+		E5D4853E1D215C9500692B36 /* CCHMapClusterControllerDebugPolygon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCHMapClusterControllerDebugPolygon.h; sourceTree = "<group>"; };
+		E5D4853F1D215C9500692B36 /* CCHMapClusterControllerDebugPolygon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCHMapClusterControllerDebugPolygon.m; sourceTree = "<group>"; };
+		E5D485401D215C9500692B36 /* CCHMapClusterControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCHMapClusterControllerDelegate.h; sourceTree = "<group>"; };
+		E5D485411D215C9500692B36 /* CCHMapClusterControllerUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCHMapClusterControllerUtils.h; sourceTree = "<group>"; };
+		E5D485421D215C9500692B36 /* CCHMapClusterControllerUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCHMapClusterControllerUtils.m; sourceTree = "<group>"; };
+		E5D485431D215C9500692B36 /* CCHMapClusterer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCHMapClusterer.h; sourceTree = "<group>"; };
+		E5D485441D215C9500692B36 /* CCHMapClusterOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCHMapClusterOperation.h; sourceTree = "<group>"; };
+		E5D485451D215C9500692B36 /* CCHMapClusterOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCHMapClusterOperation.m; sourceTree = "<group>"; };
+		E5D485461D215C9500692B36 /* CCHMapTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCHMapTree.h; sourceTree = "<group>"; };
+		E5D485471D215C9500692B36 /* CCHMapTree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCHMapTree.m; sourceTree = "<group>"; };
+		E5D485481D215C9500692B36 /* CCHMapTreeUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCHMapTreeUtils.h; sourceTree = "<group>"; };
+		E5D485491D215C9500692B36 /* CCHMapTreeUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCHMapTreeUtils.m; sourceTree = "<group>"; };
+		E5D4854A1D215C9500692B36 /* CCHMapViewDelegateProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCHMapViewDelegateProxy.h; sourceTree = "<group>"; };
+		E5D4854B1D215C9500692B36 /* CCHMapViewDelegateProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCHMapViewDelegateProxy.m; sourceTree = "<group>"; };
+		E5D4854C1D215C9500692B36 /* CCHNearCenterMapClusterer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCHNearCenterMapClusterer.h; sourceTree = "<group>"; };
+		E5D4854D1D215C9500692B36 /* CCHNearCenterMapClusterer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCHNearCenterMapClusterer.m; sourceTree = "<group>"; };
+		EF26484AFE99A6BEF179E264 /* Pods_BlicupTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlicupTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7D1006B41C84ADFB0076561E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9525DF11CDA5CC60035DE0E /* MapKit.framework in Frameworks */,
+				4F486663CBAA5DD10B5208C9 /* Pods_Blicup.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D1006CB1C84ADFB0076561E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37FE25DE3809C4EC19567A0F /* Pods_BlicupTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D1006D61C84ADFB0076561E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFABAED7F615667044D6B3B0 /* Pods_BlicupUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1C3CA1EFED79B039F6BB061C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1C6229356D54D5F6A97C77D4 /* Pods-Blicup.debug.xcconfig */,
+				8CD0662122254125BC01CFC0 /* Pods-Blicup.release.xcconfig */,
+				E4743E515A5B636EDD5277C8 /* Pods-BlicupTests.debug.xcconfig */,
+				6E2D80ABB821D1DEDFBF9E84 /* Pods-BlicupTests.release.xcconfig */,
+				91EB1788CEB99D7DA5E44B20 /* Pods-BlicupUITests.debug.xcconfig */,
+				66DC606130C51AA94AC5ADE8 /* Pods-BlicupUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		7B550AE0774F722AB36C132A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1A2A2D25812332F51F390540 /* Pods_Blicup.framework */,
+				EF26484AFE99A6BEF179E264 /* Pods_BlicupTests.framework */,
+				0C081D62BE3B3B2EFFE7025B /* Pods_BlicupUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7D1006AE1C84ADFB0076561E = {
+			isa = PBXGroup;
+			children = (
+				7D1006B91C84ADFB0076561E /* Blicup */,
+				7D1006B81C84ADFB0076561E /* Products */,
+				7D1006D11C84ADFB0076561E /* BlicupTests */,
+				7D1006DC1C84ADFB0076561E /* BlicupUITests */,
+				1C3CA1EFED79B039F6BB061C /* Pods */,
+				7B550AE0774F722AB36C132A /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		7D1006B81C84ADFB0076561E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7D1006B71C84ADFB0076561E /* Blicup.app */,
+				7D1006CE1C84ADFB0076561E /* BlicupTests.xctest */,
+				7D1006D91C84ADFB0076561E /* BlicupUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7D1006B91C84ADFB0076561E /* Blicup */ = {
+			isa = PBXGroup;
+			children = (
+				C99871AA1D35905B00166F6E /* Blicup.entitlements */,
+				A456F3081C999009008CF87D /* LDTPManagement */,
+				7D1006EB1C84AE200076561E /* UserManagement */,
+				7D1006EC1C84AE7B0076561E /* ChatRoomManagement */,
+				C9F8B8581D11DE6500DD6A57 /* Settings */,
+				7D8C66081CE3F378000CA40A /* BCWebImageSearch */,
+				C9E464901CB83CCB0034853B /* BlicupAPI */,
+				7D7C73A61CAB1A2400DC1164 /* Utils */,
+				7DF564DB1C9AD19400A56591 /* Extensions */,
+				7D7C73C31CAC4C3700DC1164 /* Transition */,
+				7D7C73B91CAC43DC00DC1164 /* ThirdParty */,
+				7D1006F31C84AEF30076561E /* Supporting Files */,
+			);
+			path = Blicup;
+			sourceTree = "<group>";
+		};
+		7D1006D11C84ADFB0076561E /* BlicupTests */ = {
+			isa = PBXGroup;
+			children = (
+				C91B366B1CC824BB002D77BF /* BlicupOnlineServicesTests.swift */,
+				7D1006D21C84ADFB0076561E /* BlicupTests.swift */,
+				C91B36651CC6B14F002D77BF /* BlicupServicesTests.swift */,
+				7D1006D41C84ADFB0076561E /* Info.plist */,
+			);
+			path = BlicupTests;
+			sourceTree = "<group>";
+		};
+		7D1006DC1C84ADFB0076561E /* BlicupUITests */ = {
+			isa = PBXGroup;
+			children = (
+				7D1006DD1C84ADFB0076561E /* BlicupUITests.swift */,
+				7D1006DF1C84ADFB0076561E /* Info.plist */,
+			);
+			path = BlicupUITests;
+			sourceTree = "<group>";
+		};
+		7D1006EB1C84AE200076561E /* UserManagement */ = {
+			isa = PBXGroup;
+			children = (
+				7D1006EF1C84AEA10076561E /* Presenter */,
+				7D1006EE1C84AE9F0076561E /* View */,
+				7D1006ED1C84AE9D0076561E /* Model */,
+			);
+			name = UserManagement;
+			sourceTree = "<group>";
+		};
+		7D1006EC1C84AE7B0076561E /* ChatRoomManagement */ = {
+			isa = PBXGroup;
+			children = (
+				7D1006F21C84AECC0076561E /* Presenter */,
+				7D1006F11C84AECA0076561E /* View */,
+				7D1006F01C84AEC80076561E /* Model */,
+			);
+			name = ChatRoomManagement;
+			sourceTree = "<group>";
+		};
+		7D1006ED1C84AE9D0076561E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C9EAF9491D3834AE00D59752 /* UserStatus+CoreDataProperties.swift */,
+				C9EAF94A1D3834AE00D59752 /* UserStatus.swift */,
+				C9BCFF101CF783BF00D498FA /* UserInfo+CoreDataProperties.swift */,
+				C9BCFF111CF783BF00D498FA /* UserInfo.swift */,
+				7DFD1E041C874F1200CF5C94 /* User+CoreDataProperties.swift */,
+				7DFD1E051C874F1200CF5C94 /* User.swift */,
+				7DD7C8941D41704C003454A7 /* default_tags_en.json */,
+				7D1EC71B1CC83CE7006689B3 /* default_tags_pt.json */,
+				7DF0EC5A1D42B24500DEF902 /* default_tags_es.json */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		7D1006EE1C84AE9F0076561E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7D1006BE1C84ADFB0076561E /* Main.storyboard */,
+				7DD7C8911D41645B003454A7 /* Signup.storyboard */,
+				7D1006FB1C85D5B80076561E /* LoginViewController.swift */,
+				7DF8FDAD1C90B3CE0058F877 /* SignupViewController.swift */,
+				7DF8FDAF1C90B4690058F877 /* SignupPageViewController.swift */,
+				7DD0F7D51C886F36001E5780 /* SignupUsernameViewController.swift */,
+				7DD0F7E01C89DEA9001E5780 /* SignupPictureViewController.swift */,
+				7DF8FD9B1C8F0C220058F877 /* SignupTermsPrivacyViewController.swift */,
+				7DC2B3551C933A4B000112B4 /* WelcomeViewController.swift */,
+				7D563E411C9A0E9C002D5E4E /* InterestListViewController.swift */,
+				7D563E431C9ACC1A002D5E4E /* InterestTagCollectionViewCell.swift */,
+				7D8626541C9B48FA00D87E87 /* InterestListAddedBlankCollectionViewCell.swift */,
+				7D5220AC1D537DAD0041FE46 /* SuggestedUsersViewController.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		7D1006EF1C84AEA10076561E /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				7DD0F7DD1C89B140001E5780 /* CI */,
+				7DFD1DFE1C862F4200CF5C94 /* LoginPresenter.swift */,
+				7DF8FDB11C90D9C60058F877 /* SignupPresenter.swift */,
+				7D8626521C9B261D00D87E87 /* InterestPresenter.swift */,
+				7DB632991CF4A34C00921AFF /* UserSearchPresenter.swift */,
+				7D5220AE1D538C360041FE46 /* SuggestUsersPresenter.swift */,
+			);
+			name = Presenter;
+			sourceTree = "<group>";
+		};
+		7D1006F01C84AEC80076561E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C973E0731CE22059008591FD /* ChatRoomMessage+CoreDataProperties.swift */,
+				C973E0741CE22059008591FD /* ChatRoomMessage.swift */,
+				C9525DF41CDA911D0035DE0E /* ChatAddress+CoreDataProperties.swift */,
+				C9525DF51CDA911D0035DE0E /* ChatAddress.swift */,
+				7DA80C161CBF0E14006151E1 /* Photo+CoreDataProperties.swift */,
+				7DA80C171CBF0E14006151E1 /* Photo.swift */,
+				7DA5A86C1CAF05040019B32D /* ChatRoom+CoreDataProperties.swift */,
+				7DA5A86D1CAF05040019B32D /* ChatRoom.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		7D1006F11C84AECA0076561E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7DCC30F71D4013E5001202F4 /* Chat.storyboard */,
+				C99D36071CEF843600B0F889 /* ChatRoom Screen */,
+				C9F8B8531D0F43E100DD6A57 /* Cover */,
+				7D7C73BD1CAC477600DC1164 /* ChatRoomsListViewController.swift */,
+				7D7C73CD1CAC556400DC1164 /* ChatRoomListCollectionViewCell.swift */,
+				7D7C73F01CAC617E00DC1164 /* ChatRoomListNavigationController.swift */,
+				7D0525911CB437470010961E /* CreateChatRoomViewController.swift */,
+				7DCFA7281D1044C00043CEA1 /* CreateChatRoomInputAccessoryView.swift */,
+				C9E464961CB8592C0034853B /* CoverPhotosCollectionViewController.swift */,
+				C9E464981CB8599C0034853B /* CoverPhotoCollectionViewCell.swift */,
+				7D8C661E1CE3F413000CA40A /* CoverPhotoCollectionReusableView.swift */,
+				E54340DF1D3D45DF003866EB /* SearchLocationTableViewController.swift */,
+				C98C13FE1D2461E500BAD95C /* MapTab */,
+				E53D40A21CEE4355000CAC49 /* ChatRoomTalkInfoViewController.swift */,
+				7DCF1D0A1CFE1DC10020BF08 /* ChatRoomsAndUsersSearchViewController.swift */,
+				7DB5C7C61CF098B200A5EFF2 /* UserSearchCollectionViewCell.swift */,
+				C98C13FF1D24621500BAD95C /* MyChatsTab */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		7D1006F21C84AECC0076561E /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				C93AC3F21D26F75D00ED8046 /* ChatRoomListPresenters */,
+				7D0525931CB443F30010961E /* CreateChatRoomPresenter.swift */,
+				C9525DF81CDA99BA0035DE0E /* ChatMapPresenter.swift */,
+				C947A3331CE6423600D810D3 /* ChatRoomPresenter.swift */,
+				7D2DBDB01CF7A1170018510A /* ChatRoomGiphySearchPresenter.swift */,
+				C97C00691D1C651300C16541 /* ChatRoomTalkInfoPresenter.swift */,
+				C93AC3EE1D25961400ED8046 /* MyChatsPresenter.swift */,
+				7DABC2DB1D34796300D7903C /* ChatRoomContextMenuProtocol.swift */,
+				7DF3BB9B1D396A13002CC8B2 /* ChatRoomShareCard.swift */,
+			);
+			name = Presenter;
+			sourceTree = "<group>";
+		};
+		7D1006F31C84AEF30076561E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C9EBFF4F1D401C4300B7A211 /* Sounds */,
+				7D10071F1C86059A0076561E /* Blicup.xcdatamodeld */,
+				7D10071E1C86059A0076561E /* AppDelegate.swift */,
+				7D1006FE1C8604BA0076561E /* Fonts */,
+				7DF3978F1D46647900E279D7 /* Info.plist */,
+				7DF3979A1D4692C800E279D7 /* InfoPlist.strings */,
+				7D1006C41C84ADFB0076561E /* Assets.xcassets */,
+				7D1006C61C84ADFB0076561E /* LaunchScreen.storyboard */,
+				7D1007251C8611460076561E /* Bridging-Header.h */,
+				7DF8FDA71C8F6A470058F877 /* Localizable.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7D1006FE1C8604BA0076561E /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				7D1006FF1C8604BA0076561E /* SF-UI-Text-Bold.otf */,
+				7D1007001C8604BA0076561E /* SF-UI-Text-BoldItalic.otf */,
+				7D1007011C8604BA0076561E /* SF-UI-Text-Heavy.otf */,
+				7D1007021C8604BA0076561E /* SF-UI-Text-HeavyItalic.otf */,
+				7D1007031C8604BA0076561E /* SF-UI-Text-Light.otf */,
+				7D1007041C8604BA0076561E /* SF-UI-Text-LightItalic.otf */,
+				7D1007051C8604BA0076561E /* SF-UI-Text-Medium.otf */,
+				7D1007061C8604BA0076561E /* SF-UI-Text-MediumItalic.otf */,
+				7D1007071C8604BA0076561E /* SF-UI-Text-Regular.otf */,
+				7D1007081C8604BA0076561E /* SF-UI-Text-RegularItalic.otf */,
+				7D1007091C8604BA0076561E /* SF-UI-Text-Semibold.otf */,
+				7D10070A1C8604BA0076561E /* SF-UI-Text-SemiboldItalic.otf */,
+			);
+			name = Fonts;
+			path = "Supporting Files/Fonts";
+			sourceTree = "<group>";
+		};
+		7D7C73A61CAB1A2400DC1164 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				E5CC0CFD1CE225B900C1D8CB /* OHCircleSegue.swift */,
+				7D7C73AF1CAB208F00DC1164 /* BCProgress.swift */,
+				7DA80C1A1CC00977006151E1 /* BCGradientImageView.swift */,
+				7D8C661C1CE3F3D4000CA40A /* BCGradientView.swift */,
+				7D37A2DD1CC01BF90045F2EB /* BCRefreshControl.swift */,
+				7D37A3001CC122890045F2EB /* BCRefreshControlView.xib */,
+				7DDADD501CC1A7470097A86B /* BCBlurredTabBar.swift */,
+				7D7C73B01CAB208F00DC1164 /* CustomTextField.swift */,
+				7D7C73B21CAB208F00DC1164 /* FlowLayout.swift */,
+				7D7C73B31CAB208F00DC1164 /* TextFieldNoTextOptions.swift */,
+				7D7C73A71CAB1A7C00DC1164 /* Macro.swift */,
+				7D0525951CB44D8B0010961E /* UIPlaceHolderTextView.swift */,
+				E5C1FAB01CC514010015F3E6 /* AmazonManager.swift */,
+				E52791711CEF4EFD00F5E727 /* FollowCustomButton.swift */,
+				7DB5C7C81CF0B90600A5EFF2 /* CollectionViewListFlowLayout.swift */,
+				C9BCFF0E1CF7721100D498FA /* ToStringArrayTransformer.swift */,
+				7DF6C7851D0756D800B1866D /* BCButton.swift */,
+				C98575E01D0B0C190045CD9D /* BlicupClock.swift */,
+				E5401B181D30065D0011C647 /* PaddingLabel.swift */,
+				E525592A1D36A39500E323C3 /* BCCloseButton.swift */,
+				E535CE021D3FF4840059EFC4 /* CustomLabelChatOver.swift */,
+				E574EE471D5904FB006571FE /* Image.swift */,
+				E54EBDD31D5B5C57002EE541 /* CoverTip */,
+				E574EE491D5A2471006571FE /* Share Chat Tip */,
+				E506A09C1D4BE8C400CCD728 /* Tips */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		7D7C73B91CAC43DC00DC1164 /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+				E5D485341D215C6400692B36 /* ClusterAnnotation */,
+				7DDADD521CC268600097A86B /* GHContextMenu */,
+				7D7C73BA1CAC43EF00DC1164 /* Layout */,
+			);
+			name = ThirdParty;
+			sourceTree = "<group>";
+		};
+		7D7C73BA1CAC43EF00DC1164 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				7D7C73C11CAC47E300DC1164 /* CHTCollectionViewWaterfallLayout.swift */,
+			);
+			name = Layout;
+			sourceTree = "<group>";
+		};
+		7D7C73C31CAC4C3700DC1164 /* Transition */ = {
+			isa = PBXGroup;
+			children = (
+				7D27FCD31D217E0B008B5021 /* AlphaVerticalSlideTransition.swift */,
+				7D7C73C91CAC4E3300DC1164 /* CollectionViewTransition.swift */,
+				C93AC3FB1D27132E00ED8046 /* ChatListToCoverTrasition.swift */,
+				7D7C73C41CAC4C3D00DC1164 /* Protocol */,
+			);
+			name = Transition;
+			sourceTree = "<group>";
+		};
+		7D7C73C41CAC4C3D00DC1164 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				7D7C73C51CAC4C9900DC1164 /* CollectionViewTransitionProtocol.swift */,
+			);
+			name = Protocol;
+			sourceTree = "<group>";
+		};
+		7D8C66081CE3F378000CA40A /* BCWebImageSearch */ = {
+			isa = PBXGroup;
+			children = (
+				7D8C66091CE3F378000CA40A /* Model */,
+				7D8C660C1CE3F378000CA40A /* Presenter */,
+				7D8C660E1CE3F378000CA40A /* View */,
+			);
+			name = BCWebImageSearch;
+			path = Utils/BCWebImageSearch;
+			sourceTree = "<group>";
+		};
+		7D8C66091CE3F378000CA40A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7D8C660A1CE3F378000CA40A /* WebImage.swift */,
+				7D8C660B1CE3F378000CA40A /* WebImageSearchBS.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7D8C660C1CE3F378000CA40A /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				7D8C660D1CE3F378000CA40A /* WebImageSearchPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		7D8C660E1CE3F378000CA40A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7D8C660F1CE3F378000CA40A /* WebImageSearch.storyboard */,
+				7D8C66101CE3F378000CA40A /* WebImageSearchCollectionFooterReusableView.swift */,
+				7D8C66111CE3F378000CA40A /* WebImageSearchCollectionViewCell.swift */,
+				7D8C66131CE3F378000CA40A /* WebImageSearchViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7DD0F7DD1C89B140001E5780 /* CI */ = {
+			isa = PBXGroup;
+			children = (
+				7DFD1E001C86438700CF5C94 /* LoginController.swift */,
+			);
+			name = CI;
+			sourceTree = "<group>";
+		};
+		7DDADD521CC268600097A86B /* GHContextMenu */ = {
+			isa = PBXGroup;
+			children = (
+				7DDADD531CC268730097A86B /* GHContextMenuView.h */,
+				7DDADD541CC268730097A86B /* GHContextMenuView.m */,
+			);
+			name = GHContextMenu;
+			sourceTree = "<group>";
+		};
+		7DF564DB1C9AD19400A56591 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7D7C73CB1CAC4F1F00DC1164 /* Extension.swift */,
+				7D595B2F1CC7FC63009E994D /* BlicupAppColors.swift */,
+				7D1EC71D1CC91721006689B3 /* MD5.swift */,
+				7DCF1D0C1CFF89460020BF08 /* StringExtensions.swift */,
+				7DE759971D2ABE5F004BAFF9 /* AlertControllerProtocol.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		A456F3081C999009008CF87D /* LDTPManagement */ = {
+			isa = PBXGroup;
+			children = (
+				C93E1C171CD277C600E0E7ED /* Communication */,
+				C93E1C161CD2779D00E0E7ED /* ProtocolCore */,
+			);
+			path = LDTPManagement;
+			sourceTree = "<group>";
+		};
+		C93AC3F21D26F75D00ED8046 /* ChatRoomListPresenters */ = {
+			isa = PBXGroup;
+			children = (
+				C93AC3EC1D256D8E00ED8046 /* ChatRoomsListProtocol.swift */,
+				C93AC3F01D25C93600ED8046 /* ChatRoomFetchResultPresenter.swift */,
+				C93AC3F31D26F81D00ED8046 /* ChatRoomMainListPresenter.swift */,
+				C93AC3F51D26F86900ED8046 /* ChatRoomSearchListPresenter.swift */,
+				C93AC3F71D26F94800ED8046 /* MapChatRoomListPresenter.swift */,
+				C93AC3F91D26F9A000ED8046 /* CoverChatRoomsListPresenter.swift */,
+			);
+			name = ChatRoomListPresenters;
+			sourceTree = "<group>";
+		};
+		C93E1C161CD2779D00E0E7ED /* ProtocolCore */ = {
+			isa = PBXGroup;
+			children = (
+				A456F3091C999009008CF87D /* LDTProtocolImpl.swift */,
+				C9FD9CFC1CBD7D5E004E2C04 /* LDTPMockImpl.swift */,
+			);
+			name = ProtocolCore;
+			sourceTree = "<group>";
+		};
+		C93E1C171CD277C600E0E7ED /* Communication */ = {
+			isa = PBXGroup;
+			children = (
+				C91B36691CC800A0002D77BF /* LDTPMessageBuilder.swift */,
+				C91B36671CC7FF54002D77BF /* LDTPWebSocketManager.swift */,
+				C93E1C181CD278AB00E0E7ED /* LDTPWebSocketReceiverManager.swift */,
+				C934B2841CD93BF9006B3EF4 /* LDTPTaskQueue.swift */,
+				C9BCFF0C1CF7656F00D498FA /* LDTPNSNotificationCenterControl.swift */,
+			);
+			name = Communication;
+			sourceTree = "<group>";
+		};
+		C95B14DE1D2169BA00D4DA0F /* UserListWithBlockFollow */ = {
+			isa = PBXGroup;
+			children = (
+				C95B14DC1D21636800D4DA0F /* UserListFollowBlockViewController.swift */,
+				7DCFA72C1D122C6A0043CEA1 /* UserTableViewCell.swift */,
+				7DCC30E01D400148001202F4 /* UserTableViewCell.xib */,
+				7DCC30E61D4004B6001202F4 /* UserBlockCell.xib */,
+				7D50A6791D5B5DB9009739F2 /* UserWithLikeTableViewCell.swift */,
+				7D50A67B1D5B5DD4009739F2 /* UserWithLikeTableViewCell.xib */,
+			);
+			name = UserListWithBlockFollow;
+			sourceTree = "<group>";
+		};
+		C98C13FE1D2461E500BAD95C /* MapTab */ = {
+			isa = PBXGroup;
+			children = (
+				C9525DEE1CDA3F3F0035DE0E /* Map.storyboard */,
+				C9525DF21CDA79AD0035DE0E /* ChatRoomMapViewController.swift */,
+				C9525DFA1CDBCD7B0035DE0E /* ChatRoomAnnotationView.swift */,
+				C9525DFC1CE122580035DE0E /* MapChatListViewController.swift */,
+			);
+			name = MapTab;
+			sourceTree = "<group>";
+		};
+		C98C13FF1D24621500BAD95C /* MyChatsTab */ = {
+			isa = PBXGroup;
+			children = (
+				7DCC30F21D4013B1001202F4 /* MyChats.storyboard */,
+				C98C14021D24646400BAD95C /* MyChatsViewController.swift */,
+			);
+			name = MyChatsTab;
+			sourceTree = "<group>";
+		};
+		C99D36071CEF843600B0F889 /* ChatRoom Screen */ = {
+			isa = PBXGroup;
+			children = (
+				C947A3311CE6421C00D810D3 /* ChatRoomViewController.swift */,
+				C99D36051CEF840F00B0F889 /* ChatRoomInputAccessoryView.swift */,
+				C99D36031CEF600E00B0F889 /* ChatRoomCell.swift */,
+				7DCF1D081CFE08280020BF08 /* ChatRoomUserMentionCollectionViewCell.swift */,
+				C9C606881D06187500F39B15 /* GiphyViewerController.swift */,
+			);
+			name = "ChatRoom Screen";
+			sourceTree = "<group>";
+		};
+		C9E464901CB83CCB0034853B /* BlicupAPI */ = {
+			isa = PBXGroup;
+			children = (
+				C9E464911CB83CF60034853B /* ChatRoomBS.swift */,
+				A4D97E201CB9758900E13678 /* UserBS.swift */,
+				C9437A9B1CFC8E73008425A0 /* BlicupAsyncHandler.swift */,
+				C9B9DDCA1D2ECAC500B57F62 /* BlicupRouter.swift */,
+				7DF3BB991D38284E002CC8B2 /* BlicupAnalytics.swift */,
+			);
+			name = BlicupAPI;
+			sourceTree = "<group>";
+		};
+		C9EBFF4F1D401C4300B7A211 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				C9EBFF501D401C6200B7A211 /* push_blicup.aif */,
+			);
+			name = Sounds;
+			sourceTree = "<group>";
+		};
+		C9F8B8531D0F43E100DD6A57 /* Cover */ = {
+			isa = PBXGroup;
+			children = (
+				7D7C73EC1CAC5ADB00DC1164 /* ChatRoomsListHorizontalPageViewController.swift */,
+				C9525DEC1CCEBABD0035DE0E /* ChatRoomCoverCell.swift */,
+				C9F8B8541D0F443200DD6A57 /* CoverMessageView.swift */,
+				C9F8B8561D0F444700DD6A57 /* CoverMessageView.xib */,
+			);
+			name = Cover;
+			sourceTree = "<group>";
+		};
+		C9F8B8581D11DE6500DD6A57 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				C9F8B8591D11DED000DD6A57 /* Presenter */,
+				C9F8B85A1D11DEE200DD6A57 /* View */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
+		C9F8B8591D11DED000DD6A57 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				C9F8B85D1D11E3B200DD6A57 /* SettingsPresenter.swift */,
+				7DB019071D15C4C00077F7CB /* UserProfileCardPresenter.swift */,
+				C97C005B1D1821E400C16541 /* SettingsTablePresenter.swift */,
+				C97C00611D18754D00C16541 /* FavoritesPresenter.swift */,
+				7DD527A51D1C673000D8B73B /* FollowUnfollowPresenter.swift */,
+				C97C00651D1B097900C16541 /* BlockListPresenter.swift */,
+				7D3337A41D1C7AEA00D2EB55 /* FollowListPresenter.swift */,
+				C97C006D1D1DD93300C16541 /* BlockFollowUserListPresenter.swift */,
+				7D50A6771D5B584C009739F2 /* FindFriendsPresenter.swift */,
+			);
+			name = Presenter;
+			sourceTree = "<group>";
+		};
+		C9F8B85A1D11DEE200DD6A57 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C95B14DE1D2169BA00D4DA0F /* UserListWithBlockFollow */,
+				7DCC30ED1D400EF5001202F4 /* Settings.storyboard */,
+				C97C01C61D11F00B00E5C5AC /* SettingsViewController.swift */,
+				7DCFA72A1D1220030043CEA1 /* FolloweeViewController.swift */,
+				7DB0190B1D15E01D0077F7CB /* FollowerViewController.swift */,
+				7DCFA72E1D144F720043CEA1 /* UserProfileViewController.swift */,
+				C97C005D1D182D9700C16541 /* InfoTableViewController.swift */,
+				C97C005F1D18705E00C16541 /* FavoritesViewController.swift */,
+				C97C00631D1B090000C16541 /* BlockedListViewController.swift */,
+				7D50A6751D5A71A7009739F2 /* FindFriendsViewController.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		E506A09C1D4BE8C400CCD728 /* Tips */ = {
+			isa = PBXGroup;
+			children = (
+				E506A09F1D4BEA9800CCD728 /* TipsView.swift */,
+				E506A0A11D4BFF0B00CCD728 /* TipsView.xib */,
+			);
+			name = Tips;
+			sourceTree = "<group>";
+		};
+		E54EBDD31D5B5C57002EE541 /* CoverTip */ = {
+			isa = PBXGroup;
+			children = (
+				E54EBDD61D5B604A002EE541 /* SlideCoverTipView.swift */,
+				E54EBDD41D5B5CAD002EE541 /* SlideCoverTipView.xib */,
+				E54EBDD81D5B86AF002EE541 /* SwipeCoverImagesTipView.swift */,
+				E54EBDDA1D5B86BB002EE541 /* SwipeCoverImagesTipView.xib */,
+			);
+			name = CoverTip;
+			sourceTree = "<group>";
+		};
+		E574EE491D5A2471006571FE /* Share Chat Tip */ = {
+			isa = PBXGroup;
+			children = (
+				E574EE4A1D5A24B4006571FE /* ShareChatView.swift */,
+				E574EE4C1D5A24C7006571FE /* ShareChatView.xib */,
+			);
+			name = "Share Chat Tip";
+			sourceTree = "<group>";
+		};
+		E5D485341D215C6400692B36 /* ClusterAnnotation */ = {
+			isa = PBXGroup;
+			children = (
+				E5D485351D215C9500692B36 /* CCHCenterOfMassMapClusterer.h */,
+				E5D485361D215C9500692B36 /* CCHCenterOfMassMapClusterer.m */,
+				E5D485371D215C9500692B36 /* CCHFadeInOutMapAnimator.h */,
+				E5D485381D215C9500692B36 /* CCHFadeInOutMapAnimator.m */,
+				E5D485391D215C9500692B36 /* CCHMapAnimator.h */,
+				E5D4853A1D215C9500692B36 /* CCHMapClusterAnnotation.h */,
+				E5D4853B1D215C9500692B36 /* CCHMapClusterAnnotation.m */,
+				E5D4853C1D215C9500692B36 /* CCHMapClusterController.h */,
+				E5D4853D1D215C9500692B36 /* CCHMapClusterController.m */,
+				E5D4853E1D215C9500692B36 /* CCHMapClusterControllerDebugPolygon.h */,
+				E5D4853F1D215C9500692B36 /* CCHMapClusterControllerDebugPolygon.m */,
+				E5D485401D215C9500692B36 /* CCHMapClusterControllerDelegate.h */,
+				E5D485411D215C9500692B36 /* CCHMapClusterControllerUtils.h */,
+				E5D485421D215C9500692B36 /* CCHMapClusterControllerUtils.m */,
+				E5D485431D215C9500692B36 /* CCHMapClusterer.h */,
+				E5D485441D215C9500692B36 /* CCHMapClusterOperation.h */,
+				E5D485451D215C9500692B36 /* CCHMapClusterOperation.m */,
+				E5D485461D215C9500692B36 /* CCHMapTree.h */,
+				E5D485471D215C9500692B36 /* CCHMapTree.m */,
+				E5D485481D215C9500692B36 /* CCHMapTreeUtils.h */,
+				E5D485491D215C9500692B36 /* CCHMapTreeUtils.m */,
+				E5D4854A1D215C9500692B36 /* CCHMapViewDelegateProxy.h */,
+				E5D4854B1D215C9500692B36 /* CCHMapViewDelegateProxy.m */,
+				E5D4854C1D215C9500692B36 /* CCHNearCenterMapClusterer.h */,
+				E5D4854D1D215C9500692B36 /* CCHNearCenterMapClusterer.m */,
+			);
+			name = ClusterAnnotation;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7D1006B61C84ADFB0076561E /* Blicup */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7D1006E21C84ADFB0076561E /* Build configuration list for PBXNativeTarget "Blicup" */;
+			buildPhases = (
+				A850C6AEAFE22E016E39DE89 /* 📦 Check Pods Manifest.lock */,
+				8AB62DF7A0F1199465B047CD /* 📦 Embed Pods Frameworks */,
+				72EEB1577FCC01AB79C8B085 /* [CP] Check Pods Manifest.lock */,
+				7D1006B31C84ADFB0076561E /* Sources */,
+				7D1006B41C84ADFB0076561E /* Frameworks */,
+				7D1006B51C84ADFB0076561E /* Resources */,
+				7D86267A1CA1D0B800D87E87 /* ShellScript */,
+				24F951BF1876E98D2C1A2466 /* 📦 Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Blicup;
+			productName = Blicup;
+			productReference = 7D1006B71C84ADFB0076561E /* Blicup.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7D1006CD1C84ADFB0076561E /* BlicupTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7D1006E51C84ADFB0076561E /* Build configuration list for PBXNativeTarget "BlicupTests" */;
+			buildPhases = (
+				0AD6ED758F7281AF575F1E0B /* 📦 Check Pods Manifest.lock */,
+				A8400827C22C8206F5F93CF7 /* [CP] Check Pods Manifest.lock */,
+				4EA135E4B936FCCE58BBF623 /* [CP] Check Pods Manifest.lock */,
+				7D1006CA1C84ADFB0076561E /* Sources */,
+				7D1006CB1C84ADFB0076561E /* Frameworks */,
+				7D1006CC1C84ADFB0076561E /* Resources */,
+				591C1220AFC1243C57617B3E /* [CP] Embed Pods Frameworks */,
+				FF65503D72CAD447683C9159 /* [CP] Copy Pods Resources */,
+				F9CECBD1A2A291EE12056834 /* [CP] Embed Pods Frameworks */,
+				62CF798FF787507D05B8238F /* 📦 Copy Pods Resources */,
+				35D5BDD80BFB2D86778EBB6D /* 📦 Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7D1006D01C84ADFB0076561E /* PBXTargetDependency */,
+			);
+			name = BlicupTests;
+			productName = BlicupTests;
+			productReference = 7D1006CE1C84ADFB0076561E /* BlicupTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		7D1006D81C84ADFB0076561E /* BlicupUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7D1006E81C84ADFB0076561E /* Build configuration list for PBXNativeTarget "BlicupUITests" */;
+			buildPhases = (
+				A4389D8CD7996D1590BCA42C /* 📦 Check Pods Manifest.lock */,
+				1CF407D620ECF3D9EE62BB3E /* [CP] Check Pods Manifest.lock */,
+				F9554E142BD965C7A8E0645F /* [CP] Check Pods Manifest.lock */,
+				7D1006D51C84ADFB0076561E /* Sources */,
+				7D1006D61C84ADFB0076561E /* Frameworks */,
+				7D1006D71C84ADFB0076561E /* Resources */,
+				2DB33776F085F91035CC6102 /* [CP] Copy Pods Resources */,
+				2FD249EF53516E9618E8FE53 /* 📦 Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7D1006DB1C84ADFB0076561E /* PBXTargetDependency */,
+			);
+			name = BlicupUITests;
+			productName = BlicupUITests;
+			productReference = 7D1006D91C84ADFB0076561E /* BlicupUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7D1006AF1C84ADFB0076561E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = Moymer;
+				TargetAttributes = {
+					7D1006B61C84ADFB0076561E = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = CH687DDWFY;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.SafariKeychain = {
+								enabled = 1;
+							};
+						};
+					};
+					7D1006CD1C84ADFB0076561E = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 7D1006B61C84ADFB0076561E;
+					};
+					7D1006D81C84ADFB0076561E = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 7D1006B61C84ADFB0076561E;
+					};
+				};
+			};
+			buildConfigurationList = 7D1006B21C84ADFB0076561E /* Build configuration list for PBXProject "Blicup" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				"pt-BR",
+				es,
+				"es-MX",
+				"es-419",
+			);
+			mainGroup = 7D1006AE1C84ADFB0076561E;
+			productRefGroup = 7D1006B81C84ADFB0076561E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7D1006B61C84ADFB0076561E /* Blicup */,
+				7D1006CD1C84ADFB0076561E /* BlicupTests */,
+				7D1006D81C84ADFB0076561E /* BlicupUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7D1006B51C84ADFB0076561E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7DF8FDA51C8F6A470058F877 /* Localizable.strings in Resources */,
+				7DF397981D4692C800E279D7 /* InfoPlist.strings in Resources */,
+				7D1007151C8604BA0076561E /* SF-UI-Text-Semibold.otf in Resources */,
+				7D8C66171CE3F378000CA40A /* WebImageSearch.storyboard in Resources */,
+				7D1006C81C84ADFB0076561E /* LaunchScreen.storyboard in Resources */,
+				7D1006C51C84ADFB0076561E /* Assets.xcassets in Resources */,
+				7D1007131C8604BA0076561E /* SF-UI-Text-Regular.otf in Resources */,
+				7DD7C8951D41704C003454A7 /* default_tags_en.json in Resources */,
+				7DCC30EB1D400EF5001202F4 /* Settings.storyboard in Resources */,
+				C9EBFF511D401C6200B7A211 /* push_blicup.aif in Resources */,
+				7D37A3011CC122890045F2EB /* BCRefreshControlView.xib in Resources */,
+				7D10070B1C8604BA0076561E /* SF-UI-Text-Bold.otf in Resources */,
+				7DCC30F01D4013B1001202F4 /* MyChats.storyboard in Resources */,
+				7D10070D1C8604BA0076561E /* SF-UI-Text-Heavy.otf in Resources */,
+				7D10070E1C8604BA0076561E /* SF-UI-Text-HeavyItalic.otf in Resources */,
+				7D10070C1C8604BA0076561E /* SF-UI-Text-BoldItalic.otf in Resources */,
+				7D10070F1C8604BA0076561E /* SF-UI-Text-Light.otf in Resources */,
+				7D1007101C8604BA0076561E /* SF-UI-Text-LightItalic.otf in Resources */,
+				7D1007111C8604BA0076561E /* SF-UI-Text-Medium.otf in Resources */,
+				7DCC30F51D4013E5001202F4 /* Chat.storyboard in Resources */,
+				7D50A67C1D5B5DD4009739F2 /* UserWithLikeTableViewCell.xib in Resources */,
+				E54EBDD51D5B5CAD002EE541 /* SlideCoverTipView.xib in Resources */,
+				C9F8B8571D0F444700DD6A57 /* CoverMessageView.xib in Resources */,
+				E54EBDDB1D5B86BB002EE541 /* SwipeCoverImagesTipView.xib in Resources */,
+				7D1006C01C84ADFB0076561E /* Main.storyboard in Resources */,
+				E574EE4D1D5A24C7006571FE /* ShareChatView.xib in Resources */,
+				7D1007161C8604BA0076561E /* SF-UI-Text-SemiboldItalic.otf in Resources */,
+				7DCC30DE1D400148001202F4 /* UserTableViewCell.xib in Resources */,
+				C9525DEF1CDA3F3F0035DE0E /* Map.storyboard in Resources */,
+				7D1007141C8604BA0076561E /* SF-UI-Text-RegularItalic.otf in Resources */,
+				7DD7C88F1D41645B003454A7 /* Signup.storyboard in Resources */,
+				7DCC30E81D4004B6001202F4 /* UserBlockCell.xib in Resources */,
+				7D1007121C8604BA0076561E /* SF-UI-Text-MediumItalic.otf in Resources */,
+				7DF0EC5B1D42B24500DEF902 /* default_tags_es.json in Resources */,
+				7D1EC71C1CC83CE7006689B3 /* default_tags_pt.json in Resources */,
+				E506A0A21D4BFF0B00CCD728 /* TipsView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D1006CC1C84ADFB0076561E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D1006D71C84ADFB0076561E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0AD6ED758F7281AF575F1E0B /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		1CF407D620ECF3D9EE62BB3E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		24F951BF1876E98D2C1A2466 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Blicup/Pods-Blicup-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2DB33776F085F91035CC6102 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BlicupUITests/Pods-BlicupUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2FD249EF53516E9618E8FE53 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BlicupUITests/Pods-BlicupUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		35D5BDD80BFB2D86778EBB6D /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BlicupTests/Pods-BlicupTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4EA135E4B936FCCE58BBF623 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+		};
+		591C1220AFC1243C57617B3E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BlicupTests/Pods-BlicupTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		62CF798FF787507D05B8238F /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BlicupTests/Pods-BlicupTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		72EEB1577FCC01AB79C8B085 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7D86267A1CA1D0B800D87E87 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" ebe43d72fb819ea7cb8117b056e061dc4020a4d0 2f07aebb13dea16ee6571bf907f458111ecec6c6a27224cf1eb6f076a2f3bd0b";
+		};
+		8AB62DF7A0F1199465B047CD /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Blicup/Pods-Blicup-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A4389D8CD7996D1590BCA42C /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A8400827C22C8206F5F93CF7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A850C6AEAFE22E016E39DE89 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F9554E142BD965C7A8E0645F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F9CECBD1A2A291EE12056834 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BlicupTests/Pods-BlicupTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FF65503D72CAD447683C9159 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BlicupTests/Pods-BlicupTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7D1006B31C84ADFB0076561E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7DABC2DC1D34796300D7903C /* ChatRoomContextMenuProtocol.swift in Sources */,
+				7D8C66181CE3F378000CA40A /* WebImageSearchCollectionFooterReusableView.swift in Sources */,
+				7DB019081D15C4C00077F7CB /* UserProfileCardPresenter.swift in Sources */,
+				7D7C73ED1CAC5ADB00DC1164 /* ChatRoomsListHorizontalPageViewController.swift in Sources */,
+				C97C006A1D1C651300C16541 /* ChatRoomTalkInfoPresenter.swift in Sources */,
+				E5D485551D215C9500692B36 /* CCHMapTree.m in Sources */,
+				C98C14031D24646400BAD95C /* MyChatsViewController.swift in Sources */,
+				7D50A67A1D5B5DB9009739F2 /* UserWithLikeTableViewCell.swift in Sources */,
+				7D595B301CC7FC63009E994D /* BlicupAppColors.swift in Sources */,
+				7D37A2DE1CC01BF90045F2EB /* BCRefreshControl.swift in Sources */,
+				7D8C66161CE3F378000CA40A /* WebImageSearchPresenter.swift in Sources */,
+				E53D40A31CEE4355000CAC49 /* ChatRoomTalkInfoViewController.swift in Sources */,
+				7D563E421C9A0E9C002D5E4E /* InterestListViewController.swift in Sources */,
+				7D8C661F1CE3F413000CA40A /* CoverPhotoCollectionReusableView.swift in Sources */,
+				7DFD1DFF1C862F4200CF5C94 /* LoginPresenter.swift in Sources */,
+				E5D485501D215C9500692B36 /* CCHMapClusterAnnotation.m in Sources */,
+				7DF3BB9A1D38284E002CC8B2 /* BlicupAnalytics.swift in Sources */,
+				7DA5A86E1CAF05040019B32D /* ChatRoom+CoreDataProperties.swift in Sources */,
+				7D7C73A81CAB1A7C00DC1164 /* Macro.swift in Sources */,
+				C934B2851CD93BF9006B3EF4 /* LDTPTaskQueue.swift in Sources */,
+				A456F30A1C999009008CF87D /* LDTProtocolImpl.swift in Sources */,
+				7D5220AF1D538C360041FE46 /* SuggestUsersPresenter.swift in Sources */,
+				7DA80C181CBF0E14006151E1 /* Photo+CoreDataProperties.swift in Sources */,
+				7DDADD551CC268730097A86B /* GHContextMenuView.m in Sources */,
+				7D7C73CA1CAC4E3300DC1164 /* CollectionViewTransition.swift in Sources */,
+				C9525DF61CDA911D0035DE0E /* ChatAddress+CoreDataProperties.swift in Sources */,
+				E574EE481D5904FB006571FE /* Image.swift in Sources */,
+				7D0525921CB437470010961E /* CreateChatRoomViewController.swift in Sources */,
+				C9B9DDCB1D2ECAC500B57F62 /* BlicupRouter.swift in Sources */,
+				E5CC0CFE1CE225B900C1D8CB /* OHCircleSegue.swift in Sources */,
+				7D1007231C86059A0076561E /* Blicup.xcdatamodeld in Sources */,
+				7D7C73C61CAC4C9900DC1164 /* CollectionViewTransitionProtocol.swift in Sources */,
+				7D7C73B71CAB208F00DC1164 /* FlowLayout.swift in Sources */,
+				E525592B1D36A39600E323C3 /* BCCloseButton.swift in Sources */,
+				C97C01C71D11F00B00E5C5AC /* SettingsViewController.swift in Sources */,
+				C9437A9C1CFC8E73008425A0 /* BlicupAsyncHandler.swift in Sources */,
+				7D563E441C9ACC1A002D5E4E /* InterestTagCollectionViewCell.swift in Sources */,
+				7D8C66141CE3F378000CA40A /* WebImage.swift in Sources */,
+				E5D485561D215C9500692B36 /* CCHMapTreeUtils.m in Sources */,
+				C9FD9CFD1CBD7D5E004E2C04 /* LDTPMockImpl.swift in Sources */,
+				C97C00641D1B090000C16541 /* BlockedListViewController.swift in Sources */,
+				7DD0F7D61C886F36001E5780 /* SignupUsernameViewController.swift in Sources */,
+				7D8626531C9B261D00D87E87 /* InterestPresenter.swift in Sources */,
+				7DC2B3561C933A4B000112B4 /* WelcomeViewController.swift in Sources */,
+				E574EE4B1D5A24B4006571FE /* ShareChatView.swift in Sources */,
+				A4D97E211CB9758900E13678 /* UserBS.swift in Sources */,
+				C9E464971CB8592C0034853B /* CoverPhotosCollectionViewController.swift in Sources */,
+				C93AC3F41D26F81D00ED8046 /* ChatRoomMainListPresenter.swift in Sources */,
+				7D7C73B81CAB208F00DC1164 /* TextFieldNoTextOptions.swift in Sources */,
+				7D50A6781D5B584C009739F2 /* FindFriendsPresenter.swift in Sources */,
+				7DA80C1B1CC00977006151E1 /* BCGradientImageView.swift in Sources */,
+				C93E1C191CD278AB00E0E7ED /* LDTPWebSocketReceiverManager.swift in Sources */,
+				7D1EC71E1CC91721006689B3 /* MD5.swift in Sources */,
+				C9525DF31CDA79AD0035DE0E /* ChatRoomMapViewController.swift in Sources */,
+				C9EAF94B1D3834AE00D59752 /* UserStatus+CoreDataProperties.swift in Sources */,
+				C95B14DD1D21636800D4DA0F /* UserListFollowBlockViewController.swift in Sources */,
+				7D7C73F11CAC617E00DC1164 /* ChatRoomListNavigationController.swift in Sources */,
+				7DFD1E081C874F1200CF5C94 /* User+CoreDataProperties.swift in Sources */,
+				C93AC3F11D25C93600ED8046 /* ChatRoomFetchResultPresenter.swift in Sources */,
+				7DCF1D091CFE08280020BF08 /* ChatRoomUserMentionCollectionViewCell.swift in Sources */,
+				7D8C661D1CE3F3D4000CA40A /* BCGradientView.swift in Sources */,
+				C9525DF91CDA99BA0035DE0E /* ChatMapPresenter.swift in Sources */,
+				E5D485521D215C9500692B36 /* CCHMapClusterControllerDebugPolygon.m in Sources */,
+				C9BCFF131CF783BF00D498FA /* UserInfo.swift in Sources */,
+				E54EBDD91D5B86AF002EE541 /* SwipeCoverImagesTipView.swift in Sources */,
+				E5D485511D215C9500692B36 /* CCHMapClusterController.m in Sources */,
+				7DF6C7861D0756D800B1866D /* BCButton.swift in Sources */,
+				7DF8FDAE1C90B3CE0058F877 /* SignupViewController.swift in Sources */,
+				C97C006E1D1DD93300C16541 /* BlockFollowUserListPresenter.swift in Sources */,
+				C9BCFF0D1CF7656F00D498FA /* LDTPNSNotificationCenterControl.swift in Sources */,
+				7DF3BB9C1D396A13002CC8B2 /* ChatRoomShareCard.swift in Sources */,
+				C91B366A1CC800A0002D77BF /* LDTPMessageBuilder.swift in Sources */,
+				7D3337A51D1C7AEA00D2EB55 /* FollowListPresenter.swift in Sources */,
+				7D1007221C86059A0076561E /* AppDelegate.swift in Sources */,
+				7D5220AD1D537DAD0041FE46 /* SuggestedUsersViewController.swift in Sources */,
+				C98575E11D0B0C190045CD9D /* BlicupClock.swift in Sources */,
+				C97C005E1D182D9700C16541 /* InfoTableViewController.swift in Sources */,
+				7D2DBDB11CF7A1170018510A /* ChatRoomGiphySearchPresenter.swift in Sources */,
+				7DD0F7E11C89DEA9001E5780 /* SignupPictureViewController.swift in Sources */,
+				E506A0A01D4BEA9800CCD728 /* TipsView.swift in Sources */,
+				E5D485531D215C9500692B36 /* CCHMapClusterControllerUtils.m in Sources */,
+				7DDADD511CC1A7470097A86B /* BCBlurredTabBar.swift in Sources */,
+				E54EBDD71D5B604A002EE541 /* SlideCoverTipView.swift in Sources */,
+				7D0525961CB44D8B0010961E /* UIPlaceHolderTextView.swift in Sources */,
+				C99D36041CEF600E00B0F889 /* ChatRoomCell.swift in Sources */,
+				E5D485571D215C9500692B36 /* CCHMapViewDelegateProxy.m in Sources */,
+				C9E464991CB8599C0034853B /* CoverPhotoCollectionViewCell.swift in Sources */,
+				7DB0190C1D15E01D0077F7CB /* FollowerViewController.swift in Sources */,
+				C9C606891D06187500F39B15 /* GiphyViewerController.swift in Sources */,
+				7D27FCD41D217E0B008B5021 /* AlphaVerticalSlideTransition.swift in Sources */,
+				7D8C66151CE3F378000CA40A /* WebImageSearchBS.swift in Sources */,
+				7DCFA72F1D144F720043CEA1 /* UserProfileViewController.swift in Sources */,
+				C9F8B85E1D11E3B200DD6A57 /* SettingsPresenter.swift in Sources */,
+				E54340E01D3D45DF003866EB /* SearchLocationTableViewController.swift in Sources */,
+				C93AC3EF1D25961400ED8046 /* MyChatsPresenter.swift in Sources */,
+				7DB6329A1CF4A34C00921AFF /* UserSearchPresenter.swift in Sources */,
+				7D7C73B51CAB208F00DC1164 /* CustomTextField.swift in Sources */,
+				7D1006FC1C85D5B80076561E /* LoginViewController.swift in Sources */,
+				7DF8FDB21C90D9C60058F877 /* SignupPresenter.swift in Sources */,
+				C973E0761CE22059008591FD /* ChatRoomMessage.swift in Sources */,
+				E5D485581D215C9500692B36 /* CCHNearCenterMapClusterer.m in Sources */,
+				7D7C73BE1CAC477600DC1164 /* ChatRoomsListViewController.swift in Sources */,
+				C99D36061CEF840F00B0F889 /* ChatRoomInputAccessoryView.swift in Sources */,
+				7D7C73C21CAC47E300DC1164 /* CHTCollectionViewWaterfallLayout.swift in Sources */,
+				C93AC3F81D26F94800ED8046 /* MapChatRoomListPresenter.swift in Sources */,
+				C947A3321CE6421C00D810D3 /* ChatRoomViewController.swift in Sources */,
+				7DA80C191CBF0E14006151E1 /* Photo.swift in Sources */,
+				C9EAF94C1D3834AE00D59752 /* UserStatus.swift in Sources */,
+				7DFD1E011C86438700CF5C94 /* LoginController.swift in Sources */,
+				C93AC3F61D26F86900ED8046 /* ChatRoomSearchListPresenter.swift in Sources */,
+				C97C00661D1B097900C16541 /* BlockListPresenter.swift in Sources */,
+				E52791721CEF4EFD00F5E727 /* FollowCustomButton.swift in Sources */,
+				7D8626551C9B48FA00D87E87 /* InterestListAddedBlankCollectionViewCell.swift in Sources */,
+				7DCFA72B1D1220040043CEA1 /* FolloweeViewController.swift in Sources */,
+				C9BCFF121CF783BF00D498FA /* UserInfo+CoreDataProperties.swift in Sources */,
+				E5D4854E1D215C9500692B36 /* CCHCenterOfMassMapClusterer.m in Sources */,
+				7D7C73CC1CAC4F1F00DC1164 /* Extension.swift in Sources */,
+				C9E464921CB83CF60034853B /* ChatRoomBS.swift in Sources */,
+				C9F8B8551D0F443200DD6A57 /* CoverMessageView.swift in Sources */,
+				7DD527A61D1C673000D8B73B /* FollowUnfollowPresenter.swift in Sources */,
+				C9525DF71CDA911D0035DE0E /* ChatAddress.swift in Sources */,
+				E5D4854F1D215C9500692B36 /* CCHFadeInOutMapAnimator.m in Sources */,
+				C97C00601D18705E00C16541 /* FavoritesViewController.swift in Sources */,
+				C9525DED1CCEBABD0035DE0E /* ChatRoomCoverCell.swift in Sources */,
+				C97C005C1D1821E400C16541 /* SettingsTablePresenter.swift in Sources */,
+				C9525DFD1CE122580035DE0E /* MapChatListViewController.swift in Sources */,
+				7DCF1D0B1CFE1DC10020BF08 /* ChatRoomsAndUsersSearchViewController.swift in Sources */,
+				E5D485541D215C9500692B36 /* CCHMapClusterOperation.m in Sources */,
+				7DB5C7C91CF0B90600A5EFF2 /* CollectionViewListFlowLayout.swift in Sources */,
+				7D50A6761D5A71A7009739F2 /* FindFriendsViewController.swift in Sources */,
+				7DF8FDB01C90B4690058F877 /* SignupPageViewController.swift in Sources */,
+				7D8C66191CE3F378000CA40A /* WebImageSearchCollectionViewCell.swift in Sources */,
+				7D8C661B1CE3F378000CA40A /* WebImageSearchViewController.swift in Sources */,
+				7DCF1D0D1CFF89460020BF08 /* StringExtensions.swift in Sources */,
+				7DFD1E091C874F1200CF5C94 /* User.swift in Sources */,
+				7D7C73B41CAB208F00DC1164 /* BCProgress.swift in Sources */,
+				C947A3341CE6423600D810D3 /* ChatRoomPresenter.swift in Sources */,
+				7DCFA7291D1044C00043CEA1 /* CreateChatRoomInputAccessoryView.swift in Sources */,
+				C9BCFF0F1CF7721100D498FA /* ToStringArrayTransformer.swift in Sources */,
+				E5401B191D30065D0011C647 /* PaddingLabel.swift in Sources */,
+				7DCFA72D1D122C6A0043CEA1 /* UserTableViewCell.swift in Sources */,
+				C97C00621D18754D00C16541 /* FavoritesPresenter.swift in Sources */,
+				C9525DFB1CDBCD7B0035DE0E /* ChatRoomAnnotationView.swift in Sources */,
+				C91B36681CC7FF54002D77BF /* LDTPWebSocketManager.swift in Sources */,
+				7DE759981D2ABE5F004BAFF9 /* AlertControllerProtocol.swift in Sources */,
+				C93AC3ED1D256D8E00ED8046 /* ChatRoomsListProtocol.swift in Sources */,
+				C973E0751CE22059008591FD /* ChatRoomMessage+CoreDataProperties.swift in Sources */,
+				E535CE031D3FF4860059EFC4 /* CustomLabelChatOver.swift in Sources */,
+				7DA5A86F1CAF05040019B32D /* ChatRoom.swift in Sources */,
+				7DB5C7C71CF098B200A5EFF2 /* UserSearchCollectionViewCell.swift in Sources */,
+				7DF8FD9C1C8F0C220058F877 /* SignupTermsPrivacyViewController.swift in Sources */,
+				E5C1FAB11CC514010015F3E6 /* AmazonManager.swift in Sources */,
+				7D7C73CE1CAC556400DC1164 /* ChatRoomListCollectionViewCell.swift in Sources */,
+				C93AC3FA1D26F9A000ED8046 /* CoverChatRoomsListPresenter.swift in Sources */,
+				7D0525941CB443F30010961E /* CreateChatRoomPresenter.swift in Sources */,
+				C93AC3FC1D27132E00ED8046 /* ChatListToCoverTrasition.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D1006CA1C84ADFB0076561E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C91B36641CC6AED3002D77BF /* LDTProtocolImpl.swift in Sources */,
+				C91B366E1CC82A07002D77BF /* LDTPMessageBuilder.swift in Sources */,
+				C91B366D1CC82A04002D77BF /* LDTPWebSocketManager.swift in Sources */,
+				C91B366C1CC824BB002D77BF /* BlicupOnlineServicesTests.swift in Sources */,
+				7D1006D31C84ADFB0076561E /* BlicupTests.swift in Sources */,
+				C91B36661CC6B14F002D77BF /* BlicupServicesTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D1006D51C84ADFB0076561E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D1006DE1C84ADFB0076561E /* BlicupUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7D1006D01C84ADFB0076561E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7D1006B61C84ADFB0076561E /* Blicup */;
+			targetProxy = 7D1006CF1C84ADFB0076561E /* PBXContainerItemProxy */;
+		};
+		7D1006DB1C84ADFB0076561E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7D1006B61C84ADFB0076561E /* Blicup */;
+			targetProxy = 7D1006DA1C84ADFB0076561E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7D1006BE1C84ADFB0076561E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7D1006BF1C84ADFB0076561E /* Base */,
+				7DF8FD9F1C8F69C50058F877 /* pt-BR */,
+				7DF8FDA21C8F69E60058F877 /* en */,
+				7DF0EC5C1D42B34900DEF902 /* es */,
+				7DF0EC651D42B35600DEF902 /* es-MX */,
+				7DF0EC6E1D42DE2C00DEF902 /* es-419 */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7D1006C61C84ADFB0076561E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7D1006C71C84ADFB0076561E /* Base */,
+				7DF8FDA01C8F69C50058F877 /* pt-BR */,
+				7DF0EC631D42B34A00DEF902 /* es */,
+				7DF0EC6C1D42B35800DEF902 /* es-MX */,
+				7DF0EC751D42DE3200DEF902 /* es-419 */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		7DCC30E01D400148001202F4 /* UserTableViewCell.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7DCC30DF1D400148001202F4 /* Base */,
+				7DCC30E21D400181001202F4 /* pt-BR */,
+				7DF0EC601D42B34900DEF902 /* es */,
+				7DF0EC691D42B35700DEF902 /* es-MX */,
+				7DF0EC721D42DE2E00DEF902 /* es-419 */,
+			);
+			name = UserTableViewCell.xib;
+			path = Settings/View;
+			sourceTree = "<group>";
+		};
+		7DCC30E61D4004B6001202F4 /* UserBlockCell.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7DCC30E91D4004C1001202F4 /* Base */,
+				7DCC30EA1D4004C8001202F4 /* pt-BR */,
+				7DF0EC611D42B34A00DEF902 /* es */,
+				7DF0EC6A1D42B35700DEF902 /* es-MX */,
+				7DF0EC731D42DE2E00DEF902 /* es-419 */,
+			);
+			name = UserBlockCell.xib;
+			sourceTree = "<group>";
+		};
+		7DCC30ED1D400EF5001202F4 /* Settings.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7DCC30EC1D400EF5001202F4 /* Base */,
+				7DCC30EF1D400EFA001202F4 /* pt-BR */,
+				7DF0EC621D42B34A00DEF902 /* es */,
+				7DF0EC6B1D42B35700DEF902 /* es-MX */,
+				7DF0EC741D42DE2F00DEF902 /* es-419 */,
+			);
+			name = Settings.storyboard;
+			path = Settings/View;
+			sourceTree = "<group>";
+		};
+		7DCC30F21D4013B1001202F4 /* MyChats.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7DCC30F11D4013B1001202F4 /* Base */,
+				7DCC30F41D4013B6001202F4 /* pt-BR */,
+				7DF0EC5F1D42B34900DEF902 /* es */,
+				7DF0EC681D42B35700DEF902 /* es-MX */,
+				7DF0EC711D42DE2E00DEF902 /* es-419 */,
+			);
+			name = MyChats.storyboard;
+			path = ChatRoomManagement/View;
+			sourceTree = "<group>";
+		};
+		7DCC30F71D4013E5001202F4 /* Chat.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7DCC30F61D4013E5001202F4 /* Base */,
+				7DCC30F91D4013EB001202F4 /* pt-BR */,
+				7DF0EC5E1D42B34900DEF902 /* es */,
+				7DF0EC671D42B35700DEF902 /* es-MX */,
+				7DF0EC701D42DE2D00DEF902 /* es-419 */,
+			);
+			name = Chat.storyboard;
+			path = ChatRoomManagement/View;
+			sourceTree = "<group>";
+		};
+		7DD7C8911D41645B003454A7 /* Signup.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7DD7C8901D41645B003454A7 /* Base */,
+				7DD7C8931D41645E003454A7 /* pt-BR */,
+				7DF0EC5D1D42B34900DEF902 /* es */,
+				7DF0EC661D42B35700DEF902 /* es-MX */,
+				7DF0EC6F1D42DE2C00DEF902 /* es-419 */,
+			);
+			name = Signup.storyboard;
+			path = UserManagement/View;
+			sourceTree = "<group>";
+		};
+		7DF3978F1D46647900E279D7 /* Info.plist */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7DF3978E1D46647900E279D7 /* Base */,
+				7DF397901D46647C00E279D7 /* en */,
+				7DF397911D46647D00E279D7 /* pt-BR */,
+				7DF397921D46647F00E279D7 /* es */,
+				7DF397931D46648000E279D7 /* es-MX */,
+				7DF397941D46648100E279D7 /* es-419 */,
+			);
+			name = Info.plist;
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7DF3979A1D4692C800E279D7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7DF397991D4692C800E279D7 /* Base */,
+				7DF3979B1D4692CB00E279D7 /* pt-BR */,
+				7DF3979C1D4692CD00E279D7 /* es */,
+				7DF3979D1D4692CF00E279D7 /* es-MX */,
+				7DF3979E1D4692D100E279D7 /* es-419 */,
+			);
+			name = InfoPlist.strings;
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7DF8FDA71C8F6A470058F877 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7DF8FDA81C8F6A4B0058F877 /* en */,
+				7DF8FDA91C8F6A4C0058F877 /* pt-BR */,
+				7DF0EC641D42B34A00DEF902 /* es */,
+				7DF0EC6D1D42BC0400DEF902 /* es-MX */,
+				7DF0EC761D42DE3500DEF902 /* es-419 */,
+			);
+			name = Localizable.strings;
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7D1006E01C84ADFB0076561E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MOMC_NO_INVERSE_RELATIONSHIP_WARNINGS = YES;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "";
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7D1006E11C84ADFB0076561E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MOMC_NO_INVERSE_RELATIONSHIP_WARNINGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7D1006E31C84ADFB0076561E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1C6229356D54D5F6A97C77D4 /* Pods-Blicup.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
+				CODE_SIGN_ENTITLEMENTS = Blicup/Blicup.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = YES;
+				INFOPLIST_FILE = "Blicup/Supporting Files/Base.lproj/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MOMC_NO_INVERSE_RELATIONSHIP_WARNINGS = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.blicup;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PRODUCT_NAME)/Supporting Files/Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = 1;
+				USE_HEADERMAP = YES;
+			};
+			name = Debug;
+		};
+		7D1006E41C84ADFB0076561E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8CD0662122254125BC01CFC0 /* Pods-Blicup.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
+				CODE_SIGN_ENTITLEMENTS = Blicup/Blicup.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = YES;
+				INFOPLIST_FILE = "Blicup/Supporting Files/Base.lproj/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MOMC_NO_INVERSE_RELATIONSHIP_WARNINGS = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.blicup;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PRODUCT_NAME)/Supporting Files/Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = 1;
+				USE_HEADERMAP = YES;
+			};
+			name = Release;
+		};
+		7D1006E61C84ADFB0076561E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4743E515A5B636EDD5277C8 /* Pods-BlicupTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = BlicupTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.BlicupTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Blicup.app/Blicup";
+			};
+			name = Debug;
+		};
+		7D1006E71C84ADFB0076561E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6E2D80ABB821D1DEDFBF9E84 /* Pods-BlicupTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = BlicupTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.BlicupTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Blicup.app/Blicup";
+			};
+			name = Release;
+		};
+		7D1006E91C84ADFB0076561E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 91EB1788CEB99D7DA5E44B20 /* Pods-BlicupUITests.debug.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = BlicupUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.BlicupUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Blicup;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		7D1006EA1C84ADFB0076561E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 66DC606130C51AA94AC5ADE8 /* Pods-BlicupUITests.release.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = BlicupUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.BlicupUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Blicup;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7D1006B21C84ADFB0076561E /* Build configuration list for PBXProject "Blicup" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D1006E01C84ADFB0076561E /* Debug */,
+				7D1006E11C84ADFB0076561E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7D1006E21C84ADFB0076561E /* Build configuration list for PBXNativeTarget "Blicup" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D1006E31C84ADFB0076561E /* Debug */,
+				7D1006E41C84ADFB0076561E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7D1006E51C84ADFB0076561E /* Build configuration list for PBXNativeTarget "BlicupTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D1006E61C84ADFB0076561E /* Debug */,
+				7D1006E71C84ADFB0076561E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7D1006E81C84ADFB0076561E /* Build configuration list for PBXNativeTarget "BlicupUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D1006E91C84ADFB0076561E /* Debug */,
+				7D1006EA1C84ADFB0076561E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		7D10071F1C86059A0076561E /* Blicup.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				7DF6A7C81D51233A007515CE /* Blicup 1.0.1.xcdatamodel */,
+				7D1007201C86059A0076561E /* Blicup.xcdatamodel */,
+			);
+			currentVersion = 7DF6A7C81D51233A007515CE /* Blicup 1.0.1.xcdatamodel */;
+			name = Blicup.xcdatamodeld;
+			path = "Supporting Files/Blicup.xcdatamodeld";
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 7D1006AF1C84ADFB0076561E /* Project object */;
+}
