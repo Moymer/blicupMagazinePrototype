@@ -28,36 +28,19 @@ class ChatRoomListCollectionViewCell: UICollectionViewCell {
         
         super.awakeFromNib()
         
-        ivWhoCreatedPhoto.layer.cornerRadius = ivWhoCreatedPhoto.frame.height/2
-        ivWhoCreatedPhoto.clipsToBounds = true
         ivBackground.runLoopMode = NSDefaultRunLoopMode
         ivBackground.needsPrescaling = false
         ivBackground.autoPlayAnimatedImage = true
         ivBackground.framePreloadCount = 2
         
-        self.vContainer.layer.cornerRadius = 4
+        self.vContainer.layer.cornerRadius = 15
         self.vContainer.clipsToBounds = true
     }
     override func prepareForReuse() {
         ivBackground.kf_cancelDownloadTask()
         ivBackground.image = nil
-        ivWhoCreatedPhoto.kf_cancelDownloadTask()
-        ivWhoCreatedPhoto.image = nil
-        lblParticipantsCount.text = nil
     }
     
-    override func layoutSubviews() {
-        
-        super.layoutSubviews()
-        
-        let shadowPath = UIBezierPath(rect: self.bounds).CGPath
-        self.layer.masksToBounds = false
-        self.layer.shadowOpacity = 0.2
-        self.layer.shadowOffset = CGSize(width: 1.0, height: 1.0)
-        self.layer.shadowRadius = 1.0
-        self.layer.shadowColor = UIColor.blackColor().CGColor
-        self.layer.shadowPath = shadowPath
-    }
     
     func showVerifiedBadge(isVerified: Bool) {
         

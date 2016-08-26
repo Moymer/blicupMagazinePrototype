@@ -33,12 +33,9 @@ class ChatRoomsListViewController: UIViewController, CHTCollectionViewDelegateWa
     var showBlicupGrayActivityIndicatorTimer: NSTimer?
     var ivBlic = UIImageView()
     
-    @IBOutlet weak var btnSearchBar: BCButton!
-    @IBOutlet weak var btnCreateChat: BCButton!
     @IBOutlet weak var lblNoInternet: UILabel!
     @IBOutlet weak var vEmptyListBackground: UIView!
     @IBOutlet weak var ivLoadingBlicupGray: UIImageView!
-    @IBOutlet weak var vContainerSearchBar: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
@@ -47,9 +44,6 @@ class ChatRoomsListViewController: UIViewController, CHTCollectionViewDelegateWa
         // Do any additional setup after loading the view, typically from a nib.
         self.chatRoomsListPresenter.delegate = self
         
-        setCollectionViewLayout()
-        customizeSearchBar()
-        customizeBtnCreateChat()
         loadBlicupGrayImages()
         setGHContextMenuView()
         getChatRoomsDatasource()
@@ -98,17 +92,6 @@ class ChatRoomsListViewController: UIViewController, CHTCollectionViewDelegateWa
     
     
     // MARK: - Layout
-    
-    func customizeBtnCreateChat() {
-        
-        btnCreateChat.layer.shadowOpacity = 0.2
-        btnCreateChat.layer.shadowOffset = CGSize(width: 0, height: 0)
-        btnCreateChat.layer.shadowRadius = 1.0
-        btnCreateChat.layer.shadowColor = UIColor.blackColor().CGColor
-        btnCreateChat.layer.masksToBounds = false
-        
-    }
-    
     func customizeTipView() {
         if viewTips != nil {
             self.viewTips.hidden = false
@@ -136,21 +119,6 @@ class ChatRoomsListViewController: UIViewController, CHTCollectionViewDelegateWa
         }
     }
     
-    func customizeSearchBar() {
-        
-        vContainerSearchBar.layer.shadowOpacity = 0.1
-        vContainerSearchBar.layer.shadowOffset = CGSize(width: 0, height: 0)
-        vContainerSearchBar.layer.shadowRadius = 2.0
-        vContainerSearchBar.layer.shadowColor = UIColor.blackColor().CGColor
-        vContainerSearchBar.layer.masksToBounds = false
-        
-        btnSearchBar.layer.borderWidth = 1.5
-        btnSearchBar.layer.borderColor = UIColor.whiteColor().colorWithAlphaComponent(0.8).CGColor
-        btnSearchBar.layer.cornerRadius = 4
-        btnSearchBar.clipsToBounds = true
-        
-    }
-    
     func loadBlicupGrayImages() {
         
         var animationArray: [UIImage] = []
@@ -164,12 +132,6 @@ class ChatRoomsListViewController: UIViewController, CHTCollectionViewDelegateWa
         ivLoadingBlicupGray.alpha = 0
     }
     
-    func setCollectionViewLayout() {
-        let collectionViewLayout = CHTCollectionViewWaterfallLayout()
-        collectionViewLayout.sectionInset = UIEdgeInsetsMake(kChatRoomsListTopSectionInsetDefault, 2, kTabBarHeight + 2, 2) // bottom 50 = tab bar height + 10 padding
-        self.collectionView.setCollectionViewLayout(collectionViewLayout, animated: false)
-        self.collectionView.reloadData()
-    }
     
     func createCustomBlicupLoadingView() {
         ivBlic.contentMode = UIViewContentMode.ScaleAspectFit
@@ -184,7 +146,7 @@ class ChatRoomsListViewController: UIViewController, CHTCollectionViewDelegateWa
         ivBlic.animationImages = animationArray
         ivBlic.animationDuration = 1.0
         
-        ivBlic.frame = CGRectMake(0, kChatRoomsListTopSectionInsetDefault-42, 35, 35)
+        ivBlic.frame = CGRectMake(0, -42, 35, 35)
         ivBlic.center = CGPointMake(collectionView.bounds.width/2, ivBlic.center.y)
         
         collectionView.addSubview(ivBlic)
@@ -243,7 +205,7 @@ class ChatRoomsListViewController: UIViewController, CHTCollectionViewDelegateWa
         let totalLines = getNameAndTagListTotalAndTaglLines(indexPath).0
         let size = self.chatRoomsListPresenter.getChatItemSizeForLines(totalLines)
         
-        let imageHeight = size.height*(GRID_WIDTH/size.width)
+        let imageHeight = size.height*(GRID_WIDTH/size.width)*1.5
         return CGSizeMake(GRID_WIDTH, imageHeight)
         
     }
@@ -279,11 +241,9 @@ class ChatRoomsListViewController: UIViewController, CHTCollectionViewDelegateWa
         collectionCell.layer.shouldRasterize = true
         collectionCell.layer.rasterizationScale = UIScreen.mainScreen().scale
         
-        collectionCell.lblParticipantsCount.text = "\(self.chatRoomsListPresenter.chatRoomNumberOfParticipants(indexPath))"
-        collectionCell.bcTimer.updateBasedOnTime(self.chatRoomsListPresenter.chatRoomLastUpdate(indexPath))
         collectionCell.lblName.text = self.chatRoomsListPresenter.chatRoomName(forIndex: indexPath)
         collectionCell.vContainer.backgroundColor = self.chatRoomsListPresenter.chatRoomMainColor(indexPath)
-        
+        collectionCell.ivBackground.setMainColor(self.chatRoomsListPresenter.chatRoomMainColor(indexPath))
         
         let photoUrlList = self.chatRoomsListPresenter.photoUrlList(indexPath)
         
@@ -298,21 +258,8 @@ class ChatRoomsListViewController: UIViewController, CHTCollectionViewDelegateWa
             collectionCell.ivBackground.kf_setImageWithURL(thumbUrl, placeholderImage: nil, optionsInfo: optionInfo, progressBlock: nil, completionHandler: nil)
         }
         
-        
-        collectionCell.lblTagList.text = self.chatRoomsListPresenter.chatRoomHashtags(forIndex: indexPath)
-        
-        if let ownerPhoto = chatRoomsListPresenter.chatRoomOwnerPhotoUrl(forIndex: indexPath) {
-            collectionCell.ivWhoCreatedPhoto.kf_setImageWithURL(ownerPhoto)
-        }
-        else {
-            collectionCell.ivWhoCreatedPhoto.image = nil
-        }
-        
         collectionCell.lblWhoCreatedUsername.text = chatRoomsListPresenter.chatRoomOwnerName(forIndex: indexPath)
         collectionCell.showVerifiedBadge(chatRoomsListPresenter.chatRoomOwnerIsVerified(forIndex: indexPath))
-        
-        let totalAndTagLines = getNameAndTagListTotalAndTaglLines(indexPath)
-        collectionCell.lblTagList.numberOfLines = totalAndTagLines.1
         
         if shouldAnimateCell{
             animateCell(collectionCell)
@@ -679,39 +626,6 @@ class ChatRoomsListViewController: UIViewController, CHTCollectionViewDelegateWa
     }
     
     
-    // MARK: - Actions
-    
-    @IBAction func createChatPressed(sender: AnyObject) {
-        self.view.userInteractionEnabled = false
-        UIView.animateWithDuration(0.05, animations: {
-            self.btnCreateChat.transform = CGAffineTransformMakeScale(1, 1)
-        }) { (_) in
-            self.performSegueWithIdentifier("createChatSegue", sender: sender)
-            self.view.userInteractionEnabled = true
-        }
-        
-    }
-    
-    
-    @IBAction func searchBarPressed(sender: AnyObject) {
-        
-        self.view.userInteractionEnabled = false
-        btnSearchBar.transform = CGAffineTransformMakeScale(0.95, 0.95)
-        UIView.animateWithDuration(0.3, animations: {
-            self.btnSearchBar.transform = CGAffineTransformMakeScale(1, 1)
-        }) { (_) in
-            if self.viewTips != nil {
-                self.viewTips.hidden = true
-            } else if self.vCreateTip != nil {
-                self.vCreateTip.hidden = true
-                
-            }
-            self.performSegueWithIdentifier("showChatRoomAndUserSearchSegue", sender: nil)
-            self.view.userInteractionEnabled = true
-        }
-    }
-    
-    
     // MARK: Action sheet
     
     func showReportActionShet(indexPath index: NSIndexPath) {
@@ -899,8 +813,6 @@ class ChatRoomsListViewController: UIViewController, CHTCollectionViewDelegateWa
     //MARK:
     
     func sharePressed(sender: UIButton) {
-        self.createChatPressed(UIButton(frame: self.btnCreateChat.frame))
-        
         UIView.animateWithDuration(0.5, delay: 0.2, options: [], animations: {
             self.vCreateTip.transform = CGAffineTransformMakeTranslation(0, 60)
         }) { (_) in
