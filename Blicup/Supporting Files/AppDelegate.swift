@@ -80,6 +80,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         BlicupAsyncHandler.sharedInstance
         
         BlicupRouter.routeLogin(self.window)
+        //BlicupRouter.routeTest(self.window)
         
         let cache = KingfisherManager.sharedManager.cache
         cache.maxCachePeriodInSecond = 60 * 60 * 24 * 365 * 50

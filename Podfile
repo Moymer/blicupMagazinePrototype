@@ -25,6 +25,7 @@ target 'Blicup' do
     pod 'TTTAttributedLabel'
     pod 'KeychainAccess'
     pod 'NSString+RemoveEmoji'
+    pod 'XLPagerTabStrip', '~> 5.0'
     
   target 'BlicupTests' do
     inherit! :search_paths

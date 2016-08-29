@@ -120,6 +120,7 @@
 		7DFD1E091C874F1200CF5C94 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFD1E051C874F1200CF5C94 /* User.swift */; };
 		A456F30A1C999009008CF87D /* LDTProtocolImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A456F3091C999009008CF87D /* LDTProtocolImpl.swift */; };
 		A4D97E211CB9758900E13678 /* UserBS.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D97E201CB9758900E13678 /* UserBS.swift */; };
+		C91414541D74EF2600C574DB /* CameraRollPagerTabStripController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91414531D74EF2600C574DB /* CameraRollPagerTabStripController.swift */; };
 		C91B36641CC6AED3002D77BF /* LDTProtocolImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A456F3091C999009008CF87D /* LDTProtocolImpl.swift */; };
 		C91B36661CC6B14F002D77BF /* BlicupServicesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91B36651CC6B14F002D77BF /* BlicupServicesTests.swift */; };
 		C91B36681CC7FF54002D77BF /* LDTPWebSocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91B36671CC7FF54002D77BF /* LDTPWebSocketManager.swift */; };
@@ -180,6 +181,10 @@
 		C9569F661D746D3D00006019 /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9569F4A1D746D3D00006019 /* Content.swift */; };
 		C9569F691D74AB7600006019 /* Location+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9569F671D74AB7600006019 /* Location+CoreDataProperties.swift */; };
 		C9569F6A1D74AB7600006019 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9569F681D74AB7600006019 /* Location.swift */; };
+		C9569F6E1D74B23800006019 /* Magazine.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9569F6D1D74B23800006019 /* Magazine.storyboard */; };
+		C9569F701D74B87100006019 /* CameraRollPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9569F6F1D74B87100006019 /* CameraRollPresenter.swift */; };
+		C9569F741D74C3E900006019 /* CameraRollCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9569F731D74C3E900006019 /* CameraRollCollectionViewController.swift */; };
+		C9569F761D74C66200006019 /* CameraRollImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9569F751D74C66200006019 /* CameraRollImageCollectionViewCell.swift */; };
 		C95B14DD1D21636800D4DA0F /* UserListFollowBlockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95B14DC1D21636800D4DA0F /* UserListFollowBlockViewController.swift */; };
 		C973E0751CE22059008591FD /* ChatRoomMessage+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C973E0731CE22059008591FD /* ChatRoomMessage+CoreDataProperties.swift */; };
 		C973E0761CE22059008591FD /* ChatRoomMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C973E0741CE22059008591FD /* ChatRoomMessage.swift */; };
@@ -434,6 +439,7 @@
 		91EB1788CEB99D7DA5E44B20 /* Pods-BlicupUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlicupUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BlicupUITests/Pods-BlicupUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A456F3091C999009008CF87D /* LDTProtocolImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDTProtocolImpl.swift; sourceTree = "<group>"; };
 		A4D97E201CB9758900E13678 /* UserBS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserBS.swift; path = BlicupAPI/UserBS.swift; sourceTree = "<group>"; };
+		C91414531D74EF2600C574DB /* CameraRollPagerTabStripController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CameraRollPagerTabStripController.swift; path = MagazineManagement/View/CameraRollPagerTabStripController.swift; sourceTree = "<group>"; };
 		C91B36651CC6B14F002D77BF /* BlicupServicesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlicupServicesTests.swift; sourceTree = "<group>"; };
 		C91B36671CC7FF54002D77BF /* LDTPWebSocketManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDTPWebSocketManager.swift; sourceTree = "<group>"; };
 		C91B36691CC800A0002D77BF /* LDTPMessageBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDTPMessageBuilder.swift; sourceTree = "<group>"; };
@@ -491,6 +497,11 @@
 		C9569F4A1D746D3D00006019 /* Content.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Content.swift; path = MagazineManagement/Model/Content.swift; sourceTree = "<group>"; };
 		C9569F671D74AB7600006019 /* Location+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Location+CoreDataProperties.swift"; path = "MagazineManagement/Model/Location+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C9569F681D74AB7600006019 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Location.swift; path = MagazineManagement/Model/Location.swift; sourceTree = "<group>"; };
+		C9569F6D1D74B23800006019 /* Magazine.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Magazine.storyboard; path = MagazineManagement/View/Magazine.storyboard; sourceTree = "<group>"; };
+		C9569F6F1D74B87100006019 /* CameraRollPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CameraRollPresenter.swift; path = MagazineManagement/Presenter/CameraRollPresenter.swift; sourceTree = "<group>"; };
+		C9569F711D74B8C500006019 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		C9569F731D74C3E900006019 /* CameraRollCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CameraRollCollectionViewController.swift; path = MagazineManagement/View/CameraRollCollectionViewController.swift; sourceTree = "<group>"; };
+		C9569F751D74C66200006019 /* CameraRollImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CameraRollImageCollectionViewCell.swift; path = MagazineManagement/View/CameraRollImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		C95B14DC1D21636800D4DA0F /* UserListFollowBlockViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserListFollowBlockViewController.swift; path = Settings/View/UserListFollowBlockViewController.swift; sourceTree = "<group>"; };
 		C973E0731CE22059008591FD /* ChatRoomMessage+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ChatRoomMessage+CoreDataProperties.swift"; path = "ChatRoomManagement/Model/ChatRoomMessage+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C973E0741CE22059008591FD /* ChatRoomMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatRoomMessage.swift; path = ChatRoomManagement/Model/ChatRoomMessage.swift; sourceTree = "<group>"; };
@@ -615,6 +626,7 @@
 		7B550AE0774F722AB36C132A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C9569F711D74B8C500006019 /* Photos.framework */,
 				1A2A2D25812332F51F390540 /* Pods_Blicup.framework */,
 				EF26484AFE99A6BEF179E264 /* Pods_BlicupTests.framework */,
 				0C081D62BE3B3B2EFFE7025B /* Pods_BlicupUITests.framework */,
@@ -1031,7 +1043,7 @@
 			children = (
 				C9569F291D70DF2E00006019 /* Model */,
 				C9569F2A1D70DF3600006019 /* View */,
-				C9569F2B1D70DF4700006019 /* Controller */,
+				C9569F2B1D70DF4700006019 /* Presenter */,
 			);
 			name = MagazineManagement;
 			sourceTree = "<group>";
@@ -1076,15 +1088,20 @@
 		C9569F2A1D70DF3600006019 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C9569F6D1D74B23800006019 /* Magazine.storyboard */,
+				C9569F731D74C3E900006019 /* CameraRollCollectionViewController.swift */,
+				C9569F751D74C66200006019 /* CameraRollImageCollectionViewCell.swift */,
+				C91414531D74EF2600C574DB /* CameraRollPagerTabStripController.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
 		};
-		C9569F2B1D70DF4700006019 /* Controller */ = {
+		C9569F2B1D70DF4700006019 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				C9569F6F1D74B87100006019 /* CameraRollPresenter.swift */,
 			);
-			name = Controller;
+			name = Presenter;
 			sourceTree = "<group>";
 		};
 		C95B14DE1D2169BA00D4DA0F /* UserListWithBlockFollow */ = {
@@ -1273,6 +1290,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7D1006E21C84ADFB0076561E /* Build configuration list for PBXNativeTarget "Blicup" */;
 			buildPhases = (
+				E3829ECBD6BD49BC3F8FCE0F /* 📦 Check Pods Manifest.lock */,
 				A850C6AEAFE22E016E39DE89 /* [CP] Check Pods Manifest.lock */,
 				8AB62DF7A0F1199465B047CD /* [CP] Embed Pods Frameworks */,
 				72EEB1577FCC01AB79C8B085 /* [CP] Check Pods Manifest.lock */,
@@ -1281,6 +1299,8 @@
 				7D1006B51C84ADFB0076561E /* Resources */,
 				7D86267A1CA1D0B800D87E87 /* ShellScript */,
 				24F951BF1876E98D2C1A2466 /* [CP] Copy Pods Resources */,
+				F8F9BC19AD06D56277EB137F /* 📦 Embed Pods Frameworks */,
+				5143D8BD88628A06D693485E /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1295,6 +1315,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7D1006E51C84ADFB0076561E /* Build configuration list for PBXNativeTarget "BlicupTests" */;
 			buildPhases = (
+				A46DC691725A86A64E114727 /* 📦 Check Pods Manifest.lock */,
 				0AD6ED758F7281AF575F1E0B /* [CP] Check Pods Manifest.lock */,
 				A8400827C22C8206F5F93CF7 /* [CP] Check Pods Manifest.lock */,
 				4EA135E4B936FCCE58BBF623 /* [CP] Check Pods Manifest.lock */,
@@ -1321,6 +1342,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7D1006E81C84ADFB0076561E /* Build configuration list for PBXNativeTarget "BlicupUITests" */;
 			buildPhases = (
+				25690EE6A21A17720440D158 /* 📦 Check Pods Manifest.lock */,
 				A4389D8CD7996D1590BCA42C /* [CP] Check Pods Manifest.lock */,
 				1CF407D620ECF3D9EE62BB3E /* [CP] Check Pods Manifest.lock */,
 				F9554E142BD965C7A8E0645F /* [CP] Check Pods Manifest.lock */,
@@ -1437,6 +1459,7 @@
 				7DD7C88F1D41645B003454A7 /* Signup.storyboard in Resources */,
 				7DCC30E81D4004B6001202F4 /* UserBlockCell.xib in Resources */,
 				7D1007121C8604BA0076561E /* SF-UI-Text-MediumItalic.otf in Resources */,
+				C9569F6E1D74B23800006019 /* Magazine.storyboard in Resources */,
 				7DF0EC5B1D42B24500DEF902 /* default_tags_es.json in Resources */,
 				7D1EC71C1CC83CE7006689B3 /* default_tags_pt.json in Resources */,
 				E506A0A21D4BFF0B00CCD728 /* TipsView.xib in Resources */,
@@ -1505,6 +1528,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Blicup/Pods-Blicup-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		25690EE6A21A17720440D158 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		2DB33776F085F91035CC6102 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1563,6 +1601,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+		};
+		5143D8BD88628A06D693485E /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Blicup/Pods-Blicup-resources.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 		591C1220AFC1243C57617B3E /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1652,6 +1705,21 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		A46DC691725A86A64E114727 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		A8400827C22C8206F5F93CF7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1680,6 +1748,36 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E3829ECBD6BD49BC3F8FCE0F /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F8F9BC19AD06D56277EB137F /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Blicup/Pods-Blicup-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F9554E142BD965C7A8E0645F /* [CP] Check Pods Manifest.lock */ = {
@@ -1812,12 +1910,14 @@
 				C93AC3F11D25C93600ED8046 /* ChatRoomFetchResultPresenter.swift in Sources */,
 				7DCF1D091CFE08280020BF08 /* ChatRoomUserMentionCollectionViewCell.swift in Sources */,
 				7D8C661D1CE3F3D4000CA40A /* BCGradientView.swift in Sources */,
+				C91414541D74EF2600C574DB /* CameraRollPagerTabStripController.swift in Sources */,
 				C9525DF91CDA99BA0035DE0E /* ChatMapPresenter.swift in Sources */,
 				E5D485521D215C9500692B36 /* CCHMapClusterControllerDebugPolygon.m in Sources */,
 				C9BCFF131CF783BF00D498FA /* UserInfo.swift in Sources */,
 				E54EBDD91D5B86AF002EE541 /* SwipeCoverImagesTipView.swift in Sources */,
 				E5D485511D215C9500692B36 /* CCHMapClusterController.m in Sources */,
 				7DF6C7861D0756D800B1866D /* BCButton.swift in Sources */,
+				C9569F761D74C66200006019 /* CameraRollImageCollectionViewCell.swift in Sources */,
 				7DF8FDAE1C90B3CE0058F877 /* SignupViewController.swift in Sources */,
 				C97C006E1D1DD93300C16541 /* BlockFollowUserListPresenter.swift in Sources */,
 				C9BCFF0D1CF7656F00D498FA /* LDTPNSNotificationCenterControl.swift in Sources */,
@@ -1890,6 +1990,7 @@
 				7DCF1D0B1CFE1DC10020BF08 /* ChatRoomsAndUsersSearchViewController.swift in Sources */,
 				E5D485541D215C9500692B36 /* CCHMapClusterOperation.m in Sources */,
 				7DB5C7C91CF0B90600A5EFF2 /* CollectionViewListFlowLayout.swift in Sources */,
+				C9569F741D74C3E900006019 /* CameraRollCollectionViewController.swift in Sources */,
 				C9569F511D746D3D00006019 /* CText+CoreDataProperties.swift in Sources */,
 				7D50A6761D5A71A7009739F2 /* FindFriendsViewController.swift in Sources */,
 				7DF8FDB01C90B4690058F877 /* SignupPageViewController.swift in Sources */,
@@ -1900,6 +2001,7 @@
 				7D7C73B41CAB208F00DC1164 /* BCProgress.swift in Sources */,
 				C947A3341CE6423600D810D3 /* ChatRoomPresenter.swift in Sources */,
 				7DCFA7291D1044C00043CEA1 /* CreateChatRoomInputAccessoryView.swift in Sources */,
+				C9569F701D74B87100006019 /* CameraRollPresenter.swift in Sources */,
 				C9BCFF0F1CF7721100D498FA /* ToStringArrayTransformer.swift in Sources */,
 				E5401B191D30065D0011C647 /* PaddingLabel.swift in Sources */,
 				C9569F631D746D3D00006019 /* PositionSizeLD+CoreDataProperties.swift in Sources */,
