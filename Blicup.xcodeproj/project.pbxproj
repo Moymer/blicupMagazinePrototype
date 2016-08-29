@@ -1910,6 +1910,7 @@
 				C9BCFF0F1CF7721100D498FA /* ToStringArrayTransformer.swift in Sources */,
 				E5401B191D30065D0011C647 /* PaddingLabel.swift in Sources */,
 				C98256B41D70D14C008257C4 /* BlicCollectionViewCell.swift in Sources */,
+				C9569F631D746D3D00006019 /* PositionSizeLD+CoreDataProperties.swift in Sources */,
 				7DCFA72D1D122C6A0043CEA1 /* UserTableViewCell.swift in Sources */,
 				C9569F5C1D746D3D00006019 /* Author.swift in Sources */,
 				C97C00621D18754D00C16541 /* FavoritesPresenter.swift in Sources */,
