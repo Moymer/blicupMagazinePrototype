@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="SF-UI-Text-Bold.otf">
+            <string>SFUIText-Bold</string>
+        </mutableArray>
+        <mutableArray key="SF-UI-Text-HeavyItalic.otf">
+            <string>SFUIText-HeavyItalic</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="BlicCollectionViewCell" customModule="Blicup" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="314" height="335"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="314" height="335"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2E4-3D-Qq9">
+                        <rect key="frame" x="0.0" y="0.0" width="314" height="335"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@Jack " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Hy-3f-bAe">
+                        <rect key="frame" x="10" y="285" width="51" height="17"/>
+                        <fontDescription key="fontDescription" name="SFUIText-HeavyItalic" family="SF UI Text" pointSize="14"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_verified" translatesAutoresizingMaskIntoConstraints="NO" id="EGD-AG-T5B">
+                        <rect key="frame" x="63" y="286" width="15" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="15" id="Tuo-2Y-2Jv"/>
+                            <constraint firstAttribute="width" constant="15" id="xKr-fq-O3g"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="16Y-a2-eeA">
+                        <rect key="frame" x="10" y="307" width="294" height="18"/>
+                        <fontDescription key="fontDescription" name="SFUIText-Bold" family="SF UI Text" pointSize="15"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="2E4-3D-Qq9" secondAttribute="trailing" id="4ob-Bd-GRF"/>
+                <constraint firstItem="16Y-a2-eeA" firstAttribute="top" secondItem="3Hy-3f-bAe" secondAttribute="bottom" constant="5" id="8y9-bm-hGG"/>
+                <constraint firstItem="2E4-3D-Qq9" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Fcf-VE-kTe"/>
+                <constraint firstItem="16Y-a2-eeA" firstAttribute="leading" secondItem="3Hy-3f-bAe" secondAttribute="leading" id="G16-xV-cey"/>
+                <constraint firstItem="16Y-a2-eeA" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="LVh-tZ-GA7"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="EGD-AG-T5B" secondAttribute="trailing" constant="10" id="Ywd-kF-lBE"/>
+                <constraint firstAttribute="bottom" secondItem="16Y-a2-eeA" secondAttribute="bottom" constant="10" id="e2D-LF-sCw"/>
+                <constraint firstItem="EGD-AG-T5B" firstAttribute="leading" secondItem="3Hy-3f-bAe" secondAttribute="trailing" constant="2" id="gg0-nj-FmZ"/>
+                <constraint firstItem="EGD-AG-T5B" firstAttribute="centerY" secondItem="3Hy-3f-bAe" secondAttribute="centerY" id="krT-59-ydT"/>
+                <constraint firstAttribute="trailing" secondItem="16Y-a2-eeA" secondAttribute="trailing" constant="10" id="lVB-Zh-rJd"/>
+                <constraint firstItem="2E4-3D-Qq9" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="pgJ-Sd-kPa"/>
+                <constraint firstAttribute="bottom" secondItem="2E4-3D-Qq9" secondAttribute="bottom" id="upq-9D-aDa"/>
+            </constraints>
+            <size key="customSize" width="314" height="335"/>
+            <connections>
+                <outlet property="ivBackground" destination="2E4-3D-Qq9" id="lcX-lG-acf"/>
+                <outlet property="ivVerifiedBadge" destination="EGD-AG-T5B" id="FtP-W1-ec0"/>
+                <outlet property="lblName" destination="16Y-a2-eeA" id="gJ6-sI-JAa"/>
+                <outlet property="lblWhoCreatedUsername" destination="3Hy-3f-bAe" id="H6c-kc-TEd"/>
+            </connections>
+            <point key="canvasLocation" x="436" y="282.5"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="ic_verified" width="15" height="15"/>
+    </resources>
+</document>

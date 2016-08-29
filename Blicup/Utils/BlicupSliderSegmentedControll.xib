@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BlicupSliderSegmentedControll" customModule="Blicup" customModuleProvider="target">
+            <connections>
+                <outlet property="bottomBarWidth" destination="TVH-k2-7JH" id="IDa-gD-z5v"/>
+                <outlet property="firstBtn" destination="lc4-Rt-KvE" id="Wzl-sI-wRo"/>
+                <outlet property="secondBtn" destination="771-D3-eXo" id="1XE-OL-FkD"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="378" height="47"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lc4-Rt-KvE">
+                    <rect key="frame" x="0.0" y="0.0" width="189" height="47"/>
+                    <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="16"/>
+                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <state key="normal" title="First">
+                        <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="selected">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="771-D3-eXo">
+                    <rect key="frame" x="189" y="0.0" width="189" height="47"/>
+                    <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="16"/>
+                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <state key="normal" title="Second">
+                        <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="selected">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6cV-5P-bmi" userLabel="bar">
+                    <rect key="frame" x="80" y="46" width="30" height="1"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="0Ad-c6-xxm"/>
+                        <constraint firstAttribute="width" constant="30" id="TVH-k2-7JH"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="lc4-Rt-KvE" secondAttribute="bottom" id="7aK-eh-NZ2"/>
+                <constraint firstItem="lc4-Rt-KvE" firstAttribute="width" secondItem="771-D3-eXo" secondAttribute="width" id="BK4-JU-hbA"/>
+                <constraint firstAttribute="bottom" secondItem="6cV-5P-bmi" secondAttribute="bottom" id="E6g-Mc-CuU"/>
+                <constraint firstItem="lc4-Rt-KvE" firstAttribute="height" secondItem="771-D3-eXo" secondAttribute="height" id="LgI-8W-Gu7"/>
+                <constraint firstItem="6cV-5P-bmi" firstAttribute="centerX" secondItem="lc4-Rt-KvE" secondAttribute="centerX" id="Wbm-RF-kCg"/>
+                <constraint firstItem="771-D3-eXo" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Wmz-0Y-GVJ"/>
+                <constraint firstItem="lc4-Rt-KvE" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="YGw-vs-q0n"/>
+                <constraint firstItem="lc4-Rt-KvE" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="ZpY-aY-wl0"/>
+                <constraint firstAttribute="trailing" secondItem="771-D3-eXo" secondAttribute="trailing" id="dqf-3C-MzS"/>
+                <constraint firstItem="771-D3-eXo" firstAttribute="leading" secondItem="lc4-Rt-KvE" secondAttribute="trailing" id="ppD-4G-bHY"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="375" y="85.5"/>
+        </view>
+    </objects>
+</document>

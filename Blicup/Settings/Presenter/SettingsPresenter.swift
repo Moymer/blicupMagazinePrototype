@@ -137,4 +137,31 @@ class SettingsPresenter: NSObject {
             })
         }
     }
+    
+    func updateUserInfoData(completion:((success:Bool)->Void)?) {
+        guard let loggedId = UserBS.getLoggedUser()?.userId else {
+            completion?(success:false)
+            return
+        }
+        
+        UserBS.updateUsersInfo([loggedId]) { (success) in
+            completion?(success:success)
+        }
+    }
+    
+    func followersText()->String {
+        guard let followersCount = UserBS.getLoggedUser()?.userInfo?.followerCount else {
+            return "-"
+        }
+        
+        return followersCount.stringValue
+    }
+    
+    func followeeText()->String {
+        guard let followeeCount = UserBS.getLoggedUser()?.userInfo?.followeeCount else {
+            return "-"
+        }
+        
+        return followeeCount.stringValue
+    }
 }
