@@ -10,7 +10,7 @@ import UIKit
 import Kingfisher
 import ReachabilitySwift
 
-class ChatRoomsAndUsersSearchViewController: UIViewController, UICollectionViewDataSource, CHTCollectionViewDelegateWaterfallLayout, UITextFieldDelegate, ChatRoomFetchResultPresenterDelegate, UserSearchCollectionViewCellProtocol, UserProfileViewControllerDelegate, ChatListToCoverTrasitionProtocol, GHContextOverlayViewDelegate, GHContextOverlayViewDataSource, AlertControllerProtocol {
+class ChatRoomsAndUsersSearchViewController: UIViewController, UICollectionViewDataSource, CHTCollectionViewDelegateWaterfallLayout, UITextFieldDelegate, ChatRoomFetchResultPresenterDelegate, UserProfileViewControllerDelegate, ChatListToCoverTrasitionProtocol, GHContextOverlayViewDelegate, GHContextOverlayViewDataSource, AlertControllerProtocol {
 
     enum ContextMenuItemSelected: Int {
         case MORE, SHARE, ENTER_CHAT
@@ -31,21 +31,11 @@ class ChatRoomsAndUsersSearchViewController: UIViewController, UICollectionViewD
     private let kUserItemHeight: CGFloat = 80
 
     
-    @IBOutlet weak var btnClose: UIButton!
-    @IBOutlet weak var vevBlurBackground: UIVisualEffectView!
-    @IBOutlet weak var vevSearchBarTop: UIVisualEffectView!
     @IBOutlet weak var tfSearch: CustomTextField!
     @IBOutlet weak var vContainerTFSearch: UIView!
-    @IBOutlet weak var vBackground: UIView!
     
     @IBOutlet weak var lblNoInternet: UILabel!
     @IBOutlet weak var ivLoadingBlicupGray: UIImageView!
-    
-    // No Chats With the Tag views
-    @IBOutlet weak var vNoChatsOrUserWithSearchTerm: UIView!
-    @IBOutlet weak var lblNoChatsOrUsersWithSearchTermTitle: UILabel!
-    @IBOutlet weak var lblNoChatsWithTagDesc: UILabel!
-    @IBOutlet weak var btnNoChatsWithTag: UIButton!
     
     
     @IBOutlet weak var cvcSearchChatRoomsAndUsers: UICollectionView!
@@ -57,17 +47,7 @@ class ChatRoomsAndUsersSearchViewController: UIViewController, UICollectionViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        btnClose.layer.cornerRadius = btnClose.bounds.height/2
-        
-        var t = CGAffineTransformIdentity
-        t = CGAffineTransformRotate(t, CGFloat((M_PI * 45) / 180))
-        
-        self.btnClose.transform = t
-        
         lblNoInternet.text = NSLocalizedString("No internet", comment: "No internet")
-        
-        btnNoChatsWithTag.layer.cornerRadius = btnNoChatsWithTag.frame.height / 4
-        btnNoChatsWithTag.clipsToBounds = true
         
         chatRoomsListPresenter.delegate = self
         setGHContextMenuView()
@@ -84,15 +64,8 @@ class ChatRoomsAndUsersSearchViewController: UIViewController, UICollectionViewD
         
         if alreadyAnimated == false {
             UIView.animateWithDuration(0.5, animations: {
-                self.vevBlurBackground.alpha = 1
-                self.vBackground.alpha = 1
                 self.cvcSearchChatRoomsAndUsers.alpha = 1
-                
-                var t = CGAffineTransformIdentity
-                t = CGAffineTransformRotate(t, CGFloat((M_PI * 90) / 180))
-                self.btnClose.transform = t
-                self.btnClose.backgroundColor = UIColor.blackColor()
-                
+                self.view.backgroundColor = UIColor.whiteColor()
                 
             }) { (finished) in
                 self.alreadyAnimated = true
@@ -152,9 +125,7 @@ class ChatRoomsAndUsersSearchViewController: UIViewController, UICollectionViewD
         tfSearch.paddingPosX = paddingX
         tfSearch.leftView = vPadding
         tfSearch.leftViewMode = UITextFieldViewMode.Always
-        tfSearch.layer.borderWidth = 1.5
-        tfSearch.layer.borderColor = UIColor.whiteColor().CGColor
-        vContainerTFSearch.layer.cornerRadius = 4
+        vContainerTFSearch.layer.cornerRadius = vContainerTFSearch.frame.height/2
         vContainerTFSearch.clipsToBounds = true
         
         tfSearch.performSelector(#selector(UIResponder.becomeFirstResponder), withObject: nil, afterDelay: 0.5)
@@ -216,24 +187,12 @@ class ChatRoomsAndUsersSearchViewController: UIViewController, UICollectionViewD
             
             let userCell: UserSearchCollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier(userListViewCellID, forIndexPath: indexPath) as! UserSearchCollectionViewCell
             
-            if userSearchPresenter.isLoggedUser(indexPath){
-                userCell.state = UserSearchCollectionViewCell.CellState.None
-            }
-            else if userSearchPresenter.isUserBlocked(indexPath) {
-                userCell.state = UserSearchCollectionViewCell.CellState.Block
-            }
-            else {
-                userCell.state = UserSearchCollectionViewCell.CellState.UnFollow
-            }
-            
             if let userPhotoUrl = userSearchPresenter.photoUrlAtIndex(indexPath) {
                 userCell.ivUserPhoto.kf_setImageWithURL(userPhotoUrl)
             }
             
-            userCell.delegate = self
             userCell.lblUsername.text = userSearchPresenter.usernameAtIndex(indexPath)
-            userCell.lblLikes.text = "\(userSearchPresenter.numberOfLikesAtIndex(indexPath)) 👍"
-            userCell.setFollowing(userSearchPresenter.isFollowingUser(indexPath))
+//            userCell.lblBio.text = "\(userSearchPresenter.(indexPath)) 👍"
             userCell.showVerifiedBadge(userSearchPresenter.isVerifiedUser(indexPath))
             
             return userCell
@@ -412,19 +371,7 @@ class ChatRoomsAndUsersSearchViewController: UIViewController, UICollectionViewD
     // MARK: UITextFieldDelegate
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
-        
-//        guard var text = textField.text else {
-//            return false
-//        }
-//        
-//        if text != "" {
-//            if isUserListFlowLayoutUsed && text.hasPrefix("@") {
-//                text = String(text.characters.dropFirst())
-//                searchUsersWithSearchTerm(text)
-//            } else {
-//                searchChatRoomWithSearchTerm(text)
-//            }
-//        }
+
         dismissKeyboard(nil)
         return false
     }
@@ -492,7 +439,7 @@ class ChatRoomsAndUsersSearchViewController: UIViewController, UICollectionViewD
     func textFieldShouldClear(textField: UITextField) -> Bool {
         
         removeAllItems()
-        hideNoChatsOrUsersWithSearchTerm()
+//        hideNoChatsOrUsersWithSearchTerm()
         
         reloadData()
         return true
@@ -520,7 +467,7 @@ class ChatRoomsAndUsersSearchViewController: UIViewController, UICollectionViewD
                         if self.chatRoomsListPresenter.chatRoomsCount() > 0 {
                             self.reloadData()
                         } else {
-                            self.showNoChatsWithSearchTerm(searchTerm)
+//                            self.showNoChatsWithSearchTerm(searchTerm)
                         }
                     } else {
                         // TODO: tratar timout servidor
@@ -540,7 +487,7 @@ class ChatRoomsAndUsersSearchViewController: UIViewController, UICollectionViewD
     
     func prepareToPerfomSearch() {
         hidelblNoInternet()
-        hideNoChatsOrUsersWithSearchTerm()
+//        hideNoChatsOrUsersWithSearchTerm()
         removeAllItems()
         reloadData()
         
@@ -571,7 +518,7 @@ class ChatRoomsAndUsersSearchViewController: UIViewController, UICollectionViewD
                         if self.userSearchPresenter.userCount() > 0 {
                             self.reloadData()
                         } else {
-                            self.showNoUsersWithSearchTerm(searchTerm)
+//                            self.showNoUsersWithSearchTerm(searchTerm)
                         }
                     } else {
                         self.showlblNoInternet()
@@ -662,205 +609,10 @@ class ChatRoomsAndUsersSearchViewController: UIViewController, UICollectionViewD
             
         }, completion: { (finished) -> Void in
                 
-                
             self.ivLoadingBlicupGray.stopAnimating()
-                
         })
     }
-    
-    // MARK: ShowNoChatsOrUserWithSearchTerm
-    
-    func showNoChatsWithSearchTerm(searchTerm: String) {
-        
-        // Titulo é comum para todos os casos
-        let title = NSLocalizedString("NoChatsWithTagTitle", comment: "There are no chats with the tag:")
-        let titleTag = "\n\"\(searchTerm)\""
-        
-        
-        let titleAttrText = NSMutableAttributedString(string: title + titleTag)
-        titleAttrText.addAttribute(NSFontAttributeName, value: UIFont(name: "SFUIText-Bold", size: 18)!, range: NSRange(location: title.length, length: titleTag.length))
-        
-        lblNoChatsOrUsersWithSearchTermTitle.attributedText = titleAttrText
-        
-        
-        let words = searchTerm.componentsSeparatedByString(" ")
 
-        // Se o número de palavras for maior que um, só mostra o título
-        if words.count > 1 {
-            
-            btnNoChatsWithTag.hidden = true
-            lblNoChatsWithTagDesc.hidden = true
-            
-        } else {
-        
-            // Descrição das tags
-            let tag = searchTerm.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()).lowercaseString
-            let descTag = " #\(tag) "
-            let btnTitle = NSLocalizedString("NoChatsWithTagBtnTitle", comment: "Add this tag")
-            
-            var descAttrText = NSMutableAttributedString()
-            
-            if chatRoomsListPresenter.tagAlreadyInUserTagList(tag) {
-                
-                btnNoChatsWithTag.hidden = true
-                let descText = NSLocalizedString("NoChatsWithTagDesc_alreadyInTagList", comment: "is in your List of Favorites! Whenever someone create a new chat about it you'll be notifyed!")
-                
-                descAttrText = NSMutableAttributedString(string: descTag + descText)
-                descAttrText.addAttribute(NSFontAttributeName, value: UIFont(name: "SFUIText-Bold", size: 16)!, range: NSRange(location: 0, length: descTag.length))
-                
-            } else {
-                
-                btnNoChatsWithTag.hidden = false
-                let descFirstText = NSLocalizedString("NoChatsWithTagDesc_fist_text", comment: "Do you want to add")
-                let descLastText = NSLocalizedString("NoChatsWithTagDesc_last_text", comment: "to your List of Favorites? Whenever someone create a new chat about it you'll be notifyed!")
-                
-                descAttrText = NSMutableAttributedString(string: descFirstText + descTag + descLastText)
-                descAttrText.addAttribute(NSFontAttributeName, value: UIFont(name: "SFUIText-Bold", size: 16)!, range: NSRange(location: descFirstText.length, length: descTag.length))
-            }
-            
-            lblNoChatsWithTagDesc.attributedText = descAttrText
-            btnNoChatsWithTag.setTitle(btnTitle, forState: .Normal)
-            btnNoChatsWithTag.backgroundColor = UIColor.blicupPurple()
-            btnNoChatsWithTag.setImage(nil, forState: .Normal)
-            btnNoChatsWithTag.enabled = true
-            lblNoChatsWithTagDesc.hidden = false
-        }
-        
-        
-        self.vNoChatsOrUserWithSearchTerm.hidden = false
-        UIView.animateWithDuration(0.3) {
-            self.vNoChatsOrUserWithSearchTerm.alpha = 1
-        }
-    }
-    
-    
-    func showNoUsersWithSearchTerm(searchTerm: String) {
-        
-        let title = NSLocalizedString("NoUsersWithSearchTermTitle", comment: "No users found with:")
-        let titleUser = "\n\"@\(searchTerm)\""
-        
-        let titleAttrText = NSMutableAttributedString(string: title + titleUser)
-        titleAttrText.addAttribute(NSFontAttributeName, value: UIFont(name: "SFUIText-Bold", size: 18)!, range: NSRange(location: title.length, length: titleUser.length))
-        
-        lblNoChatsOrUsersWithSearchTermTitle.attributedText = titleAttrText
-        btnNoChatsWithTag.hidden = true
-        lblNoChatsWithTagDesc.hidden = true
-        
-        self.vNoChatsOrUserWithSearchTerm.hidden = false
-        UIView.animateWithDuration(0.3) {
-            self.vNoChatsOrUserWithSearchTerm.alpha = 1
-        }
-    }
-    
-    func hideNoChatsOrUsersWithSearchTerm() {
-        
-        if !vNoChatsOrUserWithSearchTerm.hidden {
-            self.vNoChatsOrUserWithSearchTerm.hidden = true
-        }
-    }
-    
-    // MARK: UserSearchCollectionViewCellProtocol
-    
-    func userSearchCollectionViewCellFollowPressed(cell: UserSearchCollectionViewCell) {
-        if let index = cvcSearchChatRoomsAndUsers.indexPathForCell(cell) {
-            if self.userSearchPresenter.isFollowingUser(index){
-                
-                let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
-                let unfollow = UIAlertAction(title: NSLocalizedString("Unfollow", comment: ""), style: .Default, handler: { (action) -> Void in
-                    
-                    cell.setFollowing(!self.userSearchPresenter.isFollowingUser(index))
-                    cell.btnFollow.userInteractionEnabled = false
-                    
-                    self.userSearchPresenter.followUnfollowUserAtIndex(index, completionHandler: { (success) in
-                        
-                        if success {
-                            cell.setFollowing(self.userSearchPresenter.isFollowingUser(index))
-                        }
-                        else {
-                            cell.setFollowing(self.userSearchPresenter.isFollowingUser(index))
-                            self.alertNoInternet()
-                        }
-                        
-                        cell.btnFollow.userInteractionEnabled = true
-                    })
-                    
-                })
-                
-                let cancel = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .Cancel, handler: { (action) -> Void in
-                    
-                })
-                
-                if #available(iOS 9.0, *) {
-                    unfollow.setValue(UIColor.blicupPink(), forKey: "titleTextColor")
-                    cancel.setValue(UIColor.blicupPink(), forKey: "titleTextColor")
-                }
-                
-                alertController.addAction(unfollow)
-                alertController.addAction(cancel)
-                
-                self.presentViewController(alertController, animated: true, completion: nil)
-                
-                alertController.view.tintColor = UIColor.blicupPink()
-                
-            } else {
-                cell.setFollowing(!self.userSearchPresenter.isFollowingUser(index))
-                cell.btnFollow.userInteractionEnabled = false
-                
-                self.userSearchPresenter.followUnfollowUserAtIndex(index, completionHandler: { (success) in
-                    
-                    if success {
-                        cell.setFollowing(self.userSearchPresenter.isFollowingUser(index))
-                    }
-                    else {
-                        cell.setFollowing(!self.userSearchPresenter.isFollowingUser(index))
-                        self.alertNoInternet()
-                    }
-                    
-                    cell.btnFollow.userInteractionEnabled = true
-                })
-            }
-        }
-    }
-    
-    func userSearchCollectionViewCelllUnblockPressed(cell: UserSearchCollectionViewCell) {
-        if let index = cvcSearchChatRoomsAndUsers.indexPathForCell(cell) {
-            
-            let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
-            let unblock = UIAlertAction(title: NSLocalizedString("Unblock", comment: "") , style: .Default, handler: { (action) -> Void in
-                cell.setFollowing(!self.userSearchPresenter.isFollowingUser(index))
-                cell.btnBlock.enabled = false
-                self.userSearchPresenter.unblockUserAtIndex(index, completionHandler: { (success) in
-                    if success {
-                        cell.state = .UnFollow
-                        cell.setFollowing(self.userSearchPresenter.isFollowingUser(index))
-                    }
-                    else {
-                        cell.setFollowing(self.userSearchPresenter.isFollowingUser(index))
-                        self.alertNoInternet()
-                    }
-                    
-                    cell.btnBlock.enabled = true
-                })
-            })
-            
-            let cancel = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .Cancel, handler: { (action) -> Void in
-                
-            })
-            
-            if #available(iOS 9.0, *) {
-                unblock.setValue(UIColor.blicupPink(), forKey: "titleTextColor")
-                cancel.setValue(UIColor.blicupPink(), forKey: "titleTextColor")
-            }
-            
-            alertController.addAction(unblock)
-            alertController.addAction(cancel)
-            
-            self.presentViewController(alertController, animated: true, completion: nil)
-            
-            alertController.view.tintColor = UIColor.blicupPink()
-            
-        }
-    }
     
     // MARK: Action sheet
     
@@ -1012,107 +764,27 @@ class ChatRoomsAndUsersSearchViewController: UIViewController, UICollectionViewD
     
     // MARK: - Actions
     
-    @IBAction func closePressed(sender: UIButton) {
-        self.view.endEditing(true)
-        UIView.animateWithDuration(0.05, animations: {
-            var t = CGAffineTransformIdentity
-            t = CGAffineTransformScale(t, 1, 1)
-            t = CGAffineTransformRotate(t, CGFloat((M_PI * 90) / 180))
-            self.btnClose.transform = t
-        }) { (_) in
-            UIView.animateWithDuration(0.5, animations: {
-                self.vevBlurBackground.alpha = 0
-                self.vBackground.alpha = 0
-                self.cvcSearchChatRoomsAndUsers.alpha = 0
-                self.vNoChatsOrUserWithSearchTerm.alpha = 0
-                self.vevSearchBarTop.alpha = 0
-                
-                var t = CGAffineTransformIdentity
-                t = CGAffineTransformRotate(t, CGFloat((M_PI * 45) / 180))
-                self.btnClose.transform = t
-                self.btnClose.backgroundColor = UIColor.blicupGreen()
-                
-                self.constrTFSearchWidth.constant = 30
-                self.constrTFSearchCenterX.constant = -8
-                self.tfSearch.text = ""
-                self.tfSearch.placeholder = ""
-                self.view.layoutIfNeeded()
-                
-            }) { (finished) in
-                self.presentingViewController!.tabBarController?.tabBar.hidden = false
-                self.performSegueWithIdentifier("unwindFromSecondary", sender: self)
-            }
-        }
-    }
-    
-    @IBAction func btnDragExit(sender: AnyObject) {
-        UIView.animateWithDuration(0.1) {
-            var t = CGAffineTransformIdentity
-            t = CGAffineTransformScale(t, 1, 1)
-            t = CGAffineTransformRotate(t, CGFloat((M_PI * 90) / 180))
-            self.btnClose.transform = t
-        }
-    }
-    
-    @IBAction func btnDragEnter(sender: AnyObject) {
-        UIView.animateWithDuration(0.1) {
-            var t = CGAffineTransformIdentity
-            t = CGAffineTransformScale(t, 0.8, 0.8)
-            t = CGAffineTransformRotate(t, CGFloat((M_PI * 90) / 180))
-            self.btnClose.transform = t
-        }
-    }
-    
-    @IBAction func btnPressedDown(sender: AnyObject) {
-        UIView.animateWithDuration(0.17) {
-            var t = CGAffineTransformIdentity
-            t = CGAffineTransformScale(t, 0.8, 0.8)
-            t = CGAffineTransformRotate(t, CGFloat((M_PI * 90) / 180))
-            self.btnClose.transform = t
-        }
-    }
-    
-    @IBAction func btnTouchCancel(sender: AnyObject) {
-        UIView.animateWithDuration(0.1) {
-            var t = CGAffineTransformIdentity
-            t = CGAffineTransformScale(t, 1, 1)
-            t = CGAffineTransformRotate(t, CGFloat((M_PI * 90) / 180))
-            self.btnClose.transform = t
-        }
-    }
-    
-   
-    @IBAction func btnAddThisTagPressed(sender: AnyObject) {
+    @IBAction func cancelPressed(sender: AnyObject) {
         
-        self.btnNoChatsWithTag.enabled = false
-        self.chatRoomsListPresenter.setTagInUser { (success) in
-            if success {
-
-                self.btnNoChatsWithTag.setTitle("", forState: .Normal)
-                self.btnNoChatsWithTag.setImage(UIImage(named: "ic_check_gray")?.imageWithRenderingMode(.AlwaysOriginal), forState: .Normal)
-                
-                self.btnNoChatsWithTag.transform = CGAffineTransformMakeScale(0.9, 0.9)
-                UIView.animateWithDuration(0.6, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 3, options: UIViewAnimationOptions.BeginFromCurrentState, animations: {
-                        self.btnNoChatsWithTag.transform = CGAffineTransformIdentity
-                        self.btnNoChatsWithTag.backgroundColor = UIColor.blicupGreenLemon()
-
-                }, completion: { (finished) in
-                    
-                    self.btnNoChatsWithTag.imageView?.transform = CGAffineTransformMakeScale(0.8, 0.8)
-
-                    UIView.animateWithDuration(1.0, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 4, options: UIViewAnimationOptions.BeginFromCurrentState, animations: {
-                        self.btnNoChatsWithTag.imageView?.transform = CGAffineTransformIdentity
-                    }, completion: nil)
-                })
-                
-                
-            } else {
-                // TODO Tratar erro
-                self.btnNoChatsWithTag.enabled = true
-            }
+        self.view.endEditing(true)
+        
+        UIView.animateWithDuration(0.5, animations: {
+            self.view.backgroundColor = UIColor.clearColor()
+            self.cvcSearchChatRoomsAndUsers.alpha = 0
+            
+            self.constrTFSearchWidth.constant = 30
+            self.constrTFSearchCenterX.constant = 0
+            self.tfSearch.text = ""
+            self.tfSearch.placeholder = ""
+            self.view.layoutIfNeeded()
+            
+        }) { (finished) in
+            self.presentingViewController!.tabBarController?.tabBar.hidden = false
+            self.performSegueWithIdentifier("unwindFromSecondary", sender: self)
         }
     }
 
+   
     // MARK: Transition Delegate
     func snapshotViewToAnimateOnTrasition(chatIndex:NSIndexPath)->UIView {
         guard let cell = cvcSearchChatRoomsAndUsers.cellForItemAtIndexPath(chatIndex) as? ChatRoomListCollectionViewCell else {

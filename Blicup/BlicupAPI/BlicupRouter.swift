@@ -66,7 +66,7 @@ class BlicupRouter: NSObject {
     
     private class func configTabBarController(tabBarController:UITabBarController) {
         guard let chatViewController = UIStoryboard(name: "Chat", bundle: nil).instantiateInitialViewController(),
-            let mapViewController = UIStoryboard(name: "Map", bundle: nil).instantiateInitialViewController(),
+            let mapViewController = UIStoryboard(name: "Search", bundle: nil).instantiateInitialViewController(),
             let settingsViewController = UIStoryboard(name: "Settings", bundle: nil).instantiateInitialViewController(),
             let myChatsViewController = UIStoryboard(name: "MyChats", bundle: nil).instantiateInitialViewController() as? ChatRoomListNavigationController else {
                 return

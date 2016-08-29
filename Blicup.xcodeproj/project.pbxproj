@@ -141,7 +141,7 @@
 		C947A3321CE6421C00D810D3 /* ChatRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C947A3311CE6421C00D810D3 /* ChatRoomViewController.swift */; };
 		C947A3341CE6423600D810D3 /* ChatRoomPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C947A3331CE6423600D810D3 /* ChatRoomPresenter.swift */; };
 		C9525DED1CCEBABD0035DE0E /* ChatRoomCoverCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9525DEC1CCEBABD0035DE0E /* ChatRoomCoverCell.swift */; };
-		C9525DEF1CDA3F3F0035DE0E /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9525DEE1CDA3F3F0035DE0E /* Map.storyboard */; };
+		C9525DEF1CDA3F3F0035DE0E /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9525DEE1CDA3F3F0035DE0E /* Search.storyboard */; };
 		C9525DF11CDA5CC60035DE0E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9525DF01CDA5CC60035DE0E /* MapKit.framework */; };
 		C9525DF31CDA79AD0035DE0E /* ChatRoomMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9525DF21CDA79AD0035DE0E /* ChatRoomMapViewController.swift */; };
 		C9525DF61CDA911D0035DE0E /* ChatAddress+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9525DF41CDA911D0035DE0E /* ChatAddress+CoreDataProperties.swift */; };
@@ -421,7 +421,7 @@
 		C947A3311CE6421C00D810D3 /* ChatRoomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatRoomViewController.swift; path = ChatRoomManagement/View/ChatRoomViewController.swift; sourceTree = "<group>"; };
 		C947A3331CE6423600D810D3 /* ChatRoomPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatRoomPresenter.swift; path = ChatRoomManagement/Presenter/ChatRoomPresenter.swift; sourceTree = "<group>"; };
 		C9525DEC1CCEBABD0035DE0E /* ChatRoomCoverCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatRoomCoverCell.swift; path = ChatRoomManagement/View/ChatRoomCoverCell.swift; sourceTree = "<group>"; };
-		C9525DEE1CDA3F3F0035DE0E /* Map.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Map.storyboard; path = ChatRoomManagement/View/Map.storyboard; sourceTree = "<group>"; };
+		C9525DEE1CDA3F3F0035DE0E /* Search.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Search.storyboard; path = ChatRoomManagement/View/Search.storyboard; sourceTree = "<group>"; };
 		C9525DF01CDA5CC60035DE0E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		C9525DF21CDA79AD0035DE0E /* ChatRoomMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatRoomMapViewController.swift; path = ChatRoomManagement/View/ChatRoomMapViewController.swift; sourceTree = "<group>"; };
 		C9525DF41CDA911D0035DE0E /* ChatAddress+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ChatAddress+CoreDataProperties.swift"; path = "ChatRoomManagement/Model/ChatAddress+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -720,10 +720,8 @@
 				C9E464981CB8599C0034853B /* CoverPhotoCollectionViewCell.swift */,
 				7D8C661E1CE3F413000CA40A /* CoverPhotoCollectionReusableView.swift */,
 				E54340DF1D3D45DF003866EB /* SearchLocationTableViewController.swift */,
-				C98C13FE1D2461E500BAD95C /* MapTab */,
+				C98C13FE1D2461E500BAD95C /* SearchTab */,
 				E53D40A21CEE4355000CAC49 /* ChatRoomTalkInfoViewController.swift */,
-				7DCF1D0A1CFE1DC10020BF08 /* ChatRoomsAndUsersSearchViewController.swift */,
-				7DB5C7C61CF098B200A5EFF2 /* UserSearchCollectionViewCell.swift */,
 				C98C13FF1D24621500BAD95C /* MyChatsTab */,
 			);
 			name = View;
@@ -975,15 +973,17 @@
 			name = UserListWithBlockFollow;
 			sourceTree = "<group>";
 		};
-		C98C13FE1D2461E500BAD95C /* MapTab */ = {
+		C98C13FE1D2461E500BAD95C /* SearchTab */ = {
 			isa = PBXGroup;
 			children = (
-				C9525DEE1CDA3F3F0035DE0E /* Map.storyboard */,
+				C9525DEE1CDA3F3F0035DE0E /* Search.storyboard */,
 				C9525DF21CDA79AD0035DE0E /* ChatRoomMapViewController.swift */,
 				C9525DFA1CDBCD7B0035DE0E /* ChatRoomAnnotationView.swift */,
 				C9525DFC1CE122580035DE0E /* MapChatListViewController.swift */,
+				7DCF1D0A1CFE1DC10020BF08 /* ChatRoomsAndUsersSearchViewController.swift */,
+				7DB5C7C61CF098B200A5EFF2 /* UserSearchCollectionViewCell.swift */,
 			);
-			name = MapTab;
+			name = SearchTab;
 			sourceTree = "<group>";
 		};
 		C98C13FF1D24621500BAD95C /* MyChatsTab */ = {
@@ -1307,7 +1307,7 @@
 				E574EE4D1D5A24C7006571FE /* ShareChatView.xib in Resources */,
 				7D1007161C8604BA0076561E /* SF-UI-Text-SemiboldItalic.otf in Resources */,
 				7DCC30DE1D400148001202F4 /* UserTableViewCell.xib in Resources */,
-				C9525DEF1CDA3F3F0035DE0E /* Map.storyboard in Resources */,
+				C9525DEF1CDA3F3F0035DE0E /* Search.storyboard in Resources */,
 				7D1007141C8604BA0076561E /* SF-UI-Text-RegularItalic.otf in Resources */,
 				7DD7C88F1D41645B003454A7 /* Signup.storyboard in Resources */,
 				7DCC30E81D4004B6001202F4 /* UserBlockCell.xib in Resources */,

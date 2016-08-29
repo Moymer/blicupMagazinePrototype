@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="238-ww-Skl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="238-ww-Skl">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -93,49 +93,21 @@
                             <view opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="NIN-rf-ECg" userLabel="containerSearchBtnCreateChat">
                                 <rect key="frame" x="0.0" y="23" width="600" height="45"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h25-qY-bca" userLabel="ContainerSearchBar">
-                                        <rect key="frame" x="10" y="5" width="537" height="35"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LYZ-QH-YB4" customClass="BCButton" customModule="Blicup" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="537" height="35"/>
-                                                <color key="backgroundColor" white="1" alpha="0.80000000000000004" colorSpace="calibratedWhite"/>
-                                                <state key="normal" image="ic_search"/>
-                                                <connections>
-                                                    <action selector="searchBarPressed:" destination="J5K-Iu-hkn" eventType="touchUpInside" id="5X7-hW-FKu"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstItem="LYZ-QH-YB4" firstAttribute="leading" secondItem="h25-qY-bca" secondAttribute="leading" id="CAH-L6-NlZ"/>
-                                            <constraint firstAttribute="bottom" secondItem="LYZ-QH-YB4" secondAttribute="bottom" id="XBN-fd-Kxh"/>
-                                            <constraint firstItem="LYZ-QH-YB4" firstAttribute="top" secondItem="h25-qY-bca" secondAttribute="top" id="ePI-8j-WVt"/>
-                                            <constraint firstAttribute="trailing" secondItem="LYZ-QH-YB4" secondAttribute="trailing" id="fpL-NL-DTP"/>
-                                            <constraint firstAttribute="height" constant="35" id="yCM-3G-Kta"/>
-                                        </constraints>
-                                    </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vNP-zz-gC1" customClass="BCButton" customModule="Blicup" customModuleProvider="target">
-                                        <rect key="frame" x="551" y="0.0" width="45" height="45"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="45" id="ouT-GE-KMX"/>
-                                        </constraints>
-                                        <size key="titleShadowOffset" width="2.2250738585072014e-308" height="2.2250738585072014e-308"/>
-                                        <state key="normal" image="ic_add_green">
-                                            <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LYZ-QH-YB4" customClass="BCButton" customModule="Blicup" customModuleProvider="target">
+                                        <rect key="frame" x="10" y="5" width="580" height="35"/>
+                                        <color key="backgroundColor" red="0.85490196080000003" green="0.85098039219999999" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" image="ic_search"/>
                                         <connections>
-                                            <action selector="createChatPressed:" destination="J5K-Iu-hkn" eventType="touchUpInside" id="UM8-Lq-Er5"/>
+                                            <action selector="searchBarPressed:" destination="J5K-Iu-hkn" eventType="touchUpInside" id="5X7-hW-FKu"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="7U1-xo-3nh"/>
-                                    <constraint firstItem="vNP-zz-gC1" firstAttribute="top" secondItem="NIN-rf-ECg" secondAttribute="top" id="83v-On-qDZ"/>
-                                    <constraint firstAttribute="trailing" secondItem="vNP-zz-gC1" secondAttribute="trailing" constant="4" id="CkX-3d-7AI"/>
-                                    <constraint firstItem="vNP-zz-gC1" firstAttribute="centerY" secondItem="h25-qY-bca" secondAttribute="centerY" id="PYg-PY-QsF"/>
-                                    <constraint firstItem="vNP-zz-gC1" firstAttribute="leading" secondItem="h25-qY-bca" secondAttribute="trailing" constant="4" id="XwN-Lz-f16"/>
-                                    <constraint firstItem="h25-qY-bca" firstAttribute="centerY" secondItem="NIN-rf-ECg" secondAttribute="centerY" id="nET-4f-uk2"/>
-                                    <constraint firstItem="h25-qY-bca" firstAttribute="leading" secondItem="NIN-rf-ECg" secondAttribute="leading" constant="10" id="x15-n8-gPV"/>
+                                    <constraint firstAttribute="bottom" secondItem="LYZ-QH-YB4" secondAttribute="bottom" constant="5" id="8Ub-uJ-o7J"/>
+                                    <constraint firstItem="LYZ-QH-YB4" firstAttribute="top" secondItem="NIN-rf-ECg" secondAttribute="top" constant="5" id="Oz1-7C-CjF"/>
+                                    <constraint firstItem="LYZ-QH-YB4" firstAttribute="leading" secondItem="NIN-rf-ECg" secondAttribute="leading" constant="10" id="Ufv-TQ-ksN"/>
+                                    <constraint firstAttribute="trailing" secondItem="LYZ-QH-YB4" secondAttribute="trailing" constant="10" id="fKa-Kl-pWu"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -156,14 +128,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="EmB-eN-Lug"/>
                     <connections>
-                        <outlet property="btnCreateChat" destination="vNP-zz-gC1" id="oTR-wQ-4iB"/>
                         <outlet property="btnSearchBar" destination="LYZ-QH-YB4" id="Egr-Zl-Poo"/>
                         <outlet property="ivBlicLogoLoading" destination="2PS-lT-xzs" id="ARZ-Qa-pGd"/>
                         <outlet property="lblNoInternet" destination="f6y-h3-VvT" id="jeG-5t-vp4"/>
                         <outlet property="mvChatMap" destination="Dew-4K-G2C" id="iQ4-Sr-A2K"/>
                         <outlet property="vChatsLoading" destination="J6U-mN-3O0" id="AqK-31-E5G"/>
-                        <outlet property="vSearchShadowContainer" destination="h25-qY-bca" id="8O0-Ti-SOk"/>
-                        <segue destination="2CZ-do-CjQ" kind="custom" identifier="createChatSegue" customClass="OHCircleSegue" customModule="Blicup" id="rZi-bn-DBW"/>
                         <segue destination="Qe8-PB-7XS" kind="presentation" identifier="showChatListSegue" animates="NO" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="rEh-Ei-rb0"/>
                         <segue destination="Qe8-PB-7XS" kind="custom" identifier="showSingleChatSegue" customClass="OHCircleSegue" customModule="Blicup" customModuleProvider="target" id="Vg4-Lk-rOn"/>
                         <segue destination="LHH-Jq-njs" kind="presentation" identifier="ncShowChatRoomAndUserSearchSegue" animates="NO" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="Qpe-7X-awa"/>
@@ -172,14 +141,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OiS-lh-Mbg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="990" y="176"/>
-        </scene>
-        <!--createChatStoryboardID-->
-        <scene sceneID="tFW-Hg-Sql">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Chat" referencedIdentifier="createChatStoryboardID" id="2CZ-do-CjQ" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MKw-qy-XQ0" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1597.5" y="176"/>
         </scene>
         <!--chatRoomsAndUsersSearchNavController-->
         <scene sceneID="9qB-96-gva">
@@ -449,7 +410,6 @@
     </scenes>
     <resources>
         <image name="BlicLoading_0" width="50" height="50"/>
-        <image name="ic_add_green" width="35" height="35"/>
         <image name="ic_close" width="22" height="22"/>
         <image name="ic_search" width="16" height="16"/>
         <image name="ic_user" width="15" height="15"/>
@@ -457,6 +417,6 @@
         <image name="layer_top" width="375" height="263"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Vg4-Lk-rOn"/>
+        <segue reference="rEh-Ei-rb0"/>
     </inferredMetricsTieBreakers>
 </document>
