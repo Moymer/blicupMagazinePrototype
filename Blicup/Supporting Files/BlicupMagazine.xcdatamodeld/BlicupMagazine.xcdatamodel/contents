@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15E65" minimumToolsVersion="Xcode 7.0">
+    <entity name="Article" representedClassName=".Article" syncable="YES">
+        <attribute name="articleId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="chatroomId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="contentSize" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="creationDate" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="isDraft" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pubDate" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="articleSpec" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ArticleSpecs" syncable="YES"/>
+        <relationship name="author" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Author" inverseName="articlesPubList" inverseEntity="Author" syncable="YES"/>
+        <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="categoryArticleList" inverseEntity="Category" syncable="YES"/>
+        <relationship name="contentList" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Content" inverseName="article" inverseEntity="Content" syncable="YES"/>
+        <relationship name="location" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Location" syncable="YES"/>
+        <relationship name="magazineList" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Magazine" inverseName="articleList" inverseEntity="Magazine" syncable="YES"/>
+        <relationship name="relatedArticleList" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Article" syncable="YES"/>
+    </entity>
+    <entity name="ArticleSpecs" representedClassName=".ArticleSpecs" syncable="YES">
+        <attribute name="transitioningList" optional="YES" attributeType="Transformable" syncable="YES"/>
+    </entity>
+    <entity name="Author" representedClassName=".Author" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="photoUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="articlesPubList" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Article" inverseName="author" inverseEntity="Article" syncable="YES"/>
+        <relationship name="myMagazineList" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Magazine" inverseName="owner" inverseEntity="Magazine" syncable="YES"/>
+    </entity>
+    <entity name="Caption" representedClassName=".Caption" syncable="YES">
+        <attribute name="entryTime" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="entryTransition" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="text" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CText" syncable="YES"/>
+    </entity>
+    <entity name="Category" representedClassName=".Category" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ref" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="categoryArticleList" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Article" inverseName="category" inverseEntity="Article" syncable="YES"/>
+    </entity>
+    <entity name="CImage" representedClassName=".CImage" parentEntity="Content" syncable="YES">
+        <attribute name="height" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="mainColor" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="mainUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="thumbUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="width" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="caption" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Caption" syncable="YES"/>
+        <relationship name="layoutAndDesign" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CImageLD" syncable="YES"/>
+    </entity>
+    <entity name="CImageLD" representedClassName=".CImageLD" syncable="YES">
+        <attribute name="motion" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="scale" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="zoom" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="positioning" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PositionSizeLD" syncable="YES"/>
+    </entity>
+    <entity name="Content" representedClassName=".Content" isAbstract="YES" syncable="YES">
+        <attribute name="articleId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="contentId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="positionOnArticle" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="article" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Article" inverseName="contentList" inverseEntity="Article" syncable="YES"/>
+    </entity>
+    <entity name="CText" representedClassName=".CText" parentEntity="Content" syncable="YES">
+        <attribute name="isUrl" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="wordCount" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <relationship name="layoutAndDesign" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CTextLD" syncable="YES"/>
+    </entity>
+    <entity name="CTextLD" representedClassName=".CTextLD" syncable="YES">
+        <attribute name="backgroundColor" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fontColor" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fontFamily" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fontSize" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fontStrength" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="textPositioning" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="positioning" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PositionSizeLD" syncable="YES"/>
+    </entity>
+    <entity name="CVideo" representedClassName=".CVideo" parentEntity="Content" syncable="YES">
+        <attribute name="durationSecs" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="height" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="mainUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sizeInMB" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="smallUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="width" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="captionList" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Caption" syncable="YES"/>
+        <relationship name="layoutAndDesign" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CVideoLD" syncable="YES"/>
+    </entity>
+    <entity name="CVideoLD" representedClassName=".CVideoLD" syncable="YES">
+        <attribute name="videoPace" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="positioning" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PositionSizeLD" syncable="YES"/>
+    </entity>
+    <entity name="Location" representedClassName=".Location" syncable="YES">
+        <attribute name="formattedAddress" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="latitude" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+    </entity>
+    <entity name="Magazine" representedClassName=".Magazine" syncable="YES">
+        <attribute name="coverMainUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="coverThumbUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="magazineId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="refDate" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="articleList" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Article" inverseName="magazineList" inverseEntity="Article" syncable="YES"/>
+        <relationship name="owner" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Author" inverseName="myMagazineList" inverseEntity="Author" syncable="YES"/>
+    </entity>
+    <entity name="PositionSizeLD" representedClassName=".PositionSizeLD" syncable="YES">
+        <attribute name="height" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="width" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="x" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="y" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Article" positionX="-558" positionY="36" width="128" height="253"/>
+        <element name="CText" positionX="-441" positionY="-405" width="128" height="105"/>
+        <element name="CImage" positionX="-36" positionY="-357" width="128" height="150"/>
+        <element name="CVideo" positionX="360" positionY="-30" width="128" height="165"/>
+        <element name="CVideoLD" positionX="189" positionY="-126" width="128" height="75"/>
+        <element name="CTextLD" positionX="-162" positionY="48" width="128" height="150"/>
+        <element name="CImageLD" positionX="205" positionY="-351" width="128" height="105"/>
+        <element name="Category" positionX="-927" positionY="288" width="128" height="90"/>
+        <element name="Content" positionX="-38" positionY="-153" width="128" height="105"/>
+        <element name="Magazine" positionX="-549" positionY="-243" width="128" height="150"/>
+        <element name="Author" positionX="-315" positionY="333" width="128" height="135"/>
+        <element name="PositionSizeLD" positionX="538" positionY="273" width="128" height="105"/>
+        <element name="Caption" positionX="-29" positionY="306" width="128" height="90"/>
+        <element name="ArticleSpecs" positionX="-189" positionY="216" width="128" height="60"/>
+        <element name="Location" positionX="-729" positionY="-261" width="128" height="90"/>
+    </elements>
+</model>
