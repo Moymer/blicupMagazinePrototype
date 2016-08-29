@@ -178,6 +178,8 @@
 		C9569F641D746D3D00006019 /* PositionSizeLD.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9569F481D746D3D00006019 /* PositionSizeLD.swift */; };
 		C9569F651D746D3D00006019 /* Content+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9569F491D746D3D00006019 /* Content+CoreDataProperties.swift */; };
 		C9569F661D746D3D00006019 /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9569F4A1D746D3D00006019 /* Content.swift */; };
+		C9569F691D74AB7600006019 /* Location+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9569F671D74AB7600006019 /* Location+CoreDataProperties.swift */; };
+		C9569F6A1D74AB7600006019 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9569F681D74AB7600006019 /* Location.swift */; };
 		C95B14DD1D21636800D4DA0F /* UserListFollowBlockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95B14DC1D21636800D4DA0F /* UserListFollowBlockViewController.swift */; };
 		C973E0751CE22059008591FD /* ChatRoomMessage+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C973E0731CE22059008591FD /* ChatRoomMessage+CoreDataProperties.swift */; };
 		C973E0761CE22059008591FD /* ChatRoomMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C973E0741CE22059008591FD /* ChatRoomMessage.swift */; };
@@ -487,6 +489,8 @@
 		C9569F481D746D3D00006019 /* PositionSizeLD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PositionSizeLD.swift; path = MagazineManagement/Model/PositionSizeLD.swift; sourceTree = "<group>"; };
 		C9569F491D746D3D00006019 /* Content+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Content+CoreDataProperties.swift"; path = "MagazineManagement/Model/Content+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C9569F4A1D746D3D00006019 /* Content.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Content.swift; path = MagazineManagement/Model/Content.swift; sourceTree = "<group>"; };
+		C9569F671D74AB7600006019 /* Location+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Location+CoreDataProperties.swift"; path = "MagazineManagement/Model/Location+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C9569F681D74AB7600006019 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Location.swift; path = MagazineManagement/Model/Location.swift; sourceTree = "<group>"; };
 		C95B14DC1D21636800D4DA0F /* UserListFollowBlockViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserListFollowBlockViewController.swift; path = Settings/View/UserListFollowBlockViewController.swift; sourceTree = "<group>"; };
 		C973E0731CE22059008591FD /* ChatRoomMessage+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ChatRoomMessage+CoreDataProperties.swift"; path = "ChatRoomManagement/Model/ChatRoomMessage+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C973E0741CE22059008591FD /* ChatRoomMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatRoomMessage.swift; path = ChatRoomManagement/Model/ChatRoomMessage.swift; sourceTree = "<group>"; };
@@ -1035,6 +1039,8 @@
 		C9569F291D70DF2E00006019 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C9569F671D74AB7600006019 /* Location+CoreDataProperties.swift */,
+				C9569F681D74AB7600006019 /* Location.swift */,
 				C9569F2F1D746D3D00006019 /* Magazine+CoreDataProperties.swift */,
 				C9569F301D746D3D00006019 /* Magazine.swift */,
 				C9569F311D746D3D00006019 /* Caption+CoreDataProperties.swift */,
@@ -1784,6 +1790,7 @@
 				C9569F581D746D3D00006019 /* CVideoLD.swift in Sources */,
 				C9569F541D746D3D00006019 /* CImage.swift in Sources */,
 				7D8626531C9B261D00D87E87 /* InterestPresenter.swift in Sources */,
+				C9569F6A1D74AB7600006019 /* Location.swift in Sources */,
 				7DC2B3561C933A4B000112B4 /* WelcomeViewController.swift in Sources */,
 				E574EE4B1D5A24B4006571FE /* ShareChatView.swift in Sources */,
 				A4D97E211CB9758900E13678 /* UserBS.swift in Sources */,
@@ -1820,6 +1827,7 @@
 				7D3337A51D1C7AEA00D2EB55 /* FollowListPresenter.swift in Sources */,
 				7D1007221C86059A0076561E /* AppDelegate.swift in Sources */,
 				7D5220AD1D537DAD0041FE46 /* SuggestedUsersViewController.swift in Sources */,
+				C9569F691D74AB7600006019 /* Location+CoreDataProperties.swift in Sources */,
 				C98575E11D0B0C190045CD9D /* BlicupClock.swift in Sources */,
 				C9569F601D746D3D00006019 /* Category.swift in Sources */,
 				C97C005E1D182D9700C16541 /* InfoTableViewController.swift in Sources */,

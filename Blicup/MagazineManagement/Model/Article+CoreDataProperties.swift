@@ -20,11 +20,13 @@ extension Article {
     @NSManaged var name: String?
     @NSManaged var contentSize: NSNumber?
     @NSManaged var articleId: String?
+    @NSManaged var chatroomId: String?
     @NSManaged var contentList: NSSet?
-    @NSManaged var category: NSManagedObject?
-    @NSManaged var author: NSManagedObject?
-    @NSManaged var relatedArticleList: Article?
+    @NSManaged var category: Category?
+    @NSManaged var author: Author?
+    @NSManaged var relatedArticleList: NSSet?
     @NSManaged var magazineList: NSSet?
-    @NSManaged var articleSpec: NSManagedObject?
+    @NSManaged var articleSpec: ArticleSpecs?
+    @NSManaged var location: Location?
 
 }
