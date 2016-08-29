@@ -598,6 +598,7 @@
                         <outlet property="btnProfileArea" destination="ryA-Gu-pcc" id="gDt-FH-oq0"/>
                         <outlet property="btnSaveProfile" destination="3t5-gZ-Nlu" id="cdq-1D-ZIS"/>
                         <outlet property="btnUserPhoto" destination="Xg9-Ea-tzr" id="TvG-DN-iQB"/>
+                        <outlet property="collectionView" destination="sFL-8T-AbS" id="duk-hd-rTb"/>
                         <outlet property="constrUserPhotoTopDistance" destination="ReR-Ly-j1Z" id="Kd7-Yz-R9Q"/>
                         <outlet property="constrUsernameWidth" destination="Gqa-ua-RMh" id="GmG-to-ohP"/>
                         <outlet property="constrivVerifiedBadgeWidth" destination="AGu-he-7dP" id="prg-O9-9fg"/>

@@ -66,7 +66,8 @@
             <connections>
                 <outlet property="ivBackground" destination="2E4-3D-Qq9" id="lcX-lG-acf"/>
                 <outlet property="ivVerifiedBadge" destination="EGD-AG-T5B" id="FtP-W1-ec0"/>
-                <outlet property="lblWhoCreatedUsername" destination="16Y-a2-eeA" id="aKZ-s0-YnT"/>
+                <outlet property="lblName" destination="16Y-a2-eeA" id="gJ6-sI-JAa"/>
+                <outlet property="lblWhoCreatedUsername" destination="3Hy-3f-bAe" id="H6c-kc-TEd"/>
             </connections>
             <point key="canvasLocation" x="436" y="282.5"/>
         </collectionViewCell>

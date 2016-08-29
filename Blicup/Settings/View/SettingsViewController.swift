@@ -16,6 +16,7 @@ class SettingsViewController: UIViewController, UICollectionViewDataSource, UIIm
     private let kProfileLinesDefaultWidth:CGFloat = 260.0
     
 
+    @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var ivUserPhoto: UIImageView!
     @IBOutlet weak var tfUsername: UITextField!
     @IBOutlet weak var btnUserPhoto: UIButton!
@@ -63,6 +64,8 @@ class SettingsViewController: UIViewController, UICollectionViewDataSource, UIIm
             navBar.addSubview(navBorder)
         }
         
+        self.collectionView.registerNib(UINib(nibName: "BlicCollectionViewCell", bundle:nil), forCellWithReuseIdentifier: "CardCell")
+        
         ivUserPhoto.layer.cornerRadius = ivUserPhoto.bounds.width/2
         btnSaveProfile.hidden = true
         tvDescription.contentInset = UIEdgeInsetsZero
@@ -105,6 +108,7 @@ class SettingsViewController: UIViewController, UICollectionViewDataSource, UIIm
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("CardCell", forIndexPath: indexPath) as! BlicCollectionViewCell
+        cell.title = "titleasd"
         return cell
     }
     
