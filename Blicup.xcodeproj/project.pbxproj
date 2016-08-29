@@ -149,6 +149,35 @@
 		C9525DF91CDA99BA0035DE0E /* ChatMapPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9525DF81CDA99BA0035DE0E /* ChatMapPresenter.swift */; };
 		C9525DFB1CDBCD7B0035DE0E /* ChatRoomAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9525DFA1CDBCD7B0035DE0E /* ChatRoomAnnotationView.swift */; };
 		C9525DFD1CE122580035DE0E /* MapChatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9525DFC1CE122580035DE0E /* MapChatListViewController.swift */; };
+		C9569F2E1D70EB1400006019 /* BlicupMagazine.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C9569F2C1D70EB1400006019 /* BlicupMagazine.xcdatamodeld */; };
+		C9569F4B1D746D3D00006019 /* Magazine+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9569F2F1D746D3D00006019 /* Magazine+CoreDataProperties.swift */; };
+		C9569F4C1D746D3D00006019 /* Magazine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9569F301D746D3D00006019 /* Magazine.swift */; };
+		C9569F4D1D746D3D00006019 /* Caption+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9569F311D746D3D00006019 /* Caption+CoreDataProperties.swift */; };
+		C9569F4E1D746D3D00006019 /* Caption.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9569F321D746D3D00006019 /* Caption.swift */; };
+		C9569F4F1D746D3D00006019 /* Article+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9569F331D746D3D00006019 /* Article+CoreDataProperties.swift */; };
+		C9569F501D746D3D00006019 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9569F341D746D3D00006019 /* Article.swift */; };
+		C9569F511D746D3D00006019 /* CText+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9569F351D746D3D00006019 /* CText+CoreDataProperties.swift */; };
+		C9569F521D746D3D00006019 /* CText.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9569F361D746D3D00006019 /* CText.swift */; };
+		C9569F531D746D3D00006019 /* CImage+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9569F371D746D3D00006019 /* CImage+CoreDataProperties.swift */; };
+		C9569F541D746D3D00006019 /* CImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9569F381D746D3D00006019 /* CImage.swift */; };
+		C9569F551D746D3D00006019 /* CVideo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9569F391D746D3D00006019 /* CVideo+CoreDataProperties.swift */; };
+		C9569F561D746D3D00006019 /* CVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9569F3A1D746D3D00006019 /* CVideo.swift */; };
+		C9569F571D746D3D00006019 /* CVideoLD+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9569F3B1D746D3D00006019 /* CVideoLD+CoreDataProperties.swift */; };
+		C9569F581D746D3D00006019 /* CVideoLD.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9569F3C1D746D3D00006019 /* CVideoLD.swift */; };
+		C9569F591D746D3D00006019 /* CImageLD+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9569F3D1D746D3D00006019 /* CImageLD+CoreDataProperties.swift */; };
+		C9569F5A1D746D3D00006019 /* CImageLD.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9569F3E1D746D3D00006019 /* CImageLD.swift */; };
+		C9569F5B1D746D3D00006019 /* Author+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9569F3F1D746D3D00006019 /* Author+CoreDataProperties.swift */; };
+		C9569F5C1D746D3D00006019 /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9569F401D746D3D00006019 /* Author.swift */; };
+		C9569F5D1D746D3D00006019 /* ArticleSpecs+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9569F411D746D3D00006019 /* ArticleSpecs+CoreDataProperties.swift */; };
+		C9569F5E1D746D3D00006019 /* ArticleSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9569F421D746D3D00006019 /* ArticleSpecs.swift */; };
+		C9569F5F1D746D3D00006019 /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9569F431D746D3D00006019 /* Category+CoreDataProperties.swift */; };
+		C9569F601D746D3D00006019 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9569F441D746D3D00006019 /* Category.swift */; };
+		C9569F611D746D3D00006019 /* CTextLD+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9569F451D746D3D00006019 /* CTextLD+CoreDataProperties.swift */; };
+		C9569F621D746D3D00006019 /* CTextLD.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9569F461D746D3D00006019 /* CTextLD.swift */; };
+		C9569F631D746D3D00006019 /* PositionSizeLD+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9569F471D746D3D00006019 /* PositionSizeLD+CoreDataProperties.swift */; };
+		C9569F641D746D3D00006019 /* PositionSizeLD.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9569F481D746D3D00006019 /* PositionSizeLD.swift */; };
+		C9569F651D746D3D00006019 /* Content+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9569F491D746D3D00006019 /* Content+CoreDataProperties.swift */; };
+		C9569F661D746D3D00006019 /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9569F4A1D746D3D00006019 /* Content.swift */; };
 		C95B14DD1D21636800D4DA0F /* UserListFollowBlockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95B14DC1D21636800D4DA0F /* UserListFollowBlockViewController.swift */; };
 		C973E0751CE22059008591FD /* ChatRoomMessage+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C973E0731CE22059008591FD /* ChatRoomMessage+CoreDataProperties.swift */; };
 		C973E0761CE22059008591FD /* ChatRoomMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C973E0741CE22059008591FD /* ChatRoomMessage.swift */; };
@@ -429,6 +458,35 @@
 		C9525DF81CDA99BA0035DE0E /* ChatMapPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatMapPresenter.swift; path = ChatRoomManagement/Presenter/ChatMapPresenter.swift; sourceTree = "<group>"; };
 		C9525DFA1CDBCD7B0035DE0E /* ChatRoomAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatRoomAnnotationView.swift; path = ChatRoomManagement/View/ChatRoomAnnotationView.swift; sourceTree = "<group>"; };
 		C9525DFC1CE122580035DE0E /* MapChatListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapChatListViewController.swift; path = ChatRoomManagement/View/MapChatListViewController.swift; sourceTree = "<group>"; };
+		C9569F2D1D70EB1400006019 /* BlicupMagazine.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BlicupMagazine.xcdatamodel; sourceTree = "<group>"; };
+		C9569F2F1D746D3D00006019 /* Magazine+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Magazine+CoreDataProperties.swift"; path = "MagazineManagement/Model/Magazine+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C9569F301D746D3D00006019 /* Magazine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Magazine.swift; path = MagazineManagement/Model/Magazine.swift; sourceTree = "<group>"; };
+		C9569F311D746D3D00006019 /* Caption+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Caption+CoreDataProperties.swift"; path = "MagazineManagement/Model/Caption+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C9569F321D746D3D00006019 /* Caption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Caption.swift; path = MagazineManagement/Model/Caption.swift; sourceTree = "<group>"; };
+		C9569F331D746D3D00006019 /* Article+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Article+CoreDataProperties.swift"; path = "MagazineManagement/Model/Article+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C9569F341D746D3D00006019 /* Article.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Article.swift; path = MagazineManagement/Model/Article.swift; sourceTree = "<group>"; };
+		C9569F351D746D3D00006019 /* CText+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CText+CoreDataProperties.swift"; path = "MagazineManagement/Model/CText+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C9569F361D746D3D00006019 /* CText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CText.swift; path = MagazineManagement/Model/CText.swift; sourceTree = "<group>"; };
+		C9569F371D746D3D00006019 /* CImage+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CImage+CoreDataProperties.swift"; path = "MagazineManagement/Model/CImage+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C9569F381D746D3D00006019 /* CImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CImage.swift; path = MagazineManagement/Model/CImage.swift; sourceTree = "<group>"; };
+		C9569F391D746D3D00006019 /* CVideo+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CVideo+CoreDataProperties.swift"; path = "MagazineManagement/Model/CVideo+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C9569F3A1D746D3D00006019 /* CVideo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CVideo.swift; path = MagazineManagement/Model/CVideo.swift; sourceTree = "<group>"; };
+		C9569F3B1D746D3D00006019 /* CVideoLD+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CVideoLD+CoreDataProperties.swift"; path = "MagazineManagement/Model/CVideoLD+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C9569F3C1D746D3D00006019 /* CVideoLD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CVideoLD.swift; path = MagazineManagement/Model/CVideoLD.swift; sourceTree = "<group>"; };
+		C9569F3D1D746D3D00006019 /* CImageLD+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CImageLD+CoreDataProperties.swift"; path = "MagazineManagement/Model/CImageLD+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C9569F3E1D746D3D00006019 /* CImageLD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CImageLD.swift; path = MagazineManagement/Model/CImageLD.swift; sourceTree = "<group>"; };
+		C9569F3F1D746D3D00006019 /* Author+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Author+CoreDataProperties.swift"; path = "MagazineManagement/Model/Author+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C9569F401D746D3D00006019 /* Author.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Author.swift; path = MagazineManagement/Model/Author.swift; sourceTree = "<group>"; };
+		C9569F411D746D3D00006019 /* ArticleSpecs+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ArticleSpecs+CoreDataProperties.swift"; path = "MagazineManagement/Model/ArticleSpecs+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C9569F421D746D3D00006019 /* ArticleSpecs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArticleSpecs.swift; path = MagazineManagement/Model/ArticleSpecs.swift; sourceTree = "<group>"; };
+		C9569F431D746D3D00006019 /* Category+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Category+CoreDataProperties.swift"; path = "MagazineManagement/Model/Category+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C9569F441D746D3D00006019 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Category.swift; path = MagazineManagement/Model/Category.swift; sourceTree = "<group>"; };
+		C9569F451D746D3D00006019 /* CTextLD+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CTextLD+CoreDataProperties.swift"; path = "MagazineManagement/Model/CTextLD+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C9569F461D746D3D00006019 /* CTextLD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CTextLD.swift; path = MagazineManagement/Model/CTextLD.swift; sourceTree = "<group>"; };
+		C9569F471D746D3D00006019 /* PositionSizeLD+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "PositionSizeLD+CoreDataProperties.swift"; path = "MagazineManagement/Model/PositionSizeLD+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C9569F481D746D3D00006019 /* PositionSizeLD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PositionSizeLD.swift; path = MagazineManagement/Model/PositionSizeLD.swift; sourceTree = "<group>"; };
+		C9569F491D746D3D00006019 /* Content+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Content+CoreDataProperties.swift"; path = "MagazineManagement/Model/Content+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C9569F4A1D746D3D00006019 /* Content.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Content.swift; path = MagazineManagement/Model/Content.swift; sourceTree = "<group>"; };
 		C95B14DC1D21636800D4DA0F /* UserListFollowBlockViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserListFollowBlockViewController.swift; path = Settings/View/UserListFollowBlockViewController.swift; sourceTree = "<group>"; };
 		C973E0731CE22059008591FD /* ChatRoomMessage+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ChatRoomMessage+CoreDataProperties.swift"; path = "ChatRoomManagement/Model/ChatRoomMessage+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C973E0741CE22059008591FD /* ChatRoomMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatRoomMessage.swift; path = ChatRoomManagement/Model/ChatRoomMessage.swift; sourceTree = "<group>"; };
@@ -588,6 +646,7 @@
 				C99871AA1D35905B00166F6E /* Blicup.entitlements */,
 				A456F3081C999009008CF87D /* LDTPManagement */,
 				7D1006EB1C84AE200076561E /* UserManagement */,
+				C9569F281D70DEC700006019 /* MagazineManagement */,
 				7D1006EC1C84AE7B0076561E /* ChatRoomManagement */,
 				C9F8B8581D11DE6500DD6A57 /* Settings */,
 				7D8C66081CE3F378000CA40A /* BCWebImageSearch */,
@@ -748,6 +807,7 @@
 			children = (
 				C9EBFF4F1D401C4300B7A211 /* Sounds */,
 				7D10071F1C86059A0076561E /* Blicup.xcdatamodeld */,
+				C9569F2C1D70EB1400006019 /* BlicupMagazine.xcdatamodeld */,
 				7D10071E1C86059A0076561E /* AppDelegate.swift */,
 				7D1006FE1C8604BA0076561E /* Fonts */,
 				7DF3978F1D46647900E279D7 /* Info.plist */,
@@ -960,6 +1020,65 @@
 			name = Communication;
 			sourceTree = "<group>";
 		};
+		C9569F281D70DEC700006019 /* MagazineManagement */ = {
+			isa = PBXGroup;
+			children = (
+				C9569F291D70DF2E00006019 /* Model */,
+				C9569F2A1D70DF3600006019 /* View */,
+				C9569F2B1D70DF4700006019 /* Controller */,
+			);
+			name = MagazineManagement;
+			sourceTree = "<group>";
+		};
+		C9569F291D70DF2E00006019 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C9569F2F1D746D3D00006019 /* Magazine+CoreDataProperties.swift */,
+				C9569F301D746D3D00006019 /* Magazine.swift */,
+				C9569F311D746D3D00006019 /* Caption+CoreDataProperties.swift */,
+				C9569F321D746D3D00006019 /* Caption.swift */,
+				C9569F331D746D3D00006019 /* Article+CoreDataProperties.swift */,
+				C9569F341D746D3D00006019 /* Article.swift */,
+				C9569F351D746D3D00006019 /* CText+CoreDataProperties.swift */,
+				C9569F361D746D3D00006019 /* CText.swift */,
+				C9569F371D746D3D00006019 /* CImage+CoreDataProperties.swift */,
+				C9569F381D746D3D00006019 /* CImage.swift */,
+				C9569F391D746D3D00006019 /* CVideo+CoreDataProperties.swift */,
+				C9569F3A1D746D3D00006019 /* CVideo.swift */,
+				C9569F3B1D746D3D00006019 /* CVideoLD+CoreDataProperties.swift */,
+				C9569F3C1D746D3D00006019 /* CVideoLD.swift */,
+				C9569F3D1D746D3D00006019 /* CImageLD+CoreDataProperties.swift */,
+				C9569F3E1D746D3D00006019 /* CImageLD.swift */,
+				C9569F3F1D746D3D00006019 /* Author+CoreDataProperties.swift */,
+				C9569F401D746D3D00006019 /* Author.swift */,
+				C9569F411D746D3D00006019 /* ArticleSpecs+CoreDataProperties.swift */,
+				C9569F421D746D3D00006019 /* ArticleSpecs.swift */,
+				C9569F431D746D3D00006019 /* Category+CoreDataProperties.swift */,
+				C9569F441D746D3D00006019 /* Category.swift */,
+				C9569F451D746D3D00006019 /* CTextLD+CoreDataProperties.swift */,
+				C9569F461D746D3D00006019 /* CTextLD.swift */,
+				C9569F471D746D3D00006019 /* PositionSizeLD+CoreDataProperties.swift */,
+				C9569F481D746D3D00006019 /* PositionSizeLD.swift */,
+				C9569F491D746D3D00006019 /* Content+CoreDataProperties.swift */,
+				C9569F4A1D746D3D00006019 /* Content.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		C9569F2A1D70DF3600006019 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		C9569F2B1D70DF4700006019 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		C95B14DE1D2169BA00D4DA0F /* UserListWithBlockFollow */ = {
 			isa = PBXGroup;
 			children = (
@@ -1148,14 +1267,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7D1006E21C84ADFB0076561E /* Build configuration list for PBXNativeTarget "Blicup" */;
 			buildPhases = (
-				A850C6AEAFE22E016E39DE89 /* 📦 Check Pods Manifest.lock */,
-				8AB62DF7A0F1199465B047CD /* 📦 Embed Pods Frameworks */,
+				A850C6AEAFE22E016E39DE89 /* [CP] Check Pods Manifest.lock */,
+				8AB62DF7A0F1199465B047CD /* [CP] Embed Pods Frameworks */,
 				72EEB1577FCC01AB79C8B085 /* [CP] Check Pods Manifest.lock */,
 				7D1006B31C84ADFB0076561E /* Sources */,
 				7D1006B41C84ADFB0076561E /* Frameworks */,
 				7D1006B51C84ADFB0076561E /* Resources */,
 				7D86267A1CA1D0B800D87E87 /* ShellScript */,
-				24F951BF1876E98D2C1A2466 /* 📦 Copy Pods Resources */,
+				24F951BF1876E98D2C1A2466 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1170,7 +1289,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7D1006E51C84ADFB0076561E /* Build configuration list for PBXNativeTarget "BlicupTests" */;
 			buildPhases = (
-				0AD6ED758F7281AF575F1E0B /* 📦 Check Pods Manifest.lock */,
+				0AD6ED758F7281AF575F1E0B /* [CP] Check Pods Manifest.lock */,
 				A8400827C22C8206F5F93CF7 /* [CP] Check Pods Manifest.lock */,
 				4EA135E4B936FCCE58BBF623 /* [CP] Check Pods Manifest.lock */,
 				7D1006CA1C84ADFB0076561E /* Sources */,
@@ -1196,7 +1315,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7D1006E81C84ADFB0076561E /* Build configuration list for PBXNativeTarget "BlicupUITests" */;
 			buildPhases = (
-				A4389D8CD7996D1590BCA42C /* 📦 Check Pods Manifest.lock */,
+				A4389D8CD7996D1590BCA42C /* [CP] Check Pods Manifest.lock */,
 				1CF407D620ECF3D9EE62BB3E /* [CP] Check Pods Manifest.lock */,
 				F9554E142BD965C7A8E0645F /* [CP] Check Pods Manifest.lock */,
 				7D1006D51C84ADFB0076561E /* Sources */,
@@ -1335,14 +1454,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0AD6ED758F7281AF575F1E0B /* 📦 Check Pods Manifest.lock */ = {
+		0AD6ED758F7281AF575F1E0B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1365,14 +1484,14 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		24F951BF1876E98D2C1A2466 /* 📦 Copy Pods Resources */ = {
+		24F951BF1876E98D2C1A2466 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1497,14 +1616,14 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\" ebe43d72fb819ea7cb8117b056e061dc4020a4d0 2f07aebb13dea16ee6571bf907f458111ecec6c6a27224cf1eb6f076a2f3bd0b";
 		};
-		8AB62DF7A0F1199465B047CD /* 📦 Embed Pods Frameworks */ = {
+		8AB62DF7A0F1199465B047CD /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1512,14 +1631,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Blicup/Pods-Blicup-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A4389D8CD7996D1590BCA42C /* 📦 Check Pods Manifest.lock */ = {
+		A4389D8CD7996D1590BCA42C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1542,14 +1661,14 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		A850C6AEAFE22E016E39DE89 /* 📦 Check Pods Manifest.lock */ = {
+		A850C6AEAFE22E016E39DE89 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1610,12 +1729,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				7DABC2DC1D34796300D7903C /* ChatRoomContextMenuProtocol.swift in Sources */,
+				C9569F4B1D746D3D00006019 /* Magazine+CoreDataProperties.swift in Sources */,
 				7D8C66181CE3F378000CA40A /* WebImageSearchCollectionFooterReusableView.swift in Sources */,
 				7DB019081D15C4C00077F7CB /* UserProfileCardPresenter.swift in Sources */,
+				C9569F501D746D3D00006019 /* Article.swift in Sources */,
 				7D7C73ED1CAC5ADB00DC1164 /* ChatRoomsListHorizontalPageViewController.swift in Sources */,
 				C97C006A1D1C651300C16541 /* ChatRoomTalkInfoPresenter.swift in Sources */,
 				E5D485551D215C9500692B36 /* CCHMapTree.m in Sources */,
+				C9569F5B1D746D3D00006019 /* Author+CoreDataProperties.swift in Sources */,
 				C98C14031D24646400BAD95C /* MyChatsViewController.swift in Sources */,
+				C9569F4D1D746D3D00006019 /* Caption+CoreDataProperties.swift in Sources */,
 				7D50A67A1D5B5DB9009739F2 /* UserWithLikeTableViewCell.swift in Sources */,
 				7D595B301CC7FC63009E994D /* BlicupAppColors.swift in Sources */,
 				7D37A2DE1CC01BF90045F2EB /* BCRefreshControl.swift in Sources */,
@@ -1627,19 +1750,24 @@
 				E5D485501D215C9500692B36 /* CCHMapClusterAnnotation.m in Sources */,
 				7DF3BB9A1D38284E002CC8B2 /* BlicupAnalytics.swift in Sources */,
 				7DA5A86E1CAF05040019B32D /* ChatRoom+CoreDataProperties.swift in Sources */,
+				C9569F5E1D746D3D00006019 /* ArticleSpecs.swift in Sources */,
 				7D7C73A81CAB1A7C00DC1164 /* Macro.swift in Sources */,
 				C934B2851CD93BF9006B3EF4 /* LDTPTaskQueue.swift in Sources */,
 				A456F30A1C999009008CF87D /* LDTProtocolImpl.swift in Sources */,
 				7D5220AF1D538C360041FE46 /* SuggestUsersPresenter.swift in Sources */,
 				7DA80C181CBF0E14006151E1 /* Photo+CoreDataProperties.swift in Sources */,
 				7DDADD551CC268730097A86B /* GHContextMenuView.m in Sources */,
+				C9569F591D746D3D00006019 /* CImageLD+CoreDataProperties.swift in Sources */,
 				7D7C73CA1CAC4E3300DC1164 /* CollectionViewTransition.swift in Sources */,
 				C9525DF61CDA911D0035DE0E /* ChatAddress+CoreDataProperties.swift in Sources */,
+				C9569F2E1D70EB1400006019 /* BlicupMagazine.xcdatamodeld in Sources */,
 				E574EE481D5904FB006571FE /* Image.swift in Sources */,
+				C9569F571D746D3D00006019 /* CVideoLD+CoreDataProperties.swift in Sources */,
 				7D0525921CB437470010961E /* CreateChatRoomViewController.swift in Sources */,
 				C9B9DDCB1D2ECAC500B57F62 /* BlicupRouter.swift in Sources */,
 				E5CC0CFE1CE225B900C1D8CB /* OHCircleSegue.swift in Sources */,
 				7D1007231C86059A0076561E /* Blicup.xcdatamodeld in Sources */,
+				C9569F531D746D3D00006019 /* CImage+CoreDataProperties.swift in Sources */,
 				7D7C73C61CAC4C9900DC1164 /* CollectionViewTransitionProtocol.swift in Sources */,
 				7D7C73B71CAB208F00DC1164 /* FlowLayout.swift in Sources */,
 				E525592B1D36A39600E323C3 /* BCCloseButton.swift in Sources */,
@@ -1649,18 +1777,25 @@
 				7D8C66141CE3F378000CA40A /* WebImage.swift in Sources */,
 				E5D485561D215C9500692B36 /* CCHMapTreeUtils.m in Sources */,
 				C9FD9CFD1CBD7D5E004E2C04 /* LDTPMockImpl.swift in Sources */,
+				C9569F641D746D3D00006019 /* PositionSizeLD.swift in Sources */,
 				C97C00641D1B090000C16541 /* BlockedListViewController.swift in Sources */,
 				7DD0F7D61C886F36001E5780 /* SignupUsernameViewController.swift in Sources */,
+				C9569F551D746D3D00006019 /* CVideo+CoreDataProperties.swift in Sources */,
+				C9569F581D746D3D00006019 /* CVideoLD.swift in Sources */,
+				C9569F541D746D3D00006019 /* CImage.swift in Sources */,
 				7D8626531C9B261D00D87E87 /* InterestPresenter.swift in Sources */,
 				7DC2B3561C933A4B000112B4 /* WelcomeViewController.swift in Sources */,
 				E574EE4B1D5A24B4006571FE /* ShareChatView.swift in Sources */,
 				A4D97E211CB9758900E13678 /* UserBS.swift in Sources */,
+				C9569F4C1D746D3D00006019 /* Magazine.swift in Sources */,
 				C9E464971CB8592C0034853B /* CoverPhotosCollectionViewController.swift in Sources */,
 				C93AC3F41D26F81D00ED8046 /* ChatRoomMainListPresenter.swift in Sources */,
 				7D7C73B81CAB208F00DC1164 /* TextFieldNoTextOptions.swift in Sources */,
+				C9569F5D1D746D3D00006019 /* ArticleSpecs+CoreDataProperties.swift in Sources */,
 				7D50A6781D5B584C009739F2 /* FindFriendsPresenter.swift in Sources */,
 				7DA80C1B1CC00977006151E1 /* BCGradientImageView.swift in Sources */,
 				C93E1C191CD278AB00E0E7ED /* LDTPWebSocketReceiverManager.swift in Sources */,
+				C9569F4F1D746D3D00006019 /* Article+CoreDataProperties.swift in Sources */,
 				7D1EC71E1CC91721006689B3 /* MD5.swift in Sources */,
 				C9525DF31CDA79AD0035DE0E /* ChatRoomMapViewController.swift in Sources */,
 				C9EAF94B1D3834AE00D59752 /* UserStatus+CoreDataProperties.swift in Sources */,
@@ -1680,14 +1815,18 @@
 				C97C006E1D1DD93300C16541 /* BlockFollowUserListPresenter.swift in Sources */,
 				C9BCFF0D1CF7656F00D498FA /* LDTPNSNotificationCenterControl.swift in Sources */,
 				7DF3BB9C1D396A13002CC8B2 /* ChatRoomShareCard.swift in Sources */,
+				C9569F521D746D3D00006019 /* CText.swift in Sources */,
 				C91B366A1CC800A0002D77BF /* LDTPMessageBuilder.swift in Sources */,
 				7D3337A51D1C7AEA00D2EB55 /* FollowListPresenter.swift in Sources */,
 				7D1007221C86059A0076561E /* AppDelegate.swift in Sources */,
 				7D5220AD1D537DAD0041FE46 /* SuggestedUsersViewController.swift in Sources */,
 				C98575E11D0B0C190045CD9D /* BlicupClock.swift in Sources */,
+				C9569F601D746D3D00006019 /* Category.swift in Sources */,
 				C97C005E1D182D9700C16541 /* InfoTableViewController.swift in Sources */,
+				C9569F4E1D746D3D00006019 /* Caption.swift in Sources */,
 				7D2DBDB11CF7A1170018510A /* ChatRoomGiphySearchPresenter.swift in Sources */,
 				7DD0F7E11C89DEA9001E5780 /* SignupPictureViewController.swift in Sources */,
+				C9569F661D746D3D00006019 /* Content.swift in Sources */,
 				E506A0A01D4BEA9800CCD728 /* TipsView.swift in Sources */,
 				E5D485531D215C9500692B36 /* CCHMapClusterControllerUtils.m in Sources */,
 				7DDADD511CC1A7470097A86B /* BCBlurredTabBar.swift in Sources */,
@@ -1704,7 +1843,9 @@
 				C9F8B85E1D11E3B200DD6A57 /* SettingsPresenter.swift in Sources */,
 				E54340E01D3D45DF003866EB /* SearchLocationTableViewController.swift in Sources */,
 				C93AC3EF1D25961400ED8046 /* MyChatsPresenter.swift in Sources */,
+				C9569F651D746D3D00006019 /* Content+CoreDataProperties.swift in Sources */,
 				7DB6329A1CF4A34C00921AFF /* UserSearchPresenter.swift in Sources */,
+				C9569F5A1D746D3D00006019 /* CImageLD.swift in Sources */,
 				7D7C73B51CAB208F00DC1164 /* CustomTextField.swift in Sources */,
 				7D1006FC1C85D5B80076561E /* LoginViewController.swift in Sources */,
 				7DF8FDB21C90D9C60058F877 /* SignupPresenter.swift in Sources */,
@@ -1718,11 +1859,14 @@
 				7DA80C191CBF0E14006151E1 /* Photo.swift in Sources */,
 				C9EAF94C1D3834AE00D59752 /* UserStatus.swift in Sources */,
 				7DFD1E011C86438700CF5C94 /* LoginController.swift in Sources */,
+				C9569F561D746D3D00006019 /* CVideo.swift in Sources */,
 				C93AC3F61D26F86900ED8046 /* ChatRoomSearchListPresenter.swift in Sources */,
 				C97C00661D1B097900C16541 /* BlockListPresenter.swift in Sources */,
 				E52791721CEF4EFD00F5E727 /* FollowCustomButton.swift in Sources */,
+				C9569F5F1D746D3D00006019 /* Category+CoreDataProperties.swift in Sources */,
 				7D8626551C9B48FA00D87E87 /* InterestListAddedBlankCollectionViewCell.swift in Sources */,
 				7DCFA72B1D1220040043CEA1 /* FolloweeViewController.swift in Sources */,
+				C9569F621D746D3D00006019 /* CTextLD.swift in Sources */,
 				C9BCFF121CF783BF00D498FA /* UserInfo+CoreDataProperties.swift in Sources */,
 				E5D4854E1D215C9500692B36 /* CCHCenterOfMassMapClusterer.m in Sources */,
 				7D7C73CC1CAC4F1F00DC1164 /* Extension.swift in Sources */,
@@ -1738,6 +1882,7 @@
 				7DCF1D0B1CFE1DC10020BF08 /* ChatRoomsAndUsersSearchViewController.swift in Sources */,
 				E5D485541D215C9500692B36 /* CCHMapClusterOperation.m in Sources */,
 				7DB5C7C91CF0B90600A5EFF2 /* CollectionViewListFlowLayout.swift in Sources */,
+				C9569F511D746D3D00006019 /* CText+CoreDataProperties.swift in Sources */,
 				7D50A6761D5A71A7009739F2 /* FindFriendsViewController.swift in Sources */,
 				7DF8FDB01C90B4690058F877 /* SignupPageViewController.swift in Sources */,
 				7D8C66191CE3F378000CA40A /* WebImageSearchCollectionViewCell.swift in Sources */,
@@ -1749,7 +1894,9 @@
 				7DCFA7291D1044C00043CEA1 /* CreateChatRoomInputAccessoryView.swift in Sources */,
 				C9BCFF0F1CF7721100D498FA /* ToStringArrayTransformer.swift in Sources */,
 				E5401B191D30065D0011C647 /* PaddingLabel.swift in Sources */,
+				C9569F631D746D3D00006019 /* PositionSizeLD+CoreDataProperties.swift in Sources */,
 				7DCFA72D1D122C6A0043CEA1 /* UserTableViewCell.swift in Sources */,
+				C9569F5C1D746D3D00006019 /* Author.swift in Sources */,
 				C97C00621D18754D00C16541 /* FavoritesPresenter.swift in Sources */,
 				C9525DFB1CDBCD7B0035DE0E /* ChatRoomAnnotationView.swift in Sources */,
 				C91B36681CC7FF54002D77BF /* LDTPWebSocketManager.swift in Sources */,
@@ -1762,6 +1909,7 @@
 				7DF8FD9C1C8F0C220058F877 /* SignupTermsPrivacyViewController.swift in Sources */,
 				E5C1FAB11CC514010015F3E6 /* AmazonManager.swift in Sources */,
 				7D7C73CE1CAC556400DC1164 /* ChatRoomListCollectionViewCell.swift in Sources */,
+				C9569F611D746D3D00006019 /* CTextLD+CoreDataProperties.swift in Sources */,
 				C93AC3FA1D26F9A000ED8046 /* CoverChatRoomsListPresenter.swift in Sources */,
 				7D0525941CB443F30010961E /* CreateChatRoomPresenter.swift in Sources */,
 				C93AC3FC1D27132E00ED8046 /* ChatListToCoverTrasition.swift in Sources */,
@@ -2194,6 +2342,17 @@
 			currentVersion = 7DF6A7C81D51233A007515CE /* Blicup 1.0.1.xcdatamodel */;
 			name = Blicup.xcdatamodeld;
 			path = "Supporting Files/Blicup.xcdatamodeld";
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		C9569F2C1D70EB1400006019 /* BlicupMagazine.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C9569F2D1D70EB1400006019 /* BlicupMagazine.xcdatamodel */,
+			);
+			currentVersion = C9569F2D1D70EB1400006019 /* BlicupMagazine.xcdatamodel */;
+			name = BlicupMagazine.xcdatamodeld;
+			path = "Supporting Files/BlicupMagazine.xcdatamodeld";
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

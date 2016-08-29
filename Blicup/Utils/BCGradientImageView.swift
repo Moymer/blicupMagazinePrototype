@@ -38,7 +38,8 @@ class BCGradientImageView: AnimatedImageView {
         }
         
         let color1 = UIColor.clearColor().CGColor
-        let color2 = color.CGColor
+        let color2 = color.darker().CGColor
+        
         gradient.colors = [color1, color2]
     }
 

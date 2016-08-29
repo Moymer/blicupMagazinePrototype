@@ -237,21 +237,7 @@ extension ChatRoomSizeProtocol {
     }
     
     func getChatItemSizeForLines(totalOfLines:Int) -> CGSize {
-        var sizeImage = CGSize()
-        
-        switch totalOfLines {
-        case 1..<3:
-            sizeImage = CGSize(width: 345, height: 345)
-        case 3..<5:
-            sizeImage = CGSize(width: 345, height: 516)
-        case 5..<8:
-            sizeImage = CGSize(width: 345, height: 614)
-        case 8..<11:
-            sizeImage = CGSize(width: 345, height: 802)
-        default:
-            sizeImage = CGSize(width: 345, height: 802)
-        }
-        return sizeImage
+        return CGSize(width: 345, height: 345)
     }
 }
 
