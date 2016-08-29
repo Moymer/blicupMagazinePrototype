@@ -196,6 +196,8 @@
 		C98256B51D70D14C008257C4 /* BlicCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C98256B31D70D14C008257C4 /* BlicCollectionViewCell.xib */; };
 		C98575E11D0B0C190045CD9D /* BlicupClock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98575E01D0B0C190045CD9D /* BlicupClock.swift */; };
 		C98C14031D24646400BAD95C /* MyChatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98C14021D24646400BAD95C /* MyChatsViewController.swift */; };
+		C992D7471D74CDAE002A767F /* BlicupSliderSegmentedControll.xib in Resources */ = {isa = PBXBuildFile; fileRef = C992D7461D74CDAE002A767F /* BlicupSliderSegmentedControll.xib */; };
+		C992D7491D74D0E6002A767F /* BlicupSliderSegmentedControll.swift in Sources */ = {isa = PBXBuildFile; fileRef = C992D7481D74D0E6002A767F /* BlicupSliderSegmentedControll.swift */; };
 		C99D36041CEF600E00B0F889 /* ChatRoomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99D36031CEF600E00B0F889 /* ChatRoomCell.swift */; };
 		C99D36061CEF840F00B0F889 /* ChatRoomInputAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99D36051CEF840F00B0F889 /* ChatRoomInputAccessoryView.swift */; };
 		C9B9DDCB1D2ECAC500B57F62 /* BlicupRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B9DDCA1D2ECAC500B57F62 /* BlicupRouter.swift */; };
@@ -509,6 +511,8 @@
 		C98256B31D70D14C008257C4 /* BlicCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BlicCollectionViewCell.xib; path = Utils/BlicCollectionViewCell.xib; sourceTree = "<group>"; };
 		C98575E01D0B0C190045CD9D /* BlicupClock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BlicupClock.swift; path = Utils/BlicupClock.swift; sourceTree = "<group>"; };
 		C98C14021D24646400BAD95C /* MyChatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyChatsViewController.swift; path = ChatRoomManagement/View/MyChatsViewController.swift; sourceTree = "<group>"; };
+		C992D7461D74CDAE002A767F /* BlicupSliderSegmentedControll.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BlicupSliderSegmentedControll.xib; path = Utils/BlicupSliderSegmentedControll.xib; sourceTree = "<group>"; };
+		C992D7481D74D0E6002A767F /* BlicupSliderSegmentedControll.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BlicupSliderSegmentedControll.swift; path = Utils/BlicupSliderSegmentedControll.swift; sourceTree = "<group>"; };
 		C99871AA1D35905B00166F6E /* Blicup.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Blicup.entitlements; sourceTree = "<group>"; };
 		C99D36031CEF600E00B0F889 /* ChatRoomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatRoomCell.swift; path = ChatRoomManagement/View/ChatRoomCell.swift; sourceTree = "<group>"; };
 		C99D36051CEF840F00B0F889 /* ChatRoomInputAccessoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatRoomInputAccessoryView.swift; path = ChatRoomManagement/View/ChatRoomInputAccessoryView.swift; sourceTree = "<group>"; };
@@ -853,6 +857,8 @@
 		7D7C73A61CAB1A2400DC1164 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				C992D7481D74D0E6002A767F /* BlicupSliderSegmentedControll.swift */,
+				C992D7461D74CDAE002A767F /* BlicupSliderSegmentedControll.xib */,
 				C98256B21D70D14C008257C4 /* BlicCollectionViewCell.swift */,
 				C98256B31D70D14C008257C4 /* BlicCollectionViewCell.xib */,
 				E5CC0CFD1CE225B900C1D8CB /* OHCircleSegue.swift */,
@@ -1412,6 +1418,7 @@
 				7DD7C8951D41704C003454A7 /* default_tags_en.json in Resources */,
 				7DCC30EB1D400EF5001202F4 /* Settings.storyboard in Resources */,
 				C9EBFF511D401C6200B7A211 /* push_blicup.aif in Resources */,
+				C992D7471D74CDAE002A767F /* BlicupSliderSegmentedControll.xib in Resources */,
 				7D37A3011CC122890045F2EB /* BCRefreshControlView.xib in Resources */,
 				7D10070B1C8604BA0076561E /* SF-UI-Text-Bold.otf in Resources */,
 				7DCC30F01D4013B1001202F4 /* MyChats.storyboard in Resources */,
@@ -1709,6 +1716,7 @@
 				C9E464991CB8599C0034853B /* CoverPhotoCollectionViewCell.swift in Sources */,
 				7DB0190C1D15E01D0077F7CB /* FollowerViewController.swift in Sources */,
 				C9C606891D06187500F39B15 /* GiphyViewerController.swift in Sources */,
+				C992D7491D74D0E6002A767F /* BlicupSliderSegmentedControll.swift in Sources */,
 				7D27FCD41D217E0B008B5021 /* AlphaVerticalSlideTransition.swift in Sources */,
 				7D8C66151CE3F378000CA40A /* WebImageSearchBS.swift in Sources */,
 				7DCFA72F1D144F720043CEA1 /* UserProfileViewController.swift in Sources */,

@@ -540,15 +540,22 @@
                                     <action selector="profileAreaPressed:" destination="g91-As-xHy" eventType="touchUpInside" id="rQx-Fj-Hz4"/>
                                 </connections>
                             </button>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="IjQ-2B-QlX">
-                                <rect key="frame" x="210" y="286" width="181" height="29"/>
-                                <segments>
-                                    <segment title="My Stories"/>
-                                    <segment title="Bookmarked"/>
-                                </segments>
-                            </segmentedControl>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WdT-oa-PD8" customClass="BlicupSliderSegmentedControll" customModule="Blicup" customModuleProvider="target">
+                                <rect key="frame" x="160" y="280" width="280" height="34"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="280" id="4so-6v-dM7"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="firstText" value="My Stories"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="secondText" value="Bookmarked"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="barWidth">
+                                        <real key="value" value="40"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="sFL-8T-AbS">
-                                <rect key="frame" x="0.0" y="334" width="600" height="266"/>
+                                <rect key="frame" x="0.0" y="329" width="600" height="271"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="96U-BF-86h">
                                     <size key="itemSize" width="117" height="160"/>
@@ -556,17 +563,7 @@
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="10" minY="0.0" maxX="10" maxY="10"/>
                                 </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CardCell" id="hBA-d3-IBo" customClass="BlicCollectionViewCell" customModule="Blicup" customModuleProvider="target">
-                                        <rect key="frame" x="10" y="0.0" width="117" height="160"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="117" height="160"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                    </collectionViewCell>
-                                </cells>
+                                <cells/>
                                 <connections>
                                     <outlet property="dataSource" destination="g91-As-xHy" id="jiA-aJ-0Wr"/>
                                 </connections>
@@ -577,16 +574,16 @@
                             <constraint firstItem="Epw-P8-6Nl" firstAttribute="bottom" secondItem="ryA-Gu-pcc" secondAttribute="bottom" id="3Ol-VI-P8Q"/>
                             <constraint firstItem="Epw-P8-6Nl" firstAttribute="leading" secondItem="ryA-Gu-pcc" secondAttribute="leading" id="Bgp-bK-CPZ"/>
                             <constraint firstItem="sFL-8T-AbS" firstAttribute="leading" secondItem="eU2-sb-Oad" secondAttribute="leading" id="CJQ-Le-StH"/>
-                            <constraint firstItem="IjQ-2B-QlX" firstAttribute="centerX" secondItem="eU2-sb-Oad" secondAttribute="centerX" id="Hco-56-tBD"/>
                             <constraint firstItem="Epw-P8-6Nl" firstAttribute="trailing" secondItem="ryA-Gu-pcc" secondAttribute="trailing" id="IZk-NU-KoT"/>
                             <constraint firstAttribute="trailing" secondItem="Epw-P8-6Nl" secondAttribute="trailing" id="YiI-Y7-cf1"/>
                             <constraint firstAttribute="trailing" secondItem="sFL-8T-AbS" secondAttribute="trailing" id="b30-8L-DxW"/>
                             <constraint firstItem="M9R-gH-els" firstAttribute="top" secondItem="sFL-8T-AbS" secondAttribute="bottom" id="e3q-1p-QsK"/>
                             <constraint firstItem="Epw-P8-6Nl" firstAttribute="leading" secondItem="eU2-sb-Oad" secondAttribute="leading" id="gN4-Fl-hQb"/>
-                            <constraint firstItem="IjQ-2B-QlX" firstAttribute="centerY" secondItem="eU2-sb-Oad" secondAttribute="centerY" id="htI-bh-P8q"/>
+                            <constraint firstItem="sFL-8T-AbS" firstAttribute="top" secondItem="WdT-oa-PD8" secondAttribute="bottom" constant="15" id="hIt-Wd-S5x"/>
+                            <constraint firstItem="WdT-oa-PD8" firstAttribute="centerX" secondItem="eU2-sb-Oad" secondAttribute="centerX" id="jNh-of-yij"/>
+                            <constraint firstItem="WdT-oa-PD8" firstAttribute="top" secondItem="ryA-Gu-pcc" secondAttribute="bottom" constant="5" id="ouA-uJ-FS2"/>
                             <constraint firstItem="Epw-P8-6Nl" firstAttribute="top" secondItem="ryA-Gu-pcc" secondAttribute="top" id="puG-Rl-F91"/>
                             <constraint firstItem="Epw-P8-6Nl" firstAttribute="top" secondItem="0ie-9g-swX" secondAttribute="bottom" id="rDj-6I-CQM"/>
-                            <constraint firstItem="sFL-8T-AbS" firstAttribute="top" secondItem="IjQ-2B-QlX" secondAttribute="bottom" constant="20" id="stB-2F-zGP"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Nv6-Iq-UP9"/>
