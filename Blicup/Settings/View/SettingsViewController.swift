@@ -9,18 +9,18 @@
 import UIKit
 import RSKImageCropper
 
-class SettingsViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UITextViewDelegate, RSKImageCropViewControllerDelegate {
+class SettingsViewController: UIViewController, UICollectionViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UITextViewDelegate, RSKImageCropViewControllerDelegate {
     
     private let kProfileDefaultHeight:CGFloat = 240.0
     private let kProfilePhotoOffset:CGFloat = 20.0
     private let kProfileLinesDefaultWidth:CGFloat = 260.0
     
-    @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var ivBackgroundPhoto: UIImageView!
+
     @IBOutlet weak var ivUserPhoto: UIImageView!
     @IBOutlet weak var tfUsername: UITextField!
     @IBOutlet weak var btnUserPhoto: UIButton!
-    @IBOutlet weak var lblLikes: UILabel!
+    @IBOutlet weak var lblFollowersNumber: UILabel!
+    @IBOutlet weak var lblFollowingNumber: UILabel!
     @IBOutlet weak var tvDescription: UITextView!
     @IBOutlet weak var lblDescriptionPlaceholder: UILabel!
 
@@ -29,8 +29,6 @@ class SettingsViewController: UIViewController, UIImagePickerControllerDelegate,
     @IBOutlet weak var btnEditUsername: UIButton!
     
     @IBOutlet weak var constrUsernameWidth: NSLayoutConstraint!
-    @IBOutlet weak var constrLinesWidth: NSLayoutConstraint!
-    @IBOutlet weak var constrPerfilContentHeight: NSLayoutConstraint!
     @IBOutlet weak var constrUserPhotoTopDistance: NSLayoutConstraint!
     
     @IBOutlet weak var vUsernameStatus: UIView!
@@ -76,7 +74,6 @@ class SettingsViewController: UIViewController, UIImagePickerControllerDelegate,
         super.viewWillAppear(animated)
         self.navigationController?.navigationBarHidden = true
         self.tabBarController?.tabBar.hidden = isEditing
-        self.startObservingKeyboardEvents()
         self.btnEditUsername.hidden = false
         updateUserData()
     }
@@ -86,10 +83,6 @@ class SettingsViewController: UIViewController, UIImagePickerControllerDelegate,
         BlicupAnalytics.sharedInstance.mark_EnteredScreenSettings()
     }
     
-    override func viewWillDisappear(animated: Bool) {
-        super.viewWillDisappear(animated)
-        stopObservingKeyboardEvents()
-    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -105,11 +98,22 @@ class SettingsViewController: UIViewController, UIImagePickerControllerDelegate,
     }
 
     
+    // MARK: -  CollectionView Cards
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("CardCell", forIndexPath: indexPath) as! BlicCollectionViewCell
+        return cell
+    }
+    
+    
     //MARK: - Update Profile Data/Layout
     private func configUsernameTF() {
         let usernamePlaceholder = UILabel()
         usernamePlaceholder.font = tfUsername.font
-        usernamePlaceholder.textColor = UIColor.whiteColor()
+        usernamePlaceholder.textColor = tfUsername.textColor
         usernamePlaceholder.text = "@"
         usernamePlaceholder.sizeToFit()
         tfUsername.leftView = usernamePlaceholder
@@ -122,24 +126,28 @@ class SettingsViewController: UIViewController, UIImagePickerControllerDelegate,
         }
         
         if let photoUrl = presenter.userPhotoUrl() {
-            ivBackgroundPhoto.kf_setImageWithURL(photoUrl)
             ivUserPhoto.kf_setImageWithURL(photoUrl)
         }
         else {
-            ivBackgroundPhoto.image = nil
             ivUserPhoto.image = nil
         }
         
         tfUsername.text = presenter.username()
-        
         showVerifiedBadge(presenter.isVerifiedUser())
-        
         resizeUsernameTF()
-        lblLikes.text = "\(presenter.numberOfLikes()) 👍"
+        
+        lblFollowersNumber.text = self.presenter.followersText()
+        lblFollowingNumber.text = self.presenter.followeeText()
         
         tvDescription.text = presenter.userBio()
         lblDescriptionPlaceholder.text = presenter.kDefaultDescriptionMesage
         lblDescriptionPlaceholder.hidden = presenter.hasInitialBio()
+        
+        self.presenter.updateUserInfoData { (success) in
+            if success {
+                self.updateUserData()
+            }
+        }
     }
 
     @IBAction func profileAreaPressed(sender: UIButton) {
@@ -171,9 +179,6 @@ class SettingsViewController: UIViewController, UIImagePickerControllerDelegate,
         
         // Animation/Final const
         let editingAlpha:CGFloat = isEditing ? 0.0 : 1.0
-        let likesTransform = isEditing ? CGAffineTransformScale(CGAffineTransformIdentity, 0.2, 0.2) : CGAffineTransformIdentity
-        let endHeight = isEditing ? self.view.bounds.height : kProfileDefaultHeight
-        let endLinesWidth = isEditing ? kProfileLinesDefaultWidth : 0
         let offset = isEditing ? self.kProfilePhotoOffset : -self.kProfilePhotoOffset
         
         UIView.animateWithDuration(0.5, animations: {
@@ -183,12 +188,8 @@ class SettingsViewController: UIViewController, UIImagePickerControllerDelegate,
             
             self.vUsernameStatus.alpha = 1.0 - editingAlpha
             
-            self.constrPerfilContentHeight.constant = endHeight
             self.constrUserPhotoTopDistance.constant = self.constrUserPhotoTopDistance.constant + offset
-            self.constrLinesWidth.constant = endLinesWidth
             
-            self.lblLikes.transform = likesTransform
-            self.lblLikes.alpha = editingAlpha
             self.btnUserPhoto.alpha = 1.0 - editingAlpha
             self.btnSaveProfile.alpha = 0.0
             
@@ -296,16 +297,12 @@ class SettingsViewController: UIViewController, UIImagePickerControllerDelegate,
         transition.type = kCATransitionFade
         
         ivUserPhoto.layer.addAnimation(transition, forKey: kCATransition)
-        ivBackgroundPhoto.layer.addAnimation(transition, forKey: kCATransition)
         
         if let photoUrl = presenter.userPhotoUrl() {
-            let image = ivBackgroundPhoto.image
-            
-            ivBackgroundPhoto.kf_setImageWithURL(photoUrl, placeholderImage: image, optionsInfo: nil, progressBlock: nil, completionHandler: nil)
+            let image = ivUserPhoto.image
             ivUserPhoto.kf_setImageWithURL(photoUrl, placeholderImage: image, optionsInfo: nil, progressBlock: nil, completionHandler: nil)
         }
         else {
-            ivBackgroundPhoto.image = nil
             ivUserPhoto.image = nil
         }
         
@@ -322,9 +319,6 @@ class SettingsViewController: UIViewController, UIImagePickerControllerDelegate,
         transition.type = kCATransitionFade
         
         ivUserPhoto.layer.addAnimation(transition, forKey: kCATransition)
-        ivBackgroundPhoto.layer.addAnimation(transition, forKey: kCATransition)
-        
-        ivBackgroundPhoto.image = photo
         ivUserPhoto.image = photo
         
         CATransaction.commit()
@@ -456,63 +450,12 @@ class SettingsViewController: UIViewController, UIImagePickerControllerDelegate,
             }
         }
     }
-    
-    
-    // MARK: - Keyboard
-    private func startObservingKeyboardEvents() {
-        NSNotificationCenter.defaultCenter().addObserver(self,
-                                                         selector:#selector(self.keyboardWillShow(_:)),
-                                                         name:UIKeyboardWillShowNotification,
-                                                         object:nil)
-        NSNotificationCenter.defaultCenter().addObserver(self,
-                                                         selector:#selector(self.keyboardWillHide(_:)),
-                                                         name:UIKeyboardWillHideNotification,
-                                                         object:nil)
-    }
-    
-    private func stopObservingKeyboardEvents() {
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
-    }
-    
-    func keyboardWillShow(notification: NSNotification) {
-        let state = UIApplication.sharedApplication().applicationState
-        guard state == UIApplicationState.Active else {
-            return
-        }
-        
-        if let userInfo = notification.userInfo {
-            if let kbSize: CGSize = userInfo[UIKeyboardFrameEndUserInfoKey]?.CGRectValue.size {
-                let keyboardHeight = kbSize.height
-                let contentInsets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardHeight, right: 0)
-                scrollView.contentInset = contentInsets
-                scrollView.scrollIndicatorInsets = contentInsets
-                
-                var rect = CGRectZero
-                if tfUsername.isFirstResponder() {
-                    rect = tfUsername.frame
-                }
-                else if tvDescription.isFirstResponder() {
-                    rect = tvDescription.frame
-                }
-                
-                rect.size.height = rect.height+15
-                scrollView.scrollRectToVisible(rect, animated: true)
-            }
-        }
-    }
-    
-    func keyboardWillHide(notification: NSNotification) {
-        self.scrollView.contentInset = UIEdgeInsetsZero
-        self.scrollView.scrollIndicatorInsets = UIEdgeInsetsZero
-    }
 }
 
 //MARK: - New Class Table Controller
 class ProfileTableViewController: UITableViewController {
     
-    @IBOutlet weak var lblFollowersNumber: UILabel!
-    @IBOutlet weak var lblFollowingNumber: UILabel!
+    
     @IBOutlet weak var lblFavoritesNumber: UILabel!
     
     private let presenter = SettingsTablePresenter()
@@ -521,20 +464,6 @@ class ProfileTableViewController: UITableViewController {
     
     private let tellAFriendCard = TellAFriendCard() // Pre-load makes share load faster
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        presenter.updateUserInfoData { (success) in
-            self.lblFollowersNumber.text = self.presenter.followersText()
-            self.lblFollowingNumber.text = self.presenter.followeeText()
-            self.lblFavoritesNumber.text = self.presenter.tagsText()
-            self.tableView.reloadData()
-            
-            if let parentController = self.parentViewController as? SettingsViewController {
-                parentController.updateUserData()
-            }
-        }
-    }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         

@@ -161,6 +161,8 @@
 		C97C006A1D1C651300C16541 /* ChatRoomTalkInfoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97C00691D1C651300C16541 /* ChatRoomTalkInfoPresenter.swift */; };
 		C97C006E1D1DD93300C16541 /* BlockFollowUserListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97C006D1D1DD93300C16541 /* BlockFollowUserListPresenter.swift */; };
 		C97C01C71D11F00B00E5C5AC /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97C01C61D11F00B00E5C5AC /* SettingsViewController.swift */; };
+		C98256B41D70D14C008257C4 /* BlicCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98256B21D70D14C008257C4 /* BlicCollectionViewCell.swift */; };
+		C98256B51D70D14C008257C4 /* BlicCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C98256B31D70D14C008257C4 /* BlicCollectionViewCell.xib */; };
 		C98575E11D0B0C190045CD9D /* BlicupClock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98575E01D0B0C190045CD9D /* BlicupClock.swift */; };
 		C98C14031D24646400BAD95C /* MyChatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98C14021D24646400BAD95C /* MyChatsViewController.swift */; };
 		C99D36041CEF600E00B0F889 /* ChatRoomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99D36031CEF600E00B0F889 /* ChatRoomCell.swift */; };
@@ -441,6 +443,8 @@
 		C97C00691D1C651300C16541 /* ChatRoomTalkInfoPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatRoomTalkInfoPresenter.swift; path = ChatRoomManagement/Presenter/ChatRoomTalkInfoPresenter.swift; sourceTree = "<group>"; };
 		C97C006D1D1DD93300C16541 /* BlockFollowUserListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BlockFollowUserListPresenter.swift; path = Settings/Presenter/BlockFollowUserListPresenter.swift; sourceTree = "<group>"; };
 		C97C01C61D11F00B00E5C5AC /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = Settings/View/SettingsViewController.swift; sourceTree = "<group>"; };
+		C98256B21D70D14C008257C4 /* BlicCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BlicCollectionViewCell.swift; path = Utils/BlicCollectionViewCell.swift; sourceTree = "<group>"; };
+		C98256B31D70D14C008257C4 /* BlicCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BlicCollectionViewCell.xib; path = Utils/BlicCollectionViewCell.xib; sourceTree = "<group>"; };
 		C98575E01D0B0C190045CD9D /* BlicupClock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BlicupClock.swift; path = Utils/BlicupClock.swift; sourceTree = "<group>"; };
 		C98C14021D24646400BAD95C /* MyChatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyChatsViewController.swift; path = ChatRoomManagement/View/MyChatsViewController.swift; sourceTree = "<group>"; };
 		C99871AA1D35905B00166F6E /* Blicup.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Blicup.entitlements; sourceTree = "<group>"; };
@@ -785,6 +789,8 @@
 		7D7C73A61CAB1A2400DC1164 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				C98256B21D70D14C008257C4 /* BlicCollectionViewCell.swift */,
+				C98256B31D70D14C008257C4 /* BlicCollectionViewCell.xib */,
 				E5CC0CFD1CE225B900C1D8CB /* OHCircleSegue.swift */,
 				7D7C73AF1CAB208F00DC1164 /* BCProgress.swift */,
 				7DA80C1A1CC00977006151E1 /* BCGradientImageView.swift */,
@@ -1279,6 +1285,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C98256B51D70D14C008257C4 /* BlicCollectionViewCell.xib in Resources */,
 				7DF8FDA51C8F6A470058F877 /* Localizable.strings in Resources */,
 				7DF397981D4692C800E279D7 /* InfoPlist.strings in Resources */,
 				7D1007151C8604BA0076561E /* SF-UI-Text-Semibold.otf in Resources */,
@@ -1749,6 +1756,7 @@
 				7DCFA7291D1044C00043CEA1 /* CreateChatRoomInputAccessoryView.swift in Sources */,
 				C9BCFF0F1CF7721100D498FA /* ToStringArrayTransformer.swift in Sources */,
 				E5401B191D30065D0011C647 /* PaddingLabel.swift in Sources */,
+				C98256B41D70D14C008257C4 /* BlicCollectionViewCell.swift in Sources */,
 				7DCFA72D1D122C6A0043CEA1 /* UserTableViewCell.swift in Sources */,
 				C97C00621D18754D00C16541 /* FavoritesPresenter.swift in Sources */,
 				C9525DFB1CDBCD7B0035DE0E /* ChatRoomAnnotationView.swift in Sources */,
