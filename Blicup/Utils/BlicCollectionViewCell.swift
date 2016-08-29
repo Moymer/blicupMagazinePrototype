@@ -47,7 +47,7 @@ class BlicCollectionViewCell: UICollectionViewCell {
     
     var title: String? {
         set {
-            self.lblName.text = title
+            self.lblName.text = newValue
         }
         
         get {
