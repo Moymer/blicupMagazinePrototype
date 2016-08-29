@@ -108,7 +108,6 @@ class SettingsViewController: UIViewController, UICollectionViewDataSource, UIIm
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("CardCell", forIndexPath: indexPath) as! BlicCollectionViewCell
-        cell.title = "titleasd"
         return cell
     }
     

@@ -25,16 +25,6 @@ class BlicCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    var cornerRatius: CGFloat {
-        set {
-            self.layer.cornerRadius = newValue
-        }
-        
-        get {
-            return self.layer.cornerRadius
-        }
-    }
-    
     var creatorName: String? {
         set {
             self.lblWhoCreatedUsername.text = newValue
@@ -56,20 +46,10 @@ class BlicCollectionViewCell: UICollectionViewCell {
     }
     
     
-//    override init(frame: CGRect) {
-//        super.init(frame: frame)
-//        
-//    }
-//    
-//    required init?(coder aDecoder: NSCoder) {
-//        super.init(coder: aDecoder)
-//    }
-//    
-//    private func commonInit() {
-//        let view = NSBundle.mainBundle().loadNibNamed("CoverMessageView", owner: self, options: nil).first
-//        self.addSubview(view)
-//    }
-    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        self.layer.cornerRadius = 10
+    }
     
     override func prepareForReuse() {
         ivBackground.image = nil
