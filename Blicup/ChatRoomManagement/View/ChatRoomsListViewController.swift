@@ -37,6 +37,7 @@ class ChatRoomsListViewController: UIViewController, CHTCollectionViewDelegateWa
     @IBOutlet weak var vEmptyListBackground: UIView!
     @IBOutlet weak var ivLoadingBlicupGray: UIImageView!
     @IBOutlet weak var collectionView: UICollectionView!
+    var lblRecentStories: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,8 +49,15 @@ class ChatRoomsListViewController: UIViewController, CHTCollectionViewDelegateWa
         setGHContextMenuView()
         getChatRoomsDatasource()
         
+        lblRecentStories = UILabel(frame: CGRect(x: 10, y: 0, width: 580, height: 42))
+        
+        lblRecentStories.text = "Recent Stories"
+        lblRecentStories.font = UIFont(name: "Avenir-Black", size: 16.0)
+        lblRecentStories.textColor = UIColor.blicupGray()
+        
         lblNoInternet.text = NSLocalizedString("No internet", comment: "")
         
+        (self.collectionView.collectionViewLayout as! UICollectionViewFlowLayout).sectionInset = UIEdgeInsetsMake(42, 10, kTabBarHeight + 2, 10)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -150,6 +158,7 @@ class ChatRoomsListViewController: UIViewController, CHTCollectionViewDelegateWa
         ivBlic.center = CGPointMake(collectionView.bounds.width/2, ivBlic.center.y)
         
         collectionView.addSubview(ivBlic)
+        collectionView.addSubview(lblRecentStories)
     }
     
     func setGHContextMenuView() {
@@ -242,8 +251,10 @@ class ChatRoomsListViewController: UIViewController, CHTCollectionViewDelegateWa
         collectionCell.layer.rasterizationScale = UIScreen.mainScreen().scale
         
         collectionCell.lblName.text = self.chatRoomsListPresenter.chatRoomName(forIndex: indexPath)
+        
         collectionCell.vContainer.backgroundColor = self.chatRoomsListPresenter.chatRoomMainColor(indexPath)
         collectionCell.ivBackground.setMainColor(self.chatRoomsListPresenter.chatRoomMainColor(indexPath))
+        
         
         let photoUrlList = self.chatRoomsListPresenter.photoUrlList(indexPath)
         
