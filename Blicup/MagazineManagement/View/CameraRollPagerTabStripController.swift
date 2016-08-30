@@ -17,7 +17,6 @@ class CameraRollPagerTabStripController: ButtonBarPagerTabStripViewController {
     
     override func viewDidLoad() {
        
-        
         buttonBarView.selectedBar.backgroundColor = UIColor.grayColor()
         buttonBarView.backgroundColor = UIColor.whiteColor()
         
@@ -60,8 +59,70 @@ class CameraRollPagerTabStripController: ButtonBarPagerTabStripViewController {
             }
         }
 
+        setNavBar()
+        
+        UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation:UIStatusBarAnimation.None)
         
         super.viewDidLoad()
+    }
+    
+    
+    func setNavBar()
+    {
+        self.navigationController!.navigationBar.shadowImage = UIImage()
+        hideNavBarSeparator()
+        self.title = "Camera Roll"
+
+        addLeftNavItemOnView()
+        
+
+    }
+    
+    func addLeftNavItemOnView ()
+    {
+        
+        // hide default navigation bar button item
+        self.navigationItem.leftBarButtonItem = nil;
+        self.navigationItem.hidesBackButton = true;
+        
+        
+        let buttonBack: UIButton = UIButton( type: UIButtonType.Custom)
+        
+        buttonBack.frame = CGRectMake(6, 0, 40, 40)
+        buttonBack.setImage(UIImage(named:"ic_close_black"), forState: UIControlState.Normal)
+        buttonBack.addTarget(self, action: #selector(closeTapped), forControlEvents: UIControlEvents.TouchUpInside)
+        
+        let leftBarButtonItem: UIBarButtonItem = UIBarButtonItem(customView: buttonBack)
+        
+        self.navigationItem.setLeftBarButtonItem(leftBarButtonItem, animated: false)
+        
+        
+    }
+    
+    func hideNavBarSeparator()
+    {
+        //this way transparent property continues working
+        if let line = findShadowImageUnderView(self.navigationController!.navigationBar) {
+            line.hidden = true
+        }
+    }
+    private func findShadowImageUnderView(view: UIView) -> UIImageView? {
+        if view is UIImageView && view.bounds.size.height <= 1 {
+            return (view as! UIImageView)
+        }
+        
+        for subview in view.subviews {
+            if let imageView = findShadowImageUnderView(subview) {
+                return imageView
+            }
+        }
+        return nil
+    }
+    
+    
+    func closeTapped()
+    {
+        
     }
     
     // MARK: - PagerTabStripDataSource
