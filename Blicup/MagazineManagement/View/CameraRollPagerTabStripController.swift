@@ -22,8 +22,6 @@ class CameraRollPagerTabStripController: ButtonBarPagerTabStripViewController {
         buttonBarView.backgroundColor = UIColor.whiteColor()
         
         self.settings.style.buttonBarBackgroundColor =  UIColor.whiteColor()
-        // buttonBar minimumInteritemSpacing value, note that button bar extends from UICollectionView
-        //settings.style.buttonBarMinimumInteritemSpacing = 6
         // buttonBar minimumLineSpacing value
         settings.style.buttonBarMinimumLineSpacing = 10
         // buttonBar flow layout left content inset value
@@ -47,18 +45,18 @@ class CameraRollPagerTabStripController: ButtonBarPagerTabStripViewController {
         changeCurrentIndexProgressive = { (oldCell: ButtonBarViewCell?, newCell: ButtonBarViewCell?, progressPercentage: CGFloat, changeCurrentIndex: Bool, animated: Bool) -> Void in
             guard changeCurrentIndex == true else { return }
             
-            oldCell?.label.textColor = UIColor(white: 0, alpha: 0.6)
+            oldCell?.label.textColor = UIColor(white: 0, alpha: 0.70)
             newCell?.label.textColor = .blackColor()
             
             if animated {
                 UIView.animateWithDuration(0.1, animations: { () -> Void in
                     newCell?.transform = CGAffineTransformMakeScale(1.0, 1.0)
-                    oldCell?.transform = CGAffineTransformMakeScale(0.8, 0.8)
+                    oldCell?.transform = CGAffineTransformMakeScale(0.85, 0.85)
                 })
             }
             else {
                 newCell?.transform = CGAffineTransformMakeScale(1.0, 1.0)
-                oldCell?.transform = CGAffineTransformMakeScale(0.8, 0.8)
+                oldCell?.transform = CGAffineTransformMakeScale(0.85, 0.85)
             }
         }
 
@@ -75,10 +73,16 @@ class CameraRollPagerTabStripController: ButtonBarPagerTabStripViewController {
         let child_2 = storyboard.instantiateViewControllerWithIdentifier("CameraRollViewController") as! CameraRollCollectionViewController
         let child_3 = storyboard.instantiateViewControllerWithIdentifier("CameraRollViewController") as! CameraRollCollectionViewController
         
-    
+        let assetSelector = CameraRollAssetSelector()
+        
+        child_1.assetSelector = assetSelector
+        child_2.assetSelector = assetSelector
+        child_3.assetSelector = assetSelector
+        
+        
         child_1.itemInfo = "All"
         child_2.itemInfo = "Photos"
-         child_2.loadingType = LoadingType.PHOTO
+        child_2.loadingType = LoadingType.PHOTO
         child_3.itemInfo = "Videos"
         child_3.loadingType = LoadingType.VIDEO
         
@@ -110,23 +114,4 @@ class CameraRollPagerTabStripController: ButtonBarPagerTabStripViewController {
         super.reloadPagerTabStripView()
     }
 
-/**
-    
-    changeCurrentIndexProgressive = { (oldCell: ButtonBarViewCell?, newCell: ButtonBarViewCell?, progressPercentage: CGFloat, changeCurrentIndex: Bool, animated: Bool) -> Void in
-    guard changeCurrentIndex == true else { return }
-    
-    oldCell?.label.textColor = UIColor(white: 1, alpha: 0.6)
-    newCell?.label.textColor = .whiteColor()
-    
-    if animated {
-    UIView.animateWithDuration(0.1, animations: { () -> Void in
-    newCell?.transform = CGAffineTransformMakeScale(1.0, 1.0)
-    oldCell?.transform = CGAffineTransformMakeScale(0.8, 0.8)
-    })
-    }
-    else {
-    newCell?.transform = CGAffineTransformMakeScale(1.0, 1.0)
-    oldCell?.transform = CGAffineTransformMakeScale(0.8, 0.8)
-    }
-    }*/
 }
