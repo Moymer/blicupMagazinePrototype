@@ -566,6 +566,7 @@
                                 <cells/>
                                 <connections>
                                     <outlet property="dataSource" destination="g91-As-xHy" id="jiA-aJ-0Wr"/>
+                                    <outlet property="delegate" destination="g91-As-xHy" id="aof-Ww-fvh"/>
                                 </connections>
                             </collectionView>
                         </subviews>
