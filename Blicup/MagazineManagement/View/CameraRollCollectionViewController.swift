@@ -11,17 +11,23 @@ import XLPagerTabStrip
 
 private let reuseIdentifier = "assetImageCell"
 
-class CameraRollCollectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, IndicatorInfoProvider  {
 
+enum LoadingType: Int {
+    case ALL, PHOTO, VIDEO
+}
+
+class CameraRollCollectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, IndicatorInfoProvider {
     
+
+
     @IBOutlet weak var collectionView: UICollectionView!
     var presenter = CameraRollPresenter()
-    
+    var loadingType = LoadingType.ALL
     
     var itemInfo: IndicatorInfo = "View"
     
-
-
+    let c_all_space_between_images:CGFloat = 8.0
+    let c_number_of_columns: CGFloat = 3.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,25 +35,27 @@ class CameraRollCollectionViewController: UIViewController, UICollectionViewDele
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
-        presenter.loadAll { 
-            self.collectionView!.reloadData()
+        switch loadingType {
+        case LoadingType.ALL:
+            presenter.loadAll {
+                self.collectionView!.reloadData()
+            }
+            break
+            
+        case LoadingType.PHOTO:
+            presenter.loadPhotos {
+                self.collectionView!.reloadData()
+            }
+            break
+        case LoadingType.VIDEO:
+            presenter.loadVideos {
+                self.collectionView!.reloadData()
+            }
+            break
+
         }
+        
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
 
     // MARK: UICollectionViewDataSource
 
@@ -77,7 +85,7 @@ class CameraRollCollectionViewController: UIViewController, UICollectionViewDele
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         
-        let w = (UIScreen.mainScreen().applicationFrame.width - 20)/3
+        let w = (UIScreen.mainScreen().applicationFrame.width - c_all_space_between_images) / c_number_of_columns
         return CGSize(width: w, height: w)
         
     }

@@ -20,15 +20,15 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Kvf-JQ-GCE">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="yDP-2N-jVX">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="2" minimumInteritemSpacing="2" id="yDP-2N-jVX">
                                     <size key="itemSize" width="209" height="162"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="5" minY="5" maxX="5" maxY="5"/>
+                                    <inset key="sectionInset" minX="2" minY="2" maxX="2" maxY="2"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="assetImageCell" id="vRT-Te-uJt" customClass="CameraRollImageCollectionViewCell" customModule="Blicup" customModuleProvider="target">
-                                        <rect key="frame" x="5" y="5" width="209" height="162"/>
+                                        <rect key="frame" x="2" y="2" width="209" height="162"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="209" height="162"/>
@@ -88,12 +88,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="46e-Ix-olu">
-                                <rect key="frame" x="0.0" y="104" width="600" height="496"/>
+                                <rect key="frame" x="0.0" y="110" width="600" height="496"/>
                             </scrollView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="CNW-yd-Q90" customClass="ButtonBarView" customModule="XLPagerTabStrip">
-                                <rect key="frame" x="0.0" y="64" width="600" height="40"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="35"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="cYy-lN-66I"/>
+                                    <constraint firstAttribute="height" constant="35" id="cYy-lN-66I"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Xjc-Pr-Bj5">
                                     <size key="itemSize" width="50" height="50"/>
@@ -117,12 +117,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="CNW-yd-Q90" secondAttribute="trailing" id="6NK-lP-0Nj"/>
-                            <constraint firstItem="pbx-l8-ZO8" firstAttribute="top" secondItem="46e-Ix-olu" secondAttribute="bottom" id="FGJ-wt-6GV"/>
+                            <constraint firstItem="pbx-l8-ZO8" firstAttribute="top" secondItem="46e-Ix-olu" secondAttribute="bottom" constant="-6" id="FGJ-wt-6GV"/>
                             <constraint firstItem="46e-Ix-olu" firstAttribute="leading" secondItem="jAY-Vg-QTx" secondAttribute="leading" id="MC5-QR-0ki"/>
                             <constraint firstItem="CNW-yd-Q90" firstAttribute="top" secondItem="mcO-xf-5Yk" secondAttribute="bottom" id="ZaE-Eu-5Pa"/>
                             <constraint firstItem="CNW-yd-Q90" firstAttribute="leading" secondItem="jAY-Vg-QTx" secondAttribute="leading" id="bwI-Iz-y2S"/>
                             <constraint firstAttribute="trailing" secondItem="46e-Ix-olu" secondAttribute="trailing" id="ffP-v1-GnE"/>
-                            <constraint firstItem="46e-Ix-olu" firstAttribute="top" secondItem="mcO-xf-5Yk" secondAttribute="bottom" constant="40" id="sgA-tQ-ANd"/>
+                            <constraint firstItem="46e-Ix-olu" firstAttribute="top" secondItem="mcO-xf-5Yk" secondAttribute="bottom" constant="46" id="sgA-tQ-ANd"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="s4Q-Gy-Mmy"/>
