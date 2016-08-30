@@ -8,15 +8,12 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
+private let reuseIdentifier = "CoverCell"
 
-class ArticleCreationViewController: UICollectionViewController {
+class ArticleCreationViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Register cell classes
-        self.collectionView!.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
         // Do any additional setup after loading the view.
     }
@@ -39,24 +36,29 @@ class ArticleCreationViewController: UICollectionViewController {
     // MARK: UICollectionViewDataSource
 
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
 
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return 0
+        return 1
     }
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath)
     
-        // Configure the cell
+        cell.layer.cornerRadius = 6
+        cell.layer.borderColor = UIColor.lightGrayColor().CGColor
+        cell.layer.borderWidth = 2
     
         return cell
     }
 
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        let width = collectionView.bounds.width - 40
+        return CGSizeMake(width, 310)
+    }
+    
     // MARK: UICollectionViewDelegate
 
     /*
