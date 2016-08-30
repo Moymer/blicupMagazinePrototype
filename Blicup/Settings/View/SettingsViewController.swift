@@ -9,7 +9,7 @@
 import UIKit
 import RSKImageCropper
 
-class SettingsViewController: UIViewController, UICollectionViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UITextViewDelegate, RSKImageCropViewControllerDelegate {
+class SettingsViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UITextViewDelegate, RSKImageCropViewControllerDelegate {
     
     private let kProfileDefaultHeight:CGFloat = 240.0
     private let kProfilePhotoOffset:CGFloat = 20.0
@@ -110,6 +110,13 @@ class SettingsViewController: UIViewController, UICollectionViewDataSource, UIIm
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("CardCell", forIndexPath: indexPath) as! BlicCollectionViewCell
         return cell
     }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        return CGSizeMake(collectionView.frame.width/3 - 15, 184.0)
+    }
+    
+    
+    
     
     
     //MARK: - Update Profile Data/Layout
