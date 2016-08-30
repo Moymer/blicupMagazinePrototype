@@ -1,38 +1,39 @@
 PODS:
-  - Alamofire (3.4.0)
+  - Alamofire (3.4.1)
   - AWSCore (2.3.6)
   - AWSS3 (2.3.6):
     - AWSCore (= 2.3.6)
   - AWSSNS (2.3.6):
     - AWSCore (= 2.3.6)
-  - Bolts (1.7.0):
-    - Bolts/AppLinks (= 1.7.0)
-    - Bolts/Tasks (= 1.7.0)
-  - Bolts/AppLinks (1.7.0):
+  - Bolts (1.8.4):
+    - Bolts/AppLinks (= 1.8.4)
+    - Bolts/Tasks (= 1.8.4)
+  - Bolts/AppLinks (1.8.4):
     - Bolts/Tasks
-  - Bolts/Tasks (1.7.0)
-  - Crashlytics (3.7.0):
+  - Bolts/Tasks (1.8.4)
+  - Crashlytics (3.7.2):
     - Fabric (~> 1.6.3)
   - Fabric (1.6.7)
-  - FBSDKCoreKit (4.11.0):
+  - FBSDKCoreKit (4.14.0):
     - Bolts (~> 1.7)
-  - FBSDKLoginKit (4.11.0):
+  - FBSDKLoginKit (4.14.0):
     - FBSDKCoreKit
-  - FBSDKShareKit (4.11.0):
+  - FBSDKShareKit (4.14.0):
     - FBSDKCoreKit
   - GrowingTextView (0.1.6)
-  - KeychainAccess (2.3.5)
-  - Kingfisher (2.4.1)
+  - KeychainAccess (2.3.6)
+  - Kingfisher (2.4.2)
   - NSString+RemoveEmoji (0.1.1)
   - ReachabilitySwift (2.3.3)
   - RSKImageCropper (1.5.1)
   - SocketRocket (0.4.2)
   - SwiftyJSON (2.3.2)
   - TTTAttributedLabel (2.0.0)
-  - TwitterCore (2.0.2):
+  - TwitterCore (2.3.0):
     - Fabric
-  - TwitterKit (2.0.2):
-    - TwitterCore (= 2.0.2)
+  - TwitterKit (2.3.0):
+    - TwitterCore (= 2.3.0)
+  - XLPagerTabStrip (5.0.0)
 
 DEPENDENCIES:
   - Alamofire (~> 3.0)
@@ -54,6 +55,7 @@ DEPENDENCIES:
   - TTTAttributedLabel
   - TwitterCore
   - TwitterKit
+  - XLPagerTabStrip (~> 5.0)
 
 EXTERNAL SOURCES:
   SwiftyJSON:
@@ -65,28 +67,29 @@ CHECKOUT OPTIONS:
     :git: https://github.com/SwiftyJSON/SwiftyJSON.git
 
 SPEC CHECKSUMS:
-  Alamofire: c19a627cefd6a95f840401c49ab1f124e07f54ee
+  Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
   AWSCore: 917d84b32974136194a905b98c0ae25c9f3350b8
   AWSS3: 1caaf6b45100503fecf3d418c394519a89409a74
   AWSSNS: 37c7f4c80657a621fbabccf7d0f352e3c018fbd0
-  Bolts: a0058fa3b331c5a1e4402d534f2dae36dbff31e4
-  Crashlytics: c3a2333dea9e2733d2777f730910321fc9e25c0d
+  Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
+  Crashlytics: 130ab943f8c78cda7a814b434f270b2e2c8a3cba
   Fabric: caf7580c725e64db144f610ac65cd60956911dc7
-  FBSDKCoreKit: 686ac982723a14ec9ddb85e2f81235d7706c891b
-  FBSDKLoginKit: bade9fc78277764149ccc5bfaadbf13c83175c6a
-  FBSDKShareKit: 2d1746144cfc8a9dbbd24997c34ee0471be51b6a
+  FBSDKCoreKit: 6e020b5db0b5bd1e01f5fb0902131befd129a502
+  FBSDKLoginKit: da563567a108050ef83739c8c8c001ee9e25fa13
+  FBSDKShareKit: e8e5d4ccef69b41132fe33acda26db1e33143e33
   GrowingTextView: 5b431583ba0a401797d3edc8e4af1e2854aaa4e9
-  KeychainAccess: e283c1981a6c5655e1984cd411c6faf16fa165ae
-  Kingfisher: 41aed5b6c1ed8fa98cf6d75283ce89cf7890f517
+  KeychainAccess: 7f10e2ef998ddf954a64d5d608be08677774684d
+  Kingfisher: 05bf8d04408aaa70fcd2c8c81b9f1d0f1ad313dd
   NSString+RemoveEmoji: b1068058ef731c646878050972870d06bd859ce1
   ReachabilitySwift: e0f6b6f280effb47731acfaaa2d5ffe223703793
   RSKImageCropper: edd65fedb3734332818deb139906d6b7f54b8a44
   SocketRocket: ffe08119b00ef982f6c37052a4705a057c8494ad
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
   TTTAttributedLabel: 8cffe8e127e4e82ff3af1e5386d4cd0ad000b656
-  TwitterCore: 0f44d8980a6879d5205dcb4e010d15e643e56fa0
-  TwitterKit: c4e40f289a3d7cc9fab9f241edd7502385468b65
+  TwitterCore: 817eae3e291fa4125b47789e26a4f6f024115c1f
+  TwitterKit: 8a383da8d9c21b0423716381ea8bbfce20622d91
+  XLPagerTabStrip: 87b8b705f9a7178e76a063ffaa2d70045944a965
 
-PODFILE CHECKSUM: 8674d1718a7676b92ec6f6231b909045e0e5db94
+PODFILE CHECKSUM: 5f3fc329824dad0352d858ea600d9d834219eaab
 
 COCOAPODS: 1.0.0
