@@ -235,6 +235,7 @@
 		E54EBDD71D5B604A002EE541 /* SlideCoverTipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54EBDD61D5B604A002EE541 /* SlideCoverTipView.swift */; };
 		E54EBDD91D5B86AF002EE541 /* SwipeCoverImagesTipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54EBDD81D5B86AF002EE541 /* SwipeCoverImagesTipView.swift */; };
 		E54EBDDB1D5B86BB002EE541 /* SwipeCoverImagesTipView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E54EBDDA1D5B86BB002EE541 /* SwipeCoverImagesTipView.xib */; };
+		E56582DD1D75DD8E00309537 /* ArticleCreationCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56582DC1D75DD8E00309537 /* ArticleCreationCollectionViewFlowLayout.swift */; };
 		E574EE481D5904FB006571FE /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = E574EE471D5904FB006571FE /* Image.swift */; };
 		E574EE4B1D5A24B4006571FE /* ShareChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E574EE4A1D5A24B4006571FE /* ShareChatView.swift */; };
 		E574EE4D1D5A24C7006571FE /* ShareChatView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E574EE4C1D5A24C7006571FE /* ShareChatView.xib */; };
@@ -558,6 +559,7 @@
 		E54EBDD61D5B604A002EE541 /* SlideCoverTipView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideCoverTipView.swift; sourceTree = "<group>"; };
 		E54EBDD81D5B86AF002EE541 /* SwipeCoverImagesTipView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeCoverImagesTipView.swift; sourceTree = "<group>"; };
 		E54EBDDA1D5B86BB002EE541 /* SwipeCoverImagesTipView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SwipeCoverImagesTipView.xib; sourceTree = "<group>"; };
+		E56582DC1D75DD8E00309537 /* ArticleCreationCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleCreationCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		E574EE471D5904FB006571FE /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		E574EE4A1D5A24B4006571FE /* ShareChatView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareChatView.swift; sourceTree = "<group>"; };
 		E574EE4C1D5A24C7006571FE /* ShareChatView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShareChatView.xib; sourceTree = "<group>"; };
@@ -1107,6 +1109,7 @@
 				C9569F751D74C66200006019 /* CameraRollImageCollectionViewCell.swift */,
 				C91414531D74EF2600C574DB /* CameraRollPagerTabStripController.swift */,
 				C9DBE91C1D75C08000F2A4B9 /* ArticleCreationViewController.swift */,
+				E56582DC1D75DD8E00309537 /* ArticleCreationCollectionViewFlowLayout.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -1755,6 +1758,7 @@
 				7DF8FDB21C90D9C60058F877 /* SignupPresenter.swift in Sources */,
 				C973E0761CE22059008591FD /* ChatRoomMessage.swift in Sources */,
 				E5D485581D215C9500692B36 /* CCHNearCenterMapClusterer.m in Sources */,
+				E56582DD1D75DD8E00309537 /* ArticleCreationCollectionViewFlowLayout.swift in Sources */,
 				7D7C73BE1CAC477600DC1164 /* ChatRoomsListViewController.swift in Sources */,
 				C99D36061CEF840F00B0F889 /* ChatRoomInputAccessoryView.swift in Sources */,
 				7D7C73C21CAC47E300DC1164 /* CHTCollectionViewWaterfallLayout.swift in Sources */,

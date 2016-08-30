@@ -11,7 +11,7 @@ import UIKit
 private let reuseIdentifier = "CoverCell"
 
 class ArticleCreationViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,6 +34,16 @@ class ArticleCreationViewController: UICollectionViewController, UICollectionVie
     */
 
     // MARK: UICollectionViewDataSource
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        var insets = self.collectionView?.contentInset
+        let value = (self.view.frame.size.width - (self.collectionView?.collectionViewLayout as! UICollectionViewFlowLayout).itemSize.width) * 0.5
+        insets?.left = value
+        insets?.right = value
+        self.collectionView?.contentInset = insets!
+        self.collectionView?.decelerationRate = UIScrollViewDecelerationRateFast;
+    }
 
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
@@ -41,7 +51,7 @@ class ArticleCreationViewController: UICollectionViewController, UICollectionVie
 
 
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return 5
     }
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
