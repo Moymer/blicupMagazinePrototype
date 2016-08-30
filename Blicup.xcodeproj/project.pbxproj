@@ -211,6 +211,7 @@
 		C9BCFF121CF783BF00D498FA /* UserInfo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BCFF101CF783BF00D498FA /* UserInfo+CoreDataProperties.swift */; };
 		C9BCFF131CF783BF00D498FA /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BCFF111CF783BF00D498FA /* UserInfo.swift */; };
 		C9C606891D06187500F39B15 /* GiphyViewerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C606881D06187500F39B15 /* GiphyViewerController.swift */; };
+		C9DBE91D1D75C08000F2A4B9 /* ArticleCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DBE91C1D75C08000F2A4B9 /* ArticleCreationViewController.swift */; };
 		C9E464921CB83CF60034853B /* ChatRoomBS.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E464911CB83CF60034853B /* ChatRoomBS.swift */; };
 		C9E464971CB8592C0034853B /* CoverPhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E464961CB8592C0034853B /* CoverPhotosCollectionViewController.swift */; };
 		C9E464991CB8599C0034853B /* CoverPhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E464981CB8599C0034853B /* CoverPhotoCollectionViewCell.swift */; };
@@ -533,6 +534,7 @@
 		C9BCFF101CF783BF00D498FA /* UserInfo+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UserInfo+CoreDataProperties.swift"; path = "UserManagement/Model/UserInfo+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C9BCFF111CF783BF00D498FA /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserInfo.swift; path = UserManagement/Model/UserInfo.swift; sourceTree = "<group>"; };
 		C9C606881D06187500F39B15 /* GiphyViewerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GiphyViewerController.swift; path = ChatRoomManagement/View/GiphyViewerController.swift; sourceTree = "<group>"; };
+		C9DBE91C1D75C08000F2A4B9 /* ArticleCreationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArticleCreationViewController.swift; path = MagazineManagement/View/ArticleCreationViewController.swift; sourceTree = "<group>"; };
 		C9E464911CB83CF60034853B /* ChatRoomBS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatRoomBS.swift; path = BlicupAPI/ChatRoomBS.swift; sourceTree = "<group>"; };
 		C9E464961CB8592C0034853B /* CoverPhotosCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoverPhotosCollectionViewController.swift; path = ChatRoomManagement/View/CoverPhotosCollectionViewController.swift; sourceTree = "<group>"; };
 		C9E464981CB8599C0034853B /* CoverPhotoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoverPhotoCollectionViewCell.swift; path = ChatRoomManagement/View/CoverPhotoCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -1104,6 +1106,7 @@
 				C9569F731D74C3E900006019 /* CameraRollCollectionViewController.swift */,
 				C9569F751D74C66200006019 /* CameraRollImageCollectionViewCell.swift */,
 				C91414531D74EF2600C574DB /* CameraRollPagerTabStripController.swift */,
+				C9DBE91C1D75C08000F2A4B9 /* ArticleCreationViewController.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -1309,7 +1312,6 @@
 				7D86267A1CA1D0B800D87E87 /* ShellScript */,
 				6087E35708BE357783EACDEA /* 📦 Embed Pods Frameworks */,
 				8E7A6C22B1B765782806E12C /* 📦 Copy Pods Resources */,
-
 			);
 			buildRules = (
 			);
@@ -1499,8 +1501,6 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-
-
 		2FD249EF53516E9618E8FE53 /* 📦 Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1546,7 +1546,6 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-
 		6087E35708BE357783EACDEA /* 📦 Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1605,7 +1604,6 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\" ebe43d72fb819ea7cb8117b056e061dc4020a4d0 2f07aebb13dea16ee6571bf907f458111ecec6c6a27224cf1eb6f076a2f3bd0b";
 		};
-
 		8E7A6C22B1B765782806E12C /* 📦 Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1704,6 +1702,7 @@
 				7D7C73F11CAC617E00DC1164 /* ChatRoomListNavigationController.swift in Sources */,
 				7DFD1E081C874F1200CF5C94 /* User+CoreDataProperties.swift in Sources */,
 				C93AC3F11D25C93600ED8046 /* ChatRoomFetchResultPresenter.swift in Sources */,
+				C9DBE91D1D75C08000F2A4B9 /* ArticleCreationViewController.swift in Sources */,
 				7DCF1D091CFE08280020BF08 /* ChatRoomUserMentionCollectionViewCell.swift in Sources */,
 				7D8C661D1CE3F3D4000CA40A /* BCGradientView.swift in Sources */,
 				C91414541D74EF2600C574DB /* CameraRollPagerTabStripController.swift in Sources */,
