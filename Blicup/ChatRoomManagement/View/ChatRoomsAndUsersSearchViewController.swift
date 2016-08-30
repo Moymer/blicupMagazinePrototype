@@ -44,6 +44,10 @@ class ChatRoomsAndUsersSearchViewController: UIViewController, UICollectionViewD
     @IBOutlet weak var constrTFSearchCenterX: NSLayoutConstraint!
     
     
+    @IBOutlet weak var constrCancelTrailing: NSLayoutConstraint!
+    @IBOutlet weak var constrCancelLeading: NSLayoutConstraint!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -92,7 +96,6 @@ class ChatRoomsAndUsersSearchViewController: UIViewController, UICollectionViewD
         super.viewWillAppear(animated)
         
         UIApplication.sharedApplication().setStatusBarStyle(.Default, animated: true)
-        self.presentingViewController!.tabBarController?.tabBar.hidden = true
     }
     
     deinit {
@@ -779,7 +782,6 @@ class ChatRoomsAndUsersSearchViewController: UIViewController, UICollectionViewD
             self.view.layoutIfNeeded()
             
         }) { (finished) in
-            self.presentingViewController!.tabBarController?.tabBar.hidden = false
             self.performSegueWithIdentifier("unwindFromSecondary", sender: self)
         }
     }

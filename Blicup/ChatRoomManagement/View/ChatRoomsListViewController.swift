@@ -873,5 +873,4 @@ class ChatRoomsListViewController: UIViewController, CHTCollectionViewDelegateWa
             }
         }
     }
-    
 }

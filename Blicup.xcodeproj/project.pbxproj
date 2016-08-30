@@ -72,6 +72,7 @@
 		7D8C661B1CE3F378000CA40A /* WebImageSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8C66131CE3F378000CA40A /* WebImageSearchViewController.swift */; };
 		7D8C661D1CE3F3D4000CA40A /* BCGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8C661C1CE3F3D4000CA40A /* BCGradientView.swift */; };
 		7D8C661F1CE3F413000CA40A /* CoverPhotoCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8C661E1CE3F413000CA40A /* CoverPhotoCollectionReusableView.swift */; };
+		7D9564F51D74C78300D14658 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9564F41D74C78300D14658 /* SearchViewController.swift */; };
 		7DA5A86E1CAF05040019B32D /* ChatRoom+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA5A86C1CAF05040019B32D /* ChatRoom+CoreDataProperties.swift */; };
 		7DA5A86F1CAF05040019B32D /* ChatRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA5A86D1CAF05040019B32D /* ChatRoom.swift */; };
 		7DA80C181CBF0E14006151E1 /* Photo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA80C161CBF0E14006151E1 /* Photo+CoreDataProperties.swift */; };
@@ -333,6 +334,7 @@
 		7D8C66131CE3F378000CA40A /* WebImageSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebImageSearchViewController.swift; sourceTree = "<group>"; };
 		7D8C661C1CE3F3D4000CA40A /* BCGradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BCGradientView.swift; path = Utils/BCGradientView.swift; sourceTree = "<group>"; };
 		7D8C661E1CE3F413000CA40A /* CoverPhotoCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoverPhotoCollectionReusableView.swift; path = ChatRoomManagement/View/CoverPhotoCollectionReusableView.swift; sourceTree = "<group>"; };
+		7D9564F41D74C78300D14658 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchViewController.swift; path = ChatRoomManagement/View/SearchViewController.swift; sourceTree = "<group>"; };
 		7DA5A86C1CAF05040019B32D /* ChatRoom+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ChatRoom+CoreDataProperties.swift"; path = "ChatRoomManagement/Model/ChatRoom+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		7DA5A86D1CAF05040019B32D /* ChatRoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatRoom.swift; path = ChatRoomManagement/Model/ChatRoom.swift; sourceTree = "<group>"; };
 		7DA80C161CBF0E14006151E1 /* Photo+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Photo+CoreDataProperties.swift"; path = "ChatRoomManagement/Model/Photo+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -1096,11 +1098,12 @@
 			isa = PBXGroup;
 			children = (
 				C9525DEE1CDA3F3F0035DE0E /* Search.storyboard */,
+				7D9564F41D74C78300D14658 /* SearchViewController.swift */,
+				7DCF1D0A1CFE1DC10020BF08 /* ChatRoomsAndUsersSearchViewController.swift */,
+				7DB5C7C61CF098B200A5EFF2 /* UserSearchCollectionViewCell.swift */,
 				C9525DF21CDA79AD0035DE0E /* ChatRoomMapViewController.swift */,
 				C9525DFA1CDBCD7B0035DE0E /* ChatRoomAnnotationView.swift */,
 				C9525DFC1CE122580035DE0E /* MapChatListViewController.swift */,
-				7DCF1D0A1CFE1DC10020BF08 /* ChatRoomsAndUsersSearchViewController.swift */,
-				7DB5C7C61CF098B200A5EFF2 /* UserSearchCollectionViewCell.swift */,
 			);
 			name = SearchTab;
 			sourceTree = "<group>";
@@ -1267,6 +1270,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7D1006E21C84ADFB0076561E /* Build configuration list for PBXNativeTarget "Blicup" */;
 			buildPhases = (
+				FE647D69E52F71535BA0D779 /* 📦 Check Pods Manifest.lock */,
 				A850C6AEAFE22E016E39DE89 /* [CP] Check Pods Manifest.lock */,
 				8AB62DF7A0F1199465B047CD /* [CP] Embed Pods Frameworks */,
 				72EEB1577FCC01AB79C8B085 /* [CP] Check Pods Manifest.lock */,
@@ -1275,6 +1279,8 @@
 				7D1006B51C84ADFB0076561E /* Resources */,
 				7D86267A1CA1D0B800D87E87 /* ShellScript */,
 				24F951BF1876E98D2C1A2466 /* [CP] Copy Pods Resources */,
+				56E91203B559FC9BADE25BE5 /* 📦 Embed Pods Frameworks */,
+				036683FB123BA5B956DD0454 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1289,6 +1295,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7D1006E51C84ADFB0076561E /* Build configuration list for PBXNativeTarget "BlicupTests" */;
 			buildPhases = (
+				92298ABF8F39FFD4981D3BDE /* 📦 Check Pods Manifest.lock */,
 				0AD6ED758F7281AF575F1E0B /* [CP] Check Pods Manifest.lock */,
 				A8400827C22C8206F5F93CF7 /* [CP] Check Pods Manifest.lock */,
 				4EA135E4B936FCCE58BBF623 /* [CP] Check Pods Manifest.lock */,
@@ -1315,6 +1322,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7D1006E81C84ADFB0076561E /* Build configuration list for PBXNativeTarget "BlicupUITests" */;
 			buildPhases = (
+				67AF4407026C1DA83FF64119 /* 📦 Check Pods Manifest.lock */,
 				A4389D8CD7996D1590BCA42C /* [CP] Check Pods Manifest.lock */,
 				1CF407D620ECF3D9EE62BB3E /* [CP] Check Pods Manifest.lock */,
 				F9554E142BD965C7A8E0645F /* [CP] Check Pods Manifest.lock */,
@@ -1454,6 +1462,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		036683FB123BA5B956DD0454 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Blicup/Pods-Blicup-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		0AD6ED758F7281AF575F1E0B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1558,6 +1581,21 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 		};
+		56E91203B559FC9BADE25BE5 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Blicup/Pods-Blicup-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		591C1220AFC1243C57617B3E /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1586,6 +1624,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BlicupTests/Pods-BlicupTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		67AF4407026C1DA83FF64119 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		72EEB1577FCC01AB79C8B085 /* [CP] Check Pods Manifest.lock */ = {
@@ -1629,6 +1682,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Blicup/Pods-Blicup-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		92298ABF8F39FFD4981D3BDE /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		A4389D8CD7996D1590BCA42C /* [CP] Check Pods Manifest.lock */ = {
@@ -1704,6 +1772,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BlicupTests/Pods-BlicupTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FE647D69E52F71535BA0D779 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		FF65503D72CAD447683C9159 /* [CP] Copy Pods Resources */ = {
@@ -1890,6 +1973,7 @@
 				7DCF1D0D1CFF89460020BF08 /* StringExtensions.swift in Sources */,
 				7DFD1E091C874F1200CF5C94 /* User.swift in Sources */,
 				7D7C73B41CAB208F00DC1164 /* BCProgress.swift in Sources */,
+				7D9564F51D74C78300D14658 /* SearchViewController.swift in Sources */,
 				C947A3341CE6423600D810D3 /* ChatRoomPresenter.swift in Sources */,
 				7DCFA7291D1044C00043CEA1 /* CreateChatRoomInputAccessoryView.swift in Sources */,
 				C9BCFF0F1CF7721100D498FA /* ToStringArrayTransformer.swift in Sources */,
