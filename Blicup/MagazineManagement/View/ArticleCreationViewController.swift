@@ -47,16 +47,22 @@ class ArticleCreationViewController: UICollectionViewController, UICollectionVie
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath)
     
-        cell.layer.cornerRadius = 6
-        cell.layer.borderColor = UIColor.lightGrayColor().CGColor
-        cell.layer.borderWidth = 2
+        let container = cell.viewWithTag(1)!
+        container.layer.cornerRadius = 20
+        
+        cell.layer.shadowColor = UIColor.lightGrayColor().CGColor
+        cell.layer.shadowOffset = CGSizeMake(2, 2)
+        cell.layer.shadowOpacity = 0.5
+        cell.layer.shadowRadius = 2.0
+        cell.clipsToBounds = false
+        cell.layer.masksToBounds = false
     
         return cell
     }
 
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         let width = collectionView.bounds.width - 40
-        return CGSizeMake(width, 310)
+        return CGSizeMake(width, 320)
     }
     
     // MARK: UICollectionViewDelegate
