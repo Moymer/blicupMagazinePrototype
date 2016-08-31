@@ -9,7 +9,7 @@
 import UIKit
 import XLPagerTabStrip
 
-class CameraRollPagerTabStripController: ButtonBarPagerTabStripViewController {
+class CameraRollPagerTabStripController: ButtonBarPagerTabStripViewController, CameraRollAssetSelectionDelegate {
 
     var isReload = false
     let assetSelector = CameraRollAssetSelector()
@@ -61,6 +61,8 @@ class CameraRollPagerTabStripController: ButtonBarPagerTabStripViewController {
 
         btnCreateArticle.layer.cornerRadius = 21
         btnCreateArticle.clipsToBounds = true
+        btnCreateArticle.hidden = true
+        assetSelector.delegate = self
         
         setNavBar()
         
@@ -162,22 +164,44 @@ class CameraRollPagerTabStripController: ButtonBarPagerTabStripViewController {
         return Array(childViewControllers.prefix(Int(nItems)))
     }
     
-    override func reloadPagerTabStripView() {
-        isReload = true
-        if rand() % 2 == 0 {
-            pagerBehaviour = .Progressive(skipIntermediateViewControllers: rand() % 2 == 0 , elasticIndicatorLimit: rand() % 2 == 0 )
-        }
-        else {
-            pagerBehaviour = .Common(skipIntermediateViewControllers: rand() % 2 == 0)
-        }
-        super.reloadPagerTabStripView()
-    }
+
     
       // MARK: - Actions
     
     @IBAction func createArticle(sender: UIButton) {
         
+        let selectedAssets = assetSelector.getSelectedAssetsOrdered()
         
+        //TODO - Call article creation
+        
+    }
+     // MARK: - Selector Delegate
+    
+    func selectedAssets(numberSelected: Int) {
+        
+        if numberSelected == 0
+        {
+            btnCreateArticle.hidden = false
+            btnCreateArticle.alpha = 1.0
+            UIView.animateWithDuration(0.2, animations: {
+                self.btnCreateArticle.alpha = 0.0
+                }, completion: { (finish) in
+                    self.btnCreateArticle.hidden = true
+                    self.btnCreateArticle.alpha = 1.0
+            })
+        }
+        else
+        {
+            if numberSelected == 1 {
+                btnCreateArticle.hidden = false
+                btnCreateArticle.alpha = 0.0
+                UIView.animateWithDuration(0.2, animations: {
+                    self.btnCreateArticle.alpha = 1.0
+                   
+                })
+            }
+            btnCreateArticle.setTitle("Add (\(numberSelected))", forState: UIControlState.Normal)
+        }
     }
 
 }
