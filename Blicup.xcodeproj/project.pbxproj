@@ -189,6 +189,10 @@
 		C95B14DD1D21636800D4DA0F /* UserListFollowBlockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95B14DC1D21636800D4DA0F /* UserListFollowBlockViewController.swift */; };
 		C973E0751CE22059008591FD /* ChatRoomMessage+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C973E0731CE22059008591FD /* ChatRoomMessage+CoreDataProperties.swift */; };
 		C973E0761CE22059008591FD /* ChatRoomMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C973E0741CE22059008591FD /* ChatRoomMessage.swift */; };
+		C97A08431D77493500D794EA /* MagazineReading.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C97A08421D77493500D794EA /* MagazineReading.storyboard */; };
+		C97A084C1D776AF900D794EA /* CardContentOverCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97A084A1D776AF900D794EA /* CardContentOverCollectionCell.swift */; };
+		C97A084D1D776AF900D794EA /* CardContentOverCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C97A084B1D776AF900D794EA /* CardContentOverCollectionCell.xib */; };
+		C97A08501D77746200D794EA /* ArticlesReadingCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97A084F1D77746200D794EA /* ArticlesReadingCollectionViewController.swift */; };
 		C97C005C1D1821E400C16541 /* SettingsTablePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97C005B1D1821E400C16541 /* SettingsTablePresenter.swift */; };
 		C97C005E1D182D9700C16541 /* InfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97C005D1D182D9700C16541 /* InfoTableViewController.swift */; };
 		C97C00601D18705E00C16541 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97C005F1D18705E00C16541 /* FavoritesViewController.swift */; };
@@ -513,6 +517,10 @@
 		C95B14DC1D21636800D4DA0F /* UserListFollowBlockViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserListFollowBlockViewController.swift; path = Settings/View/UserListFollowBlockViewController.swift; sourceTree = "<group>"; };
 		C973E0731CE22059008591FD /* ChatRoomMessage+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ChatRoomMessage+CoreDataProperties.swift"; path = "ChatRoomManagement/Model/ChatRoomMessage+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C973E0741CE22059008591FD /* ChatRoomMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatRoomMessage.swift; path = ChatRoomManagement/Model/ChatRoomMessage.swift; sourceTree = "<group>"; };
+		C97A08421D77493500D794EA /* MagazineReading.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MagazineReading.storyboard; path = MagazineManagement/View/MagazineReading.storyboard; sourceTree = "<group>"; };
+		C97A084A1D776AF900D794EA /* CardContentOverCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CardContentOverCollectionCell.swift; path = MagazineManagement/View/CardContentOverCollectionCell.swift; sourceTree = "<group>"; };
+		C97A084B1D776AF900D794EA /* CardContentOverCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CardContentOverCollectionCell.xib; path = MagazineManagement/View/CardContentOverCollectionCell.xib; sourceTree = "<group>"; };
+		C97A084F1D77746200D794EA /* ArticlesReadingCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArticlesReadingCollectionViewController.swift; path = MagazineManagement/View/ArticlesReadingCollectionViewController.swift; sourceTree = "<group>"; };
 		C97C005B1D1821E400C16541 /* SettingsTablePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsTablePresenter.swift; path = Settings/Presenter/SettingsTablePresenter.swift; sourceTree = "<group>"; };
 		C97C005D1D182D9700C16541 /* InfoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InfoTableViewController.swift; path = Settings/View/InfoTableViewController.swift; sourceTree = "<group>"; };
 		C97C005F1D18705E00C16541 /* FavoritesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FavoritesViewController.swift; path = Settings/View/FavoritesViewController.swift; sourceTree = "<group>"; };
@@ -1112,6 +1120,7 @@
 				C91414531D74EF2600C574DB /* CameraRollPagerTabStripController.swift */,
 				C9DBE91C1D75C08000F2A4B9 /* ArticleCreationViewController.swift */,
 				E56582DC1D75DD8E00309537 /* ArticleCreationCollectionViewFlowLayout.swift */,
+				C97A084E1D776B0300D794EA /* Reading */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -1136,6 +1145,17 @@
 				7D50A67B1D5B5DD4009739F2 /* UserWithLikeTableViewCell.xib */,
 			);
 			name = UserListWithBlockFollow;
+			sourceTree = "<group>";
+		};
+		C97A084E1D776B0300D794EA /* Reading */ = {
+			isa = PBXGroup;
+			children = (
+				C97A08421D77493500D794EA /* MagazineReading.storyboard */,
+				C97A084A1D776AF900D794EA /* CardContentOverCollectionCell.swift */,
+				C97A084B1D776AF900D794EA /* CardContentOverCollectionCell.xib */,
+				C97A084F1D77746200D794EA /* ArticlesReadingCollectionViewController.swift */,
+			);
+			name = Reading;
 			sourceTree = "<group>";
 		};
 		C98C13FE1D2461E500BAD95C /* MapTab */ = {
@@ -1472,12 +1492,14 @@
 				7D1007161C8604BA0076561E /* SF-UI-Text-SemiboldItalic.otf in Resources */,
 				7DCC30DE1D400148001202F4 /* UserTableViewCell.xib in Resources */,
 				C9525DEF1CDA3F3F0035DE0E /* Map.storyboard in Resources */,
+				C97A08431D77493500D794EA /* MagazineReading.storyboard in Resources */,
 				7D1007141C8604BA0076561E /* SF-UI-Text-RegularItalic.otf in Resources */,
 				7DD7C88F1D41645B003454A7 /* Signup.storyboard in Resources */,
 				7DCC30E81D4004B6001202F4 /* UserBlockCell.xib in Resources */,
 				7D1007121C8604BA0076561E /* SF-UI-Text-MediumItalic.otf in Resources */,
 				C9569F6E1D74B23800006019 /* Magazine.storyboard in Resources */,
 				7DF0EC5B1D42B24500DEF902 /* default_tags_es.json in Resources */,
+				C97A084D1D776AF900D794EA /* CardContentOverCollectionCell.xib in Resources */,
 				7D1EC71C1CC83CE7006689B3 /* default_tags_pt.json in Resources */,
 				E506A0A21D4BFF0B00CCD728 /* TipsView.xib in Resources */,
 			);
@@ -1760,6 +1782,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C97A084C1D776AF900D794EA /* CardContentOverCollectionCell.swift in Sources */,
 				7DABC2DC1D34796300D7903C /* ChatRoomContextMenuProtocol.swift in Sources */,
 				C9569F4B1D746D3D00006019 /* Magazine+CoreDataProperties.swift in Sources */,
 				7D8C66181CE3F378000CA40A /* WebImageSearchCollectionFooterReusableView.swift in Sources */,
@@ -1941,6 +1964,7 @@
 				7DCFA72D1D122C6A0043CEA1 /* UserTableViewCell.swift in Sources */,
 				C9569F5C1D746D3D00006019 /* Author.swift in Sources */,
 				C97C00621D18754D00C16541 /* FavoritesPresenter.swift in Sources */,
+				C97A08501D77746200D794EA /* ArticlesReadingCollectionViewController.swift in Sources */,
 				C9525DFB1CDBCD7B0035DE0E /* ChatRoomAnnotationView.swift in Sources */,
 				C91B36681CC7FF54002D77BF /* LDTPWebSocketManager.swift in Sources */,
 				7DE759981D2ABE5F004BAFF9 /* AlertControllerProtocol.swift in Sources */,

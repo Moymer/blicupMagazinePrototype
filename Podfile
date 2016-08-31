@@ -26,7 +26,7 @@ target 'Blicup' do
     pod 'KeychainAccess'
     pod 'NSString+RemoveEmoji'
     pod 'XLPagerTabStrip', '~> 5.0'
-    
+    pod 'Spring', :git => 'https://github.com/MengTo/Spring.git', :branch => 'swift2'
   target 'BlicupTests' do
     inherit! :search_paths
     # Pods for testing
