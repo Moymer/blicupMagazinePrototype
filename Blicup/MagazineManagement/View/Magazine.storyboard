@@ -531,6 +531,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ic_check_selected" width="22" height="17"/>
+        <image name="ic_video_indicator" width="22" height="11"/>
         <image name="ic_close_black" width="22" height="22"/>
     </resources>
 </document>
