@@ -7,11 +7,13 @@
 //
 
 import UIKit
-
+import Photos
 
 private let reuseIdentifier = "CoverCell"
 
 class ArticleCreationViewController: UICollectionViewController, UITextViewDelegate {
+    
+    var numberOfCells = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,13 +47,13 @@ class ArticleCreationViewController: UICollectionViewController, UITextViewDeleg
 
 
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6
+        return numberOfCells
     }
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
         let identifier = indexPath.row==0 ? reuseIdentifier : "ContentCell"
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(identifier, forIndexPath: indexPath)
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(identifier, forIndexPath: indexPath) as! CoverCollectionViewCell
     
         let container = cell.viewWithTag(1)!
         container.layer.cornerRadius = 20
@@ -62,7 +64,7 @@ class ArticleCreationViewController: UICollectionViewController, UITextViewDeleg
         cell.layer.shadowRadius = 3.0
         cell.clipsToBounds = false
         cell.layer.masksToBounds = false
-    
+        
         return cell
     }
     

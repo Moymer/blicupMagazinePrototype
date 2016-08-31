@@ -9,6 +9,7 @@
 import UIKit
 import XLPagerTabStrip
 
+
 class CameraRollPagerTabStripController: ButtonBarPagerTabStripViewController, CameraRollAssetSelectionDelegate {
 
     var isReload = false
@@ -169,11 +170,7 @@ class CameraRollPagerTabStripController: ButtonBarPagerTabStripViewController, C
       // MARK: - Actions
     
     @IBAction func createArticle(sender: UIButton) {
-        
-        let selectedAssets = assetSelector.getSelectedAssetsOrdered()
-        
-        //TODO - Call article creation
-        
+        self.performSegueWithIdentifier("CreateArticleSegue", sender: nil)
     }
      // MARK: - Selector Delegate
     
@@ -201,6 +198,14 @@ class CameraRollPagerTabStripController: ButtonBarPagerTabStripViewController, C
                 })
             }
             btnCreateArticle.setTitle("Add (\(numberSelected))", forState: UIControlState.Normal)
+        }
+    }
+    
+    
+    // MARK: Navigation Segue
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "CreateArticleSegue", let vc = segue.destinationViewController as? ArticleCreationViewController {
+            vc.numberOfCells = assetSelector.getSelectedAssetsOrdered().count
         }
     }
 

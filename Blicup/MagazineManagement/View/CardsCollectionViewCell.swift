@@ -41,6 +41,8 @@ class ArticleTextView: UITextView {
 
 
 class CoverCollectionViewCell: UICollectionViewCell {
+    @IBOutlet var cardMedia: UIImageView!
+    
     override func preferredLayoutAttributesFittingAttributes(layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
         let superAttr = super.preferredLayoutAttributesFittingAttributes(layoutAttributes)
         superAttr.size = CGSizeMake(layoutAttributes.size.width, superAttr.size.height)
