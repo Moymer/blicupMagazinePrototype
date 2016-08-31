@@ -9,50 +9,44 @@
 import UIKit
 import Photos
 
-private let reuseIdentifier = "CoverCell"
 
-class ArticleCreationViewController: UICollectionViewController, UITextViewDelegate {
+class ArticleCreationViewController: UIViewController, UICollectionViewDataSource, UITextViewDelegate {
     
-    var numberOfCells = 0
+    @IBOutlet weak var collectionView: UICollectionView!
+    let presenter = ArticleCreationPresenter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.collectionView?.decelerationRate = UIScrollViewDecelerationRateFast
-        
-        if let articleFlowLayout = collectionView?.collectionViewLayout as? ArticleCreationCollectionViewFlowLayout {
-            let cellWidth = collectionView!.bounds.width - (articleFlowLayout.sectionInset.left + articleFlowLayout.sectionInset.right)
-            articleFlowLayout.estimatedItemSize = CGSizeMake(cellWidth, 330)
-        }
+        self.collectionView.decelerationRate = UIScrollViewDecelerationRateFast
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+    override func viewDidLayoutSubviews() {
+        if let articleFlowLayout = collectionView.collectionViewLayout as? ArticleCreationCollectionViewFlowLayout {
+            let cellWidth = collectionView.bounds.width - (articleFlowLayout.sectionInset.left + articleFlowLayout.sectionInset.right)
+            articleFlowLayout.estimatedItemSize = CGSizeMake(cellWidth, 330)
+        }
+        
+        super.viewDidLayoutSubviews()
     }
-    */
-
+    
     // MARK: UICollectionViewDataSource
-    override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
     }
 
-
-    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return numberOfCells
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return presenter.numberOfMedias()
     }
 
-    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
-        let identifier = indexPath.row==0 ? reuseIdentifier : "ContentCell"
+        let identifier = indexPath.row==0 ? "CoverCell" : "ContentCell"
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(identifier, forIndexPath: indexPath) as! CoverCollectionViewCell
     
         let container = cell.viewWithTag(1)!
@@ -65,45 +59,16 @@ class ArticleCreationViewController: UICollectionViewController, UITextViewDeleg
         cell.clipsToBounds = false
         cell.layer.masksToBounds = false
         
+        presenter.getImageMedia(indexPath) { (image) in
+            cell.cardMedia.image = image
+        }
+        
         return cell
     }
     
     // TextView Delegate
     func textViewDidChange(textView: UITextView) {
         textView.invalidateIntrinsicContentSize()
-        self.collectionViewLayout.invalidateLayout()
+        self.collectionView.collectionViewLayout.invalidateLayout()
     }
-    
-    
-    // MARK: UICollectionViewDelegate
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(collectionView: UICollectionView, shouldHighlightItemAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(collectionView: UICollectionView, shouldSelectItemAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(collectionView: UICollectionView, shouldShowMenuForItemAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(collectionView: UICollectionView, canPerformAction action: Selector, forItemAtIndexPath indexPath: NSIndexPath, withSender sender: AnyObject?) -> Bool {
-        return false
-    }
-
-    override func collectionView(collectionView: UICollectionView, performAction action: Selector, forItemAtIndexPath indexPath: NSIndexPath, withSender sender: AnyObject?) {
-    
-    }
-    */
-
 }
