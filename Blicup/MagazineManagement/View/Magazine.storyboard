@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BRJ-H2-Y4z">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BRJ-H2-Y4z">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -300,7 +300,7 @@
                                     <constraint firstAttribute="bottom" secondItem="BEE-Z0-8Fc" secondAttribute="bottom" id="iyF-0E-r1d"/>
                                 </constraints>
                             </collectionViewCell>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="M5S-1z-rB0" userLabel="ContentCell">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ContentCell" id="M5S-1z-rB0" userLabel="ContentCell">
                                 <rect key="frame" x="133" y="530" width="335" height="330"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -312,31 +312,37 @@
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Zjn-aj-D6Q">
                                                     <rect key="frame" x="0.0" y="0.0" width="335" height="225"/>
-                                                    <color key="backgroundColor" red="0.95294117649999999" green="0.0" blue="0.32549019610000002" alpha="0.20037715519999999" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="225" id="M1k-SU-ABX"/>
                                                     </constraints>
                                                 </imageView>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="751" scrollEnabled="NO" text="Title" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="m7z-gF-yHg" customClass="ArticleTextView" customModule="Blicup" customModuleProvider="target">
-                                                    <rect key="frame" x="10" y="235" width="315" height="38"/>
+                                                    <rect key="frame" x="10" y="235" width="315" height="48"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="16"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="23"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="bmi-8c-ssl" id="zDz-lB-Fhb"/>
+                                                    </connections>
                                                 </textView>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="749" text="Your text..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="XiU-wi-uxh" customClass="ArticleTextView" customModule="Blicup" customModuleProvider="target">
-                                                    <rect key="frame" x="10" y="278" width="315" height="37"/>
+                                                    <rect key="frame" x="10" y="283" width="315" height="32"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="bmi-8c-ssl" id="9ub-bP-4VR"/>
+                                                    </connections>
                                                 </textView>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstItem="m7z-gF-yHg" firstAttribute="leading" secondItem="23s-Mh-9qN" secondAttribute="leading" constant="10" id="90p-AZ-Nib"/>
                                                 <constraint firstAttribute="trailing" secondItem="XiU-wi-uxh" secondAttribute="trailing" constant="10" id="QnI-GQ-loM"/>
-                                                <constraint firstItem="XiU-wi-uxh" firstAttribute="top" secondItem="m7z-gF-yHg" secondAttribute="bottom" constant="5" id="UE9-6H-g5P"/>
+                                                <constraint firstItem="XiU-wi-uxh" firstAttribute="top" secondItem="m7z-gF-yHg" secondAttribute="bottom" id="UE9-6H-g5P"/>
                                                 <constraint firstAttribute="bottom" secondItem="XiU-wi-uxh" secondAttribute="bottom" constant="15" id="YVd-8X-F8G"/>
                                                 <constraint firstItem="Zjn-aj-D6Q" firstAttribute="top" secondItem="23s-Mh-9qN" secondAttribute="top" id="eEu-oI-802"/>
                                                 <constraint firstItem="XiU-wi-uxh" firstAttribute="leading" secondItem="23s-Mh-9qN" secondAttribute="leading" constant="10" id="hBY-88-eRd"/>

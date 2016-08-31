@@ -45,11 +45,13 @@ class ArticleCreationViewController: UICollectionViewController, UITextViewDeleg
 
 
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return 6
     }
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath)
+        
+        let identifier = indexPath.row==0 ? reuseIdentifier : "ContentCell"
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(identifier, forIndexPath: indexPath)
     
         let container = cell.viewWithTag(1)!
         container.layer.cornerRadius = 20
