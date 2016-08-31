@@ -1123,6 +1123,7 @@
 				C9DBE91C1D75C08000F2A4B9 /* ArticleCreationViewController.swift */,
 				E56582DC1D75DD8E00309537 /* ArticleCreationCollectionViewFlowLayout.swift */,
 				C9111B731D760D9800673CB6 /* CardsCollectionViewCell.swift */,
+				E516B0661D760ABA00051313 /* SearchArticleLocationViewController.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
