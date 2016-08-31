@@ -121,6 +121,7 @@
 		A456F30A1C999009008CF87D /* LDTProtocolImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A456F3091C999009008CF87D /* LDTProtocolImpl.swift */; };
 		A4D97E211CB9758900E13678 /* UserBS.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D97E201CB9758900E13678 /* UserBS.swift */; };
 		C91414541D74EF2600C574DB /* CameraRollPagerTabStripController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91414531D74EF2600C574DB /* CameraRollPagerTabStripController.swift */; };
+		C91414571D76001C00C574DB /* CameraRollAssetSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91414561D76001C00C574DB /* CameraRollAssetSelector.swift */; };
 		C91B36641CC6AED3002D77BF /* LDTProtocolImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A456F3091C999009008CF87D /* LDTProtocolImpl.swift */; };
 		C91B36661CC6B14F002D77BF /* BlicupServicesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91B36651CC6B14F002D77BF /* BlicupServicesTests.swift */; };
 		C91B36681CC7FF54002D77BF /* LDTPWebSocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91B36671CC7FF54002D77BF /* LDTPWebSocketManager.swift */; };
@@ -449,6 +450,7 @@
 		A456F3091C999009008CF87D /* LDTProtocolImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDTProtocolImpl.swift; sourceTree = "<group>"; };
 		A4D97E201CB9758900E13678 /* UserBS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserBS.swift; path = BlicupAPI/UserBS.swift; sourceTree = "<group>"; };
 		C91414531D74EF2600C574DB /* CameraRollPagerTabStripController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CameraRollPagerTabStripController.swift; path = MagazineManagement/View/CameraRollPagerTabStripController.swift; sourceTree = "<group>"; };
+		C91414561D76001C00C574DB /* CameraRollAssetSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CameraRollAssetSelector.swift; path = MagazineManagement/Presenter/CameraRollAssetSelector.swift; sourceTree = "<group>"; };
 		C91B36651CC6B14F002D77BF /* BlicupServicesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlicupServicesTests.swift; sourceTree = "<group>"; };
 		C91B36671CC7FF54002D77BF /* LDTPWebSocketManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDTPWebSocketManager.swift; sourceTree = "<group>"; };
 		C91B36691CC800A0002D77BF /* LDTPMessageBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDTPMessageBuilder.swift; sourceTree = "<group>"; };
@@ -1127,6 +1129,7 @@
 			isa = PBXGroup;
 			children = (
 				C9569F6F1D74B87100006019 /* CameraRollPresenter.swift */,
+				C91414561D76001C00C574DB /* CameraRollAssetSelector.swift */,
 			);
 			name = Presenter;
 			sourceTree = "<group>";
@@ -1317,6 +1320,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7D1006E21C84ADFB0076561E /* Build configuration list for PBXNativeTarget "Blicup" */;
 			buildPhases = (
+				16A62B9EB8DD8E4826BB6487 /* 📦 Check Pods Manifest.lock */,
 				7344C74ECB720FE1C186A78E /* [CP] Check Pods Manifest.lock */,
 				7D1006B31C84ADFB0076561E /* Sources */,
 				7D1006B41C84ADFB0076561E /* Frameworks */,
@@ -1324,6 +1328,8 @@
 				7D86267A1CA1D0B800D87E87 /* ShellScript */,
 				6087E35708BE357783EACDEA /* [CP] Embed Pods Frameworks */,
 				8E7A6C22B1B765782806E12C /* [CP] Copy Pods Resources */,
+				63A6740E991373C194CD3C7F /* 📦 Embed Pods Frameworks */,
+				8062EA18BC5299409E5F31C8 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1338,12 +1344,15 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7D1006E51C84ADFB0076561E /* Build configuration list for PBXNativeTarget "BlicupTests" */;
 			buildPhases = (
+				BE4E17F1711D2AC006BCDF18 /* 📦 Check Pods Manifest.lock */,
 				4A7CF89754E6CE58CCF33A76 /* [CP] Check Pods Manifest.lock */,
 				7D1006CA1C84ADFB0076561E /* Sources */,
 				7D1006CB1C84ADFB0076561E /* Frameworks */,
 				7D1006CC1C84ADFB0076561E /* Resources */,
 				62CF798FF787507D05B8238F /* [CP] Copy Pods Resources */,
 				35D5BDD80BFB2D86778EBB6D /* [CP] Embed Pods Frameworks */,
+				A78052B5137D798F4E4E7BDE /* 📦 Embed Pods Frameworks */,
+				6A2A6BAC219178C0B3A9C2C0 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1359,11 +1368,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7D1006E81C84ADFB0076561E /* Build configuration list for PBXNativeTarget "BlicupUITests" */;
 			buildPhases = (
+				804AFA43A669E4A4D867BE70 /* 📦 Check Pods Manifest.lock */,
 				293E55DBCE75332B8205F22E /* [CP] Check Pods Manifest.lock */,
 				7D1006D51C84ADFB0076561E /* Sources */,
 				7D1006D61C84ADFB0076561E /* Frameworks */,
 				7D1006D71C84ADFB0076561E /* Resources */,
 				2FD249EF53516E9618E8FE53 /* [CP] Copy Pods Resources */,
+				71C30385D3242CB17EB555A5 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1498,6 +1509,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		16A62B9EB8DD8E4826BB6487 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		293E55DBCE75332B8205F22E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1588,6 +1614,51 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BlicupTests/Pods-BlicupTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		63A6740E991373C194CD3C7F /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Blicup/Pods-Blicup-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6A2A6BAC219178C0B3A9C2C0 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BlicupTests/Pods-BlicupTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		71C30385D3242CB17EB555A5 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BlicupUITests/Pods-BlicupUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		7344C74ECB720FE1C186A78E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1616,6 +1687,36 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\" ebe43d72fb819ea7cb8117b056e061dc4020a4d0 2f07aebb13dea16ee6571bf907f458111ecec6c6a27224cf1eb6f076a2f3bd0b";
 		};
+		804AFA43A669E4A4D867BE70 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8062EA18BC5299409E5F31C8 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Blicup/Pods-Blicup-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		8E7A6C22B1B765782806E12C /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1629,6 +1730,36 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Blicup/Pods-Blicup-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A78052B5137D798F4E4E7BDE /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BlicupTests/Pods-BlicupTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BE4E17F1711D2AC006BCDF18 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1671,6 +1802,7 @@
 				7D7C73CA1CAC4E3300DC1164 /* CollectionViewTransition.swift in Sources */,
 				C9525DF61CDA911D0035DE0E /* ChatAddress+CoreDataProperties.swift in Sources */,
 				C9569F2E1D70EB1400006019 /* BlicupMagazine.xcdatamodeld in Sources */,
+				C91414571D76001C00C574DB /* CameraRollAssetSelector.swift in Sources */,
 				E574EE481D5904FB006571FE /* Image.swift in Sources */,
 				C9569F571D746D3D00006019 /* CVideoLD+CoreDataProperties.swift in Sources */,
 				7D0525921CB437470010961E /* CreateChatRoomViewController.swift in Sources */,
