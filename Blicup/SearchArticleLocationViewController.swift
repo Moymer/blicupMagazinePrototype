@@ -20,6 +20,7 @@ class SearchArticleLocationViewController: UIViewController, UITableViewDelegate
     
     var resultSearchController: CustomArticleLocationSearchController? = nil
     
+    @IBOutlet weak var btnClose: BCCloseButton!
     @IBOutlet weak var lblLocation: UILabel!
     @IBOutlet weak var tvLocations: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
@@ -107,10 +108,14 @@ class SearchArticleLocationViewController: UIViewController, UITableViewDelegate
     }
     
     @IBAction func cancelSelectionOfLocation(sender: AnyObject) {
-        handleMapSearchDelegate?.setLocation(nil, title: nil)
-        self.view.endEditing(true)
-        self.dismissViewControllerAnimated(true) {
-            self.dismissViewControllerAnimated(true, completion: nil)
+        UIView.animateWithDuration(0.1, delay: 0.0, options: [UIViewAnimationOptions.BeginFromCurrentState], animations: {
+            self.btnClose.transform = CGAffineTransformIdentity
+        }) { (_) in
+            self.handleMapSearchDelegate?.setLocation(nil, title: nil)
+            self.view.endEditing(true)
+            self.dismissViewControllerAnimated(true) {
+                self.dismissViewControllerAnimated(true, completion: nil)
+            }
         }
     }
     
@@ -140,7 +145,7 @@ extension SearchArticleLocationViewController : UISearchResultsUpdating {
             self?.matchingItems = response
             self?.tvLocations.reloadData()
             
-        })
+            })
         
         //        let request = MKLocalSearchRequest()
         //        request.naturalLanguageQuery = searchBarText
