@@ -8,14 +8,19 @@
 
 import UIKit
 
+
 private let reuseIdentifier = "CoverCell"
 
-class ArticleCreationViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+class ArticleCreationViewController: UICollectionViewController, UITextViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.collectionView?.decelerationRate = UIScrollViewDecelerationRateFast
+        
+        if let articleFlowLayout = collectionView?.collectionViewLayout as? ArticleCreationCollectionViewFlowLayout {
+            let cellWidth = collectionView!.bounds.width - (articleFlowLayout.sectionInset.left + articleFlowLayout.sectionInset.right)
+            articleFlowLayout.estimatedItemSize = CGSizeMake(cellWidth, 330)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,17 +39,6 @@ class ArticleCreationViewController: UICollectionViewController, UICollectionVie
     */
 
     // MARK: UICollectionViewDataSource
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        var insets = self.collectionView?.contentInset
-        let value = (self.view.frame.size.width - (self.collectionView?.collectionViewLayout as! UICollectionViewFlowLayout).itemSize.width) * 0.5
-        insets?.left = value
-        insets?.right = value
-        self.collectionView?.contentInset = insets!
-        self.collectionView?.decelerationRate = UIScrollViewDecelerationRateFast;
-    }
-
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -63,17 +57,19 @@ class ArticleCreationViewController: UICollectionViewController, UICollectionVie
         cell.layer.shadowColor = UIColor.lightGrayColor().CGColor
         cell.layer.shadowOffset = CGSizeMake(2, 2)
         cell.layer.shadowOpacity = 0.5
-        cell.layer.shadowRadius = 2.0
+        cell.layer.shadowRadius = 3.0
         cell.clipsToBounds = false
         cell.layer.masksToBounds = false
     
         return cell
     }
-
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        let width = collectionView.bounds.width - 40
-        return CGSizeMake(width, 320)
+    
+    // TextView Delegate
+    func textViewDidChange(textView: UITextView) {
+        textView.invalidateIntrinsicContentSize()
+        self.collectionViewLayout.invalidateLayout()
     }
+    
     
     // MARK: UICollectionViewDelegate
 

@@ -144,41 +144,41 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="50" minimumInteritemSpacing="10" id="Fij-0N-t1v" customClass="ArticleCreationCollectionViewFlowLayout" customModule="Blicup" customModuleProvider="target">
-                            <size key="itemSize" width="335" height="310"/>
+                            <size key="itemSize" width="335" height="330"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="150" maxX="0.0" maxY="150"/>
+                            <inset key="sectionInset" minX="20" minY="150" maxX="20" maxY="150"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CoverCell" id="z8B-C0-ikn">
-                                <rect key="frame" x="133" y="150" width="335" height="310"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CoverCell" id="z8B-C0-ikn" customClass="CoverCollectionViewCell" customModule="Blicup" customModuleProvider="target">
+                                <rect key="frame" x="133" y="150" width="335" height="330"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="335" height="320"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="335" height="330"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view clipsSubviews="YES" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BEE-Z0-8Fc" userLabel="Container">
-                                            <rect key="frame" x="0.0" y="0.0" width="335" height="320"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="335" height="330"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="79G-yj-hYI">
                                                     <rect key="frame" x="0.0" y="0.0" width="335" height="225"/>
-                                                    <color key="backgroundColor" red="0.95294117649999999" green="0.0" blue="0.32549019610000002" alpha="0.20037715519999999" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="225" id="rcN-NH-0c1"/>
                                                     </constraints>
                                                 </imageView>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Story Title" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="CYw-xj-7gp">
-                                                    <rect key="frame" x="5" y="230" width="325" height="40"/>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="Story Title" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="CYw-xj-7gp" customClass="ArticleTextView" customModule="Blicup" customModuleProvider="target">
+                                                    <rect key="frame" x="5" y="235" width="325" height="28"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="23"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" spellCheckingType="no" returnKeyType="done"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="bmi-8c-ssl" id="g0R-WX-Mbc"/>
+                                                    </connections>
                                                 </textView>
-                                                <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EzX-dN-hbV">
-                                                    <rect key="frame" x="5" y="280" width="325" height="25"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="25" id="Lkp-Al-B3y"/>
-                                                    </constraints>
+                                                <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="EzX-dN-hbV" customClass="LocationButton" customModule="Blicup" customModuleProvider="target">
+                                                    <rect key="frame" x="5" y="273" width="325" height="37"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="18"/>
                                                     <state key="normal" title="Location">
                                                         <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -193,10 +193,10 @@
                                                 <constraint firstItem="EzX-dN-hbV" firstAttribute="top" secondItem="CYw-xj-7gp" secondAttribute="bottom" constant="10" id="al0-KZ-rW6"/>
                                                 <constraint firstAttribute="trailing" secondItem="EzX-dN-hbV" secondAttribute="trailing" constant="5" id="d3A-de-Cct"/>
                                                 <constraint firstAttribute="trailing" secondItem="79G-yj-hYI" secondAttribute="trailing" id="i1g-Vm-jO8"/>
-                                                <constraint firstAttribute="bottom" secondItem="EzX-dN-hbV" secondAttribute="bottom" constant="15" id="o2w-8b-NJD"/>
                                                 <constraint firstItem="79G-yj-hYI" firstAttribute="leading" secondItem="BEE-Z0-8Fc" secondAttribute="leading" id="wbo-GW-9H3"/>
                                                 <constraint firstItem="EzX-dN-hbV" firstAttribute="leading" secondItem="BEE-Z0-8Fc" secondAttribute="leading" constant="5" id="xqK-3l-qLd"/>
-                                                <constraint firstItem="CYw-xj-7gp" firstAttribute="top" secondItem="79G-yj-hYI" secondAttribute="bottom" constant="5" id="yPO-zG-aax"/>
+                                                <constraint firstItem="CYw-xj-7gp" firstAttribute="top" secondItem="79G-yj-hYI" secondAttribute="bottom" constant="10" id="yPO-zG-aax"/>
+                                                <constraint firstAttribute="bottom" secondItem="EzX-dN-hbV" secondAttribute="bottom" constant="20" id="zQd-Dm-h9j"/>
                                             </constraints>
                                         </view>
                                     </subviews>
@@ -211,14 +211,14 @@
                                 </constraints>
                             </collectionViewCell>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="M5S-1z-rB0" userLabel="ContentCell">
-                                <rect key="frame" x="133" y="470" width="335" height="320"/>
+                                <rect key="frame" x="133" y="530" width="335" height="330"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="335" height="320"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="335" height="330"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view clipsSubviews="YES" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="23s-Mh-9qN" userLabel="Container">
-                                            <rect key="frame" x="0.0" y="0.0" width="335" height="320"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="335" height="330"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Zjn-aj-D6Q">
                                                     <rect key="frame" x="0.0" y="0.0" width="335" height="225"/>
@@ -227,31 +227,32 @@
                                                         <constraint firstAttribute="height" constant="225" id="M1k-SU-ABX"/>
                                                     </constraints>
                                                 </imageView>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Your text..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="XiU-wi-uxh">
-                                                    <rect key="frame" x="10" y="267" width="315" height="38"/>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="751" scrollEnabled="NO" text="Title" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="m7z-gF-yHg" customClass="ArticleTextView" customModule="Blicup" customModuleProvider="target">
+                                                    <rect key="frame" x="10" y="235" width="315" height="38"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iTf-pm-lmC">
-                                                    <rect key="frame" x="13" y="235" width="309" height="32"/>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="749" text="Your text..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="XiU-wi-uxh" customClass="ArticleTextView" customModule="Blicup" customModuleProvider="target">
+                                                    <rect key="frame" x="10" y="278" width="315" height="37"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="23"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
+                                                    <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="16"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstItem="iTf-pm-lmC" firstAttribute="top" secondItem="Zjn-aj-D6Q" secondAttribute="bottom" constant="10" id="2tH-HN-NZd"/>
-                                                <constraint firstAttribute="trailing" secondItem="iTf-pm-lmC" secondAttribute="trailing" constant="13" id="GKW-qb-Y0K"/>
+                                                <constraint firstItem="m7z-gF-yHg" firstAttribute="leading" secondItem="23s-Mh-9qN" secondAttribute="leading" constant="10" id="90p-AZ-Nib"/>
                                                 <constraint firstAttribute="trailing" secondItem="XiU-wi-uxh" secondAttribute="trailing" constant="10" id="QnI-GQ-loM"/>
+                                                <constraint firstItem="XiU-wi-uxh" firstAttribute="top" secondItem="m7z-gF-yHg" secondAttribute="bottom" constant="5" id="UE9-6H-g5P"/>
                                                 <constraint firstAttribute="bottom" secondItem="XiU-wi-uxh" secondAttribute="bottom" constant="15" id="YVd-8X-F8G"/>
-                                                <constraint firstItem="XiU-wi-uxh" firstAttribute="top" secondItem="iTf-pm-lmC" secondAttribute="bottom" id="aOG-aZ-wMF"/>
-                                                <constraint firstItem="iTf-pm-lmC" firstAttribute="leading" secondItem="23s-Mh-9qN" secondAttribute="leading" constant="13" id="cHr-MJ-qPy"/>
                                                 <constraint firstItem="Zjn-aj-D6Q" firstAttribute="top" secondItem="23s-Mh-9qN" secondAttribute="top" id="eEu-oI-802"/>
                                                 <constraint firstItem="XiU-wi-uxh" firstAttribute="leading" secondItem="23s-Mh-9qN" secondAttribute="leading" constant="10" id="hBY-88-eRd"/>
+                                                <constraint firstItem="m7z-gF-yHg" firstAttribute="top" secondItem="Zjn-aj-D6Q" secondAttribute="bottom" constant="10" id="lTs-rw-dBA"/>
                                                 <constraint firstAttribute="trailing" secondItem="Zjn-aj-D6Q" secondAttribute="trailing" id="mdt-hZ-N2e"/>
+                                                <constraint firstAttribute="trailing" secondItem="m7z-gF-yHg" secondAttribute="trailing" constant="10" id="tki-Ta-H72"/>
                                                 <constraint firstItem="Zjn-aj-D6Q" firstAttribute="leading" secondItem="23s-Mh-9qN" secondAttribute="leading" id="v8I-1d-Wzq"/>
                                             </constraints>
                                         </view>

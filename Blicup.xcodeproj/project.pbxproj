@@ -120,6 +120,7 @@
 		7DFD1E091C874F1200CF5C94 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFD1E051C874F1200CF5C94 /* User.swift */; };
 		A456F30A1C999009008CF87D /* LDTProtocolImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A456F3091C999009008CF87D /* LDTProtocolImpl.swift */; };
 		A4D97E211CB9758900E13678 /* UserBS.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D97E201CB9758900E13678 /* UserBS.swift */; };
+		C9111B741D760D9800673CB6 /* CardsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9111B731D760D9800673CB6 /* CardsCollectionViewCell.swift */; };
 		C91414541D74EF2600C574DB /* CameraRollPagerTabStripController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91414531D74EF2600C574DB /* CameraRollPagerTabStripController.swift */; };
 		C91B36641CC6AED3002D77BF /* LDTProtocolImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A456F3091C999009008CF87D /* LDTProtocolImpl.swift */; };
 		C91B36661CC6B14F002D77BF /* BlicupServicesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91B36651CC6B14F002D77BF /* BlicupServicesTests.swift */; };
@@ -445,6 +446,7 @@
 		91EB1788CEB99D7DA5E44B20 /* Pods-BlicupUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlicupUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BlicupUITests/Pods-BlicupUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A456F3091C999009008CF87D /* LDTProtocolImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDTProtocolImpl.swift; sourceTree = "<group>"; };
 		A4D97E201CB9758900E13678 /* UserBS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserBS.swift; path = BlicupAPI/UserBS.swift; sourceTree = "<group>"; };
+		C9111B731D760D9800673CB6 /* CardsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CardsCollectionViewCell.swift; path = MagazineManagement/View/CardsCollectionViewCell.swift; sourceTree = "<group>"; };
 		C91414531D74EF2600C574DB /* CameraRollPagerTabStripController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CameraRollPagerTabStripController.swift; path = MagazineManagement/View/CameraRollPagerTabStripController.swift; sourceTree = "<group>"; };
 		C91B36651CC6B14F002D77BF /* BlicupServicesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlicupServicesTests.swift; sourceTree = "<group>"; };
 		C91B36671CC7FF54002D77BF /* LDTPWebSocketManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDTPWebSocketManager.swift; sourceTree = "<group>"; };
@@ -1110,6 +1112,7 @@
 				C91414531D74EF2600C574DB /* CameraRollPagerTabStripController.swift */,
 				C9DBE91C1D75C08000F2A4B9 /* ArticleCreationViewController.swift */,
 				E56582DC1D75DD8E00309537 /* ArticleCreationCollectionViewFlowLayout.swift */,
+				C9111B731D760D9800673CB6 /* CardsCollectionViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -1705,6 +1708,7 @@
 				7D7C73F11CAC617E00DC1164 /* ChatRoomListNavigationController.swift in Sources */,
 				7DFD1E081C874F1200CF5C94 /* User+CoreDataProperties.swift in Sources */,
 				C93AC3F11D25C93600ED8046 /* ChatRoomFetchResultPresenter.swift in Sources */,
+				C9111B741D760D9800673CB6 /* CardsCollectionViewCell.swift in Sources */,
 				C9DBE91D1D75C08000F2A4B9 /* ArticleCreationViewController.swift in Sources */,
 				7DCF1D091CFE08280020BF08 /* ChatRoomUserMentionCollectionViewCell.swift in Sources */,
 				7D8C661D1CE3F3D4000CA40A /* BCGradientView.swift in Sources */,
