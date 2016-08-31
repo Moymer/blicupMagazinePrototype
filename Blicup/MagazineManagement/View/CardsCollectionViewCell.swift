@@ -35,7 +35,8 @@ class LocationButton: UIButton {
 class ArticleTextView: UITextView {
 
     override func intrinsicContentSize() -> CGSize {
-        return self.contentSize
+        let size = self.sizeThatFits(CGSizeMake(self.bounds.width, CGFloat.max))
+        return size
     }
 }
 
