@@ -115,16 +115,28 @@ class CameraRollCollectionViewController: UIViewController, UICollectionViewDele
         let cell : CameraRollImageCollectionViewCell = collectionView.cellForItemAtIndexPath(indexPath)  as!  CameraRollImageCollectionViewCell
         let asset = presenter.getAsset(indexPath)
         
-        if assetSelector!.hasReachedMidiaLimit() {
-            
-        }
+
         collectionView.selectItemAtIndexPath(indexPath, animated: false, scrollPosition: UICollectionViewScrollPosition.None)
         cell.selected = true
         assetSelector!.selectAsset(asset)
         cell.setSelectionAnimated(assetSelector!)
         selectedIndexesSet.insert(indexPath)
     }
-    
+    func collectionView(collectionView: UICollectionView,
+                          shouldSelectItemAtIndexPath indexPath: NSIndexPath) -> Bool
+    {
+        let asset = presenter.getAsset(indexPath)
+        
+        if assetSelector!.hasReachedMidiaLimit() {
+            showAlert(title: "Keep it short 😜", message:"Add up to 6 medias!" )
+            return false
+        }
+        if !assetSelector!.isAssetDurationOk(asset) {
+            showAlert(title: "Keep it short 😜", message:"Add videos up to 1 min duration!" )
+            return false
+        }
+        return true
+    }
     
     func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
         let cell : CameraRollImageCollectionViewCell = collectionView.cellForItemAtIndexPath(indexPath)  as!  CameraRollImageCollectionViewCell
