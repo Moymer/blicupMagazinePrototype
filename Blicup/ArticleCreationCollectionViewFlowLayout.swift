@@ -51,7 +51,7 @@ class ArticleCreationCollectionViewFlowLayout: UICollectionViewFlowLayout {
                 }
                 
                 // Beautification step , I don't know why it works!
-                if(proposedContentOffset.y == -(cv.contentInset.top)) {
+                if(proposedContentOffset.y == -(cv.contentInset.top) || proposedContentOffset.y == -(cv.contentInset.bottom)) {
                     return proposedContentOffset
                 }
                 
