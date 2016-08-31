@@ -9,21 +9,19 @@
 import UIKit
 import XLPagerTabStrip
 
-class CameraRollPagerTabStripController: ButtonBarPagerTabStripViewController {
 
+class CameraRollPagerTabStripController: ButtonBarPagerTabStripViewController, CameraRollAssetSelectionDelegate {
 
-    
     var isReload = false
+    let assetSelector = CameraRollAssetSelector()
     
+    @IBOutlet weak var btnCreateArticle: UIButton!
     override func viewDidLoad() {
        
-        
         buttonBarView.selectedBar.backgroundColor = UIColor.grayColor()
         buttonBarView.backgroundColor = UIColor.whiteColor()
         
         self.settings.style.buttonBarBackgroundColor =  UIColor.whiteColor()
-        // buttonBar minimumInteritemSpacing value, note that button bar extends from UICollectionView
-        //settings.style.buttonBarMinimumInteritemSpacing = 6
         // buttonBar minimumLineSpacing value
         settings.style.buttonBarMinimumLineSpacing = 10
         // buttonBar flow layout left content inset value
@@ -47,23 +45,86 @@ class CameraRollPagerTabStripController: ButtonBarPagerTabStripViewController {
         changeCurrentIndexProgressive = { (oldCell: ButtonBarViewCell?, newCell: ButtonBarViewCell?, progressPercentage: CGFloat, changeCurrentIndex: Bool, animated: Bool) -> Void in
             guard changeCurrentIndex == true else { return }
             
-            oldCell?.label.textColor = UIColor(white: 0, alpha: 0.6)
+            oldCell?.label.textColor = UIColor(white: 0, alpha: 0.70)
             newCell?.label.textColor = .blackColor()
             
             if animated {
                 UIView.animateWithDuration(0.1, animations: { () -> Void in
                     newCell?.transform = CGAffineTransformMakeScale(1.0, 1.0)
-                    oldCell?.transform = CGAffineTransformMakeScale(0.8, 0.8)
+                    oldCell?.transform = CGAffineTransformMakeScale(0.85, 0.85)
                 })
             }
             else {
                 newCell?.transform = CGAffineTransformMakeScale(1.0, 1.0)
-                oldCell?.transform = CGAffineTransformMakeScale(0.8, 0.8)
+                oldCell?.transform = CGAffineTransformMakeScale(0.85, 0.85)
             }
         }
 
+        btnCreateArticle.layer.cornerRadius = 21
+        btnCreateArticle.clipsToBounds = true
+        btnCreateArticle.hidden = true
+        assetSelector.delegate = self
+        
+        setNavBar()
+        
+        UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation:UIStatusBarAnimation.None)
         
         super.viewDidLoad()
+    }
+    
+    
+    func setNavBar()
+    {
+        self.navigationController!.navigationBar.shadowImage = UIImage()
+        hideNavBarSeparator()
+        self.title = "Camera Roll"
+        addLeftNavItemOnView()
+
+    }
+    
+    func addLeftNavItemOnView ()
+    {
+        
+        // hide default navigation bar button item
+        self.navigationItem.leftBarButtonItem = nil;
+        self.navigationItem.hidesBackButton = true;
+        
+        let buttonBack: UIButton = UIButton( type: UIButtonType.Custom)
+        
+        buttonBack.frame = CGRectMake(6, 0, 40, 40)
+        buttonBack.setImage(UIImage(named:"ic_close_black"), forState: UIControlState.Normal)
+        buttonBack.addTarget(self, action: #selector(closeTapped), forControlEvents: UIControlEvents.TouchUpInside)
+        
+        let leftBarButtonItem: UIBarButtonItem = UIBarButtonItem(customView: buttonBack)
+        
+        self.navigationItem.setLeftBarButtonItem(leftBarButtonItem, animated: false)
+        
+    }
+    
+    func hideNavBarSeparator()
+    {
+        //this way transparent property continues working
+        if let line = findShadowImageUnderView(self.navigationController!.navigationBar) {
+            line.hidden = true
+        }
+    }
+    private func findShadowImageUnderView(view: UIView) -> UIImageView? {
+        if view is UIImageView && view.bounds.size.height <= 1 {
+            return (view as! UIImageView)
+        }
+        
+        for subview in view.subviews {
+            if let imageView = findShadowImageUnderView(subview) {
+                return imageView
+            }
+        }
+        return nil
+    }
+    
+    
+    func closeTapped()
+    {
+        // TODO: add close
     }
     
     // MARK: - PagerTabStripDataSource
@@ -74,11 +135,16 @@ class CameraRollPagerTabStripController: ButtonBarPagerTabStripViewController {
         let child_1 = storyboard.instantiateViewControllerWithIdentifier("CameraRollViewController") as! CameraRollCollectionViewController
         let child_2 = storyboard.instantiateViewControllerWithIdentifier("CameraRollViewController") as! CameraRollCollectionViewController
         let child_3 = storyboard.instantiateViewControllerWithIdentifier("CameraRollViewController") as! CameraRollCollectionViewController
-        
     
+        
+        child_1.assetSelector = assetSelector
+        child_2.assetSelector = assetSelector
+        child_3.assetSelector = assetSelector
+        
+        
         child_1.itemInfo = "All"
         child_2.itemInfo = "Photos"
-         child_2.loadingType = LoadingType.PHOTO
+        child_2.loadingType = LoadingType.PHOTO
         child_3.itemInfo = "Videos"
         child_3.loadingType = LoadingType.VIDEO
         
@@ -99,34 +165,49 @@ class CameraRollPagerTabStripController: ButtonBarPagerTabStripViewController {
         return Array(childViewControllers.prefix(Int(nItems)))
     }
     
-    override func reloadPagerTabStripView() {
-        isReload = true
-        if rand() % 2 == 0 {
-            pagerBehaviour = .Progressive(skipIntermediateViewControllers: rand() % 2 == 0 , elasticIndicatorLimit: rand() % 2 == 0 )
+
+    
+      // MARK: - Actions
+    
+    @IBAction func createArticle(sender: UIButton) {
+        self.performSegueWithIdentifier("CreateArticleSegue", sender: nil)
+    }
+     // MARK: - Selector Delegate
+    
+    func selectedAssets(numberSelected: Int) {
+        
+        if numberSelected == 0
+        {
+            btnCreateArticle.hidden = false
+            btnCreateArticle.alpha = 1.0
+            UIView.animateWithDuration(0.2, animations: {
+                self.btnCreateArticle.alpha = 0.0
+                }, completion: { (finish) in
+                    self.btnCreateArticle.hidden = true
+                    self.btnCreateArticle.alpha = 1.0
+            })
         }
-        else {
-            pagerBehaviour = .Common(skipIntermediateViewControllers: rand() % 2 == 0)
+        else
+        {
+            if numberSelected == 1 {
+                btnCreateArticle.hidden = false
+                btnCreateArticle.alpha = 0.0
+                UIView.animateWithDuration(0.2, animations: {
+                    self.btnCreateArticle.alpha = 1.0
+                   
+                })
+            }
+            btnCreateArticle.setTitle("Add (\(numberSelected))", forState: UIControlState.Normal)
         }
-        super.reloadPagerTabStripView()
+    }
+    
+    
+    // MARK: Navigation Segue
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "CreateArticleSegue", let vc = segue.destinationViewController as? ArticleCreationViewController {
+            let assets = assetSelector.getSelectedAssetsOrdered()
+            vc.presenter.setAssets(assets)
+        }
     }
 
-/**
-    
-    changeCurrentIndexProgressive = { (oldCell: ButtonBarViewCell?, newCell: ButtonBarViewCell?, progressPercentage: CGFloat, changeCurrentIndex: Bool, animated: Bool) -> Void in
-    guard changeCurrentIndex == true else { return }
-    
-    oldCell?.label.textColor = UIColor(white: 1, alpha: 0.6)
-    newCell?.label.textColor = .whiteColor()
-    
-    if animated {
-    UIView.animateWithDuration(0.1, animations: { () -> Void in
-    newCell?.transform = CGAffineTransformMakeScale(1.0, 1.0)
-    oldCell?.transform = CGAffineTransformMakeScale(0.8, 0.8)
-    })
-    }
-    else {
-    newCell?.transform = CGAffineTransformMakeScale(1.0, 1.0)
-    oldCell?.transform = CGAffineTransformMakeScale(0.8, 0.8)
-    }
-    }*/
 }

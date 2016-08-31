@@ -79,7 +79,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Initializes de handler
         BlicupAsyncHandler.sharedInstance
         
-//        BlicupRouter.routeLogin(self.window)
+        //BlicupRouter.routeLogin(self.window)
         BlicupRouter.routeTest(self.window)
         
         let cache = KingfisherManager.sharedManager.cache
