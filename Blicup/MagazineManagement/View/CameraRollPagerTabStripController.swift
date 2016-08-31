@@ -11,10 +11,10 @@ import XLPagerTabStrip
 
 class CameraRollPagerTabStripController: ButtonBarPagerTabStripViewController {
 
-
-    
     var isReload = false
+    let assetSelector = CameraRollAssetSelector()
     
+    @IBOutlet weak var btnCreateArticle: UIButton!
     override func viewDidLoad() {
        
         buttonBarView.selectedBar.backgroundColor = UIColor.grayColor()
@@ -59,6 +59,9 @@ class CameraRollPagerTabStripController: ButtonBarPagerTabStripViewController {
             }
         }
 
+        btnCreateArticle.layer.cornerRadius = 21
+        btnCreateArticle.clipsToBounds = true
+        
         setNavBar()
         
         UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation:UIStatusBarAnimation.None)
@@ -72,9 +75,7 @@ class CameraRollPagerTabStripController: ButtonBarPagerTabStripViewController {
         self.navigationController!.navigationBar.shadowImage = UIImage()
         hideNavBarSeparator()
         self.title = "Camera Roll"
-
         addLeftNavItemOnView()
-        
 
     }
     
@@ -85,7 +86,6 @@ class CameraRollPagerTabStripController: ButtonBarPagerTabStripViewController {
         self.navigationItem.leftBarButtonItem = nil;
         self.navigationItem.hidesBackButton = true;
         
-        
         let buttonBack: UIButton = UIButton( type: UIButtonType.Custom)
         
         buttonBack.frame = CGRectMake(6, 0, 40, 40)
@@ -95,7 +95,6 @@ class CameraRollPagerTabStripController: ButtonBarPagerTabStripViewController {
         let leftBarButtonItem: UIBarButtonItem = UIBarButtonItem(customView: buttonBack)
         
         self.navigationItem.setLeftBarButtonItem(leftBarButtonItem, animated: false)
-        
         
     }
     
@@ -122,7 +121,7 @@ class CameraRollPagerTabStripController: ButtonBarPagerTabStripViewController {
     
     func closeTapped()
     {
-        
+        // TODO: add close
     }
     
     // MARK: - PagerTabStripDataSource
@@ -133,8 +132,7 @@ class CameraRollPagerTabStripController: ButtonBarPagerTabStripViewController {
         let child_1 = storyboard.instantiateViewControllerWithIdentifier("CameraRollViewController") as! CameraRollCollectionViewController
         let child_2 = storyboard.instantiateViewControllerWithIdentifier("CameraRollViewController") as! CameraRollCollectionViewController
         let child_3 = storyboard.instantiateViewControllerWithIdentifier("CameraRollViewController") as! CameraRollCollectionViewController
-        
-        let assetSelector = CameraRollAssetSelector()
+    
         
         child_1.assetSelector = assetSelector
         child_2.assetSelector = assetSelector
@@ -173,6 +171,13 @@ class CameraRollPagerTabStripController: ButtonBarPagerTabStripViewController {
             pagerBehaviour = .Common(skipIntermediateViewControllers: rand() % 2 == 0)
         }
         super.reloadPagerTabStripView()
+    }
+    
+      // MARK: - Actions
+    
+    @IBAction func createArticle(sender: UIButton) {
+        
+        
     }
 
 }

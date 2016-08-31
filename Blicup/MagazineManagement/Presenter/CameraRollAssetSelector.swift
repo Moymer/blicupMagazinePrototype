@@ -35,8 +35,8 @@ class CameraRollAssetSelector: NSObject {
         return assetsSelectedListOrdered.count
     }
     
-    func hasReachedMidiaLimit() {
-        assetsSelectedListOrdered.count == MAX_MIDIAS
+    func hasReachedMidiaLimit() -> Bool {
+        return assetsSelectedListOrdered.count == MAX_MIDIAS
     }
    
     

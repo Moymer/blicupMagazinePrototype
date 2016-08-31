@@ -20,7 +20,7 @@ class CameraRollPresenter: NSObject {
     
     func loadAll( completionHandler:() -> Void ) {
         let allPhotosOptions = PHFetchOptions()
-        allPhotosOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: true)]
+        allPhotosOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
         fetchResult = PHAsset.fetchAssetsWithOptions(allPhotosOptions)
         completionHandler()
     }
@@ -28,7 +28,7 @@ class CameraRollPresenter: NSObject {
     func loadPhotos(  completionHandler:() -> Void ) {
         let photosOptions = PHFetchOptions()
         photosOptions.predicate = NSPredicate(format:"mediaType = %d",PHAssetMediaType.Image.rawValue)
-        photosOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: true)]
+        photosOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
         fetchResult = PHAsset.fetchAssetsWithOptions( photosOptions)
         completionHandler()
         
@@ -38,7 +38,7 @@ class CameraRollPresenter: NSObject {
         let photosOptions = PHFetchOptions()
         
         photosOptions.predicate = NSPredicate(format:"mediaType = %d",PHAssetMediaType.Video.rawValue)
-        photosOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: true)]
+        photosOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
         fetchResult = PHAsset.fetchAssetsWithOptions( photosOptions)
         completionHandler()
         

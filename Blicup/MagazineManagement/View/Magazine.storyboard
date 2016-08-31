@@ -145,7 +145,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JUn-o4-weG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="728" y="273"/>
+            <point key="canvasLocation" x="1136" y="179"/>
         </scene>
         <!--Camera Roll Pager Tab Strip Controller-->
         <scene sceneID="cqI-fa-CaJ">
@@ -159,11 +159,11 @@
                         <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="46e-Ix-olu">
-                                <rect key="frame" x="0.0" y="110" width="600" height="496"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="46e-Ix-olu">
+                                <rect key="frame" x="0.0" y="50" width="600" height="486"/>
                             </scrollView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="CNW-yd-Q90" customClass="ButtonBarView" customModule="XLPagerTabStrip">
-                                <rect key="frame" x="0.0" y="64" width="600" height="35"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="CNW-yd-Q90" customClass="ButtonBarView" customModule="XLPagerTabStrip">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="cYy-lN-66I"/>
                                 </constraints>
@@ -185,27 +185,45 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pHd-O6-QEN">
+                                <rect key="frame" x="233" y="474" width="134" height="42"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="134" id="J2B-DE-4qJ"/>
+                                    <constraint firstAttribute="height" constant="42" id="uuu-MR-C7u"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="17"/>
+                                <state key="normal" title="Adicionar (6)">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="createArticle:" destination="CJX-4M-wir" eventType="touchUpInside" id="MPp-QN-sGP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="CNW-yd-Q90" secondAttribute="trailing" id="6NK-lP-0Nj"/>
-                            <constraint firstItem="pbx-l8-ZO8" firstAttribute="top" secondItem="46e-Ix-olu" secondAttribute="bottom" constant="-6" id="FGJ-wt-6GV"/>
+                            <constraint firstItem="pbx-l8-ZO8" firstAttribute="top" secondItem="46e-Ix-olu" secondAttribute="bottom" id="FGJ-wt-6GV"/>
                             <constraint firstItem="46e-Ix-olu" firstAttribute="leading" secondItem="jAY-Vg-QTx" secondAttribute="leading" id="MC5-QR-0ki"/>
+                            <constraint firstItem="pHd-O6-QEN" firstAttribute="centerX" secondItem="jAY-Vg-QTx" secondAttribute="centerX" id="XkK-Ou-cFN"/>
                             <constraint firstItem="CNW-yd-Q90" firstAttribute="top" secondItem="mcO-xf-5Yk" secondAttribute="bottom" id="ZaE-Eu-5Pa"/>
                             <constraint firstItem="CNW-yd-Q90" firstAttribute="leading" secondItem="jAY-Vg-QTx" secondAttribute="leading" id="bwI-Iz-y2S"/>
+                            <constraint firstItem="pbx-l8-ZO8" firstAttribute="top" secondItem="pHd-O6-QEN" secondAttribute="bottom" constant="20" id="dfJ-od-wkB"/>
                             <constraint firstAttribute="trailing" secondItem="46e-Ix-olu" secondAttribute="trailing" id="ffP-v1-GnE"/>
-                            <constraint firstItem="46e-Ix-olu" firstAttribute="top" secondItem="mcO-xf-5Yk" secondAttribute="bottom" constant="46" id="sgA-tQ-ANd"/>
+                            <constraint firstItem="46e-Ix-olu" firstAttribute="top" secondItem="mcO-xf-5Yk" secondAttribute="bottom" constant="50" id="sgA-tQ-ANd"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="s4Q-Gy-Mmy"/>
                     <connections>
+                        <outlet property="btnCreateArticle" destination="pHd-O6-QEN" id="4bv-dT-cFB"/>
                         <outlet property="buttonBarView" destination="CNW-yd-Q90" id="7d3-6v-oyx"/>
                         <outlet property="containerView" destination="46e-Ix-olu" id="LNK-Xh-N5Y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rtj-Ws-SRS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="260" y="979"/>
+            <point key="canvasLocation" x="279" y="869"/>
         </scene>
         <!--Article Creation View Controller-->
         <scene sceneID="Sih-Rh-vP1">
@@ -385,6 +403,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vgG-el-f6k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="458" y="78"/>
         </scene>
     </scenes>
     <resources>

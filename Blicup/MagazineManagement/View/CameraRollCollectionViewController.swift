@@ -16,7 +16,7 @@ enum LoadingType: Int {
     case ALL, PHOTO, VIDEO
 }
 
-class CameraRollCollectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, IndicatorInfoProvider {
+class CameraRollCollectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, IndicatorInfoProvider, AlertControllerProtocol {
     
 
 
@@ -113,9 +113,13 @@ class CameraRollCollectionViewController: UIViewController, UICollectionViewDele
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         let cell : CameraRollImageCollectionViewCell = collectionView.cellForItemAtIndexPath(indexPath)  as!  CameraRollImageCollectionViewCell
+        let asset = presenter.getAsset(indexPath)
+        
+        if assetSelector!.hasReachedMidiaLimit() {
+            
+        }
         collectionView.selectItemAtIndexPath(indexPath, animated: false, scrollPosition: UICollectionViewScrollPosition.None)
         cell.selected = true
-        let asset = presenter.getAsset(indexPath)
         assetSelector!.selectAsset(asset)
         cell.setSelectionAnimated(assetSelector!)
         selectedIndexesSet.insert(indexPath)
