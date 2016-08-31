@@ -120,6 +120,7 @@
 		7DFD1E091C874F1200CF5C94 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFD1E051C874F1200CF5C94 /* User.swift */; };
 		A456F30A1C999009008CF87D /* LDTProtocolImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A456F3091C999009008CF87D /* LDTProtocolImpl.swift */; };
 		A4D97E211CB9758900E13678 /* UserBS.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D97E201CB9758900E13678 /* UserBS.swift */; };
+		C9111B741D760D9800673CB6 /* CardsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9111B731D760D9800673CB6 /* CardsCollectionViewCell.swift */; };
 		C91414541D74EF2600C574DB /* CameraRollPagerTabStripController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91414531D74EF2600C574DB /* CameraRollPagerTabStripController.swift */; };
 		C91414571D76001C00C574DB /* CameraRollAssetSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91414561D76001C00C574DB /* CameraRollAssetSelector.swift */; };
 		C91B36641CC6AED3002D77BF /* LDTProtocolImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A456F3091C999009008CF87D /* LDTProtocolImpl.swift */; };
@@ -210,6 +211,7 @@
 		C992D7491D74D0E6002A767F /* BlicupSliderSegmentedControll.swift in Sources */ = {isa = PBXBuildFile; fileRef = C992D7481D74D0E6002A767F /* BlicupSliderSegmentedControll.swift */; };
 		C99D36041CEF600E00B0F889 /* ChatRoomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99D36031CEF600E00B0F889 /* ChatRoomCell.swift */; };
 		C99D36061CEF840F00B0F889 /* ChatRoomInputAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99D36051CEF840F00B0F889 /* ChatRoomInputAccessoryView.swift */; };
+		C9ACAF001D774ECC00031202 /* ArticleCreationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ACAEFF1D774ECC00031202 /* ArticleCreationPresenter.swift */; };
 		C9B9DDCB1D2ECAC500B57F62 /* BlicupRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B9DDCA1D2ECAC500B57F62 /* BlicupRouter.swift */; };
 		C9BCFF0D1CF7656F00D498FA /* LDTPNSNotificationCenterControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BCFF0C1CF7656F00D498FA /* LDTPNSNotificationCenterControl.swift */; };
 		C9BCFF0F1CF7721100D498FA /* ToStringArrayTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BCFF0E1CF7721100D498FA /* ToStringArrayTransformer.swift */; };
@@ -230,12 +232,15 @@
 		CFABAED7F615667044D6B3B0 /* Pods_BlicupUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C081D62BE3B3B2EFFE7025B /* Pods_BlicupUITests.framework */; };
 		E506A0A01D4BEA9800CCD728 /* TipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E506A09F1D4BEA9800CCD728 /* TipsView.swift */; };
 		E506A0A21D4BFF0B00CCD728 /* TipsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E506A0A11D4BFF0B00CCD728 /* TipsView.xib */; };
+		E516B0671D760ABA00051313 /* SearchArticleLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E516B0661D760ABA00051313 /* SearchArticleLocationViewController.swift */; };
 		E525592B1D36A39600E323C3 /* BCCloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E525592A1D36A39500E323C3 /* BCCloseButton.swift */; };
 		E52791721CEF4EFD00F5E727 /* FollowCustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52791711CEF4EFD00F5E727 /* FollowCustomButton.swift */; };
 		E535CE031D3FF4860059EFC4 /* CustomLabelChatOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E535CE021D3FF4840059EFC4 /* CustomLabelChatOver.swift */; };
 		E53D40A31CEE4355000CAC49 /* ChatRoomTalkInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53D40A21CEE4355000CAC49 /* ChatRoomTalkInfoViewController.swift */; };
 		E5401B191D30065D0011C647 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5401B181D30065D0011C647 /* PaddingLabel.swift */; };
 		E54340E01D3D45DF003866EB /* SearchLocationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54340DF1D3D45DF003866EB /* SearchLocationTableViewController.swift */; };
+		E547170D1D772F3C004E5799 /* Dispatch+GeocodeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E547170B1D772F3C004E5799 /* Dispatch+GeocodeHelper.swift */; };
+		E547170E1D772F3C004E5799 /* GeocodeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E547170C1D772F3C004E5799 /* GeocodeHelper.swift */; };
 		E54EBDD51D5B5CAD002EE541 /* SlideCoverTipView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E54EBDD41D5B5CAD002EE541 /* SlideCoverTipView.xib */; };
 		E54EBDD71D5B604A002EE541 /* SlideCoverTipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54EBDD61D5B604A002EE541 /* SlideCoverTipView.swift */; };
 		E54EBDD91D5B86AF002EE541 /* SwipeCoverImagesTipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54EBDD81D5B86AF002EE541 /* SwipeCoverImagesTipView.swift */; };
@@ -450,6 +455,7 @@
 		91EB1788CEB99D7DA5E44B20 /* Pods-BlicupUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlicupUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BlicupUITests/Pods-BlicupUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A456F3091C999009008CF87D /* LDTProtocolImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDTProtocolImpl.swift; sourceTree = "<group>"; };
 		A4D97E201CB9758900E13678 /* UserBS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserBS.swift; path = BlicupAPI/UserBS.swift; sourceTree = "<group>"; };
+		C9111B731D760D9800673CB6 /* CardsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CardsCollectionViewCell.swift; path = MagazineManagement/View/CardsCollectionViewCell.swift; sourceTree = "<group>"; };
 		C91414531D74EF2600C574DB /* CameraRollPagerTabStripController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CameraRollPagerTabStripController.swift; path = MagazineManagement/View/CameraRollPagerTabStripController.swift; sourceTree = "<group>"; };
 		C91414561D76001C00C574DB /* CameraRollAssetSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CameraRollAssetSelector.swift; path = MagazineManagement/Presenter/CameraRollAssetSelector.swift; sourceTree = "<group>"; };
 		C91B36651CC6B14F002D77BF /* BlicupServicesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlicupServicesTests.swift; sourceTree = "<group>"; };
@@ -539,6 +545,7 @@
 		C99871AA1D35905B00166F6E /* Blicup.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Blicup.entitlements; sourceTree = "<group>"; };
 		C99D36031CEF600E00B0F889 /* ChatRoomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatRoomCell.swift; path = ChatRoomManagement/View/ChatRoomCell.swift; sourceTree = "<group>"; };
 		C99D36051CEF840F00B0F889 /* ChatRoomInputAccessoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatRoomInputAccessoryView.swift; path = ChatRoomManagement/View/ChatRoomInputAccessoryView.swift; sourceTree = "<group>"; };
+		C9ACAEFF1D774ECC00031202 /* ArticleCreationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArticleCreationPresenter.swift; path = MagazineManagement/Presenter/ArticleCreationPresenter.swift; sourceTree = "<group>"; };
 		C9B9DDCA1D2ECAC500B57F62 /* BlicupRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BlicupRouter.swift; path = BlicupAPI/BlicupRouter.swift; sourceTree = "<group>"; };
 		C9BCFF0C1CF7656F00D498FA /* LDTPNSNotificationCenterControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDTPNSNotificationCenterControl.swift; sourceTree = "<group>"; };
 		C9BCFF0E1CF7721100D498FA /* ToStringArrayTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ToStringArrayTransformer.swift; path = Utils/ToStringArrayTransformer.swift; sourceTree = "<group>"; };
@@ -559,12 +566,15 @@
 		E4743E515A5B636EDD5277C8 /* Pods-BlicupTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlicupTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BlicupTests/Pods-BlicupTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E506A09F1D4BEA9800CCD728 /* TipsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipsView.swift; sourceTree = "<group>"; };
 		E506A0A11D4BFF0B00CCD728 /* TipsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TipsView.xib; sourceTree = "<group>"; };
+		E516B0661D760ABA00051313 /* SearchArticleLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchArticleLocationViewController.swift; sourceTree = "<group>"; };
 		E525592A1D36A39500E323C3 /* BCCloseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BCCloseButton.swift; sourceTree = "<group>"; };
 		E52791711CEF4EFD00F5E727 /* FollowCustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowCustomButton.swift; sourceTree = "<group>"; };
 		E535CE021D3FF4840059EFC4 /* CustomLabelChatOver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomLabelChatOver.swift; sourceTree = "<group>"; };
 		E53D40A21CEE4355000CAC49 /* ChatRoomTalkInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatRoomTalkInfoViewController.swift; sourceTree = "<group>"; };
 		E5401B181D30065D0011C647 /* PaddingLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		E54340DF1D3D45DF003866EB /* SearchLocationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchLocationTableViewController.swift; sourceTree = "<group>"; };
+		E547170B1D772F3C004E5799 /* Dispatch+GeocodeHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dispatch+GeocodeHelper.swift"; sourceTree = "<group>"; };
+		E547170C1D772F3C004E5799 /* GeocodeHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeocodeHelper.swift; sourceTree = "<group>"; };
 		E54EBDD41D5B5CAD002EE541 /* SlideCoverTipView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SlideCoverTipView.xib; sourceTree = "<group>"; };
 		E54EBDD61D5B604A002EE541 /* SlideCoverTipView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideCoverTipView.swift; sourceTree = "<group>"; };
 		E54EBDD81D5B86AF002EE541 /* SwipeCoverImagesTipView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeCoverImagesTipView.swift; sourceTree = "<group>"; };
@@ -909,6 +919,8 @@
 				E525592A1D36A39500E323C3 /* BCCloseButton.swift */,
 				E535CE021D3FF4840059EFC4 /* CustomLabelChatOver.swift */,
 				E574EE471D5904FB006571FE /* Image.swift */,
+				E547170B1D772F3C004E5799 /* Dispatch+GeocodeHelper.swift */,
+				E547170C1D772F3C004E5799 /* GeocodeHelper.swift */,
 				E54EBDD31D5B5C57002EE541 /* CoverTip */,
 				E574EE491D5A2471006571FE /* Share Chat Tip */,
 				E506A09C1D4BE8C400CCD728 /* Tips */,
@@ -1120,7 +1132,10 @@
 				C91414531D74EF2600C574DB /* CameraRollPagerTabStripController.swift */,
 				C9DBE91C1D75C08000F2A4B9 /* ArticleCreationViewController.swift */,
 				E56582DC1D75DD8E00309537 /* ArticleCreationCollectionViewFlowLayout.swift */,
-				C97A084E1D776B0300D794EA /* Reading */,
+				C9111B731D760D9800673CB6 /* CardsCollectionViewCell.swift */,
+				E516B0661D760ABA00051313 /* SearchArticleLocationViewController.swift */,
+				C97A084E1D776B0300D794EA /* Reading */,			 
+
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -1130,6 +1145,7 @@
 			children = (
 				C9569F6F1D74B87100006019 /* CameraRollPresenter.swift */,
 				C91414561D76001C00C574DB /* CameraRollAssetSelector.swift */,
+				C9ACAEFF1D774ECC00031202 /* ArticleCreationPresenter.swift */,
 			);
 			name = Presenter;
 			sourceTree = "<group>";
@@ -1838,6 +1854,7 @@
 				7DD0F7D61C886F36001E5780 /* SignupUsernameViewController.swift in Sources */,
 				C9569F551D746D3D00006019 /* CVideo+CoreDataProperties.swift in Sources */,
 				C9569F581D746D3D00006019 /* CVideoLD.swift in Sources */,
+				E547170D1D772F3C004E5799 /* Dispatch+GeocodeHelper.swift in Sources */,
 				C9569F541D746D3D00006019 /* CImage.swift in Sources */,
 				7D8626531C9B261D00D87E87 /* InterestPresenter.swift in Sources */,
 				C9569F6A1D74AB7600006019 /* Location.swift in Sources */,
@@ -1851,6 +1868,7 @@
 				C9569F5D1D746D3D00006019 /* ArticleSpecs+CoreDataProperties.swift in Sources */,
 				7D50A6781D5B584C009739F2 /* FindFriendsPresenter.swift in Sources */,
 				7DA80C1B1CC00977006151E1 /* BCGradientImageView.swift in Sources */,
+				C9ACAF001D774ECC00031202 /* ArticleCreationPresenter.swift in Sources */,
 				C93E1C191CD278AB00E0E7ED /* LDTPWebSocketReceiverManager.swift in Sources */,
 				C9569F4F1D746D3D00006019 /* Article+CoreDataProperties.swift in Sources */,
 				7D1EC71E1CC91721006689B3 /* MD5.swift in Sources */,
@@ -1860,6 +1878,7 @@
 				7D7C73F11CAC617E00DC1164 /* ChatRoomListNavigationController.swift in Sources */,
 				7DFD1E081C874F1200CF5C94 /* User+CoreDataProperties.swift in Sources */,
 				C93AC3F11D25C93600ED8046 /* ChatRoomFetchResultPresenter.swift in Sources */,
+				C9111B741D760D9800673CB6 /* CardsCollectionViewCell.swift in Sources */,
 				C9DBE91D1D75C08000F2A4B9 /* ArticleCreationViewController.swift in Sources */,
 				7DCF1D091CFE08280020BF08 /* ChatRoomUserMentionCollectionViewCell.swift in Sources */,
 				7D8C661D1CE3F3D4000CA40A /* BCGradientView.swift in Sources */,
@@ -1926,6 +1945,7 @@
 				C93AC3F61D26F86900ED8046 /* ChatRoomSearchListPresenter.swift in Sources */,
 				C97C00661D1B097900C16541 /* BlockListPresenter.swift in Sources */,
 				E52791721CEF4EFD00F5E727 /* FollowCustomButton.swift in Sources */,
+				E516B0671D760ABA00051313 /* SearchArticleLocationViewController.swift in Sources */,
 				C9569F5F1D746D3D00006019 /* Category+CoreDataProperties.swift in Sources */,
 				7D8626551C9B48FA00D87E87 /* InterestListAddedBlankCollectionViewCell.swift in Sources */,
 				7DCFA72B1D1220040043CEA1 /* FolloweeViewController.swift in Sources */,
@@ -1965,6 +1985,7 @@
 				C9569F5C1D746D3D00006019 /* Author.swift in Sources */,
 				C97C00621D18754D00C16541 /* FavoritesPresenter.swift in Sources */,
 				C97A08501D77746200D794EA /* ArticlesReadingCollectionViewController.swift in Sources */,
+				E547170E1D772F3C004E5799 /* GeocodeHelper.swift in Sources */,
 				C9525DFB1CDBCD7B0035DE0E /* ChatRoomAnnotationView.swift in Sources */,
 				C91B36681CC7FF54002D77BF /* LDTPWebSocketManager.swift in Sources */,
 				7DE759981D2ABE5F004BAFF9 /* AlertControllerProtocol.swift in Sources */,
@@ -2202,7 +2223,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MOMC_NO_INVERSE_RELATIONSHIP_WARNINGS = YES;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -2244,7 +2265,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MOMC_NO_INVERSE_RELATIONSHIP_WARNINGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PROVISIONING_PROFILE = "";
@@ -2267,7 +2288,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = "Blicup/Supporting Files/Base.lproj/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MOMC_NO_INVERSE_RELATIONSHIP_WARNINGS = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.blicup;
@@ -2291,7 +2312,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = "Blicup/Supporting Files/Base.lproj/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MOMC_NO_INVERSE_RELATIONSHIP_WARNINGS = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.blicup;

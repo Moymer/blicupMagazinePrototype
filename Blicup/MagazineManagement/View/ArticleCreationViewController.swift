@@ -7,55 +7,47 @@
 //
 
 import UIKit
+import Photos
 
-private let reuseIdentifier = "CoverCell"
 
-class ArticleCreationViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+class ArticleCreationViewController: UIViewController, UICollectionViewDataSource, UITextViewDelegate {
+    
+    @IBOutlet weak var collectionView: UICollectionView!
+    let presenter = ArticleCreationPresenter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.collectionView.decelerationRate = UIScrollViewDecelerationRateFast
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-    // MARK: UICollectionViewDataSource
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        var insets = self.collectionView?.contentInset
-        let value = (self.view.frame.size.width - (self.collectionView?.collectionViewLayout as! UICollectionViewFlowLayout).itemSize.width) * 0.5
-        insets?.left = value
-        insets?.right = value
-        self.collectionView?.contentInset = insets!
-        self.collectionView?.decelerationRate = UIScrollViewDecelerationRateFast;
-    }
 
-    override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    override func viewDidLayoutSubviews() {
+        if let articleFlowLayout = collectionView.collectionViewLayout as? ArticleCreationCollectionViewFlowLayout {
+            let cellWidth = collectionView.bounds.width - (articleFlowLayout.sectionInset.left + articleFlowLayout.sectionInset.right)
+            articleFlowLayout.estimatedItemSize = CGSizeMake(cellWidth, 330)
+        }
+        
+        super.viewDidLayoutSubviews()
+    }
+    
+    // MARK: UICollectionViewDataSource
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
     }
 
-
-    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return presenter.numberOfMedias()
     }
 
-    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath)
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        
+        let identifier = indexPath.row==0 ? "CoverCell" : "ContentCell"
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(identifier, forIndexPath: indexPath) as! CoverCollectionViewCell
     
         let container = cell.viewWithTag(1)!
         container.layer.cornerRadius = 20
@@ -63,47 +55,20 @@ class ArticleCreationViewController: UICollectionViewController, UICollectionVie
         cell.layer.shadowColor = UIColor.lightGrayColor().CGColor
         cell.layer.shadowOffset = CGSizeMake(2, 2)
         cell.layer.shadowOpacity = 0.5
-        cell.layer.shadowRadius = 2.0
+        cell.layer.shadowRadius = 3.0
         cell.clipsToBounds = false
         cell.layer.masksToBounds = false
-    
+        
+        presenter.getImageMedia(indexPath) { (image) in
+            cell.cardMedia.image = image
+        }
+        
         return cell
     }
-
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        let width = collectionView.bounds.width - 40
-        return CGSizeMake(width, 320)
-    }
     
-    // MARK: UICollectionViewDelegate
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(collectionView: UICollectionView, shouldHighlightItemAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return true
+    // TextView Delegate
+    func textViewDidChange(textView: UITextView) {
+        textView.invalidateIntrinsicContentSize()
+        self.collectionView.collectionViewLayout.invalidateLayout()
     }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(collectionView: UICollectionView, shouldSelectItemAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(collectionView: UICollectionView, shouldShowMenuForItemAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(collectionView: UICollectionView, canPerformAction action: Selector, forItemAtIndexPath indexPath: NSIndexPath, withSender sender: AnyObject?) -> Bool {
-        return false
-    }
-
-    override func collectionView(collectionView: UICollectionView, performAction action: Selector, forItemAtIndexPath indexPath: NSIndexPath, withSender sender: AnyObject?) {
-    
-    }
-    */
-
 }
