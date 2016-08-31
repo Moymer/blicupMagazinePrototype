@@ -29,6 +29,7 @@ class ChatRoomsAndUsersSearchViewController: UIViewController, UICollectionViewD
     private var showBlicupWhiteActivityIndicatorTimer: NSTimer?
     
     private let kUserItemHeight: CGFloat = 80
+    private let kCancelButtonTrailingDefault: CGFloat = 10
 
     
     @IBOutlet weak var tfSearch: CustomTextField!
@@ -38,14 +39,14 @@ class ChatRoomsAndUsersSearchViewController: UIViewController, UICollectionViewD
     @IBOutlet weak var ivLoadingBlicupGray: UIImageView!
     
     
+    @IBOutlet weak var btnCancel: UIButton!
+    @IBOutlet weak var vContainerSearch: UIView!
     @IBOutlet weak var cvcSearchChatRoomsAndUsers: UICollectionView!
     
     @IBOutlet weak var constrTFSearchWidth: NSLayoutConstraint!
     @IBOutlet weak var constrTFSearchCenterX: NSLayoutConstraint!
     
-    
     @IBOutlet weak var constrCancelTrailing: NSLayoutConstraint!
-    @IBOutlet weak var constrCancelLeading: NSLayoutConstraint!
     
     
     override func viewDidLoad() {
@@ -59,6 +60,7 @@ class ChatRoomsAndUsersSearchViewController: UIViewController, UICollectionViewD
         loadBlicupWhiteImages()
         setupInitialCollectionViewLayout()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(UserListFollowBlockViewController.reloadVisibleCells), name: "UserProfileClosed", object: nil)
+        constrCancelTrailing.constant = -(kCancelButtonTrailingDefault + self.btnCancel.frame.width)
         
     }
     
@@ -67,27 +69,33 @@ class ChatRoomsAndUsersSearchViewController: UIViewController, UICollectionViewD
         BlicupAnalytics.sharedInstance.mark_EnteredScreenSearch()
         
         if alreadyAnimated == false {
-            UIView.animateWithDuration(0.5, animations: {
+            
+            self.constrCancelTrailing.constant = kCancelButtonTrailingDefault
+            
+            UIView.animateWithDuration(0.3, animations: {
                 self.cvcSearchChatRoomsAndUsers.alpha = 1
                 self.view.backgroundColor = UIColor.whiteColor()
+                self.vContainerSearch.alpha = 1
+                self.view.layoutIfNeeded()
                 
             }) { (finished) in
                 self.alreadyAnimated = true
             }
-
+            
             self.constrTFSearchWidth.constant = self.vContainerTFSearch.frame.width
             self.constrTFSearchCenterX.constant = 0
-
+            
+            
+            
             UIView.animateWithDuration(0.1, delay: 0.0, options: [.CurveEaseIn], animations: {
 
                 self.view.layoutIfNeeded()
+                
 
             }, completion: { (finished) in
-                let string = screenWidth > 320 ? NSLocalizedString("CRM_ChatRoomsAndUsersTextFieldSearchPlaceholder", comment: "Search for chats or @users") : NSLocalizedString("CRM_ChatRoomsAndUsersTextFieldSearchPlaceholder_smaller_screen", comment: "Chats or @users")
+                let string = "Search"//screenWidth > 320 ? NSLocalizedString("CRM_ChatRoomsAndUsersTextFieldSearchPlaceholder", comment: "Search for chats or @users") : NSLocalizedString("CRM_ChatRoomsAndUsersTextFieldSearchPlaceholder_smaller_screen", comment: "Chats or @users")
                 let str = NSAttributedString(string: string, attributes: [NSForegroundColorAttributeName : UIColor.blicupGray()])
                 self.tfSearch.attributedPlaceholder = str
-
-                
             })
         }
     }
@@ -247,15 +255,9 @@ class ChatRoomsAndUsersSearchViewController: UIViewController, UICollectionViewD
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
-        if isUserListFlowLayoutUsed {
+        if !isUserListFlowLayoutUsed {
             // TODO: Card de usuário
             
-            let user = userSearchPresenter.userAtIndex(indexPath)
-            if let loggedUser = UserBS.getLoggedUser() where loggedUser != user {
-                self.performSegueWithIdentifier("showUserProfile", sender: user)
-            }
-            
-        } else {
             if let pageViewController = self.storyboard?.instantiateViewControllerWithIdentifier("CoverController") as? ChatRoomsListHorizontalPageViewController {
                 let presenter = CoverChatRoomsListPresenter(withLocalChats: self.chatRoomsListPresenter.currentChatIds())
                 presenter.currentIndex = indexPath
@@ -770,15 +772,15 @@ class ChatRoomsAndUsersSearchViewController: UIViewController, UICollectionViewD
     @IBAction func cancelPressed(sender: AnyObject) {
         
         self.view.endEditing(true)
-        
+        self.tfSearch.textAlignment = .Center
         UIView.animateWithDuration(0.5, animations: {
             self.view.backgroundColor = UIColor.clearColor()
             self.cvcSearchChatRoomsAndUsers.alpha = 0
-            
-            self.constrTFSearchWidth.constant = 30
+            self.constrCancelTrailing.constant = -(self.kCancelButtonTrailingDefault + self.btnCancel.frame.width)
+            self.constrTFSearchWidth.constant = 150
             self.constrTFSearchCenterX.constant = 0
             self.tfSearch.text = ""
-            self.tfSearch.placeholder = ""
+            self.tfSearch.placeholder = "Search"
             self.view.layoutIfNeeded()
             
         }) { (finished) in

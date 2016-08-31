@@ -8,9 +8,11 @@
 
 import UIKit
 
-class SearchViewController: UIViewController {
+class SearchViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
     @IBOutlet weak var btnSearchBar: BCButton!
+    @IBOutlet weak var collectionView: UICollectionView!
+    private let searchPresenter = SearchPresenter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,11 +20,6 @@ class SearchViewController: UIViewController {
         // Do any additional setup after loading the view.
         btnSearchBar.layer.cornerRadius = btnSearchBar.frame.height/2
         btnSearchBar.clipsToBounds = true
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     
@@ -39,18 +36,69 @@ class SearchViewController: UIViewController {
     }
     
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // MARK: - CollectionView
+    
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return searchPresenter.numberOfItems()
     }
-    */
+    
+    func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
+        
+        if kind == UICollectionElementKindSectionHeader {
+            
+            let headerView = collectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionHeader, withReuseIdentifier: "headerCell", forIndexPath: indexPath)
+            if let btnMap = headerView.viewWithTag(999) as? UIButton {
+                
+                btnMap.setAttributedTitle(searchPresenter.btnMapAttributedTitle(), forState: .Normal)
+                btnMap.titleLabel?.textAlignment = NSTextAlignment.Center
+                btnMap.titleLabel?.numberOfLines = 0
+            }
+            
+            return headerView
+            
+        }
+        
+        return UICollectionReusableView()
+    }
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        
+        guard let collectionCell = collectionView.dequeueReusableCellWithReuseIdentifier("collectionCell", forIndexPath: indexPath) as? MagazineCoverCollectionViewCell else {
+            return UICollectionViewCell()
+        }
+        
+        collectionCell.layer.cornerRadius = 10
+        collectionCell.layer.masksToBounds = true
+        
+        collectionCell.lblMagazineCoverTitle.text = searchPresenter.titleAtIndex(indexPath.row)
+        
+        if let image = searchPresenter.coverAtIndex(indexPath.row) {
+            collectionCell.ivMagazineCover.image = image
+            
+            
+            let averageColor = image.averageColor()
+            if let mainColor = averageColor.rgbToInt() {
+                let color = UIColor.rgbIntToUIColor(mainColor)
+                collectionCell.ivMagazineCover.setMainColor(color.colorWithAlphaComponent(0.5))
+            }
+        }
+        
+        
+        return collectionCell
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+     
+        let width = (screenWidth-40)/3
+        
+        return CGSize(width: width, height: width)
+    }
+    
     
     @IBAction func unwindFromSecondary(segue: UIStoryboardSegue) {
         
     }
 
 }
+
+
