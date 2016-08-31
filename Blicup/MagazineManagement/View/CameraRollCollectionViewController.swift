@@ -122,6 +122,7 @@ class CameraRollCollectionViewController: UIViewController, UICollectionViewDele
         cell.setSelectionAnimated(assetSelector!)
         selectedIndexesSet.insert(indexPath)
     }
+    
     func collectionView(collectionView: UICollectionView,
                           shouldSelectItemAtIndexPath indexPath: NSIndexPath) -> Bool
     {

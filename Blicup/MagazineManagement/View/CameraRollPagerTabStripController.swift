@@ -11,13 +11,13 @@ import XLPagerTabStrip
 
 
 class CameraRollPagerTabStripController: ButtonBarPagerTabStripViewController, CameraRollAssetSelectionDelegate {
-
+    
     var isReload = false
     let assetSelector = CameraRollAssetSelector()
     
     @IBOutlet weak var btnCreateArticle: UIButton!
     override func viewDidLoad() {
-       
+        
         buttonBarView.selectedBar.backgroundColor = UIColor.grayColor()
         buttonBarView.backgroundColor = UIColor.whiteColor()
         
@@ -59,7 +59,7 @@ class CameraRollPagerTabStripController: ButtonBarPagerTabStripViewController, C
                 oldCell?.transform = CGAffineTransformMakeScale(0.85, 0.85)
             }
         }
-
+        
         btnCreateArticle.layer.cornerRadius = 21
         btnCreateArticle.clipsToBounds = true
         btnCreateArticle.hidden = true
@@ -75,11 +75,11 @@ class CameraRollPagerTabStripController: ButtonBarPagerTabStripViewController, C
     
     func setNavBar()
     {
-        self.navigationController!.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.shadowImage = UIImage()
         hideNavBarSeparator()
         self.title = "Camera Roll"
         addLeftNavItemOnView()
-
+        
     }
     
     func addLeftNavItemOnView ()
@@ -104,8 +104,10 @@ class CameraRollPagerTabStripController: ButtonBarPagerTabStripViewController, C
     func hideNavBarSeparator()
     {
         //this way transparent property continues working
-        if let line = findShadowImageUnderView(self.navigationController!.navigationBar) {
-            line.hidden = true
+        if let navigationBar = self.navigationController?.navigationBar{
+            if let line = findShadowImageUnderView(navigationBar) {
+                line.hidden = true
+            }
         }
     }
     private func findShadowImageUnderView(view: UIView) -> UIImageView? {
@@ -135,7 +137,7 @@ class CameraRollPagerTabStripController: ButtonBarPagerTabStripViewController, C
         let child_1 = storyboard.instantiateViewControllerWithIdentifier("CameraRollViewController") as! CameraRollCollectionViewController
         let child_2 = storyboard.instantiateViewControllerWithIdentifier("CameraRollViewController") as! CameraRollCollectionViewController
         let child_3 = storyboard.instantiateViewControllerWithIdentifier("CameraRollViewController") as! CameraRollCollectionViewController
-    
+        
         
         child_1.assetSelector = assetSelector
         child_2.assetSelector = assetSelector
@@ -165,14 +167,14 @@ class CameraRollPagerTabStripController: ButtonBarPagerTabStripViewController, C
         return Array(childViewControllers.prefix(Int(nItems)))
     }
     
-
     
-      // MARK: - Actions
+    
+    // MARK: - Actions
     
     @IBAction func createArticle(sender: UIButton) {
         self.performSegueWithIdentifier("CreateArticleSegue", sender: nil)
     }
-     // MARK: - Selector Delegate
+    // MARK: - Selector Delegate
     
     func selectedAssets(numberSelected: Int) {
         
@@ -194,7 +196,7 @@ class CameraRollPagerTabStripController: ButtonBarPagerTabStripViewController, C
                 btnCreateArticle.alpha = 0.0
                 UIView.animateWithDuration(0.2, animations: {
                     self.btnCreateArticle.alpha = 1.0
-                   
+                    
                 })
             }
             btnCreateArticle.setTitle("Add (\(numberSelected))", forState: UIControlState.Normal)
@@ -209,5 +211,5 @@ class CameraRollPagerTabStripController: ButtonBarPagerTabStripViewController, C
             vc.presenter.setAssets(assets)
         }
     }
-
+    
 }
