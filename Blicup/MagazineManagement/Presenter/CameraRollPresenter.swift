@@ -18,30 +18,27 @@ class CameraRollPresenter: NSObject {
     
  
     
-    func loadAll( completionHandler:() -> Void )
-    {
+    func loadAll( completionHandler:() -> Void ) {
         let allPhotosOptions = PHFetchOptions()
-        allPhotosOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: true)]
+        allPhotosOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
         fetchResult = PHAsset.fetchAssetsWithOptions(allPhotosOptions)
         completionHandler()
     }
     
-    func loadPhotos(  completionHandler:() -> Void )
-    {
+    func loadPhotos(  completionHandler:() -> Void ) {
         let photosOptions = PHFetchOptions()
         photosOptions.predicate = NSPredicate(format:"mediaType = %d",PHAssetMediaType.Image.rawValue)
-        photosOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: true)]
+        photosOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
         fetchResult = PHAsset.fetchAssetsWithOptions( photosOptions)
         completionHandler()
         
     }
     
-    func loadVideos(  completionHandler:() -> Void )
-    {
+    func loadVideos(  completionHandler:() -> Void ) {
         let photosOptions = PHFetchOptions()
         
         photosOptions.predicate = NSPredicate(format:"mediaType = %d",PHAssetMediaType.Video.rawValue)
-        photosOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: true)]
+        photosOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
         fetchResult = PHAsset.fetchAssetsWithOptions( photosOptions)
         completionHandler()
         
@@ -59,13 +56,24 @@ class CameraRollPresenter: NSObject {
         imageManager.requestImageForAsset(asset, targetSize: thumbnailSize, contentMode:.AspectFill, options: nil, resultHandler: { image, _ in
             completionHandler(image: image!, localIdentifier: asset.localIdentifier )
         })
-
     }
+   
     
-    func getAssetIdentifier(indexPath:NSIndexPath) -> String
-    {
-         let asset = fetchResult?.objectAtIndex(indexPath.item) as! PHAsset
-        return asset.localIdentifier
+    func getAsset(indexPath:NSIndexPath) -> PHAsset {
+        return fetchResult?.objectAtIndex(indexPath.item) as! PHAsset
         
     }
+    
+    func getAssetIdentifier(indexPath:NSIndexPath) -> String {
+         let asset = fetchResult?.objectAtIndex(indexPath.item) as! PHAsset
+        return asset.localIdentifier
+    }
+    
+    
+    func getAssetDuration(indexPath:NSIndexPath) -> NSTimeInterval {
+        let asset = fetchResult?.objectAtIndex(indexPath.item) as! PHAsset
+        return asset.duration
+    }
+    
+    
 }
