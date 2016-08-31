@@ -207,6 +207,7 @@
 		C992D7491D74D0E6002A767F /* BlicupSliderSegmentedControll.swift in Sources */ = {isa = PBXBuildFile; fileRef = C992D7481D74D0E6002A767F /* BlicupSliderSegmentedControll.swift */; };
 		C99D36041CEF600E00B0F889 /* ChatRoomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99D36031CEF600E00B0F889 /* ChatRoomCell.swift */; };
 		C99D36061CEF840F00B0F889 /* ChatRoomInputAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99D36051CEF840F00B0F889 /* ChatRoomInputAccessoryView.swift */; };
+		C9ACAF001D774ECC00031202 /* ArticleCreationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ACAEFF1D774ECC00031202 /* ArticleCreationPresenter.swift */; };
 		C9B9DDCB1D2ECAC500B57F62 /* BlicupRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B9DDCA1D2ECAC500B57F62 /* BlicupRouter.swift */; };
 		C9BCFF0D1CF7656F00D498FA /* LDTPNSNotificationCenterControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BCFF0C1CF7656F00D498FA /* LDTPNSNotificationCenterControl.swift */; };
 		C9BCFF0F1CF7721100D498FA /* ToStringArrayTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BCFF0E1CF7721100D498FA /* ToStringArrayTransformer.swift */; };
@@ -536,6 +537,7 @@
 		C99871AA1D35905B00166F6E /* Blicup.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Blicup.entitlements; sourceTree = "<group>"; };
 		C99D36031CEF600E00B0F889 /* ChatRoomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatRoomCell.swift; path = ChatRoomManagement/View/ChatRoomCell.swift; sourceTree = "<group>"; };
 		C99D36051CEF840F00B0F889 /* ChatRoomInputAccessoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatRoomInputAccessoryView.swift; path = ChatRoomManagement/View/ChatRoomInputAccessoryView.swift; sourceTree = "<group>"; };
+		C9ACAEFF1D774ECC00031202 /* ArticleCreationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArticleCreationPresenter.swift; path = MagazineManagement/Presenter/ArticleCreationPresenter.swift; sourceTree = "<group>"; };
 		C9B9DDCA1D2ECAC500B57F62 /* BlicupRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BlicupRouter.swift; path = BlicupAPI/BlicupRouter.swift; sourceTree = "<group>"; };
 		C9BCFF0C1CF7656F00D498FA /* LDTPNSNotificationCenterControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDTPNSNotificationCenterControl.swift; sourceTree = "<group>"; };
 		C9BCFF0E1CF7721100D498FA /* ToStringArrayTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ToStringArrayTransformer.swift; path = Utils/ToStringArrayTransformer.swift; sourceTree = "<group>"; };
@@ -1133,6 +1135,7 @@
 			children = (
 				C9569F6F1D74B87100006019 /* CameraRollPresenter.swift */,
 				C91414561D76001C00C574DB /* CameraRollAssetSelector.swift */,
+				C9ACAEFF1D774ECC00031202 /* ArticleCreationPresenter.swift */,
 			);
 			name = Presenter;
 			sourceTree = "<group>";
@@ -1841,6 +1844,7 @@
 				C9569F5D1D746D3D00006019 /* ArticleSpecs+CoreDataProperties.swift in Sources */,
 				7D50A6781D5B584C009739F2 /* FindFriendsPresenter.swift in Sources */,
 				7DA80C1B1CC00977006151E1 /* BCGradientImageView.swift in Sources */,
+				C9ACAF001D774ECC00031202 /* ArticleCreationPresenter.swift in Sources */,
 				C93E1C191CD278AB00E0E7ED /* LDTPWebSocketReceiverManager.swift in Sources */,
 				C9569F4F1D746D3D00006019 /* Article+CoreDataProperties.swift in Sources */,
 				7D1EC71E1CC91721006689B3 /* MD5.swift in Sources */,
