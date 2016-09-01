@@ -71,6 +71,8 @@
 		7D840C1F1D78669600374C19 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D840C161D78669600374C19 /* SearchViewController.swift */; };
 		7D840C201D78669600374C19 /* UserSearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D840C171D78669600374C19 /* UserSearchCollectionViewCell.swift */; };
 		7D840C231D7866E200374C19 /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D840C221D7866E200374C19 /* SearchPresenter.swift */; };
+		7D840C251D786A8B00374C19 /* SearchPagerTabStripController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D840C241D786A8B00374C19 /* SearchPagerTabStripController.swift */; };
+		7D840C271D78813200374C19 /* SearchUserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D840C261D78813200374C19 /* SearchUserTableViewController.swift */; };
 		7D8626531C9B261D00D87E87 /* InterestPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8626521C9B261D00D87E87 /* InterestPresenter.swift */; };
 		7D8626551C9B48FA00D87E87 /* InterestListAddedBlankCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8626541C9B48FA00D87E87 /* InterestListAddedBlankCollectionViewCell.swift */; };
 		7D8C66141CE3F378000CA40A /* WebImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8C660A1CE3F378000CA40A /* WebImage.swift */; };
@@ -112,6 +114,7 @@
 		7DDADD511CC1A7470097A86B /* BCBlurredTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DDADD501CC1A7470097A86B /* BCBlurredTabBar.swift */; };
 		7DDADD551CC268730097A86B /* GHContextMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DDADD541CC268730097A86B /* GHContextMenuView.m */; };
 		7DE759981D2ABE5F004BAFF9 /* AlertControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE759971D2ABE5F004BAFF9 /* AlertControllerProtocol.swift */; };
+		7DE78B6D1D78BA660052B56F /* UserTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE78B6C1D78BA660052B56F /* UserTableCell.swift */; };
 		7DF0EC5B1D42B24500DEF902 /* default_tags_es.json in Resources */ = {isa = PBXBuildFile; fileRef = 7DF0EC5A1D42B24500DEF902 /* default_tags_es.json */; };
 		7DF397981D4692C800E279D7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7DF3979A1D4692C800E279D7 /* InfoPlist.strings */; };
 		7DF3BB9A1D38284E002CC8B2 /* BlicupAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF3BB991D38284E002CC8B2 /* BlicupAnalytics.swift */; };
@@ -358,6 +361,8 @@
 		7D840C161D78669600374C19 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchViewController.swift; path = SearchManagement/View/SearchViewController.swift; sourceTree = "<group>"; };
 		7D840C171D78669600374C19 /* UserSearchCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserSearchCollectionViewCell.swift; path = SearchManagement/View/UserSearchCollectionViewCell.swift; sourceTree = "<group>"; };
 		7D840C221D7866E200374C19 /* SearchPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchPresenter.swift; path = SearchManagement/Presenter/SearchPresenter.swift; sourceTree = "<group>"; };
+		7D840C241D786A8B00374C19 /* SearchPagerTabStripController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchPagerTabStripController.swift; sourceTree = "<group>"; };
+		7D840C261D78813200374C19 /* SearchUserTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchUserTableViewController.swift; path = SearchManagement/View/SearchUserTableViewController.swift; sourceTree = "<group>"; };
 		7D8626521C9B261D00D87E87 /* InterestPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InterestPresenter.swift; path = UserManagement/Presenter/InterestPresenter.swift; sourceTree = "<group>"; };
 		7D8626541C9B48FA00D87E87 /* InterestListAddedBlankCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InterestListAddedBlankCollectionViewCell.swift; path = UserManagement/View/InterestListAddedBlankCollectionViewCell.swift; sourceTree = "<group>"; };
 		7D8C660A1CE3F378000CA40A /* WebImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebImage.swift; sourceTree = "<group>"; };
@@ -406,6 +411,7 @@
 		7DDADD531CC268730097A86B /* GHContextMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHContextMenuView.h; sourceTree = "<group>"; };
 		7DDADD541CC268730097A86B /* GHContextMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHContextMenuView.m; sourceTree = "<group>"; };
 		7DE759971D2ABE5F004BAFF9 /* AlertControllerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlertControllerProtocol.swift; path = Extensions/AlertControllerProtocol.swift; sourceTree = "<group>"; };
+		7DE78B6C1D78BA660052B56F /* UserTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserTableCell.swift; path = SearchManagement/View/UserTableCell.swift; sourceTree = "<group>"; };
 		7DF0EC5A1D42B24500DEF902 /* default_tags_es.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = default_tags_es.json; sourceTree = "<group>"; };
 		7DF0EC5C1D42B34900DEF902 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
 		7DF0EC5D1D42B34900DEF902 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Signup.strings; sourceTree = "<group>"; };
@@ -1197,14 +1203,17 @@
 			isa = PBXGroup;
 			children = (
 				7D840C141D78669600374C19 /* Search.storyboard */,
-				7D840C0F1D78669600374C19 /* ChatRoomAnnotationView.swift */,
-				7D840C101D78669600374C19 /* ChatRoomMapViewController.swift */,
-				7D840C111D78669600374C19 /* ChatRoomsAndUsersSearchViewController.swift */,
+				7D840C161D78669600374C19 /* SearchViewController.swift */,
+				7D840C241D786A8B00374C19 /* SearchPagerTabStripController.swift */,
+				7D840C261D78813200374C19 /* SearchUserTableViewController.swift */,
+				7DE78B6C1D78BA660052B56F /* UserTableCell.swift */,
 				7D840C121D78669600374C19 /* MagazineCoverCollectionViewCell.swift */,
+				7D840C171D78669600374C19 /* UserSearchCollectionViewCell.swift */,
+				7D840C111D78669600374C19 /* ChatRoomsAndUsersSearchViewController.swift */,
+				7D840C101D78669600374C19 /* ChatRoomMapViewController.swift */,
 				7D840C131D78669600374C19 /* MapChatListViewController.swift */,
 				7D840C151D78669600374C19 /* SearchLocationTableViewController.swift */,
-				7D840C161D78669600374C19 /* SearchViewController.swift */,
-				7D840C171D78669600374C19 /* UserSearchCollectionViewCell.swift */,
+				7D840C0F1D78669600374C19 /* ChatRoomAnnotationView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -1800,6 +1809,7 @@
 				7D840C231D7866E200374C19 /* SearchPresenter.swift in Sources */,
 				7D840C181D78669600374C19 /* ChatRoomAnnotationView.swift in Sources */,
 				7D7C73A81CAB1A7C00DC1164 /* Macro.swift in Sources */,
+				7DE78B6D1D78BA660052B56F /* UserTableCell.swift in Sources */,
 				C934B2851CD93BF9006B3EF4 /* LDTPTaskQueue.swift in Sources */,
 				A456F30A1C999009008CF87D /* LDTProtocolImpl.swift in Sources */,
 				7D5220AF1D538C360041FE46 /* SuggestUsersPresenter.swift in Sources */,
@@ -1879,6 +1889,7 @@
 				7D1007221C86059A0076561E /* AppDelegate.swift in Sources */,
 				7D5220AD1D537DAD0041FE46 /* SuggestedUsersViewController.swift in Sources */,
 				7D840C1B1D78669600374C19 /* MagazineCoverCollectionViewCell.swift in Sources */,
+				7D840C271D78813200374C19 /* SearchUserTableViewController.swift in Sources */,
 				C9569F691D74AB7600006019 /* Location+CoreDataProperties.swift in Sources */,
 				C98575E11D0B0C190045CD9D /* BlicupClock.swift in Sources */,
 				C9569F601D746D3D00006019 /* Category.swift in Sources */,
@@ -1915,6 +1926,7 @@
 				E56582DD1D75DD8E00309537 /* ArticleCreationCollectionViewFlowLayout.swift in Sources */,
 				7D7C73BE1CAC477600DC1164 /* ChatRoomsListViewController.swift in Sources */,
 				C99D36061CEF840F00B0F889 /* ChatRoomInputAccessoryView.swift in Sources */,
+				7D840C251D786A8B00374C19 /* SearchPagerTabStripController.swift in Sources */,
 				7D7C73C21CAC47E300DC1164 /* CHTCollectionViewWaterfallLayout.swift in Sources */,
 				C93AC3F81D26F94800ED8046 /* MapChatRoomListPresenter.swift in Sources */,
 				C947A3321CE6421C00D810D3 /* ChatRoomViewController.swift in Sources */,
