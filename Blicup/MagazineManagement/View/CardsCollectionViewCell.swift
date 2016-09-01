@@ -41,12 +41,70 @@ class ArticleTextView: UITextView {
 }
 
 
-class CoverCollectionViewCell: UICollectionViewCell {
+class CardCollectionViewCell: UICollectionViewCell {
     @IBOutlet var cardMedia: UIImageView!
     
     override func preferredLayoutAttributesFittingAttributes(layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
         let superAttr = super.preferredLayoutAttributesFittingAttributes(layoutAttributes)
         superAttr.size = CGSizeMake(layoutAttributes.size.width, superAttr.size.height)
         return superAttr
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.title = nil
+        self.content = nil
+        self.invalidateIntrinsicContentSize()
+        setNeedsLayout()
+    }
+
+    
+    var title: String? {
+        set { print("Override this method") }
+        
+        get {
+            print("Override this method")
+            return nil
+        }
+    }
+    
+    var content: String? {
+        set { print("Override this method") }
+        
+        get {
+            print("Override this method")
+            return nil
+        }
+    }
+}
+
+class ContentCollectionCell: CardCollectionViewCell {
+    @IBOutlet weak var contentTitle: ArticleTextView!
+    @IBOutlet weak var contentText: ArticleTextView!
+    
+    override var title: String? {
+        set { contentTitle.text = newValue }
+        get { return contentTitle.text }
+    }
+    
+    override var content: String? {
+        set { contentText.text = newValue }
+        get { return contentText.text }
+    }
+}
+
+class CoverCollectionCell: CardCollectionViewCell {
+    @IBOutlet weak var articleTitle: ArticleTextView!
+    @IBOutlet weak var articleLocation: LocationButton!
+    
+    override var title: String? {
+        set { articleTitle.text = newValue }
+        get { return articleTitle.text }
+    }
+    
+    override var content: String? {
+        set { articleLocation.setTitle(newValue, forState: UIControlState.Normal) }
+        
+        get { return articleLocation.titleLabel?.text }
     }
 }

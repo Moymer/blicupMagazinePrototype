@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BRJ-H2-Y4z">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BRJ-H2-Y4z">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
@@ -247,7 +247,7 @@
                                     <inset key="sectionInset" minX="20" minY="150" maxX="20" maxY="150"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CoverCell" id="wGq-bE-OFW" customClass="CoverCollectionViewCell" customModule="Blicup" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CoverCell" id="wGq-bE-OFW" customClass="CoverCollectionCell" customModule="Blicup" customModuleProvider="target">
                                         <rect key="frame" x="133" y="150" width="335" height="330"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -310,10 +310,12 @@
                                             <constraint firstAttribute="trailing" secondItem="Fse-vF-t1s" secondAttribute="trailing" id="SLc-98-Gyc"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="articleLocation" destination="uaY-vS-bWC" id="lrQ-Ap-BY5"/>
+                                            <outlet property="articleTitle" destination="Z3A-6C-xY0" id="v2Z-Ye-zbJ"/>
                                             <outlet property="cardMedia" destination="VCw-cB-sQc" id="6V8-47-Yob"/>
                                         </connections>
                                     </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ContentCell" id="P3u-rj-nYa" userLabel="ContentCell" customClass="CoverCollectionViewCell" customModule="Blicup" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ContentCell" id="P3u-rj-nYa" userLabel="ContentCell" customClass="ContentCollectionCell" customModule="Blicup" customModuleProvider="target">
                                         <rect key="frame" x="133" y="530" width="335" height="330"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -376,6 +378,8 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="cardMedia" destination="edU-TP-24F" id="FQP-0J-m7B"/>
+                                            <outlet property="contentText" destination="LyJ-o3-li9" id="vm0-f9-Oku"/>
+                                            <outlet property="contentTitle" destination="NGC-bw-hOl" id="CmY-i7-Mj0"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

@@ -54,7 +54,7 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
         let identifier = indexPath.row==0 ? "CoverCell" : "ContentCell"
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(identifier, forIndexPath: indexPath) as! CoverCollectionViewCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(identifier, forIndexPath: indexPath) as! CardCollectionViewCell
     
         let container = cell.viewWithTag(1)!
         container.layer.cornerRadius = 20
@@ -70,16 +70,16 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
             cell.cardMedia.image = image
         }
         
+        cell.title = presenter.getCardTitle(indexPath)
+        cell.content = presenter.getCardContent(indexPath)
+        
         return cell
     }
     
     // TextView Delegate
     private func centerTextViewCell(textView:UITextView) {
-        let point = collectionView.convertPoint(CGPointZero, fromView: textView)
-        guard let index = collectionView.indexPathForItemAtPoint(point) else {
-            return
-        }
-        collectionView.scrollToItemAtIndexPath(index, atScrollPosition: UICollectionViewScrollPosition.CenteredVertically, animated: true)
+        let rect = collectionView.convertRect(textView.bounds, fromView: textView)
+        collectionView.scrollRectToVisible(rect, animated: true)
     }
     
     func textViewDidChange(textView: UITextView) {
@@ -115,12 +115,19 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
             return
         }
         
+        if let articleLayout = collectionView.collectionViewLayout as? ArticleCreationCollectionViewFlowLayout {
+            articleLayout.disablePaging = true
+        }
+        
         var inset = collectionView.contentInset
         inset.bottom = keyboardSize.height
         collectionView.contentInset = inset
     }
     
     func keyboardWillHide(notification: NSNotification) {
+        if let articleLayout = collectionView.collectionViewLayout as? ArticleCreationCollectionViewFlowLayout {
+            articleLayout.disablePaging = false
+        }
         collectionView.contentInset = UIEdgeInsetsZero
     }
 }
