@@ -33,7 +33,6 @@ class LocationButton: UIButton {
 
 
 class ArticleTextView: UITextView {
-
     override func intrinsicContentSize() -> CGSize {
         let size = self.sizeThatFits(CGSizeMake(self.bounds.width, CGFloat.max))
         return size
@@ -54,8 +53,7 @@ class CardCollectionViewCell: UICollectionViewCell {
         super.prepareForReuse()
         self.title = nil
         self.content = nil
-        self.invalidateIntrinsicContentSize()
-        setNeedsLayout()
+        
     }
 
     
@@ -83,12 +81,18 @@ class ContentCollectionCell: CardCollectionViewCell {
     @IBOutlet weak var contentText: ArticleTextView!
     
     override var title: String? {
-        set { contentTitle.text = newValue }
+        set {
+            contentTitle.text = newValue
+            contentTitle.invalidateIntrinsicContentSize()
+        }
         get { return contentTitle.text }
     }
     
     override var content: String? {
-        set { contentText.text = newValue }
+        set {
+            contentText.text = newValue
+            contentText.invalidateIntrinsicContentSize()
+        }
         get { return contentText.text }
     }
 }
@@ -98,13 +102,15 @@ class CoverCollectionCell: CardCollectionViewCell {
     @IBOutlet weak var articleLocation: LocationButton!
     
     override var title: String? {
-        set { articleTitle.text = newValue }
+        set {
+            articleTitle.text = newValue
+            articleTitle.invalidateIntrinsicContentSize()
+        }
         get { return articleTitle.text }
     }
     
     override var content: String? {
         set { articleLocation.setTitle(newValue, forState: UIControlState.Normal) }
-        
         get { return articleLocation.titleLabel?.text }
     }
 }

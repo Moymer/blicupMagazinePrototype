@@ -17,7 +17,16 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.collectionView.decelerationRate = UIScrollViewDecelerationRateFast
+        self.view.layoutIfNeeded()
+        
+        if let articleFlowLayout = collectionView.collectionViewLayout as? ArticleCreationCollectionViewFlowLayout {
+            let verticalInsets = (collectionView.bounds.height - 330)/2
+            articleFlowLayout.sectionInset = UIEdgeInsetsMake(verticalInsets, 20, verticalInsets, 20)
+            let cellWidth = collectionView.bounds.width - (articleFlowLayout.sectionInset.left + articleFlowLayout.sectionInset.right)
+            articleFlowLayout.estimatedItemSize = CGSizeMake(cellWidth, 330)
+        }
     }
 
     override func viewDidAppear(animated: Bool) {
@@ -28,18 +37,6 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-
-    override func viewDidLayoutSubviews() {
-        if let articleFlowLayout = collectionView.collectionViewLayout as? ArticleCreationCollectionViewFlowLayout {
-            let verticalInsets = (collectionView.bounds.height - 330)/2
-            articleFlowLayout.sectionInset = UIEdgeInsetsMake(verticalInsets, 20, verticalInsets, 20)
-            let cellWidth = collectionView.bounds.width - (articleFlowLayout.sectionInset.left + articleFlowLayout.sectionInset.right)
-            articleFlowLayout.estimatedItemSize = CGSizeMake(cellWidth, 330)
-        }
-        
-        super.viewDidLayoutSubviews()
     }
     
     // MARK: UICollectionViewDataSource
