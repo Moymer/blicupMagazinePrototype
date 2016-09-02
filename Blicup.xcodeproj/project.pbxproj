@@ -237,6 +237,7 @@
 		E54340E01D3D45DF003866EB /* SearchLocationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54340DF1D3D45DF003866EB /* SearchLocationTableViewController.swift */; };
 		E547170D1D772F3C004E5799 /* Dispatch+GeocodeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E547170B1D772F3C004E5799 /* Dispatch+GeocodeHelper.swift */; };
 		E547170E1D772F3C004E5799 /* GeocodeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E547170C1D772F3C004E5799 /* GeocodeHelper.swift */; };
+		E54717101D79B2D5004E5799 /* PanDirectionGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E547170F1D79B2D5004E5799 /* PanDirectionGestureRecognizer.swift */; };
 		E54EBDD51D5B5CAD002EE541 /* SlideCoverTipView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E54EBDD41D5B5CAD002EE541 /* SlideCoverTipView.xib */; };
 		E54EBDD71D5B604A002EE541 /* SlideCoverTipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54EBDD61D5B604A002EE541 /* SlideCoverTipView.swift */; };
 		E54EBDD91D5B86AF002EE541 /* SwipeCoverImagesTipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54EBDD81D5B86AF002EE541 /* SwipeCoverImagesTipView.swift */; };
@@ -567,6 +568,7 @@
 		E54340DF1D3D45DF003866EB /* SearchLocationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchLocationTableViewController.swift; sourceTree = "<group>"; };
 		E547170B1D772F3C004E5799 /* Dispatch+GeocodeHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dispatch+GeocodeHelper.swift"; sourceTree = "<group>"; };
 		E547170C1D772F3C004E5799 /* GeocodeHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeocodeHelper.swift; sourceTree = "<group>"; };
+		E547170F1D79B2D5004E5799 /* PanDirectionGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanDirectionGestureRecognizer.swift; sourceTree = "<group>"; };
 		E54EBDD41D5B5CAD002EE541 /* SlideCoverTipView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SlideCoverTipView.xib; sourceTree = "<group>"; };
 		E54EBDD61D5B604A002EE541 /* SlideCoverTipView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideCoverTipView.swift; sourceTree = "<group>"; };
 		E54EBDD81D5B86AF002EE541 /* SwipeCoverImagesTipView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeCoverImagesTipView.swift; sourceTree = "<group>"; };
@@ -916,6 +918,7 @@
 				E54EBDD31D5B5C57002EE541 /* CoverTip */,
 				E574EE491D5A2471006571FE /* Share Chat Tip */,
 				E506A09C1D4BE8C400CCD728 /* Tips */,
+				E547170F1D79B2D5004E5799 /* PanDirectionGestureRecognizer.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -1072,8 +1075,8 @@
 			isa = PBXGroup;
 			children = (
 				C9569F291D70DF2E00006019 /* Model */,
-				C9569F2A1D70DF3600006019 /* View */,
 				C9569F2B1D70DF4700006019 /* Presenter */,
+				C9569F2A1D70DF3600006019 /* View */,
 			);
 			name = MagazineManagement;
 			sourceTree = "<group>";
@@ -1326,7 +1329,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7D1006E21C84ADFB0076561E /* Build configuration list for PBXNativeTarget "Blicup" */;
 			buildPhases = (
-				16A62B9EB8DD8E4826BB6487 /* 📦 Check Pods Manifest.lock */,
+				16A62B9EB8DD8E4826BB6487 /* [CP] Check Pods Manifest.lock */,
 				7344C74ECB720FE1C186A78E /* [CP] Check Pods Manifest.lock */,
 				7D1006B31C84ADFB0076561E /* Sources */,
 				7D1006B41C84ADFB0076561E /* Frameworks */,
@@ -1350,7 +1353,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7D1006E51C84ADFB0076561E /* Build configuration list for PBXNativeTarget "BlicupTests" */;
 			buildPhases = (
-				BE4E17F1711D2AC006BCDF18 /* 📦 Check Pods Manifest.lock */,
+				BE4E17F1711D2AC006BCDF18 /* [CP] Check Pods Manifest.lock */,
 				4A7CF89754E6CE58CCF33A76 /* [CP] Check Pods Manifest.lock */,
 				7D1006CA1C84ADFB0076561E /* Sources */,
 				7D1006CB1C84ADFB0076561E /* Frameworks */,
@@ -1374,7 +1377,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7D1006E81C84ADFB0076561E /* Build configuration list for PBXNativeTarget "BlicupUITests" */;
 			buildPhases = (
-				804AFA43A669E4A4D867BE70 /* 📦 Check Pods Manifest.lock */,
+				804AFA43A669E4A4D867BE70 /* [CP] Check Pods Manifest.lock */,
 				293E55DBCE75332B8205F22E /* [CP] Check Pods Manifest.lock */,
 				7D1006D51C84ADFB0076561E /* Sources */,
 				7D1006D61C84ADFB0076561E /* Frameworks */,
@@ -1515,14 +1518,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		16A62B9EB8DD8E4826BB6487 /* 📦 Check Pods Manifest.lock */ = {
+		16A62B9EB8DD8E4826BB6487 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1693,14 +1696,14 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\" ebe43d72fb819ea7cb8117b056e061dc4020a4d0 2f07aebb13dea16ee6571bf907f458111ecec6c6a27224cf1eb6f076a2f3bd0b";
 		};
-		804AFA43A669E4A4D867BE70 /* 📦 Check Pods Manifest.lock */ = {
+		804AFA43A669E4A4D867BE70 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1753,14 +1756,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BlicupTests/Pods-BlicupTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		BE4E17F1711D2AC006BCDF18 /* 📦 Check Pods Manifest.lock */ = {
+		BE4E17F1711D2AC006BCDF18 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1960,6 +1963,7 @@
 				7DCFA72D1D122C6A0043CEA1 /* UserTableViewCell.swift in Sources */,
 				C9569F5C1D746D3D00006019 /* Author.swift in Sources */,
 				C97C00621D18754D00C16541 /* FavoritesPresenter.swift in Sources */,
+				E54717101D79B2D5004E5799 /* PanDirectionGestureRecognizer.swift in Sources */,
 				E547170E1D772F3C004E5799 /* GeocodeHelper.swift in Sources */,
 				C9525DFB1CDBCD7B0035DE0E /* ChatRoomAnnotationView.swift in Sources */,
 				C91B36681CC7FF54002D77BF /* LDTPWebSocketManager.swift in Sources */,

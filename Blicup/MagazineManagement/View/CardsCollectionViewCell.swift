@@ -42,6 +42,8 @@ class ArticleTextView: UITextView {
 
 class CoverCollectionViewCell: UICollectionViewCell {
     @IBOutlet var cardMedia: UIImageView!
+    @IBOutlet weak var vContainer: UIView!
+    @IBOutlet weak var btnTrash: UIButton!
     
     override func preferredLayoutAttributesFittingAttributes(layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
         let superAttr = super.preferredLayoutAttributesFittingAttributes(layoutAttributes)

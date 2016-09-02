@@ -24,6 +24,14 @@ class ArticleCreationPresenter: NSObject {
         self.assets = assets
     }
     
+    func addAssets(assets:[PHAsset]) {
+        self.assets.appendContentsOf(assets)
+    }
+    
+    func deleteAsset(index: Int) {
+        self.assets.removeAtIndex(index)
+    }
+    
     func numberOfMedias()->Int {
         return assets.count
     }
