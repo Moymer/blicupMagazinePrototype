@@ -32,10 +32,41 @@ class LocationButton: UIButton {
 }
 
 
-class ArticleTextView: UITextView {
+@IBDesignable class ArticleTextView: UITextView {
+    private let lblPlaceholder = UILabel()
+    
+    @IBInspectable var placeholder:String? = "placeholder" {
+        didSet {
+            lblPlaceholder.text = placeholder
+        }
+    }
+    
+    override init(frame: CGRect, textContainer: NSTextContainer?) {
+        super.init(frame: frame, textContainer: textContainer)
+        initPlaceholder()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        initPlaceholder()
+    }
+    
     override func intrinsicContentSize() -> CGSize {
+        lblPlaceholder.hidden = (text.length > 0)
         let size = self.sizeThatFits(CGSizeMake(self.bounds.width, CGFloat.max))
         return size
+    }
+    
+    private func initPlaceholder() {
+        lblPlaceholder.frame = self.bounds
+        lblPlaceholder.autoresizingMask = [UIViewAutoresizing.FlexibleWidth, UIViewAutoresizing.FlexibleHeight]
+        
+        self.addSubview(lblPlaceholder)
+        
+        lblPlaceholder.font = self.font
+        lblPlaceholder.textAlignment = self.textAlignment
+        lblPlaceholder.textColor = UIColor.lightGrayColor()
+        lblPlaceholder.text = placeholder        
     }
 }
 
@@ -53,7 +84,6 @@ class CardCollectionViewCell: UICollectionViewCell {
         super.prepareForReuse()
         self.title = nil
         self.content = nil
-        
     }
 
     var isFocusCell = false {

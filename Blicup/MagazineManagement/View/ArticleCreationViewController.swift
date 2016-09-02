@@ -110,6 +110,16 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
         centerTextViewCell(textView)
     }
 
+    func textViewDidEndEditing(textView: UITextView) {
+        let point = collectionView.convertPoint(CGPointZero, fromView: textView)
+        guard let index = collectionView.indexPathForItemAtPoint(point),
+            let cell = collectionView.cellForItemAtIndexPath(index) as? CardCollectionViewCell else {
+            return
+        }
+        
+        presenter.setCardTexts(index, title: cell.title, content: cell.content)
+    }
+    
     
     // MARK: Keyboard
     private func startObservingKeyboardEvents() {

@@ -37,19 +37,17 @@ class ArticleCreationPresenter: NSObject {
         contentsDic[index] = content
     }
     
-    func getCardTitle(index:NSIndexPath)->String {
+    func getCardTitle(index:NSIndexPath)->String? {
         guard let title = titlesDic[index] else {
-            let placeholder = index.item == 0 ? "Story Title" : "Title"
-            return placeholder
+            return nil
         }
         
         return title
     }
     
-    func getCardContent(index:NSIndexPath)->String {
-        guard let title = titlesDic[index] else {
-            let placeholder = index.item == 0 ? "Location" : "Your text..."
-            return placeholder
+    func getCardContent(index:NSIndexPath)->String? {
+        guard let title = contentsDic[index] else {
+            return nil
         }
         
         return title
