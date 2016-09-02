@@ -23,6 +23,14 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
         super.viewDidLoad()
         self.navigationController?.navigationBarHidden = true
         self.collectionView.decelerationRate = UIScrollViewDecelerationRateFast
+        self.view.layoutIfNeeded()
+        
+        if let articleFlowLayout = collectionView.collectionViewLayout as? ArticleCreationCollectionViewFlowLayout {
+            let verticalInsets = (collectionView.bounds.height - 330)/2
+            articleFlowLayout.sectionInset = UIEdgeInsetsMake(verticalInsets, 20, verticalInsets, 20)
+            let cellWidth = collectionView.bounds.width - (articleFlowLayout.sectionInset.left + articleFlowLayout.sectionInset.right)
+            articleFlowLayout.estimatedItemSize = CGSizeMake(cellWidth, 330)
+        }
         
     }
     
@@ -37,16 +45,6 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
         // Dispose of any resources that can be recreated.
     }
     
-    
-    override func viewDidLayoutSubviews() {
-        if let articleFlowLayout = collectionView.collectionViewLayout as? ArticleCreationCollectionViewFlowLayout {
-            let cellWidth = collectionView.bounds.width - (articleFlowLayout.sectionInset.left + articleFlowLayout.sectionInset.right)
-            articleFlowLayout.estimatedItemSize = CGSizeMake(cellWidth, 330)
-        }
-        
-        super.viewDidLayoutSubviews()
-    }
-    
     // MARK: UICollectionViewDataSource
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
@@ -59,7 +57,7 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
         let identifier = indexPath.row==0 ? "CoverCell" : "ContentCell"
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(identifier, forIndexPath: indexPath) as! CoverCollectionViewCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(identifier, forIndexPath: indexPath) as! CardCollectionViewCell
         
         let container = cell.viewWithTag(1)!
         container.layer.cornerRadius = 20
@@ -87,15 +85,47 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
         return cell
     }
     
+    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+        let centerPoint = CGPointMake(scrollView.contentOffset.x + scrollView.bounds.width/2, scrollView.contentOffset.y + scrollView.bounds.height/2)
+        
+        returnCellToOriginalPosition(centerPoint)
+        
+        scrollView.endEditing(true)
+    }
+    
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        let centerPoint = CGPointMake(scrollView.contentOffset.x + scrollView.bounds.width/2, scrollView.contentOffset.y + scrollView.bounds.height/2)
+        
+        guard let centerIndex = collectionView.indexPathForItemAtPoint(centerPoint) else {
+            return
+        }
+        
+        for cell in collectionView.visibleCells() {
+            if let cardCell = cell as? CardCollectionViewCell {
+                cardCell.isFocusCell = (collectionView.indexPathForCell(cell) == centerIndex)
+            }
+        }
+    }
+    
+    
+    //MARK: Cell Operations
     
     func handleGesture(swipeGesture: UIPanGestureRecognizer) {
         let initialPosition = swipeGesture.view!.frame.origin.x
+        let centerPoint = CGPointMake(collectionView.contentOffset.x + collectionView.bounds.width/2, collectionView.contentOffset.y + collectionView.bounds.height/2)
+        let translation = swipeGesture.translationInView(swipeGesture.view!)
         
         if swipeGesture.state == UIGestureRecognizerState.Began || swipeGesture.state == UIGestureRecognizerState.Changed{
-            let translation = swipeGesture.translationInView(swipeGesture.view!)
             if initialPosition + translation.x <= 0 && initialPosition + translation.x >= -100{
                 swipeGesture.view!.center = CGPointMake(swipeGesture.view!.center.x + translation.x, swipeGesture.view!.center.y)
                 swipeGesture.setTranslation(CGPointMake(0,0), inView: self.view)
+                
+                if let centerIndex = collectionView.indexPathForItemAtPoint(centerPoint) {
+                    if let cell = collectionView.cellForItemAtIndexPath(centerIndex) as? CardCollectionViewCell {
+                        cell.btnTrash.alpha = abs(initialPosition)/100
+                    }
+                    
+                }
             }
         }
         
@@ -108,8 +138,30 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
             UIView.animateWithDuration(0.3, delay: 0.0, options: [UIViewAnimationOptions.TransitionFlipFromLeft], animations: {
                 swipeGesture.view!.frame = frame
                 }, completion: nil)
+            
+            if let centerIndex = collectionView.indexPathForItemAtPoint(centerPoint) {
+                if let cell = collectionView.cellForItemAtIndexPath(centerIndex) as? CardCollectionViewCell {
+                    cell.btnTrash.alpha = abs(frame.origin.x)
+                }
+                
+            }
         }
         
+    }
+    
+    func returnCellToOriginalPosition(centerPoint: CGPoint) {
+        guard let centerIndex = collectionView.indexPathForItemAtPoint(centerPoint) else {
+            return
+        }
+        
+        if let cell = collectionView.cellForItemAtIndexPath(centerIndex) as? CardCollectionViewCell {
+            var frame = cell.vContainer.frame
+            frame.origin.x =  0.0
+            
+            UIView.animateWithDuration(0.2, delay: 0.0, options: [UIViewAnimationOptions.TransitionFlipFromLeft], animations: {
+                cell.vContainer.frame = frame
+                }, completion: nil)
+        }
     }
     
     // TextView Delegate
@@ -127,7 +179,6 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
     func textViewDidBeginEditing(textView: UITextView) {
         centerTextViewCell(textView)
     }
-
     
     // MARK: Keyboard
     private func startObservingKeyboardEvents() {
@@ -176,19 +227,22 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
         }
     }
     
+    
     //MARK: Actions
     
     @IBAction func btnCloseArticlePressed(sender: AnyObject) {
         UIView.animateWithDuration(0.1, delay: 0.0, options: [UIViewAnimationOptions.BeginFromCurrentState], animations: {
             self.btnCloseArticle.transform = CGAffineTransformIdentity
         }) { (_) in
-            
+            self.navigationController?.popViewControllerAnimated(true)
         }
     }
     
     @IBAction func btnMorePicsPressed(sender: AnyObject) {
         UIView.animateWithDuration(0.1, delay: 0.0, options: [UIViewAnimationOptions.BeginFromCurrentState], animations: {
             self.btnMorePics.transform = CGAffineTransformIdentity
+            let centerPoint = CGPointMake(self.collectionView.contentOffset.x + self.collectionView.bounds.width/2, self.collectionView.contentOffset.y + self.collectionView.bounds.height/2)
+            self.returnCellToOriginalPosition(centerPoint)
         }) { (_) in
             if let viewSelectCamera = self.storyboard?.instantiateViewControllerWithIdentifier("CameraRollPager") as? CameraRollPagerTabStripController {
                 viewSelectCamera.selectMoreContent = 6 - self.presenter.numberOfMedias()
@@ -201,6 +255,8 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
     @IBAction func btnPreviewArticlePressed(sender: AnyObject) {
         UIView.animateWithDuration(0.1, delay: 0.0, options: [UIViewAnimationOptions.BeginFromCurrentState], animations: {
             self.btnPreviewArticle.transform = CGAffineTransformIdentity
+            let centerPoint = CGPointMake(self.collectionView.contentOffset.x + self.collectionView.bounds.width/2, self.collectionView.contentOffset.y + self.collectionView.bounds.height/2)
+            self.returnCellToOriginalPosition(centerPoint)
         }) { (_) in
             
         }
@@ -208,7 +264,7 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
     
     
     @IBAction func btnDeleteCellPressed(sender: UIButton) {
-        if let cell = self.collectionView.cellForItemAtIndexPath(NSIndexPath(forItem: sender.tag, inSection: 0)) as? CoverCollectionViewCell {
+        if let cell = self.collectionView.cellForItemAtIndexPath(NSIndexPath(forItem: sender.tag, inSection: 0)) as? CardCollectionViewCell {
             UIView.animateWithDuration(0.1, delay: 0.0, options: [UIViewAnimationOptions.BeginFromCurrentState], animations: {
                 cell.btnTrash.transform = CGAffineTransformIdentity
             }) { (_) in
@@ -216,16 +272,22 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
                 frame.origin.x = 0.0
                 
                 let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
-                let unblock = UIAlertAction(title: NSLocalizedString("Delete Media", comment: "") , style: .Default, handler: { (action) -> Void in
+                let delete = UIAlertAction(title: NSLocalizedString("Delete Media", comment: "") , style: .Default, handler: { (action) -> Void in
                     sender.selected = !sender.selected
-                    self.presenter.deleteAsset(sender.tag)
-                    self.collectionView.deleteItemsAtIndexPaths([NSIndexPath(forItem: sender.tag, inSection: 0)])
-                    UIView.animateWithDuration(0.3, delay: 0.0, options: [UIViewAnimationOptions.TransitionFlipFromLeft], animations: {
-                        cell.vContainer.frame = frame
-                        }, completion: nil)
-                    
-                    self.collectionView.reloadData()
-                    self.collectionView.reloadSections(NSIndexSet(index: 0))
+                    self.presenter.deleteAsset(sender.tag, completionHandler: { (numberOfMedias) in
+                        
+                        self.collectionView.deleteItemsAtIndexPaths([NSIndexPath(forItem: sender.tag, inSection: 0)])
+                        UIView.animateWithDuration(0.3, delay: 0.0, options: [UIViewAnimationOptions.TransitionFlipFromLeft], animations: {
+                            cell.vContainer.frame = frame
+                            }, completion: { (_) in
+                                if numberOfMedias == 0 {
+                                    self.navigationController?.popViewControllerAnimated(true)
+                                }
+                        })
+                        
+                        self.collectionView.reloadData()
+                        self.collectionView.reloadSections(NSIndexSet(index: 0))
+                    })
                 })
                 
                 let cancel = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .Cancel, handler: { (action) -> Void in
@@ -234,8 +296,14 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
                         }, completion: nil)
                 })
                 
-                alertController.addAction(unblock)
+                alertController.addAction(delete)
                 alertController.addAction(cancel)
+                
+                if #available(iOS 9.0, *) {
+                    delete.setValue(UIColor.blicupPink(), forKey: "titleTextColor")
+                    cancel.setValue(UIColor.blicupPink(), forKey: "titleTextColor")
+                }
+                
                 alertController.view.tintColor = UIColor.blicupPink()
                 
                 self.presentViewController(alertController, animated: true, completion: nil)
@@ -243,8 +311,5 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
         }
     }
     
-    func scrollViewDidScroll(scrollView: UIScrollView) {
-        let x = scrollView.tag
-    }
     
 }
