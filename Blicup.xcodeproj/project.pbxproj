@@ -225,6 +225,8 @@
 		C9EAF94B1D3834AE00D59752 /* UserStatus+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EAF9491D3834AE00D59752 /* UserStatus+CoreDataProperties.swift */; };
 		C9EAF94C1D3834AE00D59752 /* UserStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EAF94A1D3834AE00D59752 /* UserStatus.swift */; };
 		C9EBFF511D401C6200B7A211 /* push_blicup.aif in Resources */ = {isa = PBXBuildFile; fileRef = C9EBFF501D401C6200B7A211 /* push_blicup.aif */; };
+		C9F7B94E1D786DF2005475F7 /* ReadingAnimationSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F7B94D1D786DF2005475F7 /* ReadingAnimationSelector.swift */; };
+		C9F7B9501D786F9D005475F7 /* ScrollableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F7B94F1D786F9D005475F7 /* ScrollableImageView.swift */; };
 		C9F8B8551D0F443200DD6A57 /* CoverMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F8B8541D0F443200DD6A57 /* CoverMessageView.swift */; };
 		C9F8B8571D0F444700DD6A57 /* CoverMessageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9F8B8561D0F444700DD6A57 /* CoverMessageView.xib */; };
 		C9F8B85E1D11E3B200DD6A57 /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F8B85D1D11E3B200DD6A57 /* SettingsPresenter.swift */; };
@@ -559,6 +561,8 @@
 		C9EAF9491D3834AE00D59752 /* UserStatus+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UserStatus+CoreDataProperties.swift"; path = "UserManagement/Model/UserStatus+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C9EAF94A1D3834AE00D59752 /* UserStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserStatus.swift; path = UserManagement/Model/UserStatus.swift; sourceTree = "<group>"; };
 		C9EBFF501D401C6200B7A211 /* push_blicup.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = push_blicup.aif; sourceTree = "<group>"; };
+		C9F7B94D1D786DF2005475F7 /* ReadingAnimationSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReadingAnimationSelector.swift; path = MagazineManagement/Presenter/ReadingAnimationSelector.swift; sourceTree = "<group>"; };
+		C9F7B94F1D786F9D005475F7 /* ScrollableImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScrollableImageView.swift; path = MagazineManagement/View/ScrollableImageView.swift; sourceTree = "<group>"; };
 		C9F8B8541D0F443200DD6A57 /* CoverMessageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoverMessageView.swift; path = ChatRoomManagement/View/CoverMessageView.swift; sourceTree = "<group>"; };
 		C9F8B8561D0F444700DD6A57 /* CoverMessageView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CoverMessageView.xib; path = ChatRoomManagement/View/CoverMessageView.xib; sourceTree = "<group>"; };
 		C9F8B85D1D11E3B200DD6A57 /* SettingsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsPresenter.swift; path = Settings/Presenter/SettingsPresenter.swift; sourceTree = "<group>"; };
@@ -1134,8 +1138,7 @@
 				E56582DC1D75DD8E00309537 /* ArticleCreationCollectionViewFlowLayout.swift */,
 				C9111B731D760D9800673CB6 /* CardsCollectionViewCell.swift */,
 				E516B0661D760ABA00051313 /* SearchArticleLocationViewController.swift */,
-				C97A084E1D776B0300D794EA /* Reading */,			 
-
+				C97A084E1D776B0300D794EA /* Reading */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -1143,6 +1146,7 @@
 		C9569F2B1D70DF4700006019 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				C9F7B94C1D786CF0005475F7 /* Reading */,
 				C9569F6F1D74B87100006019 /* CameraRollPresenter.swift */,
 				C91414561D76001C00C574DB /* CameraRollAssetSelector.swift */,
 				C9ACAEFF1D774ECC00031202 /* ArticleCreationPresenter.swift */,
@@ -1170,6 +1174,7 @@
 				C97A084A1D776AF900D794EA /* CardContentOverCollectionCell.swift */,
 				C97A084B1D776AF900D794EA /* CardContentOverCollectionCell.xib */,
 				C97A084F1D77746200D794EA /* ArticlesReadingCollectionViewController.swift */,
+				C9F7B94F1D786F9D005475F7 /* ScrollableImageView.swift */,
 			);
 			name = Reading;
 			sourceTree = "<group>";
@@ -1224,6 +1229,14 @@
 				C9EBFF501D401C6200B7A211 /* push_blicup.aif */,
 			);
 			name = Sounds;
+			sourceTree = "<group>";
+		};
+		C9F7B94C1D786CF0005475F7 /* Reading */ = {
+			isa = PBXGroup;
+			children = (
+				C9F7B94D1D786DF2005475F7 /* ReadingAnimationSelector.swift */,
+			);
+			name = Reading;
 			sourceTree = "<group>";
 		};
 		C9F8B8531D0F43E100DD6A57 /* Cover */ = {
@@ -1942,12 +1955,14 @@
 				C9EAF94C1D3834AE00D59752 /* UserStatus.swift in Sources */,
 				7DFD1E011C86438700CF5C94 /* LoginController.swift in Sources */,
 				C9569F561D746D3D00006019 /* CVideo.swift in Sources */,
+				C9F7B94E1D786DF2005475F7 /* ReadingAnimationSelector.swift in Sources */,
 				C93AC3F61D26F86900ED8046 /* ChatRoomSearchListPresenter.swift in Sources */,
 				C97C00661D1B097900C16541 /* BlockListPresenter.swift in Sources */,
 				E52791721CEF4EFD00F5E727 /* FollowCustomButton.swift in Sources */,
 				E516B0671D760ABA00051313 /* SearchArticleLocationViewController.swift in Sources */,
 				C9569F5F1D746D3D00006019 /* Category+CoreDataProperties.swift in Sources */,
 				7D8626551C9B48FA00D87E87 /* InterestListAddedBlankCollectionViewCell.swift in Sources */,
+				C9F7B9501D786F9D005475F7 /* ScrollableImageView.swift in Sources */,
 				7DCFA72B1D1220040043CEA1 /* FolloweeViewController.swift in Sources */,
 				C9569F621D746D3D00006019 /* CTextLD.swift in Sources */,
 				C9BCFF121CF783BF00D498FA /* UserInfo+CoreDataProperties.swift in Sources */,
