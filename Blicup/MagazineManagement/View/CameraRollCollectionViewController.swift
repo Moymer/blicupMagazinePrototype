@@ -85,7 +85,10 @@ class CameraRollCollectionViewController: UIViewController, UICollectionViewDele
     
         cell.representedAssetIdentifier = presenter.getAssetIdentifier(indexPath)
         cell.duration = presenter.getAssetDuration(indexPath)
-        if cell.checkSelection(assetSelector!) {
+        
+        let showSelectionOrder: Int? = (self.assetSelector?.MAX_MIDIAS != 6) ? self.assetSelector?.getSelectionCount() : nil
+        
+        if cell.checkSelection(assetSelector!, shouldShowSelectionOrder: showSelectionOrder) {
             collectionView.selectItemAtIndexPath(indexPath, animated: false, scrollPosition: UICollectionViewScrollPosition.None)
             cell.selected = true
             selectedIndexesSet.insert(indexPath)
@@ -115,13 +118,15 @@ class CameraRollCollectionViewController: UIViewController, UICollectionViewDele
         let cell : CameraRollImageCollectionViewCell = collectionView.cellForItemAtIndexPath(indexPath)  as!  CameraRollImageCollectionViewCell
         let asset = presenter.getAsset(indexPath)
         
-
+        let showSelectionOrder: Int? = (self.assetSelector?.MAX_MIDIAS != 6) ? self.assetSelector?.getSelectionCount() : nil
+        
         collectionView.selectItemAtIndexPath(indexPath, animated: false, scrollPosition: UICollectionViewScrollPosition.None)
         cell.selected = true
         assetSelector!.selectAsset(asset)
-        cell.setSelectionAnimated(assetSelector!)
+        cell.setSelectionAnimated(assetSelector!, shouldShowSelectionOrder: showSelectionOrder)
         selectedIndexesSet.insert(indexPath)
     }
+    
     func collectionView(collectionView: UICollectionView,
                           shouldSelectItemAtIndexPath indexPath: NSIndexPath) -> Bool
     {
@@ -143,8 +148,9 @@ class CameraRollCollectionViewController: UIViewController, UICollectionViewDele
         collectionView.deselectItemAtIndexPath(indexPath, animated: false)
         cell.selected = false
         let asset = presenter.getAsset(indexPath)
+        let showSelectionOrder: Int? = (self.assetSelector?.MAX_MIDIAS != 6) ? self.assetSelector?.getSelectionCount() : nil
         assetSelector!.unselectAsset(asset)
-        cell.setSelectionAnimated(assetSelector!)
+        cell.setSelectionAnimated(assetSelector!, shouldShowSelectionOrder: showSelectionOrder)
         selectedIndexesSet.remove(indexPath)
         reloadSelectedIndex()
     }

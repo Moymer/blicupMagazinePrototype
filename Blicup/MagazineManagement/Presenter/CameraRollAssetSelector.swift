@@ -17,7 +17,7 @@ public protocol CameraRollAssetSelectionDelegate : NSObjectProtocol {
 
 class CameraRollAssetSelector: NSObject {
 
-    let MAX_MIDIAS = 6
+    var MAX_MIDIAS = 6
     let MAX_VIDEO_DURATION_SECS = 61.0
     var assetsSelected : [String:PHAsset] = [:]
     var assetsSelectedListOrdered : [String] = []
@@ -43,6 +43,9 @@ class CameraRollAssetSelector: NSObject {
     }
 
     func getSelectionCount() -> Int {
+        if MAX_MIDIAS != 6 {
+            return (6 - MAX_MIDIAS) + assetsSelectedListOrdered.count
+        }
         return assetsSelectedListOrdered.count
     }
     
