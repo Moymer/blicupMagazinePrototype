@@ -56,6 +56,13 @@ class CardCollectionViewCell: UICollectionViewCell {
         
     }
 
+    var isFocusCell = false {
+        didSet {
+            self.userInteractionEnabled = isFocusCell
+            self.alpha = isFocusCell ? 1.0 : 0.5
+        }
+    }
+    
     
     var title: String? {
         set { print("Override this method") }

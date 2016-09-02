@@ -237,7 +237,7 @@
                         <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="CZ3-A3-haI">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="CZ3-A3-haI">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="50" minimumInteritemSpacing="10" id="jy5-kl-m9n" customClass="ArticleCreationCollectionViewFlowLayout" customModule="Blicup" customModuleProvider="target">
@@ -385,6 +385,7 @@
                                 </cells>
                                 <connections>
                                     <outlet property="dataSource" destination="gs4-Ue-mWh" id="76j-zg-cXa"/>
+                                    <outlet property="delegate" destination="gs4-Ue-mWh" id="egG-oI-Cga"/>
                                 </connections>
                             </collectionView>
                         </subviews>

@@ -32,6 +32,8 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         startObservingKeyboardEvents()
+        // Just to adjust initial cells alpha
+        scrollViewDidScroll(collectionView)
     }
     
     override func didReceiveMemoryWarning() {
@@ -73,6 +75,25 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
         return cell
     }
     
+    
+    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+        scrollView.endEditing(true)
+    }
+    
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        let centerPoint = CGPointMake(scrollView.contentOffset.x + scrollView.bounds.width/2, scrollView.contentOffset.y + scrollView.bounds.height/2)
+        
+        guard let centerIndex = collectionView.indexPathForItemAtPoint(centerPoint) else {
+            return
+        }
+        
+        for cell in collectionView.visibleCells() {
+            if let cardCell = cell as? CardCollectionViewCell {
+                cardCell.isFocusCell = (collectionView.indexPathForCell(cell) == centerIndex)
+            }
+        }
+    }
+    
     // TextView Delegate
     private func centerTextViewCell(textView:UITextView) {
         let rect = collectionView.convertRect(textView.bounds, fromView: textView)
@@ -88,6 +109,7 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
     func textViewDidBeginEditing(textView: UITextView) {
         centerTextViewCell(textView)
     }
+
     
     // MARK: Keyboard
     private func startObservingKeyboardEvents() {
