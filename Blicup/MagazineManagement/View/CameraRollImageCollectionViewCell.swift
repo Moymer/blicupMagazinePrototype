@@ -9,14 +9,14 @@
 import UIKit
 
 class CameraRollImageCollectionViewCell: UICollectionViewCell {
- 
+    
     @IBOutlet weak var ivThumb: UIImageView!
     
     //selection
     @IBOutlet weak var selectionView: UIView!
     @IBOutlet weak var ivSelectionCheck: UIImageView!
     @IBOutlet weak var lblSelectionOrder: UILabel!
-  
+    
     //video
     @IBOutlet weak var videoView: UIView!
     @IBOutlet weak var icVideoIndicator: UIImageView!
@@ -66,17 +66,18 @@ class CameraRollImageCollectionViewCell: UICollectionViewCell {
                     secs = 1
                 }
                 lblVideoDuration.text = String(format: "%02d:%02d", mins, secs)
-
+                
             }
         }
     }
     
-    func checkSelection(assetSelector : CameraRollAssetSelector) -> Bool
+    func checkSelection(assetSelector : CameraRollAssetSelector, shouldShowSelectionOrder: Int?) -> Bool
     {
         var selected : Bool = false
-        let pos = assetSelector.isSelected(representedAssetIdentifier)
+        var pos = assetSelector.isSelected(representedAssetIdentifier)
         if  pos >= 0 {
             selectionView.hidden = false
+            pos = (shouldShowSelectionOrder != nil) ? shouldShowSelectionOrder! : pos
             lblSelectionOrder.text = (pos == 0) ? "Cover" : "\(pos)"
             selected = true
         }
@@ -86,29 +87,29 @@ class CameraRollImageCollectionViewCell: UICollectionViewCell {
         return selected
     }
     
-    func setSelectionAnimated(assetSelector : CameraRollAssetSelector)
+    func setSelectionAnimated(assetSelector : CameraRollAssetSelector, shouldShowSelectionOrder: Int?)
     {
-        let selected = checkSelection(assetSelector)
+        let selected = checkSelection(assetSelector, shouldShowSelectionOrder: shouldShowSelectionOrder)
         if  selected {
             selectionView.alpha = 0.0
             UIView.animateWithDuration(0.2, animations: {
                 self.selectionView.alpha = 1.0
                 self.ivSelectionCheck.transform = CGAffineTransformMakeScale(1.1, 1.1)
-
+                
                 }, completion: { (finish) in
                     
                     UIView.animateWithDuration(0.1, animations: {
                         self.ivSelectionCheck.transform = CGAffineTransformMakeScale(1.25, 1.25)
-
+                        
                         }, completion: { (finish) in
                             UIView.animateWithDuration(0.1, animations: {
                                 self.ivSelectionCheck.transform = CGAffineTransformMakeScale(0.8, 0.8)
-
+                                
                                 }, completion: { (finish) in
                                     
                                     UIView.animateWithDuration(0.1, animations: {
                                         self.ivSelectionCheck.transform = CGAffineTransformIdentity
-
+                                        
                                     })
                                     
                             })
@@ -126,7 +127,7 @@ class CameraRollImageCollectionViewCell: UICollectionViewCell {
                     self.selectionView.alpha = 1.0
                     self.selectionView.hidden = true
             })
-
+            
         }
     }
 }

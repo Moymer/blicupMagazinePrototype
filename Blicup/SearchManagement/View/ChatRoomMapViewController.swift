@@ -12,9 +12,7 @@ import MapKit
 
 class ChatRoomMapViewController: UIViewController, MKMapViewDelegate, CCHMapClusterControllerDelegate {
     
-    @IBOutlet weak var vSearchShadowContainer: UIView!
     @IBOutlet weak var btnSearchBar: BCButton!
-    @IBOutlet weak var btnCreateChat: BCButton!
     @IBOutlet weak var mvChatMap: MKMapView!
     
     @IBOutlet weak var vChatsLoading: UIView!
@@ -33,7 +31,6 @@ class ChatRoomMapViewController: UIViewController, MKMapViewDelegate, CCHMapClus
         super.viewDidLoad()
         
         customizeSearchBar()
-        customizeBtnCreateChat()
         
         mapCluster = CCHMapClusterController(mapView: mvChatMap)
         mapCluster.maxZoomLevelForClustering = 14
@@ -94,28 +91,10 @@ class ChatRoomMapViewController: UIViewController, MKMapViewDelegate, CCHMapClus
     }
     
     private func customizeSearchBar() {
-        vSearchShadowContainer.layer.shadowOpacity = 0.1
-        vSearchShadowContainer.layer.shadowOffset = CGSize(width: 0, height: 0)
-        vSearchShadowContainer.layer.shadowRadius = 2.0
-        vSearchShadowContainer.layer.shadowColor = UIColor.blackColor().CGColor
-        vSearchShadowContainer.layer.masksToBounds = false
-        
-        btnSearchBar.layer.borderWidth = 1.5
-        btnSearchBar.layer.borderColor = UIColor.whiteColor().colorWithAlphaComponent(0.8).CGColor
-        btnSearchBar.layer.cornerRadius = 4
+    
+        btnSearchBar.layer.cornerRadius = btnSearchBar.frame.height/2
         btnSearchBar.clipsToBounds = true
     }
-    
-    func customizeBtnCreateChat() {
-        
-        btnCreateChat.layer.shadowOpacity = 0.2
-        btnCreateChat.layer.shadowOffset = CGSize(width: 0, height: 0)
-        btnCreateChat.layer.shadowRadius = 1.0
-        btnCreateChat.layer.shadowColor = UIColor.blackColor().CGColor
-        btnCreateChat.layer.masksToBounds = false
-        
-    }
-    
     
     // MARK: Loading Chats
     private func customizeChatsLoading() {
@@ -380,36 +359,12 @@ class ChatRoomMapViewController: UIViewController, MKMapViewDelegate, CCHMapClus
     }
     
     
-    // MARK: Create Chat
-    @IBAction func createChatPressed(sender: UIButton) {
-        self.view.userInteractionEnabled = false
-        UIView.animateWithDuration(0.05, animations: {
-            self.btnCreateChat.transform = CGAffineTransformMakeScale(1, 1)
-        }) { (_) in
-            self.performSegueWithIdentifier("createChatSegue", sender: sender)
-            self.view.userInteractionEnabled = true
-        }
-    }
-    
-    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
         
-        if segue.identifier == "createChatSegue"{
-            let touch = sender as! UIButton
-            (segue as! OHCircleSegue).circleOrigin = CGPoint(x: touch.frame.midX, y: touch.frame.midY)
-            
-            let seguePoint = CGPoint(x: touch.frame.midX, y: touch.frame.midY + 20)
-            
-            if let destVC = segue.destinationViewController as? CreateChatRoomViewController{
-                destVC.parentView = self
-                destVC.cgPointBtnCreate = seguePoint
-            }
-            
-        }
-        else if segue.identifier == "showSingleChatSegue" || segue.identifier == "showChatListSegue" {
+        if segue.identifier == "showSingleChatSegue" || segue.identifier == "showChatListSegue" {
             // Get the destionation NavController and add the correspondent new controller to be presented
             guard let navController = segue.destinationViewController as? UINavigationController,
                 let presenter = sender as? MapChatRoomListPresenter else {

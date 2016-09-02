@@ -12,7 +12,11 @@ import Photos
 class ArticleCreationPresenter: NSObject {
     private let imageManager = PHCachingImageManager()
     private let options = PHImageRequestOptions()
+    
     private var assets = [PHAsset]()
+    private var titlesDic = [NSIndexPath:String]()
+    private var contentsDic = [NSIndexPath:String]()
+    
     
     override init() {
         super.init()
@@ -24,8 +28,38 @@ class ArticleCreationPresenter: NSObject {
         self.assets = assets
     }
     
+    func addAssets(assets:[PHAsset]) {
+        self.assets.appendContentsOf(assets)
+    }
+    
+    func deleteAsset(index: Int, completionHandler: (numberOfMedias: Int) -> ()) {
+        self.assets.removeAtIndex(index)
+        completionHandler(numberOfMedias: self.numberOfMedias())
+    }
+    
     func numberOfMedias()->Int {
         return assets.count
+    }
+    
+    func setCardTexts(index: NSIndexPath, title:String?, content:String?) {
+        titlesDic[index] = title
+        contentsDic[index] = content
+    }
+    
+    func getCardTitle(index:NSIndexPath)->String? {
+        guard let title = titlesDic[index] else {
+            return nil
+        }
+        
+        return title
+    }
+    
+    func getCardContent(index:NSIndexPath)->String? {
+        guard let title = contentsDic[index] else {
+            return nil
+        }
+        
+        return title
     }
     
     func getImageMedia(index:NSIndexPath, completion:(image:UIImage?)->Void) {

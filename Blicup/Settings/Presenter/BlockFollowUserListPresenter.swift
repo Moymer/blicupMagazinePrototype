@@ -84,6 +84,15 @@ extension BlockFollowUserListPresenter {
         return followList.contains(user.userId!)
     }
     
+    func userBio(index: NSIndexPath)->String? {
+        
+        guard let user = userAtIndex(index) else {
+            return ""
+        }
+        
+        return user.bio
+    }
+    
     
     func followUnfollowUserAtIndex(index:NSIndexPath, completionHandler:(success:Bool)->Void) {
         guard !isUserBlocked(index),

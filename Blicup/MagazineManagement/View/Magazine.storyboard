@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BRJ-H2-Y4z">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BRJ-H2-Y4z">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
@@ -149,20 +149,35 @@
         <!--Camera Roll Pager Tab Strip Controller-->
         <scene sceneID="cqI-fa-CaJ">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="CJX-4M-wir" customClass="CameraRollPagerTabStripController" customModule="Blicup" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CameraRollPager" automaticallyAdjustsScrollViewInsets="NO" id="CJX-4M-wir" customClass="CameraRollPagerTabStripController" customModule="Blicup" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mcO-xf-5Yk"/>
                         <viewControllerLayoutGuide type="bottom" id="pbx-l8-ZO8"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="jAY-Vg-QTx">
-                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="46e-Ix-olu">
-                                <rect key="frame" x="0.0" y="50" width="600" height="486"/>
+                                <rect key="frame" x="0.0" y="125" width="600" height="475"/>
                             </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pHd-O6-QEN">
+                                <rect key="frame" x="233" y="474" width="134" height="42"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="134" id="J2B-DE-4qJ"/>
+                                    <constraint firstAttribute="height" constant="42" id="uuu-MR-C7u"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="17"/>
+                                <state key="normal" title="Adicionar (6)">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="createArticle:" destination="CJX-4M-wir" eventType="touchUpInside" id="MPp-QN-sGP"/>
+                                </connections>
+                            </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="CNW-yd-Q90" customClass="ButtonBarView" customModule="XLPagerTabStrip">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="35"/>
+                                <rect key="frame" x="0.0" y="80" width="600" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="cYy-lN-66I"/>
                                 </constraints>
@@ -184,37 +199,44 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pHd-O6-QEN">
-                                <rect key="frame" x="233" y="474" width="134" height="42"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vIc-7H-yk3" customClass="BCCloseButton" customModule="Blicup" customModuleProvider="target">
+                                <rect key="frame" x="10" y="20" width="50" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="134" id="J2B-DE-4qJ"/>
-                                    <constraint firstAttribute="height" constant="42" id="uuu-MR-C7u"/>
+                                    <constraint firstAttribute="height" constant="50" id="AjH-a3-pu7"/>
+                                    <constraint firstAttribute="width" constant="50" id="vpA-kS-1PZ"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="17"/>
-                                <state key="normal" title="Adicionar (6)">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <state key="normal" title=" " image="ic_close_black"/>
                                 <connections>
-                                    <action selector="createArticle:" destination="CJX-4M-wir" eventType="touchUpInside" id="MPp-QN-sGP"/>
+                                    <action selector="btnClosePressed:" destination="CJX-4M-wir" eventType="touchUpInside" id="Q1R-aW-9fU"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Camera Roll" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8g3-Jz-X2x">
+                                <rect key="frame" x="255" y="34" width="91" height="22"/>
+                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="16"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="CNW-yd-Q90" secondAttribute="trailing" id="6NK-lP-0Nj"/>
                             <constraint firstItem="pbx-l8-ZO8" firstAttribute="top" secondItem="46e-Ix-olu" secondAttribute="bottom" id="FGJ-wt-6GV"/>
                             <constraint firstItem="46e-Ix-olu" firstAttribute="leading" secondItem="jAY-Vg-QTx" secondAttribute="leading" id="MC5-QR-0ki"/>
+                            <constraint firstItem="8g3-Jz-X2x" firstAttribute="centerY" secondItem="vIc-7H-yk3" secondAttribute="centerY" id="Nf9-1f-Ekd"/>
+                            <constraint firstItem="8g3-Jz-X2x" firstAttribute="centerX" secondItem="jAY-Vg-QTx" secondAttribute="centerX" id="R0D-jg-6v3"/>
                             <constraint firstItem="pHd-O6-QEN" firstAttribute="centerX" secondItem="jAY-Vg-QTx" secondAttribute="centerX" id="XkK-Ou-cFN"/>
-                            <constraint firstItem="CNW-yd-Q90" firstAttribute="top" secondItem="mcO-xf-5Yk" secondAttribute="bottom" id="ZaE-Eu-5Pa"/>
                             <constraint firstItem="CNW-yd-Q90" firstAttribute="leading" secondItem="jAY-Vg-QTx" secondAttribute="leading" id="bwI-Iz-y2S"/>
                             <constraint firstItem="pbx-l8-ZO8" firstAttribute="top" secondItem="pHd-O6-QEN" secondAttribute="bottom" constant="20" id="dfJ-od-wkB"/>
+                            <constraint firstItem="vIc-7H-yk3" firstAttribute="leading" secondItem="jAY-Vg-QTx" secondAttribute="leading" constant="10" id="fT7-ed-SXM"/>
                             <constraint firstAttribute="trailing" secondItem="46e-Ix-olu" secondAttribute="trailing" id="ffP-v1-GnE"/>
-                            <constraint firstItem="46e-Ix-olu" firstAttribute="top" secondItem="mcO-xf-5Yk" secondAttribute="bottom" constant="50" id="sgA-tQ-ANd"/>
+                            <constraint firstItem="46e-Ix-olu" firstAttribute="top" secondItem="CNW-yd-Q90" secondAttribute="bottom" constant="10" id="lZe-mu-8JA"/>
+                            <constraint firstItem="vIc-7H-yk3" firstAttribute="top" secondItem="mcO-xf-5Yk" secondAttribute="bottom" id="q7c-t8-raj"/>
+                            <constraint firstItem="CNW-yd-Q90" firstAttribute="top" secondItem="vIc-7H-yk3" secondAttribute="bottom" constant="10" id="yuE-Kw-6hQ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="s4Q-Gy-Mmy"/>
                     <connections>
+                        <outlet property="btnClose" destination="vIc-7H-yk3" id="qhD-Vb-YcU"/>
                         <outlet property="btnCreateArticle" destination="pHd-O6-QEN" id="4bv-dT-cFB"/>
                         <outlet property="buttonBarView" destination="CNW-yd-Q90" id="7d3-6v-oyx"/>
                         <outlet property="containerView" destination="46e-Ix-olu" id="LNK-Xh-N5Y"/>
@@ -234,11 +256,11 @@
                         <viewControllerLayoutGuide type="bottom" id="37R-kX-yON"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="cqq-gg-lMF">
-                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="CZ3-A3-haI">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="CZ3-A3-haI">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="50" minimumInteritemSpacing="10" id="jy5-kl-m9n" customClass="ArticleCreationCollectionViewFlowLayout" customModule="Blicup" customModuleProvider="target">
                                     <size key="itemSize" width="335" height="330"/>
@@ -247,41 +269,55 @@
                                     <inset key="sectionInset" minX="20" minY="150" maxX="20" maxY="150"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CoverCell" id="wGq-bE-OFW" customClass="CoverCollectionViewCell" customModule="Blicup" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CoverCell" id="wGq-bE-OFW" customClass="CoverCollectionCell" customModule="Blicup" customModuleProvider="target">
                                         <rect key="frame" x="133" y="150" width="335" height="330"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="335" height="330"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pc7-WI-BK3" customClass="BCCloseButton" customModule="Blicup" customModuleProvider="target">
+                                                    <rect key="frame" x="293" y="144" width="42" height="42"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="42" id="8MV-Yh-R8m"/>
+                                                        <constraint firstAttribute="width" constant="42" id="UmL-5H-fRO"/>
+                                                    </constraints>
+                                                    <state key="normal" image="Trash"/>
+                                                    <connections>
+                                                        <action selector="btnDeleteCellPressed:" destination="gs4-Ue-mWh" eventType="touchUpInside" id="Ylv-1h-DPg"/>
+                                                    </connections>
+                                                </button>
                                                 <view clipsSubviews="YES" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fse-vF-t1s" userLabel="Container">
                                                     <rect key="frame" x="0.0" y="0.0" width="335" height="330"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VCw-cB-sQc">
                                                             <rect key="frame" x="0.0" y="0.0" width="335" height="225"/>
-                                                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="225" id="61i-jS-fGo"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" scrollEnabled="NO" text="Story Title" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Z3A-6C-xY0" customClass="ArticleTextView" customModule="Blicup" customModuleProvider="target">
-                                                            <rect key="frame" x="5" y="235" width="325" height="48"/>
+                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" scrollEnabled="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Z3A-6C-xY0" customClass="ArticleTextView" customModule="Blicup" customModuleProvider="target">
+                                                            <rect key="frame" x="5" y="230" width="325" height="48"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                             <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="23"/>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences" spellCheckingType="no" returnKeyType="done"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Story Title"/>
+                                                            </userDefinedRuntimeAttributes>
                                                             <connections>
                                                                 <outlet property="delegate" destination="gs4-Ue-mWh" id="bsh-JL-5Bh"/>
                                                             </connections>
                                                         </textView>
                                                         <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="999" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="uaY-vS-bWC" customClass="LocationButton" customModule="Blicup" customModuleProvider="target">
-                                                            <rect key="frame" x="5" y="288" width="325" height="22"/>
+                                                            <rect key="frame" x="5" y="283" width="325" height="27"/>
                                                             <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="18"/>
                                                             <state key="normal" title="Location">
                                                                 <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
                                                             <connections>
-                                                                <segue destination="mgy-d7-Gie" kind="show" id="mDI-fB-ubN"/>
+                                                                <segue destination="mgy-d7-Gie" kind="presentation" identifier="LocationSegue" id="mDI-fB-ubN"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>
@@ -289,7 +325,7 @@
                                                     <constraints>
                                                         <constraint firstItem="uaY-vS-bWC" firstAttribute="leading" secondItem="Fse-vF-t1s" secondAttribute="leading" constant="5" id="0Xc-Ay-sfW"/>
                                                         <constraint firstAttribute="trailing" secondItem="uaY-vS-bWC" secondAttribute="trailing" constant="5" id="GQe-aL-Eka"/>
-                                                        <constraint firstItem="Z3A-6C-xY0" firstAttribute="top" secondItem="VCw-cB-sQc" secondAttribute="bottom" constant="10" id="Gfb-Se-j4R"/>
+                                                        <constraint firstItem="Z3A-6C-xY0" firstAttribute="top" secondItem="VCw-cB-sQc" secondAttribute="bottom" constant="5" id="Gfb-Se-j4R"/>
                                                         <constraint firstItem="uaY-vS-bWC" firstAttribute="top" secondItem="Z3A-6C-xY0" secondAttribute="bottom" constant="5" id="IcW-bv-w5Z"/>
                                                         <constraint firstItem="VCw-cB-sQc" firstAttribute="leading" secondItem="Fse-vF-t1s" secondAttribute="leading" id="Lx6-0Z-dRc"/>
                                                         <constraint firstAttribute="bottom" secondItem="uaY-vS-bWC" secondAttribute="bottom" constant="20" id="MAb-HS-DYU"/>
@@ -306,46 +342,69 @@
                                         <constraints>
                                             <constraint firstItem="Fse-vF-t1s" firstAttribute="top" secondItem="wGq-bE-OFW" secondAttribute="top" id="3mf-s7-UFC"/>
                                             <constraint firstItem="Fse-vF-t1s" firstAttribute="leading" secondItem="wGq-bE-OFW" secondAttribute="leading" id="8fO-Xi-vKr"/>
+                                            <constraint firstItem="Pc7-WI-BK3" firstAttribute="centerY" secondItem="wGq-bE-OFW" secondAttribute="centerY" id="L8p-dS-Tnw"/>
                                             <constraint firstAttribute="bottom" secondItem="Fse-vF-t1s" secondAttribute="bottom" id="R3q-eb-ADp"/>
                                             <constraint firstAttribute="trailing" secondItem="Fse-vF-t1s" secondAttribute="trailing" id="SLc-98-Gyc"/>
+                                            <constraint firstAttribute="trailing" secondItem="Pc7-WI-BK3" secondAttribute="trailing" id="ewg-AQ-pHv"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="articleLocation" destination="uaY-vS-bWC" id="lrQ-Ap-BY5"/>
+                                            <outlet property="articleTitle" destination="Z3A-6C-xY0" id="v2Z-Ye-zbJ"/>
+                                            <outlet property="btnTrash" destination="Pc7-WI-BK3" id="k07-gY-2A8"/>
                                             <outlet property="cardMedia" destination="VCw-cB-sQc" id="6V8-47-Yob"/>
+                                            <outlet property="vContainer" destination="Fse-vF-t1s" id="YMU-bd-T2P"/>
                                         </connections>
                                     </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ContentCell" id="P3u-rj-nYa" userLabel="ContentCell" customClass="CoverCollectionViewCell" customModule="Blicup" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ContentCell" id="P3u-rj-nYa" userLabel="ContentCell" customClass="ContentCollectionCell" customModule="Blicup" customModuleProvider="target">
                                         <rect key="frame" x="133" y="530" width="335" height="330"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="335" height="330"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="201-tz-aTf" customClass="BCCloseButton" customModule="Blicup" customModuleProvider="target">
+                                                    <rect key="frame" x="293" y="144" width="42" height="42"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="42" id="sQG-W1-eWp"/>
+                                                        <constraint firstAttribute="width" constant="42" id="wCY-Ua-c7K"/>
+                                                    </constraints>
+                                                    <state key="normal" image="Trash"/>
+                                                    <connections>
+                                                        <action selector="btnDeleteCellPressed:" destination="gs4-Ue-mWh" eventType="touchUpInside" id="UbJ-ia-xEF"/>
+                                                    </connections>
+                                                </button>
                                                 <view clipsSubviews="YES" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sZR-cX-1Ix" userLabel="Container">
                                                     <rect key="frame" x="0.0" y="0.0" width="335" height="330"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="edU-TP-24F">
                                                             <rect key="frame" x="0.0" y="0.0" width="335" height="225"/>
-                                                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="225" id="D54-wW-mcd"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" scrollEnabled="NO" text="Title" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="NGC-bw-hOl" customClass="ArticleTextView" customModule="Blicup" customModuleProvider="target">
+                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="NGC-bw-hOl" customClass="ArticleTextView" customModule="Blicup" customModuleProvider="target">
                                                             <rect key="frame" x="10" y="235" width="315" height="48"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                             <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="23"/>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Title"/>
+                                                            </userDefinedRuntimeAttributes>
                                                             <connections>
                                                                 <outlet property="delegate" destination="gs4-Ue-mWh" id="CNH-fh-XGj"/>
                                                             </connections>
                                                         </textView>
-                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="Your text..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="LyJ-o3-li9" customClass="ArticleTextView" customModule="Blicup" customModuleProvider="target">
+                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="999" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="LyJ-o3-li9" customClass="ArticleTextView" customModule="Blicup" customModuleProvider="target">
                                                             <rect key="frame" x="10" y="283" width="315" height="32"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                             <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="16"/>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Your text..."/>
+                                                            </userDefinedRuntimeAttributes>
                                                             <connections>
                                                                 <outlet property="delegate" destination="gs4-Ue-mWh" id="6Lc-ue-JdU"/>
                                                             </connections>
@@ -371,46 +430,95 @@
                                         <constraints>
                                             <constraint firstItem="sZR-cX-1Ix" firstAttribute="top" secondItem="P3u-rj-nYa" secondAttribute="top" id="Juz-t7-E4M"/>
                                             <constraint firstAttribute="bottom" secondItem="sZR-cX-1Ix" secondAttribute="bottom" id="VhF-4C-9HB"/>
+                                            <constraint firstItem="201-tz-aTf" firstAttribute="centerY" secondItem="P3u-rj-nYa" secondAttribute="centerY" id="f9m-dE-8R0"/>
+                                            <constraint firstAttribute="trailing" secondItem="201-tz-aTf" secondAttribute="trailing" id="iQD-GY-tNL"/>
                                             <constraint firstItem="sZR-cX-1Ix" firstAttribute="leading" secondItem="P3u-rj-nYa" secondAttribute="leading" id="oHQ-hU-e3x"/>
                                             <constraint firstAttribute="trailing" secondItem="sZR-cX-1Ix" secondAttribute="trailing" id="ovP-Gm-GM3"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="btnTrash" destination="201-tz-aTf" id="DWj-8v-J5b"/>
                                             <outlet property="cardMedia" destination="edU-TP-24F" id="FQP-0J-m7B"/>
+                                            <outlet property="contentText" destination="LyJ-o3-li9" id="vm0-f9-Oku"/>
+                                            <outlet property="contentTitle" destination="NGC-bw-hOl" id="CmY-i7-Mj0"/>
+                                            <outlet property="vContainer" destination="sZR-cX-1Ix" id="DMq-gc-r2a"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
                                     <outlet property="dataSource" destination="gs4-Ue-mWh" id="76j-zg-cXa"/>
+                                    <outlet property="delegate" destination="gs4-Ue-mWh" id="iIh-kU-7Ig"/>
                                 </connections>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="au4-53-Vk1" customClass="BCCloseButton" customModule="Blicup" customModuleProvider="target">
+                                <rect key="frame" x="10" y="20" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="3hY-JK-gjM"/>
+                                    <constraint firstAttribute="width" constant="50" id="l6h-PR-Cio"/>
+                                </constraints>
+                                <state key="normal" image="ic_close_black"/>
+                                <connections>
+                                    <action selector="btnCloseArticlePressed:" destination="gs4-Ue-mWh" eventType="touchUpInside" id="Lxy-mx-mlT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="50g-Ka-Cgn" customClass="BCCloseButton" customModule="Blicup" customModuleProvider="target">
+                                <rect key="frame" x="278" y="536" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="GyK-vx-LbJ"/>
+                                    <constraint firstAttribute="height" constant="44" id="s7M-EF-eKe"/>
+                                </constraints>
+                                <state key="normal" title=" " image="More"/>
+                                <connections>
+                                    <action selector="btnMorePicsPressed:" destination="gs4-Ue-mWh" eventType="touchUpInside" id="6oA-VF-1ob"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wLm-ty-ude" customClass="BCCloseButton" customModule="Blicup" customModuleProvider="target">
+                                <rect key="frame" x="538" y="537" width="42" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="42" id="Dsw-dU-xtb"/>
+                                    <constraint firstAttribute="height" constant="42" id="y35-JC-Oi3"/>
+                                </constraints>
+                                <state key="normal" title=" " image="Preview"/>
+                                <connections>
+                                    <action selector="btnPreviewArticlePressed:" destination="gs4-Ue-mWh" eventType="touchUpInside" id="VRm-Vp-aqV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="CZ3-A3-haI" firstAttribute="leading" secondItem="cqq-gg-lMF" secondAttribute="leading" id="1G2-gx-6km"/>
+                            <constraint firstItem="au4-53-Vk1" firstAttribute="leading" secondItem="cqq-gg-lMF" secondAttribute="leading" constant="10" id="6Xx-5b-meD"/>
+                            <constraint firstAttribute="trailing" secondItem="wLm-ty-ude" secondAttribute="trailing" constant="20" id="FBT-Si-EOK"/>
                             <constraint firstItem="37R-kX-yON" firstAttribute="top" secondItem="CZ3-A3-haI" secondAttribute="bottom" id="FJT-nO-gw6"/>
+                            <constraint firstItem="au4-53-Vk1" firstAttribute="top" secondItem="UUP-TQ-zbU" secondAttribute="bottom" id="OTW-oN-R2J"/>
                             <constraint firstAttribute="trailing" secondItem="CZ3-A3-haI" secondAttribute="trailing" id="OZh-Fk-MkJ"/>
+                            <constraint firstItem="50g-Ka-Cgn" firstAttribute="centerX" secondItem="cqq-gg-lMF" secondAttribute="centerX" id="Pmf-qV-2r5"/>
+                            <constraint firstItem="37R-kX-yON" firstAttribute="top" secondItem="50g-Ka-Cgn" secondAttribute="bottom" constant="20" id="Rwb-kf-vCi"/>
                             <constraint firstItem="CZ3-A3-haI" firstAttribute="top" secondItem="UUP-TQ-zbU" secondAttribute="bottom" id="iL6-Os-dy2"/>
+                            <constraint firstItem="wLm-ty-ude" firstAttribute="centerY" secondItem="50g-Ka-Cgn" secondAttribute="centerY" id="udc-A4-PRs"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnCloseArticle" destination="au4-53-Vk1" id="PrB-70-G2B"/>
+                        <outlet property="btnMorePics" destination="50g-Ka-Cgn" id="vpQ-cx-ETF"/>
+                        <outlet property="btnPreviewArticle" destination="wLm-ty-ude" id="Thn-b4-9IV"/>
                         <outlet property="collectionView" destination="CZ3-A3-haI" id="78d-9u-HIg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XHA-JO-qOE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1046" y="979"/>
+            <point key="canvasLocation" x="1023" y="893"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="JM5-M6-iHo">
             <objects>
-                <navigationController storyboardIdentifier="initNavController" id="BRJ-H2-Y4z" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="initNavController" navigationBarHidden="YES" id="BRJ-H2-Y4z" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="oUI-Lr-0M2">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="18"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         </textAttributes>
                     </navigationBar>
                     <connections>
@@ -430,7 +538,7 @@
                         <viewControllerLayoutGuide type="bottom" id="vpg-Do-DYD"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="BFv-bL-70W">
-                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="kJw-80-MUq">
@@ -441,7 +549,7 @@
                                 </constraints>
                             </activityIndicatorView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="50" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="r5h-NI-Mkt">
-                                <rect key="frame" x="0.0" y="70" width="600" height="417"/>
+                                <rect key="frame" x="0.0" y="70" width="600" height="481"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellLocation" rowHeight="90" id="DtF-AI-5Bk" customClass="SearchArticleLocationCell" customModule="Blicup" customModuleProvider="target">
@@ -457,7 +565,7 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q9s-Gf-obQ">
                                                             <rect key="frame" x="0.0" y="0.0" width="580" height="20"/>
                                                             <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="16"/>
-                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CBN-CP-oom">
@@ -508,7 +616,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vre-Wq-xJX">
                                 <rect key="frame" x="70" y="33" width="460" height="25"/>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8DQ-A4-ps5" customClass="BCCloseButton" customModule="Blicup" customModuleProvider="target">
@@ -559,10 +667,13 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1046" y="1739"/>
+            <point key="canvasLocation" x="1023" y="1698"/>
         </scene>
     </scenes>
     <resources>
+        <image name="More" width="43" height="43"/>
+        <image name="Preview" width="42" height="42"/>
+        <image name="Trash" width="42" height="42"/>
         <image name="ic_check_selected" width="22" height="17"/>
         <image name="ic_close_black" width="22" height="22"/>
         <image name="ic_video_indicator" width="22" height="11"/>

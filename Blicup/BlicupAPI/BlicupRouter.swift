@@ -63,13 +63,13 @@ class BlicupRouter: NSObject {
         }
     }
     
-    class func routeTest(window:UIWindow?)
-    {
+    class func routeTest(window:UIWindow?) {
         
-        let storyboard = UIStoryboard(name: "MagazineReading", bundle: nil)
-        let rootViewController = storyboard.instantiateViewControllerWithIdentifier("articlesReadingViewController")
-        //let rootViewController = storyboard.instantiateViewControllerWithIdentifier("initNavController")
-       //  let rootViewController = storyboard.instantiateViewControllerWithIdentifier("ArticleCreationController")
+//        let storyboard = UIStoryboard(name: "MagazineReading", bundle: nil)
+//        let rootViewController = storyboard.instantiateViewControllerWithIdentifier("articlesReadingViewController")
+        let storyboard = UIStoryboard(name: "Magazine", bundle: nil)
+        let rootViewController = storyboard.instantiateViewControllerWithIdentifier("initNavController")
+        
         if window != nil  {
             UIView.transitionWithView(window!, duration: 0.5, options: UIViewAnimationOptions.TransitionCrossDissolve, animations: {
                 window?.setRootViewController(rootViewController)
@@ -80,7 +80,7 @@ class BlicupRouter: NSObject {
     
     private class func configTabBarController(tabBarController:UITabBarController) {
         guard let chatViewController = UIStoryboard(name: "Chat", bundle: nil).instantiateInitialViewController(),
-            let mapViewController = UIStoryboard(name: "Map", bundle: nil).instantiateInitialViewController(),
+            let mapViewController = UIStoryboard(name: "Search", bundle: nil).instantiateInitialViewController(),
             let settingsViewController = UIStoryboard(name: "Settings", bundle: nil).instantiateInitialViewController(),
             let myChatsViewController = UIStoryboard(name: "MyChats", bundle: nil).instantiateInitialViewController() as? ChatRoomListNavigationController else {
                 return
