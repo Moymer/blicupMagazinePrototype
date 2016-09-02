@@ -22,7 +22,7 @@ class LocationButton: UIButton {
     }
     
     override func setTitle(title: String?, forState state: UIControlState) {
-        if state == UIControlState.Normal && title?.characterCount() == 0 {
+        if state == UIControlState.Normal && (title==nil || title!.characterCount()==0) {
             super.setTitle("Location", forState: state)
         }
         else {

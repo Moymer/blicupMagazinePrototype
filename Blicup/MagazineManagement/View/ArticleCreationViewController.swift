@@ -40,6 +40,16 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
         }
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        startObservingKeyboardEvents()
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        stopObservingKeyboardEvents()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
