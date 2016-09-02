@@ -10,7 +10,7 @@ import UIKit
 import Photos
 
 
-class ArticleCreationViewController: UIViewController, UICollectionViewDataSource, UITextViewDelegate, UIGestureRecognizerDelegate, AddAssetsProtocol {
+class ArticleCreationViewController: UIViewController, UICollectionViewDataSource, UITextViewDelegate, UIGestureRecognizerDelegate, AddAssetsProtocol, SearchArticleLocationViewControllerDelegate {
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var btnMorePics: BCCloseButton!
@@ -55,6 +55,17 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
         // Dispose of any resources that can be recreated.
     }
     
+    
+    // MARK: Location Delegate
+    func setLocation(coordinate: CLLocationCoordinate2D?, title: String?) {
+        guard let cell = collectionView.cellForItemAtIndexPath(NSIndexPath(forItem: 0, inSection: 0)) as? CardCollectionViewCell else {
+            return
+        }
+        
+        cell.content = title
+    }
+    
+    
     // MARK: UICollectionViewDataSource
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
@@ -96,11 +107,9 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
     }
     
     func scrollViewWillBeginDragging(scrollView: UIScrollView) {
-        let centerPoint = CGPointMake(scrollView.contentOffset.x + scrollView.bounds.width/2, scrollView.contentOffset.y + scrollView.bounds.height/2)
-        
-        returnCellToOriginalPosition(centerPoint)
-        
         scrollView.endEditing(true)
+        let centerPoint = CGPointMake(scrollView.contentOffset.x + scrollView.bounds.width/2, scrollView.contentOffset.y + scrollView.bounds.height/2)
+        returnCellToOriginalPosition(centerPoint)
     }
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
@@ -332,5 +341,10 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
         }
     }
     
-    
+    // MARK: Navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "LocationSegue", let vc = segue.destinationViewController as? SearchArticleLocationViewController {
+            vc.handleMapSearchDelegate = self
+        }
+    }
 }
