@@ -27,6 +27,7 @@ PODS:
   - ReachabilitySwift (2.3.3)
   - RSKImageCropper (1.5.1)
   - SocketRocket (0.4.2)
+  - Spring (1.0.3)
   - SwiftyJSON (2.3.2)
   - TTTAttributedLabel (2.0.0)
   - TwitterCore (2.3.0):
@@ -51,6 +52,7 @@ DEPENDENCIES:
   - ReachabilitySwift (~> 2.3)
   - RSKImageCropper
   - SocketRocket (= 0.4.2)
+  - Spring (from `https://github.com/MengTo/Spring.git`, branch `swift2`)
   - SwiftyJSON (from `https://github.com/SwiftyJSON/SwiftyJSON.git`)
   - TTTAttributedLabel
   - TwitterCore
@@ -58,10 +60,16 @@ DEPENDENCIES:
   - XLPagerTabStrip (~> 5.0)
 
 EXTERNAL SOURCES:
+  Spring:
+    :branch: swift2
+    :git: https://github.com/MengTo/Spring.git
   SwiftyJSON:
     :git: https://github.com/SwiftyJSON/SwiftyJSON.git
 
 CHECKOUT OPTIONS:
+  Spring:
+    :commit: 18d5c7b74489de8044e34767f856d1e574f0820e
+    :git: https://github.com/MengTo/Spring.git
   SwiftyJSON:
     :commit: 73670b94292b8d8496c398a973f56ac67789ba9f
     :git: https://github.com/SwiftyJSON/SwiftyJSON.git
@@ -84,12 +92,13 @@ SPEC CHECKSUMS:
   ReachabilitySwift: e0f6b6f280effb47731acfaaa2d5ffe223703793
   RSKImageCropper: edd65fedb3734332818deb139906d6b7f54b8a44
   SocketRocket: ffe08119b00ef982f6c37052a4705a057c8494ad
+  Spring: 3f02b5dc3308572ef177b3cad0fa7bbc4b0706f7
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
   TTTAttributedLabel: 8cffe8e127e4e82ff3af1e5386d4cd0ad000b656
   TwitterCore: 817eae3e291fa4125b47789e26a4f6f024115c1f
   TwitterKit: 8a383da8d9c21b0423716381ea8bbfce20622d91
   XLPagerTabStrip: 87b8b705f9a7178e76a063ffaa2d70045944a965
 
-PODFILE CHECKSUM: 5f3fc329824dad0352d858ea600d9d834219eaab
+PODFILE CHECKSUM: 6001f46dbf662ebefe1baa2df8bda48d2c7b50b1
 
 COCOAPODS: 1.0.0

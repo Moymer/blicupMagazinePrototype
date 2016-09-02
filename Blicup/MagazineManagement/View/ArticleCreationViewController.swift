@@ -81,6 +81,9 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
             cell.cardMedia.image = image
         }
         
+        cell.title = presenter.getCardTitle(indexPath)
+        cell.content = presenter.getCardContent(indexPath)
+        
         return cell
     }
     
@@ -110,9 +113,59 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
     }
     
     // TextView Delegate
+    private func centerTextViewCell(textView:UITextView) {
+        let rect = collectionView.convertRect(textView.bounds, fromView: textView)
+        collectionView.scrollRectToVisible(rect, animated: true)
+    }
+    
     func textViewDidChange(textView: UITextView) {
         textView.invalidateIntrinsicContentSize()
         self.collectionView.collectionViewLayout.invalidateLayout()
+        centerTextViewCell(textView)
+    }
+    
+    func textViewDidBeginEditing(textView: UITextView) {
+        centerTextViewCell(textView)
+    }
+
+    
+    // MARK: Keyboard
+    private func startObservingKeyboardEvents() {
+        NSNotificationCenter.defaultCenter().addObserver(self,
+                                                         selector:#selector(self.keyboardWillShow(_:)),
+                                                         name:UIKeyboardWillShowNotification,
+                                                         object:nil)
+        NSNotificationCenter.defaultCenter().addObserver(self,
+                                                         selector:#selector(self.keyboardWillHide(_:)),
+                                                         name:UIKeyboardWillHideNotification,
+                                                         object:nil)
+        
+    }
+    
+    private func stopObservingKeyboardEvents() {
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
+    }
+    
+    func keyboardWillShow(notification: NSNotification) {
+        guard let keyboardSize = notification.userInfo?[UIKeyboardFrameEndUserInfoKey]?.CGRectValue.size else {
+            return
+        }
+        
+        if let articleLayout = collectionView.collectionViewLayout as? ArticleCreationCollectionViewFlowLayout {
+            articleLayout.disablePaging = true
+        }
+        
+        var inset = collectionView.contentInset
+        inset.bottom = keyboardSize.height
+        collectionView.contentInset = inset
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        if let articleLayout = collectionView.collectionViewLayout as? ArticleCreationCollectionViewFlowLayout {
+            articleLayout.disablePaging = false
+        }
+        collectionView.contentInset = UIEdgeInsetsZero
     }
     
     //MARK: Assets Protocol
