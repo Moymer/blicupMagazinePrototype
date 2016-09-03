@@ -11,7 +11,13 @@ import UIKit
 
 class ArticleCreationCollectionViewFlowLayout: UICollectionViewFlowLayout {
     
+    var disablePaging = false
+    
     override func targetContentOffsetForProposedContentOffset(proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint {
+        
+        guard disablePaging == false else {
+            return proposedContentOffset
+        }
         
         if let cv = self.collectionView {
             

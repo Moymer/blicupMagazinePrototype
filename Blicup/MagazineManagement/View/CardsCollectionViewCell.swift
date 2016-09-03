@@ -22,7 +22,7 @@ class LocationButton: UIButton {
     }
     
     override func setTitle(title: String?, forState state: UIControlState) {
-        if state == UIControlState.Normal && title?.characterCount() == 0 {
+        if state == UIControlState.Normal && (title==nil || title!.characterCount()==0) {
             super.setTitle("Location", forState: state)
         }
         else {
@@ -32,21 +32,124 @@ class LocationButton: UIButton {
 }
 
 
-class ArticleTextView: UITextView {
-
+@IBDesignable class ArticleTextView: UITextView {
+    private let lblPlaceholder = UILabel()
+    
+    @IBInspectable var placeholder:String? = "placeholder" {
+        didSet {
+            lblPlaceholder.text = placeholder
+        }
+    }
+    
+    override init(frame: CGRect, textContainer: NSTextContainer?) {
+        super.init(frame: frame, textContainer: textContainer)
+        initPlaceholder()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        initPlaceholder()
+    }
+    
     override func intrinsicContentSize() -> CGSize {
+        lblPlaceholder.hidden = (text.length > 0)
         let size = self.sizeThatFits(CGSizeMake(self.bounds.width, CGFloat.max))
         return size
+    }
+    
+    private func initPlaceholder() {
+        lblPlaceholder.frame = self.bounds
+        lblPlaceholder.autoresizingMask = [UIViewAutoresizing.FlexibleWidth, UIViewAutoresizing.FlexibleHeight]
+        
+        self.addSubview(lblPlaceholder)
+        
+        lblPlaceholder.font = self.font
+        lblPlaceholder.textAlignment = self.textAlignment
+        lblPlaceholder.textColor = UIColor.lightGrayColor()
+        lblPlaceholder.text = placeholder        
     }
 }
 
 
-class CoverCollectionViewCell: UICollectionViewCell {
+class CardCollectionViewCell: UICollectionViewCell {
     @IBOutlet var cardMedia: UIImageView!
+    @IBOutlet weak var vContainer: UIView!
+    @IBOutlet weak var btnTrash: UIButton!
     
     override func preferredLayoutAttributesFittingAttributes(layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
         let superAttr = super.preferredLayoutAttributesFittingAttributes(layoutAttributes)
         superAttr.size = CGSizeMake(layoutAttributes.size.width, superAttr.size.height)
         return superAttr
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.title = nil
+        self.content = nil
+    }
+
+    var isFocusCell = false {
+        didSet {
+            self.userInteractionEnabled = isFocusCell
+            self.alpha = isFocusCell ? 1.0 : 0.5
+        }
+    }
+    
+    
+    var title: String? {
+        set { print("Override this method") }
+        
+        get {
+            print("Override this method")
+            return nil
+        }
+    }
+    
+    var content: String? {
+        set { print("Override this method") }
+        
+        get {
+            print("Override this method")
+            return nil
+        }
+    }
+}
+
+class ContentCollectionCell: CardCollectionViewCell {
+    @IBOutlet weak var contentTitle: ArticleTextView!
+    @IBOutlet weak var contentText: ArticleTextView!
+    
+    override var title: String? {
+        set {
+            contentTitle.text = newValue
+            contentTitle.invalidateIntrinsicContentSize()
+        }
+        get { return contentTitle.text }
+    }
+    
+    override var content: String? {
+        set {
+            contentText.text = newValue
+            contentText.invalidateIntrinsicContentSize()
+        }
+        get { return contentText.text }
+    }
+}
+
+class CoverCollectionCell: CardCollectionViewCell {
+    @IBOutlet weak var articleTitle: ArticleTextView!
+    @IBOutlet weak var articleLocation: LocationButton!
+    
+    override var title: String? {
+        set {
+            articleTitle.text = newValue
+            articleTitle.invalidateIntrinsicContentSize()
+        }
+        get { return articleTitle.text }
+    }
+    
+    override var content: String? {
+        set { articleLocation.setTitle(newValue, forState: UIControlState.Normal) }
+        get { return articleLocation.titleLabel?.text }
     }
 }

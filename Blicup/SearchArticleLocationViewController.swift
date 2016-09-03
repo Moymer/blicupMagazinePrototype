@@ -27,7 +27,7 @@ class SearchArticleLocationViewController: UIViewController, UITableViewDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.navigationController?.navigationBarHidden = true
         self.customizeSearchBarController()
     }
     

@@ -8,16 +8,25 @@
 
 import UIKit
 import XLPagerTabStrip
+import Photos
 
+protocol AddAssetsProtocol: class {
+    func setAssets(assets: [PHAsset]?)
+}
 
 class CameraRollPagerTabStripController: ButtonBarPagerTabStripViewController, CameraRollAssetSelectionDelegate {
-
+    
     var isReload = false
     let assetSelector = CameraRollAssetSelector()
+    var selectMoreContent: Int?
     
+    var delegateAssets: AddAssetsProtocol?
+    
+    @IBOutlet weak var btnClose: BCCloseButton!
     @IBOutlet weak var btnCreateArticle: UIButton!
+    
     override func viewDidLoad() {
-       
+        
         buttonBarView.selectedBar.backgroundColor = UIColor.grayColor()
         buttonBarView.backgroundColor = UIColor.whiteColor()
         
@@ -59,7 +68,7 @@ class CameraRollPagerTabStripController: ButtonBarPagerTabStripViewController, C
                 oldCell?.transform = CGAffineTransformMakeScale(0.85, 0.85)
             }
         }
-
+        
         btnCreateArticle.layer.cornerRadius = 21
         btnCreateArticle.clipsToBounds = true
         btnCreateArticle.hidden = true
@@ -67,47 +76,28 @@ class CameraRollPagerTabStripController: ButtonBarPagerTabStripViewController, C
         
         setNavBar()
         
-        UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation:UIStatusBarAnimation.None)
-        
         super.viewDidLoad()
     }
     
     
     func setNavBar()
     {
-        self.navigationController!.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.shadowImage = UIImage()
         hideNavBarSeparator()
-        self.title = "Camera Roll"
-        addLeftNavItemOnView()
-
+        
     }
     
-    func addLeftNavItemOnView ()
-    {
-        
-        // hide default navigation bar button item
-        self.navigationItem.leftBarButtonItem = nil;
-        self.navigationItem.hidesBackButton = true;
-        
-        let buttonBack: UIButton = UIButton( type: UIButtonType.Custom)
-        
-        buttonBack.frame = CGRectMake(6, 0, 40, 40)
-        buttonBack.setImage(UIImage(named:"ic_close_black"), forState: UIControlState.Normal)
-        buttonBack.addTarget(self, action: #selector(closeTapped), forControlEvents: UIControlEvents.TouchUpInside)
-        
-        let leftBarButtonItem: UIBarButtonItem = UIBarButtonItem(customView: buttonBack)
-        
-        self.navigationItem.setLeftBarButtonItem(leftBarButtonItem, animated: false)
-        
-    }
     
     func hideNavBarSeparator()
     {
         //this way transparent property continues working
-        if let line = findShadowImageUnderView(self.navigationController!.navigationBar) {
-            line.hidden = true
+        if let navigationBar = self.navigationController?.navigationBar{
+            if let line = findShadowImageUnderView(navigationBar) {
+                line.hidden = true
+            }
         }
     }
+    
     private func findShadowImageUnderView(view: UIView) -> UIImageView? {
         if view is UIImageView && view.bounds.size.height <= 1 {
             return (view as! UIImageView)
@@ -135,7 +125,10 @@ class CameraRollPagerTabStripController: ButtonBarPagerTabStripViewController, C
         let child_1 = storyboard.instantiateViewControllerWithIdentifier("CameraRollViewController") as! CameraRollCollectionViewController
         let child_2 = storyboard.instantiateViewControllerWithIdentifier("CameraRollViewController") as! CameraRollCollectionViewController
         let child_3 = storyboard.instantiateViewControllerWithIdentifier("CameraRollViewController") as! CameraRollCollectionViewController
-    
+        
+        if let content = selectMoreContent {
+            assetSelector.MAX_MIDIAS = content
+        }
         
         child_1.assetSelector = assetSelector
         child_2.assetSelector = assetSelector
@@ -165,14 +158,36 @@ class CameraRollPagerTabStripController: ButtonBarPagerTabStripViewController, C
         return Array(childViewControllers.prefix(Int(nItems)))
     }
     
-
     
-      // MARK: - Actions
+    
+    // MARK: - Actions
     
     @IBAction func createArticle(sender: UIButton) {
-        self.performSegueWithIdentifier("CreateArticleSegue", sender: nil)
+        UIView.animateWithDuration(0.2, delay: 0.0, options: [UIViewAnimationOptions.BeginFromCurrentState], animations: {
+            self.btnCreateArticle.transform = CGAffineTransformIdentity
+        }) { (_) in
+            if let _ = self.selectMoreContent {
+                let assets = self.assetSelector.getSelectedAssetsOrdered()
+                self.delegateAssets?.setAssets(assets)
+                self.dismissViewControllerAnimated(true, completion: nil)
+            } else {
+                self.performSegueWithIdentifier("CreateArticleSegue", sender: nil)
+            }
+        }
     }
-     // MARK: - Selector Delegate
+    
+    @IBAction func btnClosePressed(sender: UIButton) {
+        
+        UIView.animateWithDuration(0.2, delay: 0.0, options: [UIViewAnimationOptions.BeginFromCurrentState], animations: {
+            self.btnClose.transform = CGAffineTransformIdentity
+        }) { (_) in
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }
+        
+    }
+    
+    
+    // MARK: - Selector Delegate
     
     func selectedAssets(numberSelected: Int) {
         
@@ -194,12 +209,13 @@ class CameraRollPagerTabStripController: ButtonBarPagerTabStripViewController, C
                 btnCreateArticle.alpha = 0.0
                 UIView.animateWithDuration(0.2, animations: {
                     self.btnCreateArticle.alpha = 1.0
-                   
+                    
                 })
             }
             btnCreateArticle.setTitle("Add (\(numberSelected))", forState: UIControlState.Normal)
         }
     }
+    
     
     
     // MARK: Navigation Segue
@@ -209,5 +225,5 @@ class CameraRollPagerTabStripController: ButtonBarPagerTabStripViewController, C
             vc.presenter.setAssets(assets)
         }
     }
-
+    
 }
