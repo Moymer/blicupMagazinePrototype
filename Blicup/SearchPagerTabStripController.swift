@@ -181,7 +181,8 @@ class SearchPagerTabStripController: ButtonBarPagerTabStripViewController, UISea
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         
-//        dismissKeyboard(nil)
+        textField.resignFirstResponder()
+        
         return false
     }
     
@@ -200,9 +201,14 @@ class SearchPagerTabStripController: ButtonBarPagerTabStripViewController, UISea
     
     func textFieldShouldClear(textField: UITextField) -> Bool {
         
-//        removeAllItems()
+        let controller = self.viewControllers[self.currentIndex]
         
-//        reloadData()
+        if controller.isKindOfClass(SearchUserViewController) {
+            (controller as! SearchUserViewController).clearData()
+        } else {
+            (controller as! SearchStoryViewController).clearData()
+        }
+        
         return true
     }
     

@@ -197,37 +197,40 @@ class SearchStoryViewController: UIViewController, IndicatorInfoProvider, UIText
     
     func searchChatRoomWithSearchTerm(searchTerm: String) {
         
-        if let reachability = try? Reachability.reachabilityForInternetConnection() {
+        if searchTerm != self.presenter.searchTerm {
             
-            prepareToPerfomSearch()
-            
-            if reachability.isReachable() {
+            if let reachability = try? Reachability.reachabilityForInternetConnection() {
                 
-                let searchTermTimestamp = NSDate().timeIntervalSince1970
+                prepareToPerfomSearch()
                 
-                presenter.searchChatRoomsWithSearchTerm(searchTerm, timestamp: searchTermTimestamp, completionHandler: { (success) in
-                    self.stopBlicupActivityIndicator()
+                if reachability.isReachable() {
                     
-                    if success {
+                    let searchTermTimestamp = NSDate().timeIntervalSince1970
+                    
+                    presenter.searchChatRoomsWithSearchTerm(searchTerm, timestamp: searchTermTimestamp, completionHandler: { (success) in
+                        self.stopBlicupActivityIndicator()
                         
-                        if self.presenter.chatRoomsCount() > 0 {
-                            self.collectionView.reloadData()
+                        if success {
+                            
+                            if self.presenter.chatRoomsCount() > 0 {
+                                self.collectionView.reloadData()
+                            } else {
+                                //                            self.showNoChatsWithSearchTerm(searchTerm)
+                            }
                         } else {
-                            //                            self.showNoChatsWithSearchTerm(searchTerm)
+                            // TODO: tratar timout servidor
+    //                        self.showlblNoInternet()
                         }
-                    } else {
-                        // TODO: tratar timout servidor
-//                        self.showlblNoInternet()
-                    }
+                        
+                    })
                     
-                })
+                } else {
+    //                showlblNoInternet()
+                }
                 
             } else {
-//                showlblNoInternet()
+    //            showlblNoInternet()
             }
-            
-        } else {
-//            showlblNoInternet()
         }
     }
     
@@ -238,7 +241,11 @@ class SearchStoryViewController: UIViewController, IndicatorInfoProvider, UIText
         
         invalidateShowBlicupWhiteTimer()
         showBlicupWhiteActivityIndicatorTimer = NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: #selector(SearchStoryViewController.startBlicupActivityIndicator), userInfo: nil, repeats: false)
-        
+    }
+    
+    func clearData() {
+        presenter.clearChats()
+        self.collectionView.reloadData()
     }
     
     func invalidateShowBlicupWhiteTimer() {

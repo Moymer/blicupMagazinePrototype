@@ -103,34 +103,37 @@ class SearchUserViewController: UIViewController, IndicatorInfoProvider, UITable
     
     func searchUsersWithSearchTerm(searchTerm: String) {
         
-        if let reachability = try? Reachability.reachabilityForInternetConnection() {
-            
-            prepareToPerfomSearch()
-            
-            if reachability.isReachable() {
+        if searchTerm != self.userSearchPresenter.searchTerm  {
+        
+            if let reachability = try? Reachability.reachabilityForInternetConnection() {
                 
-                let searchTermTimestamp = NSDate().timeIntervalSince1970
+                prepareToPerfomSearch()
                 
-                userSearchPresenter.searchUsersWithSearchTerm(searchTerm, timestamp: searchTermTimestamp, completionHandler: { (success) in
-                    self.stopBlicupActivityIndicator()
+                if reachability.isReachable() {
                     
-                    if success {
+                    let searchTermTimestamp = NSDate().timeIntervalSince1970
+                    
+                    userSearchPresenter.searchUsersWithSearchTerm(searchTerm, timestamp: searchTermTimestamp, completionHandler: { (success) in
+                        self.stopBlicupActivityIndicator()
                         
-                        if self.userSearchPresenter.userCount() > 0 {
-                            self.tableView.reloadData()
+                        if success {
+                            
+                            if self.userSearchPresenter.userCount() > 0 {
+                                self.tableView.reloadData()
+                            }
+                            
+                        } else {
+    //                        self.showlblNoInternet()
+                            
                         }
-                        
-                    } else {
-//                        self.showlblNoInternet()
-                        
-                    }
-                })
-                
+                    })
+                    
+                } else {
+    //                showlblNoInternet()
+                }
             } else {
-//                showlblNoInternet()
+    //            showlblNoInternet()
             }
-        } else {
-//            showlblNoInternet()
         }
     }
     
@@ -151,6 +154,11 @@ class SearchUserViewController: UIViewController, IndicatorInfoProvider, UITable
             showBlicupWhiteActivityIndicatorTimer?.invalidate()
             showBlicupWhiteActivityIndicatorTimer = nil
         }
+    }
+    
+    func clearData() {
+        userSearchPresenter.removeAllItems()
+        self.tableView.reloadData()
     }
     
     // MARK: - Show Loading
