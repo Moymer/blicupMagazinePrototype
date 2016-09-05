@@ -21,7 +21,6 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBarHidden = true
         self.collectionView.decelerationRate = UIScrollViewDecelerationRateFast
         self.view.layoutIfNeeded()
         
@@ -31,10 +30,11 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
             let cellWidth = collectionView.bounds.width - (articleFlowLayout.sectionInset.left + articleFlowLayout.sectionInset.right)
             articleFlowLayout.estimatedItemSize = CGSizeMake(cellWidth, 330)
         }
-        
     }
     
     override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+
         if self.presenter.numberOfMedias() == 6 {
             self.btnMorePics.hidden = true
         }
@@ -80,15 +80,6 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
         let identifier = indexPath.row==0 ? "CoverCell" : "ContentCell"
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(identifier, forIndexPath: indexPath) as! CardCollectionViewCell
         
-        let container = cell.viewWithTag(1)!
-        container.layer.cornerRadius = 20
-        
-        cell.layer.shadowColor = UIColor.lightGrayColor().CGColor
-        cell.layer.shadowOffset = CGSizeMake(2, 2)
-        cell.layer.shadowOpacity = 0.5
-        cell.layer.shadowRadius = 3.0
-        cell.clipsToBounds = false
-        cell.layer.masksToBounds = false
         cell.btnTrash.tag = indexPath.item
         
         let cSelector = #selector(ArticleCreationViewController.handleGesture(_:))
@@ -107,12 +98,20 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
     }
     
     func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+        guard scrollView is UICollectionView else {
+            return
+        }
+        
         scrollView.endEditing(true)
         let centerPoint = CGPointMake(scrollView.contentOffset.x + scrollView.bounds.width/2, scrollView.contentOffset.y + scrollView.bounds.height/2)
         returnCellToOriginalPosition(centerPoint)
     }
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
+        guard scrollView is UICollectionView else {
+            return
+        }
+        
         let centerPoint = CGPointMake(scrollView.contentOffset.x + scrollView.bounds.width/2, scrollView.contentOffset.y + scrollView.bounds.height/2)
         
         guard let centerIndex = collectionView.indexPathForItemAtPoint(centerPoint) else {
@@ -147,10 +146,7 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
                 }
             }
         }
-        
-        
-        if swipeGesture.state == UIGestureRecognizerState.Ended {
-            
+        else if swipeGesture.state == UIGestureRecognizerState.Ended {
             var frame = swipeGesture.view!.frame
             frame.origin.x = frame.origin.x <= -62 ? -62 : 0.0
             
@@ -162,7 +158,6 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
                 if let cell = collectionView.cellForItemAtIndexPath(centerIndex) as? CardCollectionViewCell {
                     cell.btnTrash.alpha = abs(frame.origin.x)
                 }
-                
             }
         }
         

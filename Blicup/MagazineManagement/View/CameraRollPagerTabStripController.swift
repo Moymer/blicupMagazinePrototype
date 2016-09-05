@@ -226,7 +226,7 @@ class CameraRollPagerTabStripController: ButtonBarPagerTabStripViewController, C
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "CreateArticleSegue", let vc = segue.destinationViewController as? ArticleCreationViewController {
             let assets = assetSelector.getSelectedAssetsOrdered()
-            vc.presenter.setAssets(assets)
+            vc.presenter.addAssets(assets)
         }
    
         
