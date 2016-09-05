@@ -499,7 +499,6 @@ class ChatRoomsAndUsersSearchViewController: UIViewController, UICollectionViewD
         invalidateShowBlicupWhiteTimer()
         showBlicupWhiteActivityIndicatorTimer = NSTimer.scheduledTimerWithTimeInterval(0.2, target: self, selector: #selector(ChatRoomsAndUsersSearchViewController.startBlicupActivityIndicator), userInfo: nil, repeats: false)
         
-        
     }
     
     // MARK: SearchUsers
