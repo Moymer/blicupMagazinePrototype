@@ -15,6 +15,7 @@ class SearchUserViewController: UIViewController, IndicatorInfoProvider, UITable
     var itemInfo = IndicatorInfo(title: "View")
     private let userSearchPresenter = UserSearchPresenter()
     private var showBlicupWhiteActivityIndicatorTimer: NSTimer?
+    private var lblNoUsers: UILabel = UILabel()
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var ivLoadingBlicupGray: UIImageView!
@@ -25,6 +26,7 @@ class SearchUserViewController: UIViewController, IndicatorInfoProvider, UITable
         
         self.tableView.tableFooterView = UIView()
         loadBlicupWhiteImages()
+        setupLabelNoUsers()
     }
     
     func loadBlicupWhiteImages() {
@@ -40,11 +42,21 @@ class SearchUserViewController: UIViewController, IndicatorInfoProvider, UITable
         ivLoadingBlicupGray.alpha = 0
     }
     
+    // Setup Label No Users
+    
+    func setupLabelNoUsers(){
+        let lblNoUsersFont = UIFont(name: "SFUIText-Bold", size: 18)
+        lblNoUsers = UILabel(frame: self.tableView.frame)
+        lblNoUsers.font = lblNoUsersFont
+        lblNoUsers.textAlignment = .Center
+        lblNoUsers.textColor = UIColor.blicupLoadingColor()
+        lblNoUsers.sizeToFit()
+    }
 
     // MARK: - Table view data source
 
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+        return userSearchPresenter.userCount() == 0 ? 0 : 1
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -120,6 +132,8 @@ class SearchUserViewController: UIViewController, IndicatorInfoProvider, UITable
                             
                             if self.userSearchPresenter.userCount() > 0 {
                                 self.tableView.reloadData()
+                            } else {
+                                self.showLblNoUsers(show: true)
                             }
                             
                         } else {
@@ -141,6 +155,7 @@ class SearchUserViewController: UIViewController, IndicatorInfoProvider, UITable
     func prepareToPerfomSearch() {
 //        hidelblNoInternet()
         userSearchPresenter.removeAllItems()
+        showLblNoUsers(show: false)
         self.tableView.reloadData()
         
         invalidateShowBlicupWhiteTimer()
@@ -159,6 +174,13 @@ class SearchUserViewController: UIViewController, IndicatorInfoProvider, UITable
     func clearData() {
         userSearchPresenter.removeAllItems()
         self.tableView.reloadData()
+    }
+    
+    // MARK: Show No users
+    func showLblNoUsers(show show: Bool) {
+        
+        lblNoUsers.text = "No results"
+        self.tableView.backgroundView = show ? lblNoUsers : nil
     }
     
     // MARK: - Show Loading
