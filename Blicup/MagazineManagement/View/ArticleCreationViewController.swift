@@ -98,12 +98,20 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
     }
     
     func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+        guard scrollView is UICollectionView else {
+            return
+        }
+        
         scrollView.endEditing(true)
         let centerPoint = CGPointMake(scrollView.contentOffset.x + scrollView.bounds.width/2, scrollView.contentOffset.y + scrollView.bounds.height/2)
         returnCellToOriginalPosition(centerPoint)
     }
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
+        guard scrollView is UICollectionView else {
+            return
+        }
+        
         let centerPoint = CGPointMake(scrollView.contentOffset.x + scrollView.bounds.width/2, scrollView.contentOffset.y + scrollView.bounds.height/2)
         
         guard let centerIndex = collectionView.indexPathForItemAtPoint(centerPoint) else {
