@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CardSplitCell" id="gTV-IL-0wX" customClass="CardContentSplitedCollectionCell" customModule="Blicup" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g3S-Fz-qGM" userLabel="ContentLayer" customClass="UICollectionViewCell">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kll-di-8Ed" userLabel="MidiaView">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="374"/>
+                                <subviews>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8qs-ZH-wjJ" customClass="ScrollableImageView" customModule="Blicup" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="374"/>
+                                    </scrollView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AWQ-pX-8c1" userLabel="View video" customClass="FullscreenVideoView" customModule="Blicup" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="374"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="AWQ-pX-8c1" firstAttribute="top" secondItem="Kll-di-8Ed" secondAttribute="top" id="H2Q-AX-0ck"/>
+                                    <constraint firstItem="8qs-ZH-wjJ" firstAttribute="leading" secondItem="Kll-di-8Ed" secondAttribute="leading" id="I3Q-72-b1S"/>
+                                    <constraint firstAttribute="trailing" secondItem="8qs-ZH-wjJ" secondAttribute="trailing" id="M3X-Xk-hVL"/>
+                                    <constraint firstItem="8qs-ZH-wjJ" firstAttribute="top" secondItem="Kll-di-8Ed" secondAttribute="top" id="Pwl-K2-Pke"/>
+                                    <constraint firstAttribute="bottom" secondItem="AWQ-pX-8c1" secondAttribute="bottom" id="S4A-vP-RPa"/>
+                                    <constraint firstItem="AWQ-pX-8c1" firstAttribute="leading" secondItem="Kll-di-8Ed" secondAttribute="leading" id="U2M-HK-ull"/>
+                                    <constraint firstAttribute="bottom" secondItem="8qs-ZH-wjJ" secondAttribute="bottom" id="eBf-GS-WQv"/>
+                                    <constraint firstAttribute="trailing" secondItem="AWQ-pX-8c1" secondAttribute="trailing" id="jww-ed-AyQ"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bnq-xZ-417" userLabel="TextsAndBG" customClass="SpringView" customModule="Spring">
+                                <rect key="frame" x="0.0" y="374" width="600" height="226"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Info Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="URP-tg-U04">
+                                        <rect key="frame" x="16" y="126" width="568" height="24"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title Label fcvxzfvdsk ads dsafasd fadsf adsf dasf asdfa fasd fasdf " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="24" translatesAutoresizingMaskIntoConstraints="NO" id="Hm3-aA-4Kt" userLabel="Title Label fcvxzfvdsk ads dsafasd fadsf adsf dasf asdfa fasd fasdf">
+                                        <rect key="frame" x="16" y="20" width="568" height="93"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="34"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="URP-tg-U04" secondAttribute="trailing" constant="16" id="Gkx-fs-EUA"/>
+                                    <constraint firstItem="Hm3-aA-4Kt" firstAttribute="top" secondItem="Bnq-xZ-417" secondAttribute="top" constant="20" id="QVQ-j1-Z0B"/>
+                                    <constraint firstAttribute="bottom" secondItem="URP-tg-U04" secondAttribute="bottom" constant="76" id="Wy1-6X-HBw"/>
+                                    <constraint firstItem="Hm3-aA-4Kt" firstAttribute="leading" secondItem="Bnq-xZ-417" secondAttribute="leading" constant="16" id="dOH-ql-ipV"/>
+                                    <constraint firstAttribute="trailing" secondItem="Hm3-aA-4Kt" secondAttribute="trailing" constant="16" id="i0y-Q4-7QN"/>
+                                    <constraint firstItem="URP-tg-U04" firstAttribute="leading" secondItem="Bnq-xZ-417" secondAttribute="leading" constant="16" id="jdg-QG-x96"/>
+                                    <constraint firstItem="URP-tg-U04" firstAttribute="top" secondItem="Hm3-aA-4Kt" secondAttribute="bottom" constant="13" id="sut-Cb-bMO"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animation" value="squeezeUp"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="force">
+                                        <real key="value" value="0.69999999999999996"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="delay">
+                                        <real key="value" value="0.10000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="duration">
+                                        <real key="value" value="0.69999999999999996"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="0.40153556029999998" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Bnq-xZ-417" firstAttribute="top" secondItem="Kll-di-8Ed" secondAttribute="bottom" id="35U-LQ-Vfz"/>
+                            <constraint firstAttribute="bottom" secondItem="Bnq-xZ-417" secondAttribute="bottom" id="SCj-FF-Kw7"/>
+                            <constraint firstItem="Kll-di-8Ed" firstAttribute="top" secondItem="g3S-Fz-qGM" secondAttribute="top" id="Ucb-OU-dK6"/>
+                            <constraint firstItem="Kll-di-8Ed" firstAttribute="leading" secondItem="g3S-Fz-qGM" secondAttribute="leading" id="Zct-NM-kCI"/>
+                            <constraint firstAttribute="trailing" secondItem="Kll-di-8Ed" secondAttribute="trailing" id="cGV-kc-dql"/>
+                            <constraint firstItem="Bnq-xZ-417" firstAttribute="leading" secondItem="g3S-Fz-qGM" secondAttribute="leading" id="csR-m7-TJ8"/>
+                            <constraint firstAttribute="trailing" secondItem="Bnq-xZ-417" secondAttribute="trailing" id="nm5-Ej-XBN"/>
+                            <constraint firstItem="Bnq-xZ-417" firstAttribute="top" secondItem="Kll-di-8Ed" secondAttribute="bottom" id="vHn-EZ-K8a"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="g3S-Fz-qGM" secondAttribute="bottom" id="VCC-ko-Oz3"/>
+                <constraint firstItem="g3S-Fz-qGM" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="WRo-Vd-nny"/>
+                <constraint firstAttribute="trailing" secondItem="g3S-Fz-qGM" secondAttribute="trailing" id="oQl-uh-zKh"/>
+                <constraint firstItem="g3S-Fz-qGM" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="wLc-NM-z7o"/>
+            </constraints>
+            <size key="customSize" width="317" height="167"/>
+            <connections>
+                <outlet property="ivPhoto" destination="8qs-ZH-wjJ" id="Nb7-Zi-ovt"/>
+                <outlet property="lblCardInfoText" destination="URP-tg-U04" id="rDh-1P-PCY"/>
+                <outlet property="lblCardTitle" destination="Hm3-aA-4Kt" id="keC-Nk-Wz5"/>
+                <outlet property="vVideo" destination="AWQ-pX-8c1" id="JcS-pb-8bJ"/>
+            </connections>
+            <point key="canvasLocation" x="453" y="408"/>
+        </collectionViewCell>
+    </objects>
+</document>

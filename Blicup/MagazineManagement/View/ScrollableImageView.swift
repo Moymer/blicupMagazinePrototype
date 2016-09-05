@@ -9,23 +9,30 @@
 import UIKit
 import Photos
 import Kingfisher
+
+
+enum ScrollableImageViewPosAndScale: Int {
+    case NONE, ASPECT_FILL, CENTER, BY_RECT
+}
+
 class ScrollableImageView: UIScrollView , UIScrollViewDelegate {
     
     private let ZOOM_FACTOR :CGFloat  = 1.2
     private let ANIM_DUR :NSTimeInterval  = 10.0
-    private let imageManager = PHCachingImageManager()
-    private let options = PHImageRequestOptions()
+    var imageManager : PHCachingImageManager?
+    private var options = PHImageRequestOptions()
     private var assets = [PHAsset]()
     
     var imageViewTrailingConstraint: NSLayoutConstraint?
     var imageViewLeadingConstraint: NSLayoutConstraint?
     var imageViewTopConstraint: NSLayoutConstraint?
     var imageViewBottomConstraint: NSLayoutConstraint?
-   
+    
     var hasBeenInit :Bool = false
-
     var ivScalable: UIImageView?
     
+    
+    private var positioningAndScale = ScrollableImageViewPosAndScale.NONE
     
     func setAssets(assets:[PHAsset]) {
         self.assets = assets
@@ -34,60 +41,76 @@ class ScrollableImageView: UIScrollView , UIScrollViewDelegate {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.delegate = self
-    
+        
+        options.deliveryMode = .HighQualityFormat
+        options.synchronous = false
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
-       super.init(coder: aDecoder)
+        super.init(coder: aDecoder)
         
         self.delegate = self
     }
-
     
-    internal func setImage(image : UIImage) {
-        setImage(image, downloadURL: nil)
+    
+    internal func setImage(image : UIImage?) {
+        setImage(image, key: nil)
     }
-
     
-    private func setImage(image : UIImage, downloadURL: NSURL?) {
+    
+    private func setImage(image : UIImage?, key: String?) {
         if  ivScalable == nil {
-             addImageView()
+            addImageView()
             
         }
         
-        prepareImageForScaleAnimation(image) { (resImage) in
-            self.hasBeenInit = false
-            self.ivScalable!.image = resImage
+        if image == nil {
+            self.ivScalable!.image = nil
             self.ivScalable!.setNeedsLayout()
-            if downloadURL != nil {
-                KingfisherManager.sharedManager.cache.storeImage(resImage, forKey: downloadURL!.absoluteString)
+        } else {
+            prepareImageForScaleAnimation(image!) { (resImage) in
+                self.hasBeenInit = false
+                self.ivScalable!.image = resImage
+                self.ivScalable!.setNeedsLayout()
+                
+                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
+                    if key != nil {
+                        KingfisherManager.sharedManager.cache.storeImage(resImage, originalData: nil, forKey: key!, toDisk: true, completionHandler: nil)
+                    }
+                })
             }
         }
         
     }
     internal func setImageFromUrls(thumbUrl: NSURL?, photoUrl : NSURL)
     {
+        
+        let optionInfo: KingfisherOptionsInfo = [
+            .DownloadPriority(1.0),
+            .BackgroundDecode
+        ]
         if  ivScalable == nil {
             addImageView()
             
         }
         if thumbUrl == nil {
-            ivScalable!.kf_setImageWithURL(photoUrl, placeholderImage: nil, optionsInfo: nil, progressBlock: nil, completionHandler: { (image, error, cacheType, imageURL) in
-                self.setImage(image!,downloadURL: photoUrl)
+            ivScalable!.kf_setImageWithURL(photoUrl, placeholderImage: nil, optionsInfo: optionInfo, progressBlock: nil, completionHandler: { (image, error, cacheType, imageURL) in
+                self.setImage(image!,key: photoUrl.absoluteString)
             })
         }
         else {
-            KingfisherManager.sharedManager.retrieveImageWithURL( thumbUrl!, optionsInfo: nil, progressBlock: nil, completionHandler: { (image, error, cacheType, imageURL) -> () in
+            KingfisherManager.sharedManager.retrieveImageWithURL( thumbUrl!, optionsInfo: optionInfo, progressBlock: nil, completionHandler: { (image, error, cacheType, imageURL) -> () in
                 
                 if image == nil {
                     
-                    self.ivScalable!.kf_setImageWithURL(photoUrl, placeholderImage: nil, optionsInfo: nil, progressBlock: nil, completionHandler: { (resImage, error, cacheType, imageURL) in
-                        self.setImage(resImage!,downloadURL: photoUrl)
+                    self.ivScalable!.kf_setImageWithURL(photoUrl, placeholderImage: nil, optionsInfo: optionInfo, progressBlock: nil, completionHandler: { (resImage, error, cacheType, imageURL) in
+                        self.setImage(resImage!,key: photoUrl.absoluteString)
                     })
                 }
                 else {
-                    self.ivScalable!.kf_setImageWithURL(photoUrl, placeholderImage: image, optionsInfo: nil, progressBlock: nil, completionHandler: { (resImage, error, cacheType, imageURL) in
-                        self.setImage(resImage!,downloadURL: photoUrl)
+                    self.ivScalable!.kf_setImageWithURL(photoUrl, placeholderImage: image, optionsInfo: optionInfo, progressBlock: nil, completionHandler: { (resImage, error, cacheType, imageURL) in
+                        self.setImage(resImage!,key: photoUrl.absoluteString)
                     })
                     
                 }
@@ -95,23 +118,45 @@ class ScrollableImageView: UIScrollView , UIScrollViewDelegate {
             })
         }
     }
-
-
+    
+    
+    
+    internal func setImageFromAsset(asset : PHAsset )
+    {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
+            
+            let optionInfo: KingfisherOptionsInfo = [
+            .DownloadPriority(1.0),
+            .BackgroundDecode
+            ]
+            KingfisherManager.sharedManager.cache.retrieveImageForKey(asset.localIdentifier, options: optionInfo) { (resImage, cacheType) in
+                if resImage != nil {
+                   self.setImage(resImage!,key: asset.localIdentifier)
+                } else {
+                    self.imageManager?.requestImageForAsset(asset, targetSize: PHImageManagerMaximumSize, contentMode: PHImageContentMode.Default, options: self.options) { (resultImage, info) in
+                        
+                        dispatch_async(dispatch_get_main_queue()) {
+                            self.setImage(resultImage!,key: asset.localIdentifier)
+                        }
+                        
+                    }
+                    
+                }
+            }
+        })
+    }
+    
     
     override func layoutSubviews() {
         super.layoutSubviews()
-
+        
         if !hasBeenInit && ivScalable?.image != nil {
             updateMinZoomScaleForSize()
             hasBeenInit = true
-            
-            //put saved position, for now center
-            center(false)
-            makeZoomInAnimation()
-            
+            positionAndScale()
         }
         
-       
+        
         
     }
     
@@ -124,7 +169,7 @@ class ScrollableImageView: UIScrollView , UIScrollViewDelegate {
         let xOffset = max(0, (size.width - ivScalable!.frame.width) / 2)
         imageViewLeadingConstraint!.constant = xOffset
         imageViewTrailingConstraint!.constant = xOffset
-  
+        
         self.layoutIfNeeded()
     }
     
@@ -156,7 +201,9 @@ class ScrollableImageView: UIScrollView , UIScrollViewDelegate {
                     completionHandler(resImage: scaledImage)
                 }
             })
-
+            
+        } else {
+            completionHandler(resImage: scaledImage)
         }
         
         
@@ -172,22 +219,24 @@ class ScrollableImageView: UIScrollView , UIScrollViewDelegate {
         self.addConstraint(imageViewTopConstraint!)
         
         imageViewBottomConstraint = NSLayoutConstraint(item: ivScalable!, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 0)
-         self.addConstraint(imageViewBottomConstraint!)
+        self.addConstraint(imageViewBottomConstraint!)
         
         imageViewTrailingConstraint = NSLayoutConstraint(item: ivScalable!, attribute: NSLayoutAttribute.Trailing, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Trailing, multiplier: 1, constant: 0)
-         self.addConstraint(imageViewTrailingConstraint!)
+        self.addConstraint(imageViewTrailingConstraint!)
         
         imageViewLeadingConstraint = NSLayoutConstraint(item: ivScalable!, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Leading, multiplier: 1, constant: 0)
-           self.addConstraint(imageViewLeadingConstraint!)
-
+        self.addConstraint(imageViewLeadingConstraint!)
+        
     }
     
     func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView? {
         return ivScalable
     }
     func scrollViewDidZoom(scrollView: UIScrollView) {
-        updateConstraintsForSize(UIScreen.mainScreen().bounds.size)
+        updateConstraintsForSize(self.bounds.size)
+        //updateConstraintsForSize(UIScreen.mainScreen().bounds.size)
     }
+    
     
     private func updateMinZoomScaleForSize(size: CGSize) {
         let widthScale = size.width / ivScalable!.bounds.width
@@ -195,18 +244,45 @@ class ScrollableImageView: UIScrollView , UIScrollViewDelegate {
         let minScale = min(widthScale, heightScale)
         
         self.minimumZoomScale = minScale
-
-      
+        
+        
     }
-
     
-    internal func updateMinZoomScaleForSize()
+    
+    private  func updateMinZoomScaleForSize()
     {
-         updateMinZoomScaleForSize(UIScreen.mainScreen().bounds.size)
+     //   updateMinZoomScaleForSize(UIScreen.mainScreen().bounds.size)
+        updateMinZoomScaleForSize(self.bounds.size)
     }
     
-
-    internal func makeAspectFill(animated : Bool)
+    
+   // MARK: - Position and Scaling
+    
+    private func positionAndScale() {
+        switch positioningAndScale {
+        case ScrollableImageViewPosAndScale.ASPECT_FILL:
+            makeAspectFill(false)
+            break
+        case ScrollableImageViewPosAndScale.CENTER:
+            center(false)
+            break
+            
+        case ScrollableImageViewPosAndScale.NONE:
+            break
+  
+        default:
+            center(false)
+        }
+        
+        positioningAndScale = ScrollableImageViewPosAndScale.NONE
+    }
+    
+    internal func setPositioningScale(posScale:ScrollableImageViewPosAndScale) {
+        
+        positioningAndScale = posScale
+    }
+    
+    private func makeAspectFill(animated : Bool)
     {
         let w = self.superview!.bounds.width
         let h =  self.superview!.bounds.height
@@ -221,7 +297,7 @@ class ScrollableImageView: UIScrollView , UIScrollViewDelegate {
                 //zoom in
                 z = max(w/i_w, h/i_h)
                 self.setZoomScale(z, animated: animated)
-    
+                
             }
             else
                 if i_w > w && i_h > h{
@@ -244,11 +320,11 @@ class ScrollableImageView: UIScrollView , UIScrollViewDelegate {
     
     
     
-    internal func center(animated : Bool)
+    private func center(animated : Bool)
     {
         let w = self.superview!.bounds.width
         let h =  self.superview!.bounds.height
-    
+        
         let i_w = ivScalable!.bounds.width
         let i_h =  ivScalable!.bounds.height
         
@@ -260,11 +336,13 @@ class ScrollableImageView: UIScrollView , UIScrollViewDelegate {
         }
     }
     
+    // MARK: - Animating
+    
     private func makeZoomInAnimation()
     {
         setZoomScale(1/ZOOM_FACTOR, animated: true)
     }
-
+    
     
     override func setZoomScale(scale: CGFloat, animated: Bool) {
         
