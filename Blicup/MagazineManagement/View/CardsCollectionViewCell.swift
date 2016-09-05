@@ -72,9 +72,33 @@ class LocationButton: UIButton {
 
 
 class CardCollectionViewCell: UICollectionViewCell {
-    @IBOutlet var cardMedia: UIImageView!
+    @IBOutlet weak var cardMedia: UIImageView!
     @IBOutlet weak var vContainer: UIView!
     @IBOutlet weak var btnTrash: UIButton!
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        initialConfig()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        initialConfig()
+    }
+    
+    private func initialConfig() {
+        if let container = self.viewWithTag(1) {
+            container.layer.cornerRadius = 20
+        }
+        
+        self.layer.shadowColor = UIColor.lightGrayColor().CGColor
+        self.layer.shadowOffset = CGSizeMake(2, 2)
+        self.layer.shadowOpacity = 0.5
+        self.layer.shadowRadius = 3.0
+        self.clipsToBounds = false
+        self.layer.masksToBounds = false
+    }
+    
     
     override func preferredLayoutAttributesFittingAttributes(layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
         let superAttr = super.preferredLayoutAttributesFittingAttributes(layoutAttributes)
