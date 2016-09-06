@@ -383,7 +383,7 @@
                                                                 <constraint firstAttribute="height" constant="225" id="D54-wW-mcd"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="NGC-bw-hOl" customClass="ArticleTextView" customModule="Blicup" customModuleProvider="target">
+                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" bounces="NO" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="NGC-bw-hOl" customClass="ArticleTextView" customModule="Blicup" customModuleProvider="target">
                                                             <rect key="frame" x="10" y="235" width="315" height="48"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -396,7 +396,7 @@
                                                                 <outlet property="delegate" destination="gs4-Ue-mWh" id="CNH-fh-XGj"/>
                                                             </connections>
                                                         </textView>
-                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="999" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="LyJ-o3-li9" customClass="ArticleTextView" customModule="Blicup" customModuleProvider="target">
+                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="999" bounces="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="LyJ-o3-li9" customClass="ArticleTextView" customModule="Blicup" customModuleProvider="target">
                                                             <rect key="frame" x="10" y="283" width="315" height="32"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>

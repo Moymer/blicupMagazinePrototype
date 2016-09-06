@@ -186,7 +186,15 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
     
     func textViewDidChange(textView: UITextView) {
         textView.invalidateIntrinsicContentSize()
-        self.collectionView.collectionViewLayout.invalidateLayout()
+        textView.superview?.needsUpdateConstraints()
+        
+        let point = collectionView.convertPoint(CGPointZero, fromView: textView)
+        if let index = collectionView.indexPathForItemAtPoint(point) {
+            let context = UICollectionViewFlowLayoutInvalidationContext()
+            context.invalidateItemsAtIndexPaths([index])
+            self.collectionView.collectionViewLayout.invalidateLayoutWithContext(context)
+        }
+        
         centerTextViewCell(textView)
     }
     
