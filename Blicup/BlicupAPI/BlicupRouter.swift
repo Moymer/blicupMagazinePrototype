@@ -65,8 +65,8 @@ class BlicupRouter: NSObject {
     
     class func routeTest(window:UIWindow?) {
         
-        //let storyboard = UIStoryboard(name: "MagazineReading", bundle: nil)
-      //let rootViewController = storyboard.instantiateViewControllerWithIdentifier("articlesReadingViewController")
+//        let storyboard = UIStoryboard(name: "MagazineReading", bundle: nil)
+//      let rootViewController = storyboard.instantiateViewControllerWithIdentifier("articlesReadingViewController")
         let storyboard = UIStoryboard(name: "Magazine", bundle: nil)
       let rootViewController = storyboard.instantiateViewControllerWithIdentifier("initNavController")
   

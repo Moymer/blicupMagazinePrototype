@@ -18,8 +18,8 @@ enum LoadingType: Int {
 
 class CameraRollCollectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, IndicatorInfoProvider, AlertControllerProtocol {
     
-
-
+    
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
     var presenter = CameraRollPresenter()
@@ -65,24 +65,24 @@ class CameraRollCollectionViewController: UIViewController, UICollectionViewDele
     }
 
     override func viewWillAppear(animated: Bool) {
-         self.collectionView.reloadData()
+        self.collectionView.reloadData()
     }
     
     
     // MARK: UICollectionViewDataSource
-
-     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
     }
-
-
-     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    
+    
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return presenter.countAssets()
     }
-
-     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! CameraRollImageCollectionViewCell
     
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! CameraRollImageCollectionViewCell
+        
         cell.representedAssetIdentifier = presenter.getAssetIdentifier(indexPath)
         cell.duration = presenter.getAssetDuration(indexPath)
         
@@ -99,11 +99,13 @@ class CameraRollCollectionViewController: UIViewController, UICollectionViewDele
         }
         
         presenter.getThumbImageFromAsset(indexPath) { (image, localIdentifier) in
-            if cell.representedAssetIdentifier == localIdentifier {
-                cell.thumbnailImage = image
+            if let image = image {
+                if cell.representedAssetIdentifier == localIdentifier {
+                    cell.thumbnailImage = image
+                }
             }
         }
-    
+        
         return cell
     }
     
@@ -128,7 +130,7 @@ class CameraRollCollectionViewController: UIViewController, UICollectionViewDele
     }
     
     func collectionView(collectionView: UICollectionView,
-                          shouldSelectItemAtIndexPath indexPath: NSIndexPath) -> Bool
+                        shouldSelectItemAtIndexPath indexPath: NSIndexPath) -> Bool
     {
         let asset = presenter.getAsset(indexPath)
         
@@ -154,7 +156,7 @@ class CameraRollCollectionViewController: UIViewController, UICollectionViewDele
         selectedIndexesSet.remove(indexPath)
         reloadSelectedIndex()
     }
-
+    
     
     func reloadSelectedIndex() {
         if self.selectedIndexesSet.count > 0 {
@@ -170,5 +172,5 @@ class CameraRollCollectionViewController: UIViewController, UICollectionViewDele
     func indicatorInfoForPagerTabStrip(pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
         return itemInfo
     }
-
+    
 }

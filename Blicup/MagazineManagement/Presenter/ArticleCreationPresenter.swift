@@ -31,6 +31,14 @@ class ArticleCreationPresenter: NSObject {
         }
     }
     
+    func getAssetAtIndex(index: Int) -> Dictionary<String,AnyObject> {
+        return self.articleParts[index]
+    }
+    
+    func addAssetsAtIndex(index: Int, element: Dictionary<String,AnyObject>) {
+        self.articleParts[index] = element
+    }
+    
     func deleteAsset(index: Int, completionHandler: (numberOfMedias: Int) -> ()) {
         self.articleParts.removeAtIndex(index)
         

@@ -50,11 +50,11 @@ class CameraRollPresenter: NSObject {
     }
     
     
-    func getThumbImageFromAsset(indexPath : NSIndexPath, completionHandler: (image:Image, localIdentifier:String) -> Void ) {
+    func getThumbImageFromAsset(indexPath : NSIndexPath, completionHandler: (image:Image?, localIdentifier:String) -> Void ) {
         
         let asset = fetchResult?.objectAtIndex(indexPath.item) as! PHAsset
         imageManager.requestImageForAsset(asset, targetSize: thumbnailSize, contentMode:.AspectFill, options: nil, resultHandler: { image, _ in
-            completionHandler(image: image!, localIdentifier: asset.localIdentifier )
+            completionHandler(image: image, localIdentifier: asset.localIdentifier )
         })
     }
    
