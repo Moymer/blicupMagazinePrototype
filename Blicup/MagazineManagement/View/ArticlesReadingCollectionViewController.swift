@@ -115,8 +115,8 @@ class ArticlesReadingCollectionViewController: UICollectionViewController {
         case CardMode.OverCellLayout:
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifierOver, forIndexPath: indexPath) as! CardContentOverCollectionCell
             
-           // cell.layer.shouldRasterize = true;
-           // cell.layer.rasterizationScale = UIScreen.mainScreen().scale;
+            cell.layer.shouldRasterize = true;
+            cell.layer.rasterizationScale = UIScreen.mainScreen().scale;
             
             cell.setContentForPreview(card, imageManager: imageManager, design: articleCardModeOverDesign.rawValue)
             
@@ -135,15 +135,33 @@ class ArticlesReadingCollectionViewController: UICollectionViewController {
         }
     
     }
-
+    override func collectionView(collectionView: UICollectionView, didEndDisplayingCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath) {
+           let changeCell = cell as! CardContentOverCollectionCell
+            changeCell.stopAssets()
+    }
+    
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
 
         return CGSize(width: UIScreen.mainScreen().bounds.width, height: UIScreen.mainScreen().bounds.height)
     }
     
+    
+     // MARK: Layout and Design change actions for content
+    
+    func changeLayoutAndDesign() {
+        if checkIfMoreDesign() {
+            changeDesign()
+        } else {
+            changeLayout()
+        }
+    }
+    
     func changeLayout() {
         articleCardModeLayout = CardMode(rawValue: (articleCardModeLayout.rawValue + 1 ) % CardMode.count)!
         
+        articleCardModeOverDesign = CardMode.OverCellDesign(rawValue:0)!
+        
+        articleCardModeSplitDesign = CardMode.SplitCellDesign(rawValue:0)!
         //reload section to change with animation
         self.collectionView?.performBatchUpdates({ 
                 self.collectionView?.reloadSections(NSIndexSet(index: 0))
@@ -152,24 +170,40 @@ class ArticlesReadingCollectionViewController: UICollectionViewController {
     }
     
     
-    func changeDesign() {
+    func changeDesign()  {
         
         switch articleCardModeLayout {
         case CardMode.OverCellLayout:
-         articleCardModeOverDesign = CardMode.OverCellDesign(rawValue: (articleCardModeOverDesign.rawValue + 1 ) % CardMode.OverCellDesign.count)!
+            articleCardModeOverDesign = CardMode.OverCellDesign(rawValue: (articleCardModeOverDesign.rawValue + 1 ) % CardMode.OverCellDesign.count)!
             break
         case CardMode.SplitCellLayout:
             articleCardModeSplitDesign = CardMode.SplitCellDesign(rawValue: (articleCardModeSplitDesign.rawValue + 1 ) % CardMode.SplitCellDesign.count)!
             break
-
+            
         }
-
+        
         //reload section to change with animation
         self.collectionView?.performBatchUpdates({
             self.collectionView?.reloadSections(NSIndexSet(index: 0))
             }, completion: nil)
         
+        
     }
+    
+    func checkIfMoreDesign() -> Bool {
+        var hasMore : Bool = false
+        switch articleCardModeLayout {
+        case CardMode.OverCellLayout:
+            hasMore = articleCardModeOverDesign.rawValue < CardMode.OverCellDesign.count - 1
+            break
+        case CardMode.SplitCellLayout:
+            hasMore =  articleCardModeSplitDesign.rawValue < CardMode.SplitCellDesign.count - 1
+            break
+            
+        }
+        return hasMore
+    }
+
     
 
     // MARK: UICollectionViewDelegate

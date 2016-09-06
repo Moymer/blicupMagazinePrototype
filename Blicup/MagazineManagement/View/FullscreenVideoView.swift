@@ -45,13 +45,15 @@ class FullscreenVideoView: UIView {
                         }
                         
                     })
+                } else {
+                    removePlayer()
                 }
                 
             } else {
                 self.avPlayer?.seekToTime(kCMTimeZero)
                 self.avPlayer?.play()
             }
-            
+
         }
         
         
@@ -59,7 +61,7 @@ class FullscreenVideoView: UIView {
     
     private func removePlayer() {
         
-        if self.phAsset != nil
+        if self.phAsset != nil && self.avPlayerLayer != nil
         {
             NSNotificationCenter.defaultCenter().removeObserver(self, name: AVPlayerItemDidPlayToEndTimeNotification, object:self.avPlayer?.currentItem)
             self.avPlayerLayer!.removeFromSuperlayer()

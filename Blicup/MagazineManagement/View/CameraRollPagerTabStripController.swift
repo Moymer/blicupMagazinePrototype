@@ -163,6 +163,7 @@ class CameraRollPagerTabStripController: ButtonBarPagerTabStripViewController, C
     // MARK: - Actions
     
     @IBAction func createArticle(sender: UIButton) {
+        /**
         UIView.animateWithDuration(0.2, delay: 0.0, options: [UIViewAnimationOptions.BeginFromCurrentState], animations: {
             self.btnCreateArticle.transform = CGAffineTransformIdentity
         }) { (_) in
@@ -172,9 +173,10 @@ class CameraRollPagerTabStripController: ButtonBarPagerTabStripViewController, C
                 self.dismissViewControllerAnimated(true, completion: nil)
             } else {
                 self.performSegueWithIdentifier("CreateArticleSegue", sender: nil)
-                //         self.performSegueWithIdentifier("viewArticleSegue", sender: nil)
             }
-        }
+        }*/
+        
+       self.performSegueWithIdentifier("viewArticleSegue", sender: nil)
         
  
     }

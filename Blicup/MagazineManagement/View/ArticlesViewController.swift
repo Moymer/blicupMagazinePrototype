@@ -40,12 +40,12 @@ class ArticlesViewController: UIViewController {
     
     func changeLayout() {
         
-        articlesController!.changeLayout()
+        articlesController!.changeLayoutAndDesign()
     }
     
     func changeDesign() {
         
-        articlesController!.changeDesign()
+       // articlesController!.changeDesign()
     }
 }
 
@@ -61,7 +61,7 @@ class ArticlePreviewController: UIViewController {
 
     @IBAction func changeMidiaPosition(sender: AnyObject) {
     
-         mainController!.changeDesign()
+         //mainController!.changeDesign()
     }
     
     @IBAction func sendArticle(sender: AnyObject) {

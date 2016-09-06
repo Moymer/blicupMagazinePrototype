@@ -30,10 +30,14 @@ class CardContentOverCollectionCell: UICollectionViewCell {
         super.awakeFromNib()
         
     }
-    
 
     override func prepareForReuse() {
+        stopAssets()
+    }
+    
+    func stopAssets() {
         ivPhoto.setImage(nil)
+        vVideo.phAsset = nil
     }
     
     func setTexts(title:String, infoText:String) {
