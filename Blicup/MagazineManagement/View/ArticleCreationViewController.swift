@@ -10,29 +10,76 @@ import UIKit
 import Photos
 
 
-class ArticleCreationViewController: UIViewController, UICollectionViewDataSource, UITextViewDelegate, UIGestureRecognizerDelegate, AddAssetsProtocol {
+class ArticleCreationViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UITextViewDelegate, UIGestureRecognizerDelegate, AddAssetsProtocol {
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var btnMorePics: BCCloseButton!
     @IBOutlet weak var btnCloseArticle: BCCloseButton!
     @IBOutlet weak var btnPreviewArticle: BCCloseButton!
     
+    
+    
     let presenter = ArticleCreationPresenter()
+    private var longPressGesture: UILongPressGestureRecognizer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBarHidden = true
         self.collectionView.decelerationRate = UIScrollViewDecelerationRateFast
-        self.view.layoutIfNeeded()
-        
+        longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(ArticleCreationViewController.handleLongGesture(_:)))
+        self.collectionView.addGestureRecognizer(longPressGesture)
+    }
+    
+    func setFlowLayout() {
         if let articleFlowLayout = collectionView.collectionViewLayout as? ArticleCreationCollectionViewFlowLayout {
             let verticalInsets = (collectionView.bounds.height - 330)/2
             articleFlowLayout.sectionInset = UIEdgeInsetsMake(verticalInsets, 20, verticalInsets, 20)
             let cellWidth = collectionView.bounds.width - (articleFlowLayout.sectionInset.left + articleFlowLayout.sectionInset.right)
             articleFlowLayout.estimatedItemSize = CGSizeMake(cellWidth, 330)
         }
-        
     }
+    
+    func handleLongGesture(gesture: UILongPressGestureRecognizer) {
+        
+        switch(gesture.state) {
+            
+        case UIGestureRecognizerState.Began:
+            let centerPoint = CGPointMake(collectionView.contentOffset.x + collectionView.bounds.width/2, collectionView.contentOffset.y + collectionView.bounds.height/2)
+            
+            guard let centerIndex = collectionView.indexPathForItemAtPoint(centerPoint), let selectedIndexPath = self.collectionView.indexPathForItemAtPoint(gesture.locationInView(self.collectionView)) else {
+                return
+            }
+            
+            if centerIndex == selectedIndexPath {
+                self.updateLayout(true)
+                collectionView.beginInteractiveMovementForItemAtIndexPath(selectedIndexPath)
+            }
+            break
+        case UIGestureRecognizerState.Changed:
+            let frame = CGPointMake(collectionView.frame.maxX/2, gesture.locationInView(gesture.view!).y)
+            collectionView.updateInteractiveMovementTargetPosition(frame)
+            break
+        case UIGestureRecognizerState.Ended:
+            self.updateLayout(false)
+            collectionView.endInteractiveMovement()
+            
+            break
+        default:
+            self.updateLayout(false)
+            collectionView.cancelInteractiveMovement()
+            break
+        }
+    }
+    
+    func updateLayout(editing: Bool){
+        if let articleFlowLayout = collectionView.collectionViewLayout as? ArticleCreationCollectionViewFlowLayout {
+            articleFlowLayout.editing = editing
+            articleFlowLayout.prepareLayout()
+            self.collectionView.collectionViewLayout.invalidateLayout()
+            self.collectionView.setCollectionViewLayout(articleFlowLayout, animated: true)
+        }
+    }
+    
     
     override func viewWillAppear(animated: Bool) {
         if self.presenter.numberOfMedias() == 6 {
@@ -54,11 +101,23 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
         return presenter.numberOfMedias()
     }
     
+    func collectionView(collectionView: UICollectionView, moveItemAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath) {
+        
+        let temp = self.presenter.getAssetAtIndex(sourceIndexPath.item)
+        self.presenter.deleteAsset(sourceIndexPath.item) { (numberOfMedias) in }
+        self.presenter.addAssetsAtIndex(destinationIndexPath.item, element: temp)
+        
+        self.collectionView.performBatchUpdates({
+            self.collectionView.reloadData()
+            self.collectionView.reloadItemsAtIndexPaths(self.collectionView.indexPathsForVisibleItems())
+            }, completion: nil)
+        
+    }
+    
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
         let identifier = indexPath.row==0 ? "CoverCell" : "ContentCell"
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(identifier, forIndexPath: indexPath) as! CardCollectionViewCell
-        
         let container = cell.viewWithTag(1)!
         container.layer.cornerRadius = 20
         

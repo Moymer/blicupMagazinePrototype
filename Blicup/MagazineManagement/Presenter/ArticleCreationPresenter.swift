@@ -32,6 +32,14 @@ class ArticleCreationPresenter: NSObject {
         self.assets.appendContentsOf(assets)
     }
     
+    func getAssetAtIndex(index: Int) -> PHAsset {
+        return self.assets[index]
+    }
+    
+    func addAssetsAtIndex(index: Int, element: PHAsset) {
+        self.assets.insert(element, atIndex: index)
+    }
+    
     func deleteAsset(index: Int, completionHandler: (numberOfMedias: Int) -> ()) {
         self.assets.removeAtIndex(index)
         completionHandler(numberOfMedias: self.numberOfMedias())
