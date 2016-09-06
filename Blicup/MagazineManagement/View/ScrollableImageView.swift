@@ -180,7 +180,6 @@ class ScrollableImageView: UIScrollView , UIScrollViewDelegate {
         let w = UIScreen.mainScreen().bounds.width * ZOOM_FACTOR
         let h = UIScreen.mainScreen().bounds.height * ZOOM_FACTOR
         
-        
         var scaledImage = image
         if image.size.width < w || image.size.height < h
         {

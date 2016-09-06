@@ -30,7 +30,7 @@ class FullscreenVideoView: UIView {
                           dispatch_async(dispatch_get_main_queue()) {
                             self.avPlayer = AVPlayer(playerItem: avPlayerItem!)
                             self.avPlayerLayer = AVPlayerLayer(player:self.avPlayer)
-                            self.avPlayerLayer!.videoGravity = kCAGravityResizeAspectFill
+                            self.avPlayerLayer!.videoGravity = AVLayerVideoGravityResizeAspectFill
                             
                             NSNotificationCenter.defaultCenter().addObserver(self,selector: #selector(FullscreenVideoView.playerItemDidReachEnd(_:)), name: AVPlayerItemDidPlayToEndTimeNotification, object: avPlayerItem)
                             
