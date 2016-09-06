@@ -53,6 +53,7 @@ class UserSearchPresenter: BlockFollowUserListPresenter {
     func searchUsersWithSearchTerm(searchTerm: String, timestamp: NSTimeInterval, completionHandler:(success: Bool) -> Void) {
         
         searchTermTimestamp = timestamp
+        self.searchTerm = searchTerm
         
         UserBS.getUsersThatMatchesSearchTerm(searchTerm) { (searchTerm, success, userList) in
             

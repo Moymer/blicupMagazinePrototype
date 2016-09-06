@@ -24,7 +24,6 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBarHidden = true
         self.collectionView.decelerationRate = UIScrollViewDecelerationRateFast
         longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(ArticleCreationViewController.handleLongGesture(_:)))
         self.collectionView.addGestureRecognizer(longPressGesture)
@@ -82,15 +81,38 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
     
     
     override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+
         if self.presenter.numberOfMedias() == 6 {
             self.btnMorePics.hidden = true
         }
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        startObservingKeyboardEvents()
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        stopObservingKeyboardEvents()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    // MARK: Location Delegate
+    func setLocation(coordinate: CLLocationCoordinate2D?, title: String?) {
+        guard let cell = collectionView.cellForItemAtIndexPath(NSIndexPath(forItem: 0, inSection: 0)) as? CardCollectionViewCell else {
+            return
+        }
+        
+        cell.content = title
+    }
+    
     
     // MARK: UICollectionViewDataSource
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
@@ -145,14 +167,20 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
     }
     
     func scrollViewWillBeginDragging(scrollView: UIScrollView) {
-        let centerPoint = CGPointMake(scrollView.contentOffset.x + scrollView.bounds.width/2, scrollView.contentOffset.y + scrollView.bounds.height/2)
-        
-        returnCellToOriginalPosition(centerPoint)
+        guard scrollView is UICollectionView else {
+            return
+        }
         
         scrollView.endEditing(true)
+        let centerPoint = CGPointMake(scrollView.contentOffset.x + scrollView.bounds.width/2, scrollView.contentOffset.y + scrollView.bounds.height/2)
+        returnCellToOriginalPosition(centerPoint)
     }
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
+        guard scrollView is UICollectionView else {
+            return
+        }
+        
         let centerPoint = CGPointMake(scrollView.contentOffset.x + scrollView.bounds.width/2, scrollView.contentOffset.y + scrollView.bounds.height/2)
         
         guard let centerIndex = collectionView.indexPathForItemAtPoint(centerPoint) else {
@@ -187,10 +215,7 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
                 }
             }
         }
-        
-        
-        if swipeGesture.state == UIGestureRecognizerState.Ended {
-            
+        else if swipeGesture.state == UIGestureRecognizerState.Ended {
             var frame = swipeGesture.view!.frame
             frame.origin.x = frame.origin.x <= -62 ? -62 : 0.0
             
@@ -202,7 +227,6 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
                 if let cell = collectionView.cellForItemAtIndexPath(centerIndex) as? CardCollectionViewCell {
                     cell.btnTrash.alpha = abs(frame.origin.x)
                 }
-                
             }
         }
         
@@ -238,6 +262,17 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
     func textViewDidBeginEditing(textView: UITextView) {
         centerTextViewCell(textView)
     }
+
+    func textViewDidEndEditing(textView: UITextView) {
+        let point = collectionView.convertPoint(CGPointZero, fromView: textView)
+        guard let index = collectionView.indexPathForItemAtPoint(point),
+            let cell = collectionView.cellForItemAtIndexPath(index) as? CardCollectionViewCell else {
+            return
+        }
+        
+        presenter.setCardTexts(index, title: cell.title, content: cell.content)
+    }
+    
     
     // MARK: Keyboard
     private func startObservingKeyboardEvents() {
@@ -370,5 +405,10 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
         }
     }
     
-    
+    // MARK: Navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "LocationSegue", let vc = segue.destinationViewController as? SearchArticleLocationViewController {
+            vc.handleMapSearchDelegate = self
+        }
+    }
 }

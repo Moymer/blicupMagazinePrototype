@@ -30,7 +30,7 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         UIView.animateWithDuration(0.3, animations: {
             self.btnSearchBar.transform = CGAffineTransformMakeScale(1, 1)
         }) { (_) in
-            self.performSegueWithIdentifier("showChatRoomAndUserSearchSegue", sender: nil)
+            self.performSegueWithIdentifier("showSearchPagerTabStripController", sender: nil)
             self.view.userInteractionEnabled = true
         }
     }

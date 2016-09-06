@@ -72,7 +72,7 @@
 		7D840C201D78669600374C19 /* UserSearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D840C171D78669600374C19 /* UserSearchCollectionViewCell.swift */; };
 		7D840C231D7866E200374C19 /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D840C221D7866E200374C19 /* SearchPresenter.swift */; };
 		7D840C251D786A8B00374C19 /* SearchPagerTabStripController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D840C241D786A8B00374C19 /* SearchPagerTabStripController.swift */; };
-		7D840C271D78813200374C19 /* SearchUserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D840C261D78813200374C19 /* SearchUserTableViewController.swift */; };
+		7D840C271D78813200374C19 /* SearchUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D840C261D78813200374C19 /* SearchUserViewController.swift */; };
 		7D8626531C9B261D00D87E87 /* InterestPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8626521C9B261D00D87E87 /* InterestPresenter.swift */; };
 		7D8626551C9B48FA00D87E87 /* InterestListAddedBlankCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8626541C9B48FA00D87E87 /* InterestListAddedBlankCollectionViewCell.swift */; };
 		7D8C66141CE3F378000CA40A /* WebImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8C660A1CE3F378000CA40A /* WebImage.swift */; };
@@ -115,6 +115,8 @@
 		7DDADD551CC268730097A86B /* GHContextMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DDADD541CC268730097A86B /* GHContextMenuView.m */; };
 		7DE759981D2ABE5F004BAFF9 /* AlertControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE759971D2ABE5F004BAFF9 /* AlertControllerProtocol.swift */; };
 		7DE78B6D1D78BA660052B56F /* UserTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE78B6C1D78BA660052B56F /* UserTableCell.swift */; };
+		7DE78B6F1D7A1FC70052B56F /* SearchStoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE78B6E1D7A1FC70052B56F /* SearchStoryViewController.swift */; };
+		7DE78B711D7A1FF40052B56F /* SearchStoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE78B701D7A1FF40052B56F /* SearchStoryPresenter.swift */; };
 		7DF0EC5B1D42B24500DEF902 /* default_tags_es.json in Resources */ = {isa = PBXBuildFile; fileRef = 7DF0EC5A1D42B24500DEF902 /* default_tags_es.json */; };
 		7DF397981D4692C800E279D7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7DF3979A1D4692C800E279D7 /* InfoPlist.strings */; };
 		7DF3BB9A1D38284E002CC8B2 /* BlicupAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF3BB991D38284E002CC8B2 /* BlicupAnalytics.swift */; };
@@ -214,6 +216,8 @@
 		C98256B51D70D14C008257C4 /* BlicCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C98256B31D70D14C008257C4 /* BlicCollectionViewCell.xib */; };
 		C98575E11D0B0C190045CD9D /* BlicupClock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98575E01D0B0C190045CD9D /* BlicupClock.swift */; };
 		C98C14031D24646400BAD95C /* MyChatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98C14021D24646400BAD95C /* MyChatsViewController.swift */; };
+		C991F67B1D7DD81100371DE5 /* ArticlesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C991F67A1D7DD81100371DE5 /* ArticlesViewController.swift */; };
+		C991F67D1D7DEBBE00371DE5 /* FullscreenVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C991F67C1D7DEBBE00371DE5 /* FullscreenVideoView.swift */; };
 		C992D7471D74CDAE002A767F /* BlicupSliderSegmentedControll.xib in Resources */ = {isa = PBXBuildFile; fileRef = C992D7461D74CDAE002A767F /* BlicupSliderSegmentedControll.xib */; };
 		C992D7491D74D0E6002A767F /* BlicupSliderSegmentedControll.swift in Sources */ = {isa = PBXBuildFile; fileRef = C992D7481D74D0E6002A767F /* BlicupSliderSegmentedControll.swift */; };
 		C99D36041CEF600E00B0F889 /* ChatRoomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99D36031CEF600E00B0F889 /* ChatRoomCell.swift */; };
@@ -229,9 +233,13 @@
 		C9E464921CB83CF60034853B /* ChatRoomBS.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E464911CB83CF60034853B /* ChatRoomBS.swift */; };
 		C9E464971CB8592C0034853B /* CoverPhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E464961CB8592C0034853B /* CoverPhotosCollectionViewController.swift */; };
 		C9E464991CB8599C0034853B /* CoverPhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E464981CB8599C0034853B /* CoverPhotoCollectionViewCell.swift */; };
+		C9E4FE9B1D7E297A005A48B5 /* CardContentSplitedCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E4FE991D7E297A005A48B5 /* CardContentSplitedCollectionCell.swift */; };
+		C9E4FE9C1D7E297A005A48B5 /* CardContentSplitedCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9E4FE9A1D7E297A005A48B5 /* CardContentSplitedCollectionCell.xib */; };
 		C9EAF94B1D3834AE00D59752 /* UserStatus+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EAF9491D3834AE00D59752 /* UserStatus+CoreDataProperties.swift */; };
 		C9EAF94C1D3834AE00D59752 /* UserStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EAF94A1D3834AE00D59752 /* UserStatus.swift */; };
 		C9EBFF511D401C6200B7A211 /* push_blicup.aif in Resources */ = {isa = PBXBuildFile; fileRef = C9EBFF501D401C6200B7A211 /* push_blicup.aif */; };
+		C9F7B94E1D786DF2005475F7 /* ReadingAnimationSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F7B94D1D786DF2005475F7 /* ReadingAnimationSelector.swift */; };
+		C9F7B9501D786F9D005475F7 /* ScrollableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F7B94F1D786F9D005475F7 /* ScrollableImageView.swift */; };
 		C9F8B8551D0F443200DD6A57 /* CoverMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F8B8541D0F443200DD6A57 /* CoverMessageView.swift */; };
 		C9F8B8571D0F444700DD6A57 /* CoverMessageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9F8B8561D0F444700DD6A57 /* CoverMessageView.xib */; };
 		C9F8B85E1D11E3B200DD6A57 /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F8B85D1D11E3B200DD6A57 /* SettingsPresenter.swift */; };
@@ -363,7 +371,7 @@
 		7D840C171D78669600374C19 /* UserSearchCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserSearchCollectionViewCell.swift; path = SearchManagement/View/UserSearchCollectionViewCell.swift; sourceTree = "<group>"; };
 		7D840C221D7866E200374C19 /* SearchPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchPresenter.swift; path = SearchManagement/Presenter/SearchPresenter.swift; sourceTree = "<group>"; };
 		7D840C241D786A8B00374C19 /* SearchPagerTabStripController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchPagerTabStripController.swift; sourceTree = "<group>"; };
-		7D840C261D78813200374C19 /* SearchUserTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchUserTableViewController.swift; path = SearchManagement/View/SearchUserTableViewController.swift; sourceTree = "<group>"; };
+		7D840C261D78813200374C19 /* SearchUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchUserViewController.swift; path = SearchManagement/View/SearchUserViewController.swift; sourceTree = "<group>"; };
 		7D8626521C9B261D00D87E87 /* InterestPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InterestPresenter.swift; path = UserManagement/Presenter/InterestPresenter.swift; sourceTree = "<group>"; };
 		7D8626541C9B48FA00D87E87 /* InterestListAddedBlankCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InterestListAddedBlankCollectionViewCell.swift; path = UserManagement/View/InterestListAddedBlankCollectionViewCell.swift; sourceTree = "<group>"; };
 		7D8C660A1CE3F378000CA40A /* WebImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebImage.swift; sourceTree = "<group>"; };
@@ -413,6 +421,8 @@
 		7DDADD541CC268730097A86B /* GHContextMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHContextMenuView.m; sourceTree = "<group>"; };
 		7DE759971D2ABE5F004BAFF9 /* AlertControllerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlertControllerProtocol.swift; path = Extensions/AlertControllerProtocol.swift; sourceTree = "<group>"; };
 		7DE78B6C1D78BA660052B56F /* UserTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserTableCell.swift; path = SearchManagement/View/UserTableCell.swift; sourceTree = "<group>"; };
+		7DE78B6E1D7A1FC70052B56F /* SearchStoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchStoryViewController.swift; path = SearchManagement/View/SearchStoryViewController.swift; sourceTree = "<group>"; };
+		7DE78B701D7A1FF40052B56F /* SearchStoryPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchStoryPresenter.swift; path = SearchManagement/Presenter/SearchStoryPresenter.swift; sourceTree = "<group>"; };
 		7DF0EC5A1D42B24500DEF902 /* default_tags_es.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = default_tags_es.json; sourceTree = "<group>"; };
 		7DF0EC5C1D42B34900DEF902 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
 		7DF0EC5D1D42B34900DEF902 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Signup.strings; sourceTree = "<group>"; };
@@ -554,6 +564,8 @@
 		C98256B31D70D14C008257C4 /* BlicCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BlicCollectionViewCell.xib; path = Utils/BlicCollectionViewCell.xib; sourceTree = "<group>"; };
 		C98575E01D0B0C190045CD9D /* BlicupClock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BlicupClock.swift; path = Utils/BlicupClock.swift; sourceTree = "<group>"; };
 		C98C14021D24646400BAD95C /* MyChatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyChatsViewController.swift; path = ChatRoomManagement/View/MyChatsViewController.swift; sourceTree = "<group>"; };
+		C991F67A1D7DD81100371DE5 /* ArticlesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArticlesViewController.swift; path = MagazineManagement/View/ArticlesViewController.swift; sourceTree = "<group>"; };
+		C991F67C1D7DEBBE00371DE5 /* FullscreenVideoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FullscreenVideoView.swift; path = MagazineManagement/View/FullscreenVideoView.swift; sourceTree = "<group>"; };
 		C992D7461D74CDAE002A767F /* BlicupSliderSegmentedControll.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BlicupSliderSegmentedControll.xib; path = Utils/BlicupSliderSegmentedControll.xib; sourceTree = "<group>"; };
 		C992D7481D74D0E6002A767F /* BlicupSliderSegmentedControll.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BlicupSliderSegmentedControll.swift; path = Utils/BlicupSliderSegmentedControll.swift; sourceTree = "<group>"; };
 		C99871AA1D35905B00166F6E /* Blicup.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Blicup.entitlements; sourceTree = "<group>"; };
@@ -570,9 +582,13 @@
 		C9E464911CB83CF60034853B /* ChatRoomBS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatRoomBS.swift; path = BlicupAPI/ChatRoomBS.swift; sourceTree = "<group>"; };
 		C9E464961CB8592C0034853B /* CoverPhotosCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoverPhotosCollectionViewController.swift; path = ChatRoomManagement/View/CoverPhotosCollectionViewController.swift; sourceTree = "<group>"; };
 		C9E464981CB8599C0034853B /* CoverPhotoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoverPhotoCollectionViewCell.swift; path = ChatRoomManagement/View/CoverPhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		C9E4FE991D7E297A005A48B5 /* CardContentSplitedCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CardContentSplitedCollectionCell.swift; path = MagazineManagement/View/CardContentSplitedCollectionCell.swift; sourceTree = "<group>"; };
+		C9E4FE9A1D7E297A005A48B5 /* CardContentSplitedCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CardContentSplitedCollectionCell.xib; path = MagazineManagement/View/CardContentSplitedCollectionCell.xib; sourceTree = "<group>"; };
 		C9EAF9491D3834AE00D59752 /* UserStatus+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UserStatus+CoreDataProperties.swift"; path = "UserManagement/Model/UserStatus+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C9EAF94A1D3834AE00D59752 /* UserStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserStatus.swift; path = UserManagement/Model/UserStatus.swift; sourceTree = "<group>"; };
 		C9EBFF501D401C6200B7A211 /* push_blicup.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = push_blicup.aif; sourceTree = "<group>"; };
+		C9F7B94D1D786DF2005475F7 /* ReadingAnimationSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReadingAnimationSelector.swift; path = MagazineManagement/Presenter/ReadingAnimationSelector.swift; sourceTree = "<group>"; };
+		C9F7B94F1D786F9D005475F7 /* ScrollableImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScrollableImageView.swift; path = MagazineManagement/View/ScrollableImageView.swift; sourceTree = "<group>"; };
 		C9F8B8541D0F443200DD6A57 /* CoverMessageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoverMessageView.swift; path = ChatRoomManagement/View/CoverMessageView.swift; sourceTree = "<group>"; };
 		C9F8B8561D0F444700DD6A57 /* CoverMessageView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CoverMessageView.xib; path = ChatRoomManagement/View/CoverMessageView.xib; sourceTree = "<group>"; };
 		C9F8B85D1D11E3B200DD6A57 /* SettingsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsPresenter.swift; path = Settings/Presenter/SettingsPresenter.swift; sourceTree = "<group>"; };
@@ -990,6 +1006,7 @@
 			isa = PBXGroup;
 			children = (
 				7D840C221D7866E200374C19 /* SearchPresenter.swift */,
+				7DE78B701D7A1FF40052B56F /* SearchStoryPresenter.swift */,
 			);
 			name = Presenter;
 			sourceTree = "<group>";
@@ -1171,6 +1188,7 @@
 		C9569F2B1D70DF4700006019 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				C9F7B94C1D786CF0005475F7 /* Reading */,
 				C9569F6F1D74B87100006019 /* CameraRollPresenter.swift */,
 				C91414561D76001C00C574DB /* CameraRollAssetSelector.swift */,
 				C9ACAEFF1D774ECC00031202 /* ArticleCreationPresenter.swift */,
@@ -1194,10 +1212,12 @@
 		C97A084E1D776B0300D794EA /* Reading */ = {
 			isa = PBXGroup;
 			children = (
+				C9E4FE981D7E2905005A48B5 /* Cards */,
 				C97A08421D77493500D794EA /* MagazineReading.storyboard */,
-				C97A084A1D776AF900D794EA /* CardContentOverCollectionCell.swift */,
-				C97A084B1D776AF900D794EA /* CardContentOverCollectionCell.xib */,
 				C97A084F1D77746200D794EA /* ArticlesReadingCollectionViewController.swift */,
+				C9F7B94F1D786F9D005475F7 /* ScrollableImageView.swift */,
+				C991F67C1D7DEBBE00371DE5 /* FullscreenVideoView.swift */,
+				C991F67A1D7DD81100371DE5 /* ArticlesViewController.swift */,
 			);
 			name = Reading;
 			sourceTree = "<group>";
@@ -1208,7 +1228,8 @@
 				7D840C141D78669600374C19 /* Search.storyboard */,
 				7D840C161D78669600374C19 /* SearchViewController.swift */,
 				7D840C241D786A8B00374C19 /* SearchPagerTabStripController.swift */,
-				7D840C261D78813200374C19 /* SearchUserTableViewController.swift */,
+				7D840C261D78813200374C19 /* SearchUserViewController.swift */,
+				7DE78B6E1D7A1FC70052B56F /* SearchStoryViewController.swift */,
 				7DE78B6C1D78BA660052B56F /* UserTableCell.swift */,
 				7D840C121D78669600374C19 /* MagazineCoverCollectionViewCell.swift */,
 				7D840C171D78669600374C19 /* UserSearchCollectionViewCell.swift */,
@@ -1254,12 +1275,31 @@
 			name = BlicupAPI;
 			sourceTree = "<group>";
 		};
+		C9E4FE981D7E2905005A48B5 /* Cards */ = {
+			isa = PBXGroup;
+			children = (
+				C97A084A1D776AF900D794EA /* CardContentOverCollectionCell.swift */,
+				C97A084B1D776AF900D794EA /* CardContentOverCollectionCell.xib */,
+				C9E4FE991D7E297A005A48B5 /* CardContentSplitedCollectionCell.swift */,
+				C9E4FE9A1D7E297A005A48B5 /* CardContentSplitedCollectionCell.xib */,
+			);
+			name = Cards;
+			sourceTree = "<group>";
+		};
 		C9EBFF4F1D401C4300B7A211 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
 				C9EBFF501D401C6200B7A211 /* push_blicup.aif */,
 			);
 			name = Sounds;
+			sourceTree = "<group>";
+		};
+		C9F7B94C1D786CF0005475F7 /* Reading */ = {
+			isa = PBXGroup;
+			children = (
+				C9F7B94D1D786DF2005475F7 /* ReadingAnimationSelector.swift */,
+			);
+			name = Reading;
 			sourceTree = "<group>";
 		};
 		C9F8B8531D0F43E100DD6A57 /* Cover */ = {
@@ -1383,6 +1423,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7D1006E21C84ADFB0076561E /* Build configuration list for PBXNativeTarget "Blicup" */;
 			buildPhases = (
+                0357B169439EC576CC5FEBA6 /* 📦 Check Pods Manifest.lock */,
 				FE647D69E52F71535BA0D779 /* [CP] Check Pods Manifest.lock */,
 				72EEB1577FCC01AB79C8B085 /* [CP] Check Pods Manifest.lock */,
 				7D1006B31C84ADFB0076561E /* Sources */,
@@ -1391,6 +1432,8 @@
 				7D86267A1CA1D0B800D87E87 /* ShellScript */,
 				56E91203B559FC9BADE25BE5 /* [CP] Embed Pods Frameworks */,
 				036683FB123BA5B956DD0454 /* [CP] Copy Pods Resources */,
+				D513F4AC8C95A642CCB78374 /* 📦 Embed Pods Frameworks */,
+				E9763DD021F91EDEFB64D17D /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1405,6 +1448,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7D1006E51C84ADFB0076561E /* Build configuration list for PBXNativeTarget "BlicupTests" */;
 			buildPhases = (
+				C99C73A181FED0BE8ABE9F53 /* 📦 Check Pods Manifest.lock */,
+
 				92298ABF8F39FFD4981D3BDE /* [CP] Check Pods Manifest.lock */,
 				0AD6ED758F7281AF575F1E0B /* [CP] Check Pods Manifest.lock */,
 				A8400827C22C8206F5F93CF7 /* [CP] Copy Pods Resources */,
@@ -1414,6 +1459,8 @@
 				7D1006CC1C84ADFB0076561E /* Resources */,
 				62CF798FF787507D05B8238F /* 📦 Copy Pods Resources */,
 				35D5BDD80BFB2D86778EBB6D /* [CP] Embed Pods Frameworks */,
+				3347505B05F8C243166F32B1 /* 📦 Embed Pods Frameworks */,
+
 			);
 			buildRules = (
 			);
@@ -1429,12 +1476,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7D1006E81C84ADFB0076561E /* Build configuration list for PBXNativeTarget "BlicupUITests" */;
 			buildPhases = (
+				F799CE10F0CC3BEB8079E1A1 /* 📦 Check Pods Manifest.lock */,
 				67AF4407026C1DA83FF64119 /* [CP] Check Pods Manifest.lock */,
 				A4389D8CD7996D1590BCA42C /* [CP] Check Pods Manifest.lock */,
 				7D1006D51C84ADFB0076561E /* Sources */,
 				7D1006D61C84ADFB0076561E /* Frameworks */,
 				7D1006D71C84ADFB0076561E /* Resources */,
 				2FD249EF53516E9618E8FE53 /* [CP] Copy Pods Resources */,
+                4F1D78E21BCAB6D8774A1514 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1535,6 +1584,7 @@
 				7DCC30F51D4013E5001202F4 /* Chat.storyboard in Resources */,
 				7D50A67C1D5B5DD4009739F2 /* UserWithLikeTableViewCell.xib in Resources */,
 				E54EBDD51D5B5CAD002EE541 /* SlideCoverTipView.xib in Resources */,
+				C9E4FE9C1D7E297A005A48B5 /* CardContentSplitedCollectionCell.xib in Resources */,
 				C9F8B8571D0F444700DD6A57 /* CoverMessageView.xib in Resources */,
 				E54EBDDB1D5B86BB002EE541 /* SwipeCoverImagesTipView.xib in Resources */,
 				7D1006C01C84ADFB0076561E /* Main.storyboard in Resources */,
@@ -1571,6 +1621,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0357B169439EC576CC5FEBA6 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		036683FB123BA5B956DD0454 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1616,6 +1681,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BlicupUITests/Pods-BlicupUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		3347505B05F8C243166F32B1 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BlicupTests/Pods-BlicupTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		35D5BDD80BFB2D86778EBB6D /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1645,6 +1725,21 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 		};
+		4F1D78E21BCAB6D8774A1514 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BlicupUITests/Pods-BlicupUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		56E91203B559FC9BADE25BE5 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1660,6 +1755,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Blicup/Pods-Blicup-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		5B8825BE56CFAFC12AA4478E /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		62CF798FF787507D05B8238F /* 📦 Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1673,6 +1783,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BlicupTests/Pods-BlicupTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6425A31D77787C3910986F80 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Blicup/Pods-Blicup-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		67AF4407026C1DA83FF64119 /* [CP] Check Pods Manifest.lock */ = {
@@ -1718,6 +1843,21 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\" ebe43d72fb819ea7cb8117b056e061dc4020a4d0 2f07aebb13dea16ee6571bf907f458111ecec6c6a27224cf1eb6f076a2f3bd0b";
 		};
+		8C35E4B11B22D6A769792282 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Blicup/Pods-Blicup-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		92298ABF8F39FFD4981D3BDE /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1748,6 +1888,21 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		A6651F97D588041A732E3B6C /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BlicupUITests/Pods-BlicupUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		A8400827C22C8206F5F93CF7 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1761,6 +1916,66 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BlicupTests/Pods-BlicupTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C99C73A181FED0BE8ABE9F53 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D513F4AC8C95A642CCB78374 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Blicup/Pods-Blicup-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E9763DD021F91EDEFB64D17D /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Blicup/Pods-Blicup-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F799CE10F0CC3BEB8079E1A1 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		FE647D69E52F71535BA0D779 /* [CP] Check Pods Manifest.lock */ = {
@@ -1887,12 +2102,13 @@
 				C9BCFF0D1CF7656F00D498FA /* LDTPNSNotificationCenterControl.swift in Sources */,
 				7DF3BB9C1D396A13002CC8B2 /* ChatRoomShareCard.swift in Sources */,
 				C9569F521D746D3D00006019 /* CText.swift in Sources */,
+				C991F67B1D7DD81100371DE5 /* ArticlesViewController.swift in Sources */,
 				C91B366A1CC800A0002D77BF /* LDTPMessageBuilder.swift in Sources */,
 				7D3337A51D1C7AEA00D2EB55 /* FollowListPresenter.swift in Sources */,
 				7D1007221C86059A0076561E /* AppDelegate.swift in Sources */,
 				7D5220AD1D537DAD0041FE46 /* SuggestedUsersViewController.swift in Sources */,
 				7D840C1B1D78669600374C19 /* MagazineCoverCollectionViewCell.swift in Sources */,
-				7D840C271D78813200374C19 /* SearchUserTableViewController.swift in Sources */,
+				7D840C271D78813200374C19 /* SearchUserViewController.swift in Sources */,
 				C9569F691D74AB7600006019 /* Location+CoreDataProperties.swift in Sources */,
 				C98575E11D0B0C190045CD9D /* BlicupClock.swift in Sources */,
 				C9569F601D746D3D00006019 /* Category.swift in Sources */,
@@ -1937,16 +2153,20 @@
 				C9EAF94C1D3834AE00D59752 /* UserStatus.swift in Sources */,
 				7DFD1E011C86438700CF5C94 /* LoginController.swift in Sources */,
 				C9569F561D746D3D00006019 /* CVideo.swift in Sources */,
+				C9F7B94E1D786DF2005475F7 /* ReadingAnimationSelector.swift in Sources */,
 				C93AC3F61D26F86900ED8046 /* ChatRoomSearchListPresenter.swift in Sources */,
 				C97C00661D1B097900C16541 /* BlockListPresenter.swift in Sources */,
+				7DE78B6F1D7A1FC70052B56F /* SearchStoryViewController.swift in Sources */,
 				E52791721CEF4EFD00F5E727 /* FollowCustomButton.swift in Sources */,
 				E516B0671D760ABA00051313 /* SearchArticleLocationViewController.swift in Sources */,
 				C9569F5F1D746D3D00006019 /* Category+CoreDataProperties.swift in Sources */,
 				7D8626551C9B48FA00D87E87 /* InterestListAddedBlankCollectionViewCell.swift in Sources */,
+				C9F7B9501D786F9D005475F7 /* ScrollableImageView.swift in Sources */,
 				7DCFA72B1D1220040043CEA1 /* FolloweeViewController.swift in Sources */,
 				C9569F621D746D3D00006019 /* CTextLD.swift in Sources */,
 				C9BCFF121CF783BF00D498FA /* UserInfo+CoreDataProperties.swift in Sources */,
 				E5D4854E1D215C9500692B36 /* CCHCenterOfMassMapClusterer.m in Sources */,
+				C991F67D1D7DEBBE00371DE5 /* FullscreenVideoView.swift in Sources */,
 				7D7C73CC1CAC4F1F00DC1164 /* Extension.swift in Sources */,
 				C9E464921CB83CF60034853B /* ChatRoomBS.swift in Sources */,
 				C9F8B8551D0F443200DD6A57 /* CoverMessageView.swift in Sources */,
@@ -1970,6 +2190,7 @@
 				7DFD1E091C874F1200CF5C94 /* User.swift in Sources */,
 				7D7C73B41CAB208F00DC1164 /* BCProgress.swift in Sources */,
 				C947A3341CE6423600D810D3 /* ChatRoomPresenter.swift in Sources */,
+				C9E4FE9B1D7E297A005A48B5 /* CardContentSplitedCollectionCell.swift in Sources */,
 				7DCFA7291D1044C00043CEA1 /* CreateChatRoomInputAccessoryView.swift in Sources */,
 				C9569F701D74B87100006019 /* CameraRollPresenter.swift in Sources */,
 				C9BCFF0F1CF7721100D498FA /* ToStringArrayTransformer.swift in Sources */,
@@ -1989,6 +2210,7 @@
 				E535CE031D3FF4860059EFC4 /* CustomLabelChatOver.swift in Sources */,
 				7DA5A86F1CAF05040019B32D /* ChatRoom.swift in Sources */,
 				7DF8FD9C1C8F0C220058F877 /* SignupTermsPrivacyViewController.swift in Sources */,
+				7DE78B711D7A1FF40052B56F /* SearchStoryPresenter.swift in Sources */,
 				E5C1FAB11CC514010015F3E6 /* AmazonManager.swift in Sources */,
 				7D7C73CE1CAC556400DC1164 /* ChatRoomListCollectionViewCell.swift in Sources */,
 				C9569F611D746D3D00006019 /* CTextLD+CoreDataProperties.swift in Sources */,

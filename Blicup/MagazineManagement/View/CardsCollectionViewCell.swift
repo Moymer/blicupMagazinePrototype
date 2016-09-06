@@ -22,7 +22,7 @@ class LocationButton: UIButton {
     }
     
     override func setTitle(title: String?, forState state: UIControlState) {
-        if state == UIControlState.Normal && title?.characterCount() == 0 {
+        if state == UIControlState.Normal && (title==nil || title!.characterCount()==0) {
             super.setTitle("Location", forState: state)
         }
         else {
@@ -32,18 +32,73 @@ class LocationButton: UIButton {
 }
 
 
-class ArticleTextView: UITextView {
+@IBDesignable class ArticleTextView: UITextView {
+    private let lblPlaceholder = UILabel()
+    
+    @IBInspectable var placeholder:String? = "placeholder" {
+        didSet {
+            lblPlaceholder.text = placeholder
+        }
+    }
+    
+    override init(frame: CGRect, textContainer: NSTextContainer?) {
+        super.init(frame: frame, textContainer: textContainer)
+        initPlaceholder()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        initPlaceholder()
+    }
+    
     override func intrinsicContentSize() -> CGSize {
+        lblPlaceholder.hidden = (text.length > 0)
         let size = self.sizeThatFits(CGSizeMake(self.bounds.width, CGFloat.max))
         return size
+    }
+    
+    private func initPlaceholder() {
+        lblPlaceholder.frame = self.bounds
+        lblPlaceholder.autoresizingMask = [UIViewAutoresizing.FlexibleWidth, UIViewAutoresizing.FlexibleHeight]
+        
+        self.addSubview(lblPlaceholder)
+        
+        lblPlaceholder.font = self.font
+        lblPlaceholder.textAlignment = self.textAlignment
+        lblPlaceholder.textColor = UIColor.lightGrayColor()
+        lblPlaceholder.text = placeholder        
     }
 }
 
 
 class CardCollectionViewCell: UICollectionViewCell {
-    @IBOutlet var cardMedia: UIImageView!
+    @IBOutlet weak var cardMedia: UIImageView!
     @IBOutlet weak var vContainer: UIView!
     @IBOutlet weak var btnTrash: UIButton!
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        initialConfig()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        initialConfig()
+    }
+    
+    private func initialConfig() {
+        if let container = self.viewWithTag(1) {
+            container.layer.cornerRadius = 20
+        }
+        
+        self.layer.shadowColor = UIColor.lightGrayColor().CGColor
+        self.layer.shadowOffset = CGSizeMake(2, 2)
+        self.layer.shadowOpacity = 0.5
+        self.layer.shadowRadius = 3.0
+        self.clipsToBounds = false
+        self.layer.masksToBounds = false
+    }
+    
     
     override func preferredLayoutAttributesFittingAttributes(layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
         let superAttr = super.preferredLayoutAttributesFittingAttributes(layoutAttributes)
@@ -55,7 +110,6 @@ class CardCollectionViewCell: UICollectionViewCell {
         super.prepareForReuse()
         self.title = nil
         self.content = nil
-        
     }
 
     var isFocusCell = false {

@@ -7,26 +7,51 @@
 //
 
 import UIKit
-
-private let reuseIdentifier = "CardOverCell"
+import Photos
+private let reuseIdentifierOver = "CardOverCell"
+private let reuseIdentifierSplited = "CardSplitCell"
 
 class ArticlesReadingCollectionViewController: UICollectionViewController {
 
+     let imageManager = PHCachingImageManager()
+    
+    var articleContent : [[String:AnyObject]] = [] {
+        
+        didSet{
+            
+            var assets : [PHAsset] = []
+            for card in articleContent {
+                let phAsset = card["midia"] as! PHAsset
+                assets.append(phAsset)
+            }
+            imageManager.startCachingImagesForAssets(assets, targetSize: PHImageManagerMaximumSize, contentMode: PHImageContentMode.AspectFill, options: nil)
+            
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-
+        self.collectionView!.decelerationRate = UIScrollViewDecelerationRateFast
         // Register cell classes
-        self.collectionView!.registerClass(CardContentOverCollectionCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        self.collectionView!.registerClass(CardContentOverCollectionCell.self, forCellWithReuseIdentifier: reuseIdentifierOver)
 
-        self.collectionView!.registerNib(UINib(nibName: "CardContentOverCollectionCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
+        self.collectionView!.registerNib(UINib(nibName: "CardContentOverCollectionCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifierOver)
+        
+        
+        self.collectionView!.registerClass(CardContentSplitedCollectionCell.self, forCellWithReuseIdentifier: reuseIdentifierSplited)
+        
+        self.collectionView!.registerNib(UINib(nibName: "CardContentSplitedCollectionCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifierSplited)
         
         UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation:UIStatusBarAnimation.None)
         // Do any additional setup after loading the view.
     }
 
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -52,23 +77,28 @@ class ArticlesReadingCollectionViewController: UICollectionViewController {
 
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 2
+        return articleContent.count
     }
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as!CardContentOverCollectionCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifierSplited, forIndexPath: indexPath) as! CardContentSplitedCollectionCell
     
-        // Configure the cell
-        cell.setTexts("Prepare your spring tin for cake layers", infoText: "Grease the bottom and sides of the tin with some butter and then cover the bottom with grease paper and the sides with flour.\n Hold the tin in front of you and gently turn it while tapping on the sides with the palm of your hand until everything is covered. Doing this ensures you won’t have any problems getting the layers out later.")
+        cell.layer.shouldRasterize = true;
+        cell.layer.rasterizationScale = UIScreen.mainScreen().scale;
+        
+        let card = articleContent[indexPath.row]
+        
+        cell.setContentForPreview(card, imageManager: imageManager)
     
         return cell
     }
 
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
 
-        return CGSize(width: UIScreen.mainScreen().applicationFrame.width, height: UIScreen.mainScreen().applicationFrame.height)
+        return CGSize(width: UIScreen.mainScreen().bounds.width, height: UIScreen.mainScreen().bounds.height)
     }
     
+
     // MARK: UICollectionViewDelegate
 
     /*
