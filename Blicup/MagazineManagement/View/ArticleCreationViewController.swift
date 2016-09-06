@@ -87,8 +87,18 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
         gestureRecognizer.delegate = self
         cell.vContainer.addGestureRecognizer(gestureRecognizer)
         
-        presenter.getImageMedia(indexPath) { (image) in
-            cell.cardMedia.image = image
+        if presenter.mediaIsVideo(indexPath) {
+            cell.cardVideo.imageManager = presenter.imageManager
+            cell.cardVideo.phAsset = presenter.getAsset(indexPath)
+            cell.cardImage.hidden = true
+            cell.cardVideo.hidden = false
+        }
+        else {
+            cell.cardImage.hidden = false
+            cell.cardVideo.hidden = true
+            presenter.getImageMedia(indexPath) { (image) in
+                cell.cardImage.image = image
+            }
         }
         
         cell.title = presenter.getCardTitle(indexPath)

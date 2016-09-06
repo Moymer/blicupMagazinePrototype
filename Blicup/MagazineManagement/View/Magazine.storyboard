@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BRJ-H2-Y4z">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BRJ-H2-Y4z">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
@@ -299,6 +299,10 @@
                                                 <view clipsSubviews="YES" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fse-vF-t1s" userLabel="Container">
                                                     <rect key="frame" x="0.0" y="0.0" width="335" height="330"/>
                                                     <subviews>
+                                                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q6i-IJ-Wsr" customClass="FullscreenVideoView" customModule="Blicup" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="335" height="225"/>
+                                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </view>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VCw-cB-sQc">
                                                             <rect key="frame" x="0.0" y="0.0" width="335" height="225"/>
                                                             <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -333,14 +337,18 @@
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstItem="uaY-vS-bWC" firstAttribute="leading" secondItem="Fse-vF-t1s" secondAttribute="leading" constant="5" id="0Xc-Ay-sfW"/>
+                                                        <constraint firstItem="q6i-IJ-Wsr" firstAttribute="top" secondItem="VCw-cB-sQc" secondAttribute="top" id="1fW-To-yTg"/>
+                                                        <constraint firstItem="q6i-IJ-Wsr" firstAttribute="bottom" secondItem="VCw-cB-sQc" secondAttribute="bottom" id="677-Fl-jxg"/>
                                                         <constraint firstAttribute="trailing" secondItem="uaY-vS-bWC" secondAttribute="trailing" constant="5" id="GQe-aL-Eka"/>
                                                         <constraint firstItem="Z3A-6C-xY0" firstAttribute="top" secondItem="VCw-cB-sQc" secondAttribute="bottom" constant="5" id="Gfb-Se-j4R"/>
+                                                        <constraint firstItem="q6i-IJ-Wsr" firstAttribute="leading" secondItem="VCw-cB-sQc" secondAttribute="leading" id="GmY-KT-1Ld"/>
                                                         <constraint firstItem="uaY-vS-bWC" firstAttribute="top" secondItem="Z3A-6C-xY0" secondAttribute="bottom" constant="5" id="IcW-bv-w5Z"/>
                                                         <constraint firstItem="VCw-cB-sQc" firstAttribute="leading" secondItem="Fse-vF-t1s" secondAttribute="leading" id="Lx6-0Z-dRc"/>
                                                         <constraint firstAttribute="bottom" secondItem="uaY-vS-bWC" secondAttribute="bottom" constant="20" id="MAb-HS-DYU"/>
                                                         <constraint firstItem="VCw-cB-sQc" firstAttribute="top" secondItem="Fse-vF-t1s" secondAttribute="top" id="PzO-GE-Rc2"/>
                                                         <constraint firstItem="Z3A-6C-xY0" firstAttribute="leading" secondItem="Fse-vF-t1s" secondAttribute="leading" constant="5" id="REt-Oj-BHa"/>
                                                         <constraint firstAttribute="trailing" secondItem="Z3A-6C-xY0" secondAttribute="trailing" constant="5" id="SK7-CX-tgk"/>
+                                                        <constraint firstItem="q6i-IJ-Wsr" firstAttribute="trailing" secondItem="VCw-cB-sQc" secondAttribute="trailing" id="ToP-Dz-WKq"/>
                                                         <constraint firstAttribute="trailing" secondItem="VCw-cB-sQc" secondAttribute="trailing" id="ZPT-5W-VKy"/>
                                                     </constraints>
                                                 </view>
@@ -360,7 +368,8 @@
                                             <outlet property="articleLocation" destination="uaY-vS-bWC" id="lrQ-Ap-BY5"/>
                                             <outlet property="articleTitle" destination="Z3A-6C-xY0" id="v2Z-Ye-zbJ"/>
                                             <outlet property="btnTrash" destination="Pc7-WI-BK3" id="k07-gY-2A8"/>
-                                            <outlet property="cardMedia" destination="VCw-cB-sQc" id="6V8-47-Yob"/>
+                                            <outlet property="cardImage" destination="VCw-cB-sQc" id="LEl-tC-MLd"/>
+                                            <outlet property="cardVideo" destination="q6i-IJ-Wsr" id="pbh-3E-Miy"/>
                                             <outlet property="vContainer" destination="Fse-vF-t1s" id="YMU-bd-T2P"/>
                                         </connections>
                                     </collectionViewCell>
@@ -385,6 +394,10 @@
                                                 <view clipsSubviews="YES" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sZR-cX-1Ix" userLabel="Container">
                                                     <rect key="frame" x="0.0" y="0.0" width="335" height="330"/>
                                                     <subviews>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hAJ-TL-sdv" customClass="FullscreenVideoView" customModule="Blicup" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="335" height="225"/>
+                                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </view>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="edU-TP-24F">
                                                             <rect key="frame" x="0.0" y="0.0" width="335" height="225"/>
                                                             <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -421,15 +434,19 @@
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
+                                                        <constraint firstItem="hAJ-TL-sdv" firstAttribute="bottom" secondItem="edU-TP-24F" secondAttribute="bottom" id="0kD-hj-Q0Q"/>
                                                         <constraint firstAttribute="trailing" secondItem="NGC-bw-hOl" secondAttribute="trailing" constant="10" id="2hm-9c-uWj"/>
                                                         <constraint firstItem="LyJ-o3-li9" firstAttribute="leading" secondItem="sZR-cX-1Ix" secondAttribute="leading" constant="10" id="7e7-3O-akm"/>
+                                                        <constraint firstItem="hAJ-TL-sdv" firstAttribute="trailing" secondItem="edU-TP-24F" secondAttribute="trailing" id="DGL-Gx-cIn"/>
                                                         <constraint firstItem="NGC-bw-hOl" firstAttribute="top" secondItem="edU-TP-24F" secondAttribute="bottom" constant="10" id="Fbw-dQ-O6c"/>
                                                         <constraint firstAttribute="trailing" secondItem="edU-TP-24F" secondAttribute="trailing" id="dx8-tM-uaT"/>
                                                         <constraint firstAttribute="trailing" secondItem="LyJ-o3-li9" secondAttribute="trailing" constant="10" id="eyd-cZ-mi8"/>
+                                                        <constraint firstItem="hAJ-TL-sdv" firstAttribute="leading" secondItem="edU-TP-24F" secondAttribute="leading" id="kOA-Ie-bek"/>
                                                         <constraint firstItem="NGC-bw-hOl" firstAttribute="leading" secondItem="sZR-cX-1Ix" secondAttribute="leading" constant="10" id="nBm-4C-Njz"/>
                                                         <constraint firstItem="edU-TP-24F" firstAttribute="top" secondItem="sZR-cX-1Ix" secondAttribute="top" id="nDz-QY-Ihh"/>
                                                         <constraint firstItem="LyJ-o3-li9" firstAttribute="top" secondItem="NGC-bw-hOl" secondAttribute="bottom" id="qKh-RT-fBU"/>
                                                         <constraint firstAttribute="bottom" secondItem="LyJ-o3-li9" secondAttribute="bottom" constant="15" id="qPu-Of-PmD"/>
+                                                        <constraint firstItem="hAJ-TL-sdv" firstAttribute="top" secondItem="edU-TP-24F" secondAttribute="top" id="rH2-YH-GBn"/>
                                                         <constraint firstItem="edU-TP-24F" firstAttribute="leading" secondItem="sZR-cX-1Ix" secondAttribute="leading" id="y3f-KX-oBN"/>
                                                     </constraints>
                                                 </view>
@@ -446,7 +463,8 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="btnTrash" destination="201-tz-aTf" id="DWj-8v-J5b"/>
-                                            <outlet property="cardMedia" destination="edU-TP-24F" id="FQP-0J-m7B"/>
+                                            <outlet property="cardImage" destination="edU-TP-24F" id="tFW-wI-oF5"/>
+                                            <outlet property="cardVideo" destination="hAJ-TL-sdv" id="vgk-eg-t8f"/>
                                             <outlet property="contentText" destination="LyJ-o3-li9" id="vm0-f9-Oku"/>
                                             <outlet property="contentTitle" destination="NGC-bw-hOl" id="CmY-i7-Mj0"/>
                                             <outlet property="vContainer" destination="sZR-cX-1Ix" id="DMq-gc-r2a"/>

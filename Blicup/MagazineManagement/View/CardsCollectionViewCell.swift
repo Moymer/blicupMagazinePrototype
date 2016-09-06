@@ -72,7 +72,8 @@ class LocationButton: UIButton {
 
 
 class CardCollectionViewCell: UICollectionViewCell {
-    @IBOutlet weak var cardMedia: UIImageView!
+    @IBOutlet weak var cardImage: UIImageView!
+    @IBOutlet weak var cardVideo: FullscreenVideoView!
     @IBOutlet weak var vContainer: UIView!
     @IBOutlet weak var btnTrash: UIButton!
     
