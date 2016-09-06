@@ -84,7 +84,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let cache = KingfisherManager.sharedManager.cache
         cache.maxCachePeriodInSecond = 60 * 60 * 24 * 365 * 50
-        //cache.maxMemoryCost = 1000000 * 10
+       // cache.maxMemoryCost = 1024*1024 * 50
         
         setupPush()
         

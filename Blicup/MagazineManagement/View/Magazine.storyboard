@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BRJ-H2-Y4z">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BRJ-H2-Y4z">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
@@ -161,8 +161,8 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="46e-Ix-olu">
                                 <rect key="frame" x="0.0" y="125" width="600" height="475"/>
                             </scrollView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pHd-O6-QEN">
-                                <rect key="frame" x="233" y="474" width="134" height="42"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pHd-O6-QEN">
+                                <rect key="frame" x="233" y="538" width="134" height="42"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="134" id="J2B-DE-4qJ"/>
@@ -241,11 +241,20 @@
                         <outlet property="buttonBarView" destination="CNW-yd-Q90" id="7d3-6v-oyx"/>
                         <outlet property="containerView" destination="46e-Ix-olu" id="LNK-Xh-N5Y"/>
                         <segue destination="gs4-Ue-mWh" kind="show" identifier="CreateArticleSegue" id="N0v-1C-Jel"/>
+                        <segue destination="OE6-9E-xJa" kind="show" identifier="viewArticleSegue" id="a8K-TB-1ux"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rtj-Ws-SRS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="267" y="979"/>
+        </scene>
+        <!--articlesViewController-->
+        <scene sceneID="PFR-h0-bSp">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MagazineReading" referencedIdentifier="articlesViewController" id="OE6-9E-xJa" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rRF-Vy-bCT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="362.5" y="1458"/>
         </scene>
         <!--Article Creation View Controller-->
         <scene sceneID="nmo-Ml-bb4">

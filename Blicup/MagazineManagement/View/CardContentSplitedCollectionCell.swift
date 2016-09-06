@@ -1,20 +1,21 @@
 //
-//  CardContentOverCollectionCell.swift
+//  CardContentSplitedCollectionCell.swift
 //  Blicup
 //
-//  Created by Moymer on 8/31/16.
+//  Created by Moymer on 9/5/16.
 //  Copyright © 2016 Moymer. All rights reserved.
 //
 
 import UIKit
 import Photos
-class CardContentOverCollectionCell: UICollectionViewCell {
+class CardContentSplitedCollectionCell: UICollectionViewCell {
 
 
+    
+    
     @IBOutlet weak var ivPhoto: ScrollableImageView!
     @IBOutlet weak var lblCardTitle: UILabel!
     @IBOutlet weak var lblCardInfoText: UILabel!
-    @IBOutlet weak var vTextsContainer: UIView!
     @IBOutlet weak var vVideo: FullscreenVideoView!
     
     override func awakeFromNib() {
@@ -22,20 +23,12 @@ class CardContentOverCollectionCell: UICollectionViewCell {
         
     }
     
-
+    
     override func prepareForReuse() {
         ivPhoto.setImage(nil)
     }
     
-    func setTexts(title:String, infoText:String) {
-        lblCardTitle.text = title
-        
-        lblCardInfoText.text = infoText
-        lblCardInfoText.sizeToFit()
-        lblCardInfoText.layoutIfNeeded()
-      
-        setMockImage()
-    }
+    
     
     func setContentForPreview(card : [String:AnyObject], imageManager:PHCachingImageManager)
     {
@@ -63,18 +56,5 @@ class CardContentOverCollectionCell: UICollectionViewCell {
         }
         
     }
-    
-    private func setMockImage()
-    {
-       ivPhoto.setImageFromUrls(nil, photoUrl: NSURL(string: "http://www.cbc.ca/documentaries/content/images/blog/greatbarrierreef1_1920.jpg")!)
-    }
-    
 
-
-
-    /**
-    override func hitTest(point: CGPoint, withEvent event: UIEvent?) -> UIView? {
-        return ivPhoto
-    }
- **/
 }

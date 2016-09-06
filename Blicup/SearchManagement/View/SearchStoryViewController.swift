@@ -17,6 +17,7 @@ class SearchStoryViewController: UIViewController, IndicatorInfoProvider, UIText
     private let presenter = SearchStoryPresenter()
     private let chatRoomListViewCellID = "chatRoomListViewCellID"
     private var showBlicupWhiteActivityIndicatorTimer: NSTimer?
+    private var lblNoResults: UILabel = UILabel()
     
     @IBOutlet weak var ivLoadingBlicupGray: UIImageView!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -26,7 +27,9 @@ class SearchStoryViewController: UIViewController, IndicatorInfoProvider, UIText
         super.viewDidLoad()
 
         loadBlicupImages()
-        (self.collectionView.collectionViewLayout as! UICollectionViewFlowLayout).sectionInset = UIEdgeInsetsMake(10, 10, kTabBarHeight + 2, 10)   
+        setupLabelNoResults()
+        
+        (self.collectionView.collectionViewLayout as! UICollectionViewFlowLayout).sectionInset = UIEdgeInsetsMake(10, 10, kTabBarHeight + 2, 10)
     }
 
    
@@ -42,6 +45,18 @@ class SearchStoryViewController: UIViewController, IndicatorInfoProvider, UIText
         ivLoadingBlicupGray.animationDuration = 1.0
         ivLoadingBlicupGray.alpha = 0
     }
+    
+    // Setup Label No Users
+    
+    func setupLabelNoResults(){
+        let lblNoResultsFont = UIFont(name: "SFUIText-Bold", size: 18)
+        lblNoResults = UILabel(frame: self.collectionView.frame)
+        lblNoResults.font = lblNoResultsFont
+        lblNoResults.textAlignment = .Center
+        lblNoResults.textColor = UIColor.blicupLoadingColor()
+        lblNoResults.sizeToFit()
+    }
+
     
     func chatRoomsListChanged(insertedIdexes: [NSIndexPath], deletedIndexes: [NSIndexPath], reloadedIndexes: [NSIndexPath]) {
         
@@ -215,7 +230,7 @@ class SearchStoryViewController: UIViewController, IndicatorInfoProvider, UIText
                             if self.presenter.chatRoomsCount() > 0 {
                                 self.collectionView.reloadData()
                             } else {
-                                //                            self.showNoChatsWithSearchTerm(searchTerm)
+                                self.showLblNoResults(show: true)
                             }
                         } else {
                             // TODO: tratar timout servidor
@@ -237,6 +252,7 @@ class SearchStoryViewController: UIViewController, IndicatorInfoProvider, UIText
     func prepareToPerfomSearch() {
         //        hidelblNoInternet()
         presenter.clearChats()
+        self.showLblNoResults(show: false)
         self.collectionView.reloadData()
         
         invalidateShowBlicupWhiteTimer()
@@ -246,6 +262,13 @@ class SearchStoryViewController: UIViewController, IndicatorInfoProvider, UIText
     func clearData() {
         presenter.clearChats()
         self.collectionView.reloadData()
+    }
+    
+    // MARK: Show No users
+    func showLblNoResults(show show: Bool) {
+        
+        lblNoResults.text = "No results"
+        self.collectionView.backgroundView = show ? lblNoResults : nil
     }
     
     func invalidateShowBlicupWhiteTimer() {

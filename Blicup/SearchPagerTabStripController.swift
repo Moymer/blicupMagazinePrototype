@@ -133,7 +133,6 @@ class SearchPagerTabStripController: ButtonBarPagerTabStripViewController, UISea
         vContainerTFSearch.clipsToBounds = true
         
         tfSearch.performSelector(#selector(UIResponder.becomeFirstResponder), withObject: nil, afterDelay: 0.5)
-        
     }
     
     // MARK: - PagerTabStripDataSource
