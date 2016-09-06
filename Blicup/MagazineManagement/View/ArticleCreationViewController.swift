@@ -10,7 +10,7 @@ import UIKit
 import Photos
 
 
-class ArticleCreationViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UITextViewDelegate, UIGestureRecognizerDelegate, AddAssetsProtocol {
+class ArticleCreationViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UITextViewDelegate, UIGestureRecognizerDelegate, AddAssetsProtocol, SearchArticleLocationViewControllerDelegate {
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var btnMorePics: BCCloseButton!
@@ -50,7 +50,7 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
             }
             
             if centerIndex == selectedIndexPath {
-                self.updateLayout(true)
+//                self.updateLayout(true)
                 collectionView.beginInteractiveMovementForItemAtIndexPath(selectedIndexPath)
             }
             break
@@ -59,12 +59,12 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
             collectionView.updateInteractiveMovementTargetPosition(frame)
             break
         case UIGestureRecognizerState.Ended:
-            self.updateLayout(false)
+//            self.updateLayout(false)
             collectionView.endInteractiveMovement()
             
             break
         default:
-            self.updateLayout(false)
+//            self.updateLayout(false)
             collectionView.cancelInteractiveMovement()
             break
         }
