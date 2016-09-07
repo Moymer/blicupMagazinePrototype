@@ -8,17 +8,21 @@
 
 import UIKit
 import Photos
-class CardContentOverCollectionCell: UICollectionViewCell {
-
+class CardContentOverCollectionCell: UICollectionViewCell, ScrollableViewDelegate {
+    
     private let bgAlpha : CGFloat = 0.7
     let dominantBrightness : CGFloat = 0.3
     var gl:CAGradientLayer?
+ 
+    var repositioningDelegate : ArticlePreviewRepositioningDelegate?
+    private var cardIdentifier : String?
     
-    @IBOutlet weak var ivPhoto: ScrollableImageView!
+    @IBOutlet weak var ivPhoto: ScrollableView!
     @IBOutlet weak var lblCardTitle: UILabel!
     @IBOutlet weak var lblCardInfoText: UILabel!
     @IBOutlet weak var vTextsContainer: UIView!
     @IBOutlet weak var vVideo: FullscreenVideoView!
+    @IBOutlet weak var allTextView: UIView!
     
     //just over variables
     @IBOutlet weak var infoTextLeadingConstraint: NSLayoutConstraint!
@@ -33,21 +37,13 @@ class CardContentOverCollectionCell: UICollectionViewCell {
 
     override func prepareForReuse() {
         stopAssets()
+        stopRepositioning()
     }
     
     func stopAssets() {
         ivPhoto.setImage(nil)
         vVideo.phAsset = nil
-    }
-    
-    func setTexts(title:String, infoText:String) {
-        lblCardTitle.text = title
         
-        lblCardInfoText.text = infoText
-        lblCardInfoText.sizeToFit()
-        lblCardInfoText.layoutIfNeeded()
-      
-        setMockImage()
     }
     
     func setContentForPreview(card : [String:AnyObject], imageManager:PHCachingImageManager)
@@ -61,12 +57,20 @@ class CardContentOverCollectionCell: UICollectionViewCell {
         lblCardInfoText.text = infoText
         lblCardInfoText.sizeToFit()
         lblCardInfoText.layoutIfNeeded()
+        cardIdentifier = asset.localIdentifier
         
         if asset.mediaType == PHAssetMediaType.Image {
             vVideo.hidden = true
             ivPhoto.hidden = false
             ivPhoto.imageManager = imageManager
-            ivPhoto.setPositioningScale(ScrollableImageViewPosAndScale.ASPECT_FILL)
+            
+            ivPhoto.zoomAndPosDelegate = self
+            //change content midia positioning
+            if let repositioning = repositioningDelegate?.getRepositioningFor(asset.localIdentifier)  {
+                ivPhoto.setPositioningScale(ScrollableViewPosAndScale.BY_RECT, zoom: repositioning.0, offset: repositioning.1)
+            } else {
+                ivPhoto.setPositioningScale(ScrollableViewPosAndScale.ASPECT_FILL)
+            }
             ivPhoto.setImageFromAsset(asset)
         } else {
             ivPhoto.hidden = true
@@ -76,6 +80,7 @@ class CardContentOverCollectionCell: UICollectionViewCell {
         }
         
     }
+
     
     func setContentForPreview(card : [String:AnyObject], imageManager:PHCachingImageManager, design: Int)
     {
@@ -90,21 +95,21 @@ class CardContentOverCollectionCell: UICollectionViewCell {
         
         switch design {
         case CardMode.OverCellDesign.Dark.rawValue:
-            gradientView.hidden = true
+            gl?.removeFromSuperlayer()
             lblCardTitle.textColor = UIColor.whiteColor()
             lblCardInfoText.textColor = lblCardTitle.textColor
             vTextsContainer.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(bgAlpha)
             break
             
         case CardMode.OverCellDesign.Light.rawValue:
-            gradientView.hidden = true
+            gl?.removeFromSuperlayer()
             lblCardTitle.textColor = UIColor.blackColor()
             lblCardInfoText.textColor = lblCardTitle.textColor
             vTextsContainer.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(bgAlpha)
             break
             
         case CardMode.OverCellDesign.Midia.rawValue:
-            gradientView.hidden = true
+            gl?.removeFromSuperlayer()
             let dominantColor = card["midiaDominantColor"] as! UIColor
             var hue         : CGFloat = 0
             var saturation  : CGFloat = 0
@@ -151,7 +156,6 @@ class CardContentOverCollectionCell: UICollectionViewCell {
     
     private func addGradient(dominantColor : UIColor) {
         gl?.removeFromSuperlayer()
-        gradientView.hidden = false
         gl = CAGradientLayer()
         gl?.frame = self.bounds
         gl!.startPoint = CGPoint(x: 0.5, y: 1.0)
@@ -160,18 +164,33 @@ class CardContentOverCollectionCell: UICollectionViewCell {
         gl!.locations = [ 0.0, 0.6, 1.0]
         gradientView.layer.addSublayer(gl!)
     }
+
+
+    //MARK: - Repositioning
     
-    private func setMockImage()
-    {
-       ivPhoto.setImageFromUrls(nil, photoUrl: NSURL(string: "http://www.cbc.ca/documentaries/content/images/blog/greatbarrierreef1_1920.jpg")!)
+    func startRepositioning() {
+        ivPhoto.scrollEnabled = true
+        gradientView.hidden = true
+        allTextView.hidden = true
     }
     
-
-
-
-    /**
+    func stopRepositioning() {
+        ivPhoto.scrollEnabled = false
+        gradientView.hidden = false
+        allTextView.hidden = false
+    }
+    
     override func hitTest(point: CGPoint, withEvent event: UIEvent?) -> UIView? {
-        return ivPhoto
+        if ivPhoto.scrollEnabled {
+            return ivPhoto
+        }
+        return super.hitTest(point, withEvent: event)
     }
- **/
+    
+    //scalableView delegate
+    func changeViewScalingOrPositioning( zoom:CGFloat, offset :CGPoint) -> Void {
+        
+        repositioningDelegate?.addImageRepositioning(cardIdentifier!, zoom: zoom, offset: offset)
+    }
+ 
 }

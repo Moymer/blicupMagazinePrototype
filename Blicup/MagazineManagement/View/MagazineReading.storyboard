@@ -9,7 +9,7 @@
         <scene sceneID="Ls3-9r-Nzh">
             <objects>
                 <collectionViewController storyboardIdentifier="articlesReadingViewController" automaticallyAdjustsScrollViewInsets="NO" id="itD-4Z-n0G" customClass="ArticlesReadingCollectionViewController" customModule="Blicup" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" alwaysBounceVertical="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" id="6r9-Bn-YEy">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" alwaysBounceVertical="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" dataMode="prototypes" id="6r9-Bn-YEy">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="RhU-vO-8gX">
@@ -129,6 +129,11 @@
                             <constraint firstItem="C4R-3M-qiR" firstAttribute="centerX" secondItem="XGj-in-d9e" secondAttribute="centerX" id="aa5-iY-Wut"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="btnChangeLayout" destination="tmK-Ci-geg" id="rx1-Ob-TjY"/>
+                        <outlet property="btnRepositioningAndResize" destination="C4R-3M-qiR" id="Hf7-3M-MRh"/>
+                        <outlet property="btnSend" destination="XjE-rk-6Bw" id="uRB-h1-IDN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OCR-XT-pWT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

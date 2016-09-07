@@ -18,7 +18,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kfD-to-u3L" userLabel="MidiaView">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
-                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="84b-CR-ESi" customClass="ScrollableImageView" customModule="Blicup" customModuleProvider="target">
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="84b-CR-ESi" customClass="ScrollableView" customModule="Blicup" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                     </scrollView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gyZ-8u-Qw2" userLabel="View video" customClass="FullscreenVideoView" customModule="Blicup" customModuleProvider="target">
@@ -38,11 +38,11 @@
                                     <constraint firstAttribute="bottom" secondItem="84b-CR-ESi" secondAttribute="bottom" id="xu6-cI-47u"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xmV-vg-yIw">
+                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xmV-vg-yIw">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
-                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TJv-Kk-KPa" userLabel="AllTextView">
+                            <view hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TJv-Kk-KPa" userLabel="AllTextView">
                                 <rect key="frame" x="0.0" y="100" width="600" height="415"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eew-iF-oE6" userLabel="TextsAndBG" customClass="SpringView" customModule="Spring">
@@ -139,6 +139,7 @@
             </constraints>
             <size key="customSize" width="571" height="610"/>
             <connections>
+                <outlet property="allTextView" destination="TJv-Kk-KPa" id="rI9-wu-MeA"/>
                 <outlet property="gradientView" destination="xmV-vg-yIw" id="col-6M-J2w"/>
                 <outlet property="infoTextLeadingConstraint" destination="TEn-Vs-XYW" id="i2C-3r-qSa"/>
                 <outlet property="infoTextTrailingConstraint" destination="FgZ-In-Ym8" id="x01-8j-IYs"/>

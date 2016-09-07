@@ -43,9 +43,9 @@ class ArticlesViewController: UIViewController {
         articlesController!.changeLayoutAndDesign()
     }
     
-    func changeDesign() {
+    func doResizeAndRepositioning() {
         
-       // articlesController!.changeDesign()
+        articlesController!.doResizeAndRepositioning()
     }
 }
 
@@ -55,16 +55,73 @@ class ArticlePreviewController: UIViewController {
     
     var mainController : ArticlesViewController?
     
+    @IBOutlet weak var btnRepositioningAndResize: UIButton!
+    @IBOutlet weak var btnChangeLayout: UIButton!
+    @IBOutlet weak var btnSend: UIButton!
+    
     @IBAction func changeLayoutDesign(sender: AnyObject) {
         mainController!.changeLayout()
     }
 
     @IBAction func changeMidiaPosition(sender: AnyObject) {
     
-         //mainController!.changeDesign()
+        mainController!.doResizeAndRepositioning()
+        animateBts()
     }
     
     @IBAction func sendArticle(sender: AnyObject) {
     
     }
+    
+    private func animateBts() {
+        if !btnChangeLayout.hidden {
+            
+            btnChangeLayout.alpha = 1.0
+            btnChangeLayout.hidden = false
+            btnSend.alpha = 1.0
+            btnSend.hidden = false
+            
+            self.btnRepositioningAndResize.transform = CGAffineTransformIdentity
+            
+            UIView.animateWithDuration(0.25, animations: {
+                self.btnChangeLayout.alpha = 0.0
+                self.btnSend.alpha = 0.0
+               
+                self.btnChangeLayout.hidden = true
+                self.btnSend.hidden = true
+                self.btnRepositioningAndResize.transform = CGAffineTransformScale( self.btnRepositioningAndResize.transform, 0.1, 0.1)
+                
+                },completion: { (_) in
+                
+                    self.btnRepositioningAndResize.setImage(UIImage(named: "Check"), forState: UIControlState.Normal)
+                    UIView.animateWithDuration(0.2, animations: {
+                        self.btnRepositioningAndResize.transform = CGAffineTransformIdentity
+                    })
+            })
+            
+        } else {
+            btnChangeLayout.alpha = 0.0
+            btnChangeLayout.hidden = false
+            btnSend.alpha = 0.0
+            btnSend.hidden = false
+                 self.btnRepositioningAndResize.transform = CGAffineTransformIdentity
+            
+            UIView.animateWithDuration(0.25, animations: {
+                self.btnChangeLayout.alpha = 1.0
+                self.btnSend.alpha = 1.0
+                self.btnRepositioningAndResize.transform = CGAffineTransformScale( self.btnRepositioningAndResize.transform, 0.1, 0.1)
+                }, completion: { (_) in
+            
+                    self.btnRepositioningAndResize.setImage(UIImage(named: "Position"), forState: UIControlState.Normal)
+                    UIView.animateWithDuration(0.2, animations: {
+                        self.btnRepositioningAndResize.transform = CGAffineTransformIdentity
+                    })
+
+            })
+            
+     
+        }
+    }
+    
+    
 }

@@ -18,7 +18,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kll-di-8Ed" userLabel="MidiaView">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="370"/>
                                 <subviews>
-                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8qs-ZH-wjJ" customClass="ScrollableImageView" customModule="Blicup" customModuleProvider="target">
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8qs-ZH-wjJ" customClass="ScrollableView" customModule="Blicup" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="370"/>
                                     </scrollView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AWQ-pX-8c1" userLabel="View video" customClass="FullscreenVideoView" customModule="Blicup" customModuleProvider="target">

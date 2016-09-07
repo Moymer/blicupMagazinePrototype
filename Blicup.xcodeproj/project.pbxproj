@@ -223,6 +223,7 @@
 		C99D36041CEF600E00B0F889 /* ChatRoomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99D36031CEF600E00B0F889 /* ChatRoomCell.swift */; };
 		C99D36061CEF840F00B0F889 /* ChatRoomInputAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99D36051CEF840F00B0F889 /* ChatRoomInputAccessoryView.swift */; };
 		C9ACAF001D774ECC00031202 /* ArticleCreationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ACAEFF1D774ECC00031202 /* ArticleCreationPresenter.swift */; };
+		C9AEF00D1D8096C100EEA8F8 /* ArticlePreviewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AEF00C1D8096C100EEA8F8 /* ArticlePreviewPresenter.swift */; };
 		C9B9DDCB1D2ECAC500B57F62 /* BlicupRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B9DDCA1D2ECAC500B57F62 /* BlicupRouter.swift */; };
 		C9BCFF0D1CF7656F00D498FA /* LDTPNSNotificationCenterControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BCFF0C1CF7656F00D498FA /* LDTPNSNotificationCenterControl.swift */; };
 		C9BCFF0F1CF7721100D498FA /* ToStringArrayTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BCFF0E1CF7721100D498FA /* ToStringArrayTransformer.swift */; };
@@ -243,11 +244,11 @@
 		C9E4FEA91D7F1227005A48B5 /* PlatformExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E4FEA31D7F1227005A48B5 /* PlatformExtensions.swift */; };
 		C9E4FEAF1D7F127F005A48B5 /* ColorSpaceConversion.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E4FEAB1D7F127F005A48B5 /* ColorSpaceConversion.m */; };
 		C9E4FEB01D7F127F005A48B5 /* INVector3.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E4FEAE1D7F127F005A48B5 /* INVector3.m */; };
+		C9E4FEB21D804203005A48B5 /* ScrollableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E4FEB11D804203005A48B5 /* ScrollableView.swift */; };
 		C9EAF94B1D3834AE00D59752 /* UserStatus+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EAF9491D3834AE00D59752 /* UserStatus+CoreDataProperties.swift */; };
 		C9EAF94C1D3834AE00D59752 /* UserStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EAF94A1D3834AE00D59752 /* UserStatus.swift */; };
 		C9EBFF511D401C6200B7A211 /* push_blicup.aif in Resources */ = {isa = PBXBuildFile; fileRef = C9EBFF501D401C6200B7A211 /* push_blicup.aif */; };
 		C9F7B94E1D786DF2005475F7 /* ReadingAnimationSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F7B94D1D786DF2005475F7 /* ReadingAnimationSelector.swift */; };
-		C9F7B9501D786F9D005475F7 /* ScrollableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F7B94F1D786F9D005475F7 /* ScrollableImageView.swift */; };
 		C9F8B8551D0F443200DD6A57 /* CoverMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F8B8541D0F443200DD6A57 /* CoverMessageView.swift */; };
 		C9F8B8571D0F444700DD6A57 /* CoverMessageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9F8B8561D0F444700DD6A57 /* CoverMessageView.xib */; };
 		C9F8B85E1D11E3B200DD6A57 /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F8B85D1D11E3B200DD6A57 /* SettingsPresenter.swift */; };
@@ -580,6 +581,7 @@
 		C99D36031CEF600E00B0F889 /* ChatRoomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatRoomCell.swift; path = ChatRoomManagement/View/ChatRoomCell.swift; sourceTree = "<group>"; };
 		C99D36051CEF840F00B0F889 /* ChatRoomInputAccessoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatRoomInputAccessoryView.swift; path = ChatRoomManagement/View/ChatRoomInputAccessoryView.swift; sourceTree = "<group>"; };
 		C9ACAEFF1D774ECC00031202 /* ArticleCreationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArticleCreationPresenter.swift; path = MagazineManagement/Presenter/ArticleCreationPresenter.swift; sourceTree = "<group>"; };
+		C9AEF00C1D8096C100EEA8F8 /* ArticlePreviewPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArticlePreviewPresenter.swift; path = MagazineManagement/Presenter/ArticlePreviewPresenter.swift; sourceTree = "<group>"; };
 		C9B9DDCA1D2ECAC500B57F62 /* BlicupRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BlicupRouter.swift; path = BlicupAPI/BlicupRouter.swift; sourceTree = "<group>"; };
 		C9BCFF0C1CF7656F00D498FA /* LDTPNSNotificationCenterControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDTPNSNotificationCenterControl.swift; sourceTree = "<group>"; };
 		C9BCFF0E1CF7721100D498FA /* ToStringArrayTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ToStringArrayTransformer.swift; path = Utils/ToStringArrayTransformer.swift; sourceTree = "<group>"; };
@@ -603,11 +605,11 @@
 		C9E4FEAC1D7F127F005A48B5 /* DominantColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DominantColor.h; sourceTree = "<group>"; };
 		C9E4FEAD1D7F127F005A48B5 /* INVector3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INVector3.h; sourceTree = "<group>"; };
 		C9E4FEAE1D7F127F005A48B5 /* INVector3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INVector3.m; sourceTree = "<group>"; };
+		C9E4FEB11D804203005A48B5 /* ScrollableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScrollableView.swift; path = MagazineManagement/View/ScrollableView.swift; sourceTree = "<group>"; };
 		C9EAF9491D3834AE00D59752 /* UserStatus+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UserStatus+CoreDataProperties.swift"; path = "UserManagement/Model/UserStatus+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C9EAF94A1D3834AE00D59752 /* UserStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserStatus.swift; path = UserManagement/Model/UserStatus.swift; sourceTree = "<group>"; };
 		C9EBFF501D401C6200B7A211 /* push_blicup.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = push_blicup.aif; sourceTree = "<group>"; };
 		C9F7B94D1D786DF2005475F7 /* ReadingAnimationSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReadingAnimationSelector.swift; path = MagazineManagement/Presenter/ReadingAnimationSelector.swift; sourceTree = "<group>"; };
-		C9F7B94F1D786F9D005475F7 /* ScrollableImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScrollableImageView.swift; path = MagazineManagement/View/ScrollableImageView.swift; sourceTree = "<group>"; };
 		C9F8B8541D0F443200DD6A57 /* CoverMessageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoverMessageView.swift; path = ChatRoomManagement/View/CoverMessageView.swift; sourceTree = "<group>"; };
 		C9F8B8561D0F444700DD6A57 /* CoverMessageView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CoverMessageView.xib; path = ChatRoomManagement/View/CoverMessageView.xib; sourceTree = "<group>"; };
 		C9F8B85D1D11E3B200DD6A57 /* SettingsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsPresenter.swift; path = Settings/Presenter/SettingsPresenter.swift; sourceTree = "<group>"; };
@@ -1235,7 +1237,7 @@
 				C9E4FE981D7E2905005A48B5 /* Cards */,
 				C97A08421D77493500D794EA /* MagazineReading.storyboard */,
 				C97A084F1D77746200D794EA /* ArticlesReadingCollectionViewController.swift */,
-				C9F7B94F1D786F9D005475F7 /* ScrollableImageView.swift */,
+				C9E4FEB11D804203005A48B5 /* ScrollableView.swift */,
 				C991F67C1D7DEBBE00371DE5 /* FullscreenVideoView.swift */,
 				C991F67A1D7DD81100371DE5 /* ArticlesViewController.swift */,
 			);
@@ -1336,6 +1338,7 @@
 			isa = PBXGroup;
 			children = (
 				C9F7B94D1D786DF2005475F7 /* ReadingAnimationSelector.swift */,
+				C9AEF00C1D8096C100EEA8F8 /* ArticlePreviewPresenter.swift */,
 			);
 			name = Reading;
 			sourceTree = "<group>";
@@ -2040,6 +2043,7 @@
 				C9569F581D746D3D00006019 /* CVideoLD.swift in Sources */,
 				E547170D1D772F3C004E5799 /* Dispatch+GeocodeHelper.swift in Sources */,
 				C9569F541D746D3D00006019 /* CImage.swift in Sources */,
+				C9AEF00D1D8096C100EEA8F8 /* ArticlePreviewPresenter.swift in Sources */,
 				7D8626531C9B261D00D87E87 /* InterestPresenter.swift in Sources */,
 				C9569F6A1D74AB7600006019 /* Location.swift in Sources */,
 				7DC2B3561C933A4B000112B4 /* WelcomeViewController.swift in Sources */,
@@ -2140,7 +2144,6 @@
 				C9569F5F1D746D3D00006019 /* Category+CoreDataProperties.swift in Sources */,
 				C9E4FEAF1D7F127F005A48B5 /* ColorSpaceConversion.m in Sources */,
 				7D8626551C9B48FA00D87E87 /* InterestListAddedBlankCollectionViewCell.swift in Sources */,
-				C9F7B9501D786F9D005475F7 /* ScrollableImageView.swift in Sources */,
 				7DCFA72B1D1220040043CEA1 /* FolloweeViewController.swift in Sources */,
 				C9569F621D746D3D00006019 /* CTextLD.swift in Sources */,
 				C9BCFF121CF783BF00D498FA /* UserInfo+CoreDataProperties.swift in Sources */,
@@ -2167,6 +2170,7 @@
 				7D8C66191CE3F378000CA40A /* WebImageSearchCollectionViewCell.swift in Sources */,
 				7D840C1A1D78669600374C19 /* ChatRoomsAndUsersSearchViewController.swift in Sources */,
 				7D8C661B1CE3F378000CA40A /* WebImageSearchViewController.swift in Sources */,
+				C9E4FEB21D804203005A48B5 /* ScrollableView.swift in Sources */,
 				7DCF1D0D1CFF89460020BF08 /* StringExtensions.swift in Sources */,
 				7DFD1E091C874F1200CF5C94 /* User.swift in Sources */,
 				7D7C73B41CAB208F00DC1164 /* BCProgress.swift in Sources */,
