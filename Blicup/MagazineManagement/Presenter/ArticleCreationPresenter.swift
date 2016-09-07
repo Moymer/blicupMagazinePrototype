@@ -36,7 +36,7 @@ class ArticleCreationPresenter: NSObject {
     }
     
     func addAssetsAtIndex(index: Int, element: Dictionary<String,AnyObject>) {
-        self.articleParts[index] = element
+        self.articleParts.insert(element, atIndex: index)   
     }
     
     func deleteAsset(index: Int, completionHandler: (numberOfMedias: Int) -> ()) {
