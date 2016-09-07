@@ -50,7 +50,7 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
             }
             
             if centerIndex == selectedIndexPath {
-//                self.updateLayout(true)
+                self.updateLayout(true)
                 collectionView.beginInteractiveMovementForItemAtIndexPath(selectedIndexPath)
             }
             break
@@ -59,12 +59,12 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
             collectionView.updateInteractiveMovementTargetPosition(frame)
             break
         case UIGestureRecognizerState.Ended:
-//            self.updateLayout(false)
+            self.updateLayout(false)
             collectionView.endInteractiveMovement()
             
             break
         default:
-//            self.updateLayout(false)
+            self.updateLayout(false)
             collectionView.cancelInteractiveMovement()
             break
         }

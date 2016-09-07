@@ -8,53 +8,49 @@
 
 import UIKit
 import Photos
-class CardContentSplitedCollectionCell: UICollectionViewCell {
 
-
+class CardContentSplitedCollectionCell: CardContentOverCollectionCell {
     
+    let contentDark : UIColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1.0)
     
-    @IBOutlet weak var ivPhoto: ScrollableImageView!
-    @IBOutlet weak var lblCardTitle: UILabel!
-    @IBOutlet weak var lblCardInfoText: UILabel!
-    @IBOutlet weak var vVideo: FullscreenVideoView!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-    }
-    
-    
-    override func prepareForReuse() {
-        ivPhoto.setImage(nil)
-    }
-    
-    
-    
-    func setContentForPreview(card : [String:AnyObject], imageManager:PHCachingImageManager)
+    override func setContentForPreview(card : [String:AnyObject], imageManager:PHCachingImageManager, design: Int)
     {
-        let asset : PHAsset = card["midia"] as! PHAsset
-        let title : String = card["title"] as! String
-        let infoText : String = card["infoText"] as! String
         
-        lblCardTitle.text = title
+        setContentForPreview(card, imageManager: imageManager)
         
-        lblCardInfoText.text = infoText
-        lblCardInfoText.sizeToFit()
-        lblCardInfoText.layoutIfNeeded()
-        
-        if asset.mediaType == PHAssetMediaType.Image {
-            vVideo.hidden = true
-            ivPhoto.hidden = false
-            ivPhoto.imageManager = imageManager
-            ivPhoto.setPositioningScale(ScrollableImageViewPosAndScale.ASPECT_FILL)
-            ivPhoto.setImageFromAsset(asset)
-        } else {
-            ivPhoto.hidden = true
-            vVideo.hidden = false
-            vVideo.imageManager = imageManager
-            vVideo.phAsset = asset
+        switch design {
+        case CardMode.SplitCellDesign.Dark.rawValue:
+            lblCardTitle.textColor = UIColor.whiteColor()
+            lblCardInfoText.textColor = lblCardTitle.textColor
+            vTextsContainer.backgroundColor = contentDark
+            break
+            
+        case CardMode.SplitCellDesign.Light.rawValue:
+            lblCardTitle.textColor = UIColor.blackColor()
+            lblCardInfoText.textColor = lblCardTitle.textColor
+            vTextsContainer.backgroundColor = UIColor.whiteColor()
+            break
+            
+        case CardMode.SplitCellDesign.Midia.rawValue:
+            let dominantColor = card["midiaDominantColor"] as! UIColor
+            var hue         : CGFloat = 0
+            var saturation  : CGFloat = 0
+            var brightness  : CGFloat = 0
+            var alpha       : CGFloat = 0
+            
+            if dominantColor.getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: &alpha) {
+                lblCardTitle.textColor =   UIColor.whiteColor()
+                lblCardInfoText.textColor = lblCardTitle.textColor
+                vTextsContainer.backgroundColor =  UIColor( hue: hue, saturation: saturation, brightness: dominantBrightness, alpha: alpha)
+            }
+            break
+            
+            
+        default:
+            lblCardTitle.textColor = UIColor.whiteColor()
+            lblCardInfoText.textColor = lblCardTitle.textColor
+            vTextsContainer.backgroundColor = contentDark
+            
         }
-        
     }
-
 }

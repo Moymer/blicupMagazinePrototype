@@ -238,6 +238,14 @@
 		C9E464991CB8599C0034853B /* CoverPhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E464981CB8599C0034853B /* CoverPhotoCollectionViewCell.swift */; };
 		C9E4FE9B1D7E297A005A48B5 /* CardContentSplitedCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E4FE991D7E297A005A48B5 /* CardContentSplitedCollectionCell.swift */; };
 		C9E4FE9C1D7E297A005A48B5 /* CardContentSplitedCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9E4FE9A1D7E297A005A48B5 /* CardContentSplitedCollectionCell.xib */; };
+		C9E4FEA41D7F1227005A48B5 /* ColorDifference.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E4FE9E1D7F1227005A48B5 /* ColorDifference.swift */; };
+		C9E4FEA51D7F1227005A48B5 /* DominantColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E4FE9F1D7F1227005A48B5 /* DominantColors.swift */; };
+		C9E4FEA61D7F1227005A48B5 /* INVector3SwiftExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E4FEA01D7F1227005A48B5 /* INVector3SwiftExtensions.swift */; };
+		C9E4FEA71D7F1227005A48B5 /* KMeans.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E4FEA11D7F1227005A48B5 /* KMeans.swift */; };
+		C9E4FEA81D7F1227005A48B5 /* Memoization.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E4FEA21D7F1227005A48B5 /* Memoization.swift */; };
+		C9E4FEA91D7F1227005A48B5 /* PlatformExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E4FEA31D7F1227005A48B5 /* PlatformExtensions.swift */; };
+		C9E4FEAF1D7F127F005A48B5 /* ColorSpaceConversion.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E4FEAB1D7F127F005A48B5 /* ColorSpaceConversion.m */; };
+		C9E4FEB01D7F127F005A48B5 /* INVector3.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E4FEAE1D7F127F005A48B5 /* INVector3.m */; };
 		C9EAF94B1D3834AE00D59752 /* UserStatus+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EAF9491D3834AE00D59752 /* UserStatus+CoreDataProperties.swift */; };
 		C9EAF94C1D3834AE00D59752 /* UserStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EAF94A1D3834AE00D59752 /* UserStatus.swift */; };
 		C9EBFF511D401C6200B7A211 /* push_blicup.aif in Resources */ = {isa = PBXBuildFile; fileRef = C9EBFF501D401C6200B7A211 /* push_blicup.aif */; };
@@ -590,6 +598,17 @@
 		C9E464981CB8599C0034853B /* CoverPhotoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoverPhotoCollectionViewCell.swift; path = ChatRoomManagement/View/CoverPhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		C9E4FE991D7E297A005A48B5 /* CardContentSplitedCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CardContentSplitedCollectionCell.swift; path = MagazineManagement/View/CardContentSplitedCollectionCell.swift; sourceTree = "<group>"; };
 		C9E4FE9A1D7E297A005A48B5 /* CardContentSplitedCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CardContentSplitedCollectionCell.xib; path = MagazineManagement/View/CardContentSplitedCollectionCell.xib; sourceTree = "<group>"; };
+		C9E4FE9E1D7F1227005A48B5 /* ColorDifference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorDifference.swift; sourceTree = "<group>"; };
+		C9E4FE9F1D7F1227005A48B5 /* DominantColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DominantColors.swift; sourceTree = "<group>"; };
+		C9E4FEA01D7F1227005A48B5 /* INVector3SwiftExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INVector3SwiftExtensions.swift; sourceTree = "<group>"; };
+		C9E4FEA11D7F1227005A48B5 /* KMeans.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KMeans.swift; sourceTree = "<group>"; };
+		C9E4FEA21D7F1227005A48B5 /* Memoization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Memoization.swift; sourceTree = "<group>"; };
+		C9E4FEA31D7F1227005A48B5 /* PlatformExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlatformExtensions.swift; sourceTree = "<group>"; };
+		C9E4FEAA1D7F127F005A48B5 /* ColorSpaceConversion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorSpaceConversion.h; sourceTree = "<group>"; };
+		C9E4FEAB1D7F127F005A48B5 /* ColorSpaceConversion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorSpaceConversion.m; sourceTree = "<group>"; };
+		C9E4FEAC1D7F127F005A48B5 /* DominantColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DominantColor.h; sourceTree = "<group>"; };
+		C9E4FEAD1D7F127F005A48B5 /* INVector3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INVector3.h; sourceTree = "<group>"; };
+		C9E4FEAE1D7F127F005A48B5 /* INVector3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INVector3.m; sourceTree = "<group>"; };
 		C9EAF9491D3834AE00D59752 /* UserStatus+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UserStatus+CoreDataProperties.swift"; path = "UserManagement/Model/UserStatus+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C9EAF94A1D3834AE00D59752 /* UserStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserStatus.swift; path = UserManagement/Model/UserStatus.swift; sourceTree = "<group>"; };
 		C9EBFF501D401C6200B7A211 /* push_blicup.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = push_blicup.aif; sourceTree = "<group>"; };
@@ -926,6 +945,7 @@
 		7D7C73A61CAB1A2400DC1164 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				C9E4FE9D1D7F11AE005A48B5 /* DominantColors */,
 				C992D7481D74D0E6002A767F /* BlicupSliderSegmentedControll.swift */,
 				C992D7461D74CDAE002A767F /* BlicupSliderSegmentedControll.xib */,
 				C98256B21D70D14C008257C4 /* BlicCollectionViewCell.swift */,
@@ -1293,6 +1313,24 @@
 				C9E4FE9A1D7E297A005A48B5 /* CardContentSplitedCollectionCell.xib */,
 			);
 			name = Cards;
+			sourceTree = "<group>";
+		};
+		C9E4FE9D1D7F11AE005A48B5 /* DominantColors */ = {
+			isa = PBXGroup;
+			children = (
+				C9E4FEAA1D7F127F005A48B5 /* ColorSpaceConversion.h */,
+				C9E4FEAB1D7F127F005A48B5 /* ColorSpaceConversion.m */,
+				C9E4FEAC1D7F127F005A48B5 /* DominantColor.h */,
+				C9E4FEAD1D7F127F005A48B5 /* INVector3.h */,
+				C9E4FEAE1D7F127F005A48B5 /* INVector3.m */,
+				C9E4FE9E1D7F1227005A48B5 /* ColorDifference.swift */,
+				C9E4FE9F1D7F1227005A48B5 /* DominantColors.swift */,
+				C9E4FEA01D7F1227005A48B5 /* INVector3SwiftExtensions.swift */,
+				C9E4FEA11D7F1227005A48B5 /* KMeans.swift */,
+				C9E4FEA21D7F1227005A48B5 /* Memoization.swift */,
+				C9E4FEA31D7F1227005A48B5 /* PlatformExtensions.swift */,
+			);
+			name = DominantColors;
 			sourceTree = "<group>";
 		};
 		C9EBFF4F1D401C4300B7A211 /* Sounds */ = {
@@ -2027,11 +2065,13 @@
 				C93E1C191CD278AB00E0E7ED /* LDTPWebSocketReceiverManager.swift in Sources */,
 				C9569F4F1D746D3D00006019 /* Article+CoreDataProperties.swift in Sources */,
 				7D1EC71E1CC91721006689B3 /* MD5.swift in Sources */,
+				C9E4FEA41D7F1227005A48B5 /* ColorDifference.swift in Sources */,
 				C9EAF94B1D3834AE00D59752 /* UserStatus+CoreDataProperties.swift in Sources */,
 				C95B14DD1D21636800D4DA0F /* UserListFollowBlockViewController.swift in Sources */,
 				7D7C73F11CAC617E00DC1164 /* ChatRoomListNavigationController.swift in Sources */,
 				7DFD1E081C874F1200CF5C94 /* User+CoreDataProperties.swift in Sources */,
 				C93AC3F11D25C93600ED8046 /* ChatRoomFetchResultPresenter.swift in Sources */,
+				C9E4FEA51D7F1227005A48B5 /* DominantColors.swift in Sources */,
 				C9111B741D760D9800673CB6 /* CardsCollectionViewCell.swift in Sources */,
 				C9DBE91D1D75C08000F2A4B9 /* ArticleCreationViewController.swift in Sources */,
 				7DCF1D091CFE08280020BF08 /* ChatRoomUserMentionCollectionViewCell.swift in Sources */,
@@ -2108,12 +2148,15 @@
 				E52791721CEF4EFD00F5E727 /* FollowCustomButton.swift in Sources */,
 				E516B0671D760ABA00051313 /* SearchArticleLocationViewController.swift in Sources */,
 				C9569F5F1D746D3D00006019 /* Category+CoreDataProperties.swift in Sources */,
+				C9E4FEAF1D7F127F005A48B5 /* ColorSpaceConversion.m in Sources */,
 				7D8626551C9B48FA00D87E87 /* InterestListAddedBlankCollectionViewCell.swift in Sources */,
 				C9F7B9501D786F9D005475F7 /* ScrollableImageView.swift in Sources */,
 				7DCFA72B1D1220040043CEA1 /* FolloweeViewController.swift in Sources */,
 				C9569F621D746D3D00006019 /* CTextLD.swift in Sources */,
 				C9BCFF121CF783BF00D498FA /* UserInfo+CoreDataProperties.swift in Sources */,
 				E5D4854E1D215C9500692B36 /* CCHCenterOfMassMapClusterer.m in Sources */,
+				C9E4FEA81D7F1227005A48B5 /* Memoization.swift in Sources */,
+				C9E4FEA71D7F1227005A48B5 /* KMeans.swift in Sources */,
 				C991F67D1D7DEBBE00371DE5 /* FullscreenVideoView.swift in Sources */,
 				7D7C73CC1CAC4F1F00DC1164 /* Extension.swift in Sources */,
 				C9E464921CB83CF60034853B /* ChatRoomBS.swift in Sources */,
@@ -2138,12 +2181,15 @@
 				7DCF1D0D1CFF89460020BF08 /* StringExtensions.swift in Sources */,
 				7DFD1E091C874F1200CF5C94 /* User.swift in Sources */,
 				7D7C73B41CAB208F00DC1164 /* BCProgress.swift in Sources */,
+				C9E4FEA61D7F1227005A48B5 /* INVector3SwiftExtensions.swift in Sources */,
 				C947A3341CE6423600D810D3 /* ChatRoomPresenter.swift in Sources */,
 				C9E4FE9B1D7E297A005A48B5 /* CardContentSplitedCollectionCell.swift in Sources */,
 				7DCFA7291D1044C00043CEA1 /* CreateChatRoomInputAccessoryView.swift in Sources */,
 				C9569F701D74B87100006019 /* CameraRollPresenter.swift in Sources */,
 				C9BCFF0F1CF7721100D498FA /* ToStringArrayTransformer.swift in Sources */,
 				E5401B191D30065D0011C647 /* PaddingLabel.swift in Sources */,
+				C9E4FEB01D7F127F005A48B5 /* INVector3.m in Sources */,
+				C9E4FEA91D7F1227005A48B5 /* PlatformExtensions.swift in Sources */,
 				C98256B41D70D14C008257C4 /* BlicCollectionViewCell.swift in Sources */,
 				C9569F631D746D3D00006019 /* PositionSizeLD+CoreDataProperties.swift in Sources */,
 				7DCFA72D1D122C6A0043CEA1 /* UserTableViewCell.swift in Sources */,

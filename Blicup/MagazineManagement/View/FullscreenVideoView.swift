@@ -30,7 +30,7 @@ class FullscreenVideoView: UIView {
                           dispatch_async(dispatch_get_main_queue()) {
                             self.avPlayer = AVPlayer(playerItem: avPlayerItem!)
                             self.avPlayerLayer = AVPlayerLayer(player:self.avPlayer)
-                            self.avPlayerLayer!.videoGravity = kCAGravityResizeAspectFill
+                            self.avPlayerLayer!.videoGravity = AVLayerVideoGravityResizeAspectFill
                             
                             NSNotificationCenter.defaultCenter().addObserver(self,selector: #selector(FullscreenVideoView.playerItemDidReachEnd(_:)), name: AVPlayerItemDidPlayToEndTimeNotification, object: avPlayerItem)
                             
@@ -45,13 +45,15 @@ class FullscreenVideoView: UIView {
                         }
                         
                     })
+                } else {
+                    removePlayer()
                 }
                 
             } else {
                 self.avPlayer?.seekToTime(kCMTimeZero)
                 self.avPlayer?.play()
             }
-            
+
         }
         
         
@@ -59,7 +61,7 @@ class FullscreenVideoView: UIView {
     
     private func removePlayer() {
         
-        if self.phAsset != nil
+        if self.phAsset != nil && self.avPlayerLayer != nil
         {
             NSNotificationCenter.defaultCenter().removeObserver(self, name: AVPlayerItemDidPlayToEndTimeNotification, object:self.avPlayer?.currentItem)
             self.avPlayerLayer!.removeFromSuperlayer()
