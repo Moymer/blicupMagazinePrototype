@@ -117,6 +117,9 @@
 		7DE78B6D1D78BA660052B56F /* UserTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE78B6C1D78BA660052B56F /* UserTableCell.swift */; };
 		7DE78B6F1D7A1FC70052B56F /* SearchStoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE78B6E1D7A1FC70052B56F /* SearchStoryViewController.swift */; };
 		7DE78B711D7A1FF40052B56F /* SearchStoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE78B701D7A1FF40052B56F /* SearchStoryPresenter.swift */; };
+		7DE78B731D7F5E110052B56F /* PublishBlicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE78B721D7F5E110052B56F /* PublishBlicViewController.swift */; };
+		7DE78B751D7F5E630052B56F /* PublishBlicCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE78B741D7F5E630052B56F /* PublishBlicCategoryCollectionViewCell.swift */; };
+		7DE78B771D7F67B10052B56F /* PublishBlicPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE78B761D7F67B10052B56F /* PublishBlicPresenter.swift */; };
 		7DF0EC5B1D42B24500DEF902 /* default_tags_es.json in Resources */ = {isa = PBXBuildFile; fileRef = 7DF0EC5A1D42B24500DEF902 /* default_tags_es.json */; };
 		7DF397981D4692C800E279D7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7DF3979A1D4692C800E279D7 /* InfoPlist.strings */; };
 		7DF3BB9A1D38284E002CC8B2 /* BlicupAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF3BB991D38284E002CC8B2 /* BlicupAnalytics.swift */; };
@@ -423,6 +426,9 @@
 		7DE78B6C1D78BA660052B56F /* UserTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserTableCell.swift; path = SearchManagement/View/UserTableCell.swift; sourceTree = "<group>"; };
 		7DE78B6E1D7A1FC70052B56F /* SearchStoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchStoryViewController.swift; path = SearchManagement/View/SearchStoryViewController.swift; sourceTree = "<group>"; };
 		7DE78B701D7A1FF40052B56F /* SearchStoryPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchStoryPresenter.swift; path = SearchManagement/Presenter/SearchStoryPresenter.swift; sourceTree = "<group>"; };
+		7DE78B721D7F5E110052B56F /* PublishBlicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PublishBlicViewController.swift; path = MagazineManagement/View/PublishBlicViewController.swift; sourceTree = "<group>"; };
+		7DE78B741D7F5E630052B56F /* PublishBlicCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PublishBlicCategoryCollectionViewCell.swift; path = MagazineManagement/View/PublishBlicCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		7DE78B761D7F67B10052B56F /* PublishBlicPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PublishBlicPresenter.swift; path = MagazineManagement/Presenter/PublishBlicPresenter.swift; sourceTree = "<group>"; };
 		7DF0EC5A1D42B24500DEF902 /* default_tags_es.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = default_tags_es.json; sourceTree = "<group>"; };
 		7DF0EC5C1D42B34900DEF902 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
 		7DF0EC5D1D42B34900DEF902 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Signup.strings; sourceTree = "<group>"; };
@@ -1180,6 +1186,8 @@
 				E56582DC1D75DD8E00309537 /* ArticleCreationCollectionViewFlowLayout.swift */,
 				C9111B731D760D9800673CB6 /* CardsCollectionViewCell.swift */,
 				E516B0661D760ABA00051313 /* SearchArticleLocationViewController.swift */,
+				7DE78B721D7F5E110052B56F /* PublishBlicViewController.swift */,
+				7DE78B741D7F5E630052B56F /* PublishBlicCategoryCollectionViewCell.swift */,
 				C97A084E1D776B0300D794EA /* Reading */,
 			);
 			name = View;
@@ -1192,6 +1200,7 @@
 				C9569F6F1D74B87100006019 /* CameraRollPresenter.swift */,
 				C91414561D76001C00C574DB /* CameraRollAssetSelector.swift */,
 				C9ACAEFF1D774ECC00031202 /* ArticleCreationPresenter.swift */,
+				7DE78B761D7F67B10052B56F /* PublishBlicPresenter.swift */,
 			);
 			name = Presenter;
 			sourceTree = "<group>";
@@ -1423,7 +1432,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7D1006E21C84ADFB0076561E /* Build configuration list for PBXNativeTarget "Blicup" */;
 			buildPhases = (
-                0357B169439EC576CC5FEBA6 /* 📦 Check Pods Manifest.lock */,
+				0357B169439EC576CC5FEBA6 /* 📦 Check Pods Manifest.lock */,
 				FE647D69E52F71535BA0D779 /* [CP] Check Pods Manifest.lock */,
 				72EEB1577FCC01AB79C8B085 /* [CP] Check Pods Manifest.lock */,
 				7D1006B31C84ADFB0076561E /* Sources */,
@@ -1449,7 +1458,6 @@
 			buildConfigurationList = 7D1006E51C84ADFB0076561E /* Build configuration list for PBXNativeTarget "BlicupTests" */;
 			buildPhases = (
 				C99C73A181FED0BE8ABE9F53 /* 📦 Check Pods Manifest.lock */,
-
 				92298ABF8F39FFD4981D3BDE /* [CP] Check Pods Manifest.lock */,
 				0AD6ED758F7281AF575F1E0B /* [CP] Check Pods Manifest.lock */,
 				A8400827C22C8206F5F93CF7 /* [CP] Copy Pods Resources */,
@@ -1460,7 +1468,6 @@
 				62CF798FF787507D05B8238F /* 📦 Copy Pods Resources */,
 				35D5BDD80BFB2D86778EBB6D /* [CP] Embed Pods Frameworks */,
 				3347505B05F8C243166F32B1 /* 📦 Embed Pods Frameworks */,
-
 			);
 			buildRules = (
 			);
@@ -1483,7 +1490,7 @@
 				7D1006D61C84ADFB0076561E /* Frameworks */,
 				7D1006D71C84ADFB0076561E /* Resources */,
 				2FD249EF53516E9618E8FE53 /* [CP] Copy Pods Resources */,
-                4F1D78E21BCAB6D8774A1514 /* 📦 Copy Pods Resources */,
+				4F1D78E21BCAB6D8774A1514 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1755,21 +1762,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Blicup/Pods-Blicup-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		5B8825BE56CFAFC12AA4478E /* 📦 Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
 		62CF798FF787507D05B8238F /* 📦 Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1783,21 +1775,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BlicupTests/Pods-BlicupTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6425A31D77787C3910986F80 /* 📦 Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Blicup/Pods-Blicup-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		67AF4407026C1DA83FF64119 /* [CP] Check Pods Manifest.lock */ = {
@@ -1843,21 +1820,6 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\" ebe43d72fb819ea7cb8117b056e061dc4020a4d0 2f07aebb13dea16ee6571bf907f458111ecec6c6a27224cf1eb6f076a2f3bd0b";
 		};
-		8C35E4B11B22D6A769792282 /* 📦 Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Blicup/Pods-Blicup-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		92298ABF8F39FFD4981D3BDE /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1886,21 +1848,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		A6651F97D588041A732E3B6C /* 📦 Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BlicupUITests/Pods-BlicupUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A8400827C22C8206F5F93CF7 /* [CP] Copy Pods Resources */ = {
@@ -2114,6 +2061,7 @@
 				C9569F601D746D3D00006019 /* Category.swift in Sources */,
 				C97C005E1D182D9700C16541 /* InfoTableViewController.swift in Sources */,
 				C9569F4E1D746D3D00006019 /* Caption.swift in Sources */,
+				7DE78B751D7F5E630052B56F /* PublishBlicCategoryCollectionViewCell.swift in Sources */,
 				7D2DBDB11CF7A1170018510A /* ChatRoomGiphySearchPresenter.swift in Sources */,
 				7DD0F7E11C89DEA9001E5780 /* SignupPictureViewController.swift in Sources */,
 				C9569F661D746D3D00006019 /* Content.swift in Sources */,
@@ -2176,6 +2124,7 @@
 				E5D4854F1D215C9500692B36 /* CCHFadeInOutMapAnimator.m in Sources */,
 				C97C00601D18705E00C16541 /* FavoritesViewController.swift in Sources */,
 				C9525DED1CCEBABD0035DE0E /* ChatRoomCoverCell.swift in Sources */,
+				7DE78B731D7F5E110052B56F /* PublishBlicViewController.swift in Sources */,
 				C97C005C1D1821E400C16541 /* SettingsTablePresenter.swift in Sources */,
 				E5D485541D215C9500692B36 /* CCHMapClusterOperation.m in Sources */,
 				7DB5C7C91CF0B90600A5EFF2 /* CollectionViewListFlowLayout.swift in Sources */,
@@ -2212,6 +2161,7 @@
 				7DF8FD9C1C8F0C220058F877 /* SignupTermsPrivacyViewController.swift in Sources */,
 				7DE78B711D7A1FF40052B56F /* SearchStoryPresenter.swift in Sources */,
 				E5C1FAB11CC514010015F3E6 /* AmazonManager.swift in Sources */,
+				7DE78B771D7F67B10052B56F /* PublishBlicPresenter.swift in Sources */,
 				7D7C73CE1CAC556400DC1164 /* ChatRoomListCollectionViewCell.swift in Sources */,
 				C9569F611D746D3D00006019 /* CTextLD+CoreDataProperties.swift in Sources */,
 				C93AC3FA1D26F9A000ED8046 /* CoverChatRoomsListPresenter.swift in Sources */,
