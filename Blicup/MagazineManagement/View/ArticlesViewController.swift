@@ -11,6 +11,8 @@ import UIKit
 class ArticlesViewController: UIViewController {
 
     var articleContent : [[String:AnyObject]] = []
+
+    var articlesController : ArticlesReadingCollectionViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,11 +27,44 @@ class ArticlesViewController: UIViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "ArticleContentSegue" {
-            let containerViewController = segue.destinationViewController as? ArticlesReadingCollectionViewController
-            containerViewController!.articleContent = articleContent
+           articlesController = segue.destinationViewController as? ArticlesReadingCollectionViewController
+            articlesController!.articleContent = articleContent
+        }
+        
+        if segue.identifier == "ArticlePreviewControllerSegue" {
+            let articlesPreviewController = segue.destinationViewController as? ArticlePreviewController
+            articlesPreviewController!.mainController = self
         }
         
     }
     
+    func changeLayout() {
+        
+        articlesController!.changeLayoutAndDesign()
+    }
+    
+    func changeDesign() {
+        
+       // articlesController!.changeDesign()
+    }
+}
 
+
+
+class ArticlePreviewController: UIViewController {
+    
+    var mainController : ArticlesViewController?
+    
+    @IBAction func changeLayoutDesign(sender: AnyObject) {
+        mainController!.changeLayout()
+    }
+
+    @IBAction func changeMidiaPosition(sender: AnyObject) {
+    
+         //mainController!.changeDesign()
+    }
+    
+    @IBAction func sendArticle(sender: AnyObject) {
+    
+    }
 }

@@ -284,6 +284,8 @@ class LoginController: NSObject {
             let params = ["user_id": session.userID]
             var clientError : NSError?
             let request = client.URLRequestWithMethod("GET", URL: statusesShowEndpoint, parameters: params, error: &clientError)
+            /*
+            
             client.sendTwitterRequest(request) { (response, data, connectionError) -> Void in
                 
                 if connectionError != nil {
@@ -308,7 +310,7 @@ class LoginController: NSObject {
                         }
                     }
                 }
-            }
+            }*/
         }
     }
     

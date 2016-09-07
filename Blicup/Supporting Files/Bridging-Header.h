@@ -15,4 +15,9 @@
 #import "CCHMapClusterAnnotation.h"
 #import "CCHMapClusterControllerDelegate.h"
 
+#import "ColorSpaceConversion.h"
+#import "DominantColor.h"
+
+#import "CCHMapClusterControllerDelegate.h"
+
 #endif /* Bridging_Header_h */

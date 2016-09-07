@@ -16,17 +16,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kll-di-8Ed" userLabel="MidiaView">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="374"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="370"/>
                                 <subviews>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8qs-ZH-wjJ" customClass="ScrollableImageView" customModule="Blicup" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="374"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="370"/>
                                     </scrollView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AWQ-pX-8c1" userLabel="View video" customClass="FullscreenVideoView" customModule="Blicup" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="374"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="370"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="AWQ-pX-8c1" firstAttribute="top" secondItem="Kll-di-8Ed" secondAttribute="top" id="H2Q-AX-0ck"/>
                                     <constraint firstItem="8qs-ZH-wjJ" firstAttribute="leading" secondItem="Kll-di-8Ed" secondAttribute="leading" id="I3Q-72-b1S"/>
@@ -39,16 +39,16 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bnq-xZ-417" userLabel="TextsAndBG" customClass="SpringView" customModule="Spring">
-                                <rect key="frame" x="0.0" y="374" width="600" height="226"/>
+                                <rect key="frame" x="0.0" y="370" width="600" height="230"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Info Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="URP-tg-U04">
-                                        <rect key="frame" x="16" y="126" width="568" height="24"/>
+                                        <rect key="frame" x="20" y="126" width="560" height="24"/>
                                         <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title Label fcvxzfvdsk ads dsafasd fadsf adsf dasf asdfa fasd fasdf " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="24" translatesAutoresizingMaskIntoConstraints="NO" id="Hm3-aA-4Kt" userLabel="Title Label fcvxzfvdsk ads dsafasd fadsf adsf dasf asdfa fasd fasdf">
-                                        <rect key="frame" x="16" y="20" width="568" height="93"/>
+                                        <rect key="frame" x="20" y="20" width="560" height="93"/>
                                         <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="34"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -56,12 +56,12 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="URP-tg-U04" secondAttribute="trailing" constant="16" id="Gkx-fs-EUA"/>
+                                    <constraint firstAttribute="trailing" secondItem="URP-tg-U04" secondAttribute="trailing" constant="20" id="Gkx-fs-EUA"/>
                                     <constraint firstItem="Hm3-aA-4Kt" firstAttribute="top" secondItem="Bnq-xZ-417" secondAttribute="top" constant="20" id="QVQ-j1-Z0B"/>
-                                    <constraint firstAttribute="bottom" secondItem="URP-tg-U04" secondAttribute="bottom" constant="76" id="Wy1-6X-HBw"/>
-                                    <constraint firstItem="Hm3-aA-4Kt" firstAttribute="leading" secondItem="Bnq-xZ-417" secondAttribute="leading" constant="16" id="dOH-ql-ipV"/>
-                                    <constraint firstAttribute="trailing" secondItem="Hm3-aA-4Kt" secondAttribute="trailing" constant="16" id="i0y-Q4-7QN"/>
-                                    <constraint firstItem="URP-tg-U04" firstAttribute="leading" secondItem="Bnq-xZ-417" secondAttribute="leading" constant="16" id="jdg-QG-x96"/>
+                                    <constraint firstAttribute="bottom" secondItem="URP-tg-U04" secondAttribute="bottom" constant="80" id="Wy1-6X-HBw"/>
+                                    <constraint firstItem="Hm3-aA-4Kt" firstAttribute="leading" secondItem="Bnq-xZ-417" secondAttribute="leading" constant="20" id="dOH-ql-ipV"/>
+                                    <constraint firstAttribute="trailing" secondItem="Hm3-aA-4Kt" secondAttribute="trailing" constant="20" id="i0y-Q4-7QN"/>
+                                    <constraint firstItem="URP-tg-U04" firstAttribute="leading" secondItem="Bnq-xZ-417" secondAttribute="leading" constant="20" id="jdg-QG-x96"/>
                                     <constraint firstItem="URP-tg-U04" firstAttribute="top" secondItem="Hm3-aA-4Kt" secondAttribute="bottom" constant="13" id="sut-Cb-bMO"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -79,7 +79,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="0.40153556029999998" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Bnq-xZ-417" firstAttribute="top" secondItem="Kll-di-8Ed" secondAttribute="bottom" id="35U-LQ-Vfz"/>
                             <constraint firstAttribute="bottom" secondItem="Bnq-xZ-417" secondAttribute="bottom" id="SCj-FF-Kw7"/>
@@ -105,6 +105,7 @@
                 <outlet property="ivPhoto" destination="8qs-ZH-wjJ" id="Nb7-Zi-ovt"/>
                 <outlet property="lblCardInfoText" destination="URP-tg-U04" id="rDh-1P-PCY"/>
                 <outlet property="lblCardTitle" destination="Hm3-aA-4Kt" id="keC-Nk-Wz5"/>
+                <outlet property="vTextsContainer" destination="Bnq-xZ-417" id="zS9-NV-PW4"/>
                 <outlet property="vVideo" destination="AWQ-pX-8c1" id="JcS-pb-8bJ"/>
             </connections>
             <point key="canvasLocation" x="453" y="408"/>
