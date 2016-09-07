@@ -16,11 +16,20 @@ class PublishBlicViewController: UIViewController {
     let kNumberOfColumns: CGFloat = 3.0
     
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var btnPublishBlic: UIButton!
+    @IBOutlet weak var ivPublishArrow: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        self.title = "Publish Blic to:"
+        btnPublishBlic.layer.cornerRadius = self.btnPublishBlic.frame.height/2
+        btnPublishBlic.layer.masksToBounds = true
+        btnPublishBlic.hidden = true
+        ivPublishArrow.hidden = true
+        btnPublishBlic.alpha = 0
+        ivPublishArrow.alpha = 0
     }
     
     
@@ -47,12 +56,16 @@ class PublishBlicViewController: UIViewController {
             collectionView.selectItemAtIndexPath(indexPath, animated: false, scrollPosition: UICollectionViewScrollPosition.None)
             cell.selected = true
             cell.selectionView.hidden = false
+            cell.lblMagazineCategoryTitle.hidden = true
+            cell.lblMagazineCategoryTitle.alpha = 0
+            cell.lblSelectionCategory.text = presenter.titleAtIndex(indexPath.row)
         } else {
             collectionView.deselectItemAtIndexPath(indexPath, animated: false)
             cell.selected = false
             cell.selectionView.hidden = true
+            cell.lblMagazineCategoryTitle.hidden = false
+            cell.lblMagazineCategoryTitle.alpha = 1
         }
-        
         
         cell.lblMagazineCategoryTitle.text = presenter.titleAtIndex(indexPath.row)
         
@@ -76,6 +89,7 @@ class PublishBlicViewController: UIViewController {
         
         if let selectedCategoryIndex = presenter.selectedCategoryIndex where selectedCategoryIndex == indexPath {
             
+            showPublishBlicBtn(show: false)
             self.collectionView(collectionView, didDeselectItemAtIndexPath: selectedCategoryIndex)
             
         } else {
@@ -85,17 +99,47 @@ class PublishBlicViewController: UIViewController {
             presenter.selectCategory(indexPath)
             cell.lblSelectionCategory.text = presenter.titleAtIndex(indexPath.row)
             cell.setSelectionAnimated()
+            showPublishBlicBtn(show: true)
         }
     }
     
     func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
         
-        if presenter.selectedCategoryIndex != nil {
+        let indexPathsForVisibleItems = collectionView.indexPathsForVisibleItems()
+
+        if let selectedCategoryIndex = presenter.selectedCategoryIndex where indexPathsForVisibleItems.contains(selectedCategoryIndex) {
             let cell : PublishBlicCategoryCollectionViewCell = collectionView.cellForItemAtIndexPath(indexPath)  as!  PublishBlicCategoryCollectionViewCell
             collectionView.deselectItemAtIndexPath(indexPath, animated: false)
             cell.selected = false
             presenter.unselectCategory()
             cell.setSelectionAnimated()
+        }
+    }
+    
+    
+    func showPublishBlicBtn(show show: Bool) {
+        
+        let hidden = !show
+        let alpha: CGFloat = show ? 1 : 0
+        
+        if show {
+            
+            self.btnPublishBlic.hidden = hidden
+            ivPublishArrow.hidden = hidden
+            UIView.animateWithDuration(0.3, animations: {
+                self.btnPublishBlic.alpha = alpha
+                self.ivPublishArrow.alpha = alpha
+            })
+            
+        } else {
+            
+            UIView.animateWithDuration(0.3, animations: {
+                self.btnPublishBlic.alpha = alpha
+                self.ivPublishArrow.alpha = alpha
+            }) { (_) in
+                self.btnPublishBlic.hidden = hidden
+                self.ivPublishArrow.hidden = hidden
+            }
         }
     }
 }

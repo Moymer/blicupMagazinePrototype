@@ -108,6 +108,7 @@
 		7DCFA72F1D144F720043CEA1 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCFA72E1D144F720043CEA1 /* UserProfileViewController.swift */; };
 		7DD0F7D61C886F36001E5780 /* SignupUsernameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD0F7D51C886F36001E5780 /* SignupUsernameViewController.swift */; };
 		7DD0F7E11C89DEA9001E5780 /* SignupPictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD0F7E01C89DEA9001E5780 /* SignupPictureViewController.swift */; };
+		7DD262A71D808DD40058D6F5 /* BCNavigationControllerWithoutLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD262A61D808DD40058D6F5 /* BCNavigationControllerWithoutLine.swift */; };
 		7DD527A61D1C673000D8B73B /* FollowUnfollowPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD527A51D1C673000D8B73B /* FollowUnfollowPresenter.swift */; };
 		7DD7C88F1D41645B003454A7 /* Signup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DD7C8911D41645B003454A7 /* Signup.storyboard */; };
 		7DD7C8951D41704C003454A7 /* default_tags_en.json in Resources */ = {isa = PBXBuildFile; fileRef = 7DD7C8941D41704C003454A7 /* default_tags_en.json */; };
@@ -423,6 +424,7 @@
 		7DCFA72E1D144F720043CEA1 /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserProfileViewController.swift; path = Settings/View/UserProfileViewController.swift; sourceTree = "<group>"; };
 		7DD0F7D51C886F36001E5780 /* SignupUsernameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignupUsernameViewController.swift; path = UserManagement/View/SignupUsernameViewController.swift; sourceTree = "<group>"; };
 		7DD0F7E01C89DEA9001E5780 /* SignupPictureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignupPictureViewController.swift; path = UserManagement/View/SignupPictureViewController.swift; sourceTree = "<group>"; };
+		7DD262A61D808DD40058D6F5 /* BCNavigationControllerWithoutLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BCNavigationControllerWithoutLine.swift; path = Utils/BCNavigationControllerWithoutLine.swift; sourceTree = "<group>"; };
 		7DD527A51D1C673000D8B73B /* FollowUnfollowPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FollowUnfollowPresenter.swift; path = Settings/Presenter/FollowUnfollowPresenter.swift; sourceTree = "<group>"; };
 		7DD7C8901D41645B003454A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Signup.storyboard; sourceTree = "<group>"; };
 		7DD7C8931D41645E003454A7 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Signup.strings"; sourceTree = "<group>"; };
@@ -974,6 +976,7 @@
 				E574EE471D5904FB006571FE /* Image.swift */,
 				E547170B1D772F3C004E5799 /* Dispatch+GeocodeHelper.swift */,
 				E547170C1D772F3C004E5799 /* GeocodeHelper.swift */,
+				7DD262A61D808DD40058D6F5 /* BCNavigationControllerWithoutLine.swift */,
 				E54EBDD31D5B5C57002EE541 /* CoverTip */,
 				E574EE491D5A2471006571FE /* Share Chat Tip */,
 				E506A09C1D4BE8C400CCD728 /* Tips */,
@@ -2100,6 +2103,7 @@
 				C98575E11D0B0C190045CD9D /* BlicupClock.swift in Sources */,
 				C9569F601D746D3D00006019 /* Category.swift in Sources */,
 				C97C005E1D182D9700C16541 /* InfoTableViewController.swift in Sources */,
+				7DD262A71D808DD40058D6F5 /* BCNavigationControllerWithoutLine.swift in Sources */,
 				C9569F4E1D746D3D00006019 /* Caption.swift in Sources */,
 				7DE78B751D7F5E630052B56F /* PublishBlicCategoryCollectionViewCell.swift in Sources */,
 				7D2DBDB11CF7A1170018510A /* ChatRoomGiphySearchPresenter.swift in Sources */,

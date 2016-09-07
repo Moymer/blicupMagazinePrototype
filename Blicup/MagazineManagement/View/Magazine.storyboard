@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BRJ-H2-Y4z">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BRJ-H2-Y4z">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -28,7 +28,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="publishBlicCategoryCell" id="7RV-gW-Ch3" customClass="PublishBlicCategoryCollectionViewCell" customModule="Blicup" customModuleProvider="target">
-                                        <rect key="frame" x="10" y="10" width="100" height="100"/>
+                                        <rect key="frame" x="10" y="74" width="100" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -102,22 +102,44 @@
                                     <outlet property="delegate" destination="xIX-d1-BeL" id="lXn-7f-PpI"/>
                                 </connections>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cEU-wq-5kr">
+                                <rect key="frame" x="20" y="515" width="560" height="55"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="x5x-df-eMg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="18"/>
+                                <state key="normal" title="Publish Blic">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Publish" translatesAutoresizingMaskIntoConstraints="NO" id="0dH-kV-7vb">
+                                <rect key="frame" x="544" y="534" width="16" height="18"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="cEU-wq-5kr" firstAttribute="leading" secondItem="Yp3-vp-Ijv" secondAttribute="leading" constant="20" id="Hib-m4-vM4"/>
+                            <constraint firstItem="xDK-jC-jzt" firstAttribute="top" secondItem="cEU-wq-5kr" secondAttribute="bottom" constant="30" id="I2X-14-mzm"/>
                             <constraint firstItem="xDK-jC-jzt" firstAttribute="top" secondItem="5Kv-er-ueX" secondAttribute="bottom" id="VST-8P-JpH"/>
                             <constraint firstItem="5Kv-er-ueX" firstAttribute="top" secondItem="Yp3-vp-Ijv" secondAttribute="top" id="XHC-uS-GGC"/>
+                            <constraint firstItem="0dH-kV-7vb" firstAttribute="centerY" secondItem="cEU-wq-5kr" secondAttribute="centerY" id="fLZ-r9-zYX"/>
                             <constraint firstAttribute="trailing" secondItem="5Kv-er-ueX" secondAttribute="trailing" id="npU-GC-J3y"/>
+                            <constraint firstAttribute="trailing" secondItem="cEU-wq-5kr" secondAttribute="trailing" constant="20" id="sJn-nH-ZJg"/>
+                            <constraint firstItem="0dH-kV-7vb" firstAttribute="trailing" secondItem="cEU-wq-5kr" secondAttribute="trailing" constant="-20" id="uU7-PK-6j8"/>
                             <constraint firstItem="5Kv-er-ueX" firstAttribute="leading" secondItem="Yp3-vp-Ijv" secondAttribute="leading" id="zln-1Y-q9L"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="giJ-vy-aiF"/>
                     <connections>
+                        <outlet property="btnPublishBlic" destination="cEU-wq-5kr" id="6rx-WC-ctJ"/>
                         <outlet property="collectionView" destination="5Kv-er-ueX" id="3tD-yL-oeP"/>
+                        <outlet property="ivPublishArrow" destination="0dH-kV-7vb" id="pC3-PF-h8E"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="riK-Va-Uft" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1878" y="631"/>
+            <point key="canvasLocation" x="2690" y="631"/>
         </scene>
         <!--Camera Roll Collection View Controller-->
         <scene sceneID="6SK-du-9ng">
@@ -632,10 +654,10 @@
             </objects>
             <point key="canvasLocation" x="1023" y="893"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Navigation Controller Without Line-->
         <scene sceneID="JM5-M6-iHo">
             <objects>
-                <navigationController storyboardIdentifier="initNavController" navigationBarHidden="YES" id="BRJ-H2-Y4z" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="initNavController" navigationBarHidden="YES" id="BRJ-H2-Y4z" customClass="BCNavigationControllerWithoutLine" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="oUI-Lr-0M2">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -793,10 +815,29 @@
             </objects>
             <point key="canvasLocation" x="1023" y="1698"/>
         </scene>
+        <!--Navigation Controller Without Line-->
+        <scene sceneID="yJt-IS-GN0">
+            <objects>
+                <navigationController storyboardIdentifier="PublishBlicViewControllerNav" automaticallyAdjustsScrollViewInsets="NO" id="eom-zI-OzW" customClass="BCNavigationControllerWithoutLine" customModule="Blicup" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Mpc-oJ-Dax">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="xIX-d1-BeL" kind="relationship" relationship="rootViewController" id="zfg-tR-Bx8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VJm-HX-se7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1878" y="631"/>
+        </scene>
     </scenes>
     <resources>
         <image name="More" width="43" height="43"/>
         <image name="Preview" width="42" height="42"/>
+        <image name="Publish" width="16" height="18"/>
         <image name="Trash" width="42" height="42"/>
         <image name="ic_check_selected" width="22" height="17"/>
         <image name="ic_close_black" width="22" height="22"/>

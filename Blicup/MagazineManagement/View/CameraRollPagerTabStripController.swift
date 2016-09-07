@@ -74,44 +74,10 @@ class CameraRollPagerTabStripController: ButtonBarPagerTabStripViewController, C
         btnCreateArticle.hidden = true
         assetSelector.delegate = self
         
-        setNavBar()
-        
         super.viewDidLoad()
     }
     
-    
-    func setNavBar()
-    {
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        hideNavBarSeparator()
-        
-    }
-    
-    
-    func hideNavBarSeparator()
-    {
-        //this way transparent property continues working
-        if let navigationBar = self.navigationController?.navigationBar{
-            if let line = findShadowImageUnderView(navigationBar) {
-                line.hidden = true
-            }
-        }
-    }
-    
-    private func findShadowImageUnderView(view: UIView) -> UIImageView? {
-        if view is UIImageView && view.bounds.size.height <= 1 {
-            return (view as! UIImageView)
-        }
-        
-        for subview in view.subviews {
-            if let imageView = findShadowImageUnderView(subview) {
-                return imageView
-            }
-        }
-        return nil
-    }
-    
-    
+
     func closeTapped()
     {
         // TODO: add close

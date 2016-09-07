@@ -43,7 +43,7 @@ class PublishBlicCategoryCollectionViewCell: UICollectionViewCell {
                 self.ivSelectionCheck.transform = CGAffineTransformMakeScale(1.1, 1.1)
                 
                 }, completion: { (finish) in
-                    
+                    self.lblMagazineCategoryTitle.hidden = true
                     UIView.animateWithDuration(0.1, animations: {
                         self.ivSelectionCheck.transform = CGAffineTransformMakeScale(1.25, 1.25)
                         
@@ -65,16 +65,15 @@ class PublishBlicCategoryCollectionViewCell: UICollectionViewCell {
         } else {
             self.selectionView.hidden = false
             self.selectionView.alpha = 1.0
+            self.lblMagazineCategoryTitle.hidden = false
             
             UIView.animateWithDuration(0.25, animations: {
-                self.lblMagazineCategoryTitle.alpha = 1
                 self.selectionView.alpha = 0.0
-                
+                self.lblMagazineCategoryTitle.alpha = 1
                 }, completion: { (finish) in
                     self.selectionView.alpha = 1.0
                     self.selectionView.hidden = true
             })
-            
         }
     }
 }
