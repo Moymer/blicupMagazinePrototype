@@ -27,6 +27,8 @@ class ArticleCreationPresenter: NSObject {
         for asset in assets {
             var dictionary = [String:AnyObject]()
             dictionary[ASSET_KEY] = asset
+            dictionary[TITLE_KEY] = ""
+            dictionary[CONTENT_KEY] = ""
             articleParts.append(dictionary)
         }
     }
@@ -43,7 +45,7 @@ class ArticleCreationPresenter: NSObject {
         self.articleParts.removeAtIndex(index)
         
         if index == 0, var coverDic = self.articleParts.first {
-            coverDic[CONTENT_KEY] = nil
+            coverDic[CONTENT_KEY] = ""
             articleParts[0] = coverDic
         }
         
@@ -56,8 +58,8 @@ class ArticleCreationPresenter: NSObject {
     
     func setCardTexts(index: NSIndexPath, title:String?, content:String?) {
         var articleDic = self.articleParts[index.item]
-        articleDic[TITLE_KEY] = title
-        articleDic[CONTENT_KEY] = content
+        articleDic[TITLE_KEY] = title != nil ? title : ""
+        articleDic[CONTENT_KEY] = content != nil ? content : ""
         self.articleParts[index.item] = articleDic
     }
     
