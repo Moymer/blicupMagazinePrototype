@@ -10,7 +10,7 @@ import UIKit
 import Photos
 
 
-class ArticleCreationViewController: UIViewController, UICollectionViewDataSource, UITextViewDelegate, UIGestureRecognizerDelegate, AddAssetsProtocol, SearchArticleLocationViewControllerDelegate, UICollectionViewDelegateFlowLayout {
+class ArticleCreationViewController: UIViewController, UICollectionViewDataSource, UITextViewDelegate, UIGestureRecognizerDelegate, AddAssetsProtocol, SearchArticleLocationViewControllerDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var btnMorePics: BCCloseButton!
@@ -140,15 +140,7 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
         
         let identifier = indexPath.row==0 ? "CoverCell" : "ContentCell"
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(identifier, forIndexPath: indexPath) as! CardCollectionViewCell
-        let container = cell.viewWithTag(1)!
-        container.layer.cornerRadius = 20
         
-        cell.layer.shadowColor = UIColor.lightGrayColor().CGColor
-        cell.layer.shadowOffset = CGSizeMake(2, 2)
-        cell.layer.shadowOpacity = 0.5
-        cell.layer.shadowRadius = 3.0
-        cell.clipsToBounds = false
-        cell.layer.masksToBounds = false
         cell.btnTrash.tag = indexPath.item
         
         let cSelector = #selector(ArticleCreationViewController.handleGesture(_:))

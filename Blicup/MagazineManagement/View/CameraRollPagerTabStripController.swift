@@ -194,21 +194,6 @@ class CameraRollPagerTabStripController: ButtonBarPagerTabStripViewController, C
             let assets = assetSelector.getSelectedAssetsOrdered()
             vc.presenter.addAssets(assets)
         }
-   
-        
-        if segue.identifier == "viewArticleSegue", let vc = segue.destinationViewController as? ArticlesViewController {
-            let assets = assetSelector.getSelectedAssetsOrdered()
-            var articleContent : [[String:AnyObject]] = []
-            for asset in assets {
-                var card : [String:AnyObject] = [:]
-                card["midia"] = asset
-                card["title"] = "Prepare your spring tin for cake layers"
-                card["infoText"] = "Grease the bottom and sides of the tin with some butter and then cover the bottom with grease paper and the sides with flour. Hold the tin in front of you and gently turn it while tapping on the sides with the palm of your hand until everything is covered. Doing this ensures you won’t have any problems getting the layers out later."
-                articleContent.append(card)
-            }
-            vc.articleContent = articleContent
-        }
-       
     }
     
 }
