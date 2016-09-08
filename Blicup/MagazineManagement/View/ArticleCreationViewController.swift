@@ -10,12 +10,13 @@ import UIKit
 import Photos
 
 
-class ArticleCreationViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UITextViewDelegate, UIGestureRecognizerDelegate, AddAssetsProtocol, SearchArticleLocationViewControllerDelegate {
+class ArticleCreationViewController: UIViewController, UICollectionViewDataSource, UITextViewDelegate, UIGestureRecognizerDelegate, AddAssetsProtocol, SearchArticleLocationViewControllerDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var btnMorePics: BCCloseButton!
     @IBOutlet weak var btnCloseArticle: BCCloseButton!
     @IBOutlet weak var btnPreviewArticle: BCCloseButton!
+    @IBOutlet weak var articleFlowLayout: ArticleCreationCollectionViewFlowLayout!
     
     
     
@@ -27,16 +28,15 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
         self.collectionView.decelerationRate = UIScrollViewDecelerationRateFast
         longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(ArticleCreationViewController.handleLongGesture(_:)))
         self.collectionView.addGestureRecognizer(longPressGesture)
+        
+        self.view.layoutIfNeeded()
+        
+        let verticalInsets = (collectionView.bounds.height - 330)/2
+        articleFlowLayout.sectionInset = UIEdgeInsetsMake(verticalInsets, 20, verticalInsets, 20)
+        articleFlowLayout.minimumLineSpacing = 50
+        articleFlowLayout.minimumInteritemSpacing = 10
     }
     
-    func setFlowLayout() {
-        if let articleFlowLayout = collectionView.collectionViewLayout as? ArticleCreationCollectionViewFlowLayout {
-            let verticalInsets = (collectionView.bounds.height - 330)/2
-            articleFlowLayout.sectionInset = UIEdgeInsetsMake(verticalInsets, 20, verticalInsets, 20)
-            let cellWidth = collectionView.bounds.width - (articleFlowLayout.sectionInset.left + articleFlowLayout.sectionInset.right)
-            articleFlowLayout.estimatedItemSize = CGSizeMake(cellWidth, 330)
-        }
-    }
     
     func handleLongGesture(gesture: UILongPressGestureRecognizer) {
         
@@ -50,39 +50,39 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
             }
             
             if centerIndex == selectedIndexPath {
-                self.updateLayout(true)
-                collectionView.beginInteractiveMovementForItemAtIndexPath(selectedIndexPath)
+                self.collectionView.beginInteractiveMovementForItemAtIndexPath(selectedIndexPath)
+                animateCollectionViewRearrange(true)
             }
             break
         case UIGestureRecognizerState.Changed:
-            let frame = CGPointMake(collectionView.frame.maxX/2, gesture.locationInView(gesture.view!).y)
+            let frame = CGPointMake(self.collectionView.center.x, gesture.locationInView(gesture.view!).y)
             collectionView.updateInteractiveMovementTargetPosition(frame)
             break
         case UIGestureRecognizerState.Ended:
-            self.updateLayout(false)
-            collectionView.endInteractiveMovement()
-            
+            self.collectionView.endInteractiveMovement()
+            animateCollectionViewRearrange(false)
             break
         default:
-            self.updateLayout(false)
             collectionView.cancelInteractiveMovement()
+            animateCollectionViewRearrange(false)
             break
         }
     }
     
-    func updateLayout(editing: Bool){
-        if let articleFlowLayout = collectionView.collectionViewLayout as? ArticleCreationCollectionViewFlowLayout {
-            articleFlowLayout.editing = editing
-            articleFlowLayout.prepareLayout()
-            self.collectionView.collectionViewLayout.invalidateLayout()
-            self.collectionView.setCollectionViewLayout(articleFlowLayout, animated: true)
-        }
+    private func animateCollectionViewRearrange(rearranging: Bool) {
+        let scale = rearranging ? CGAffineTransformMakeScale(0.6, 0.6) : CGAffineTransformIdentity
+        UIView.animateWithDuration(0.3, delay: 0.0, options: [], animations: {
+            self.collectionView.transform = scale
+            self.collectionView.showsVerticalScrollIndicator = !rearranging
+            if rearranging { self.collectionView.clipsToBounds = false }
+            }, completion: { (_) in
+                self.collectionView.clipsToBounds = !rearranging
+        })
     }
-    
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-
+        
         if self.presenter.numberOfMedias() == 6 {
             self.btnMorePics.hidden = true
         }
@@ -131,6 +131,7 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
         
         self.collectionView.performBatchUpdates({
             self.collectionView.reloadData()
+            self.collectionView.reloadItemsAtIndexPaths([NSIndexPath(forItem: 0, inSection: 0)])
             self.collectionView.reloadItemsAtIndexPaths(self.collectionView.indexPathsForVisibleItems())
             }, completion: nil)
         
@@ -140,15 +141,7 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
         
         let identifier = indexPath.row==0 ? "CoverCell" : "ContentCell"
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(identifier, forIndexPath: indexPath) as! CardCollectionViewCell
-        let container = cell.viewWithTag(1)!
-        container.layer.cornerRadius = 20
         
-        cell.layer.shadowColor = UIColor.lightGrayColor().CGColor
-        cell.layer.shadowOffset = CGSizeMake(2, 2)
-        cell.layer.shadowOpacity = 0.5
-        cell.layer.shadowRadius = 3.0
-        cell.clipsToBounds = false
-        cell.layer.masksToBounds = false
         cell.btnTrash.tag = indexPath.item
         
         let cSelector = #selector(ArticleCreationViewController.handleGesture(_:))
@@ -156,8 +149,18 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
         gestureRecognizer.delegate = self
         cell.vContainer.addGestureRecognizer(gestureRecognizer)
         
-        presenter.getImageMedia(indexPath) { (image) in
-            cell.cardMedia.image = image
+        if presenter.mediaIsVideo(indexPath) {
+            cell.cardVideo.imageManager = presenter.imageManager
+            cell.cardVideo.phAsset = presenter.getAsset(indexPath)
+            cell.cardImage.hidden = true
+            cell.cardVideo.hidden = false
+        }
+        else {
+            cell.cardImage.hidden = false
+            cell.cardVideo.hidden = true
+            presenter.getImageMedia(indexPath) { (image) in
+                cell.cardImage.image = image
+            }
         }
         
         cell.title = presenter.getCardTitle(indexPath)
@@ -165,6 +168,19 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
         
         return cell
     }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        let verticalInsets = (collectionViewLayout as! UICollectionViewFlowLayout).sectionInset.left + (collectionViewLayout as! UICollectionViewFlowLayout).sectionInset.right
+        let cellWidth = collectionView.bounds.width - verticalInsets
+        
+        if indexPath.row == 0 {
+            return CardCollectionViewCell.cellSize(cellWidth, title: presenter.getCardTitle(indexPath), content: presenter.getCardContent(indexPath))
+        }
+        else {
+            return ContentCollectionCell.cellSize(cellWidth, title: presenter.getCardTitle(indexPath), content: presenter.getCardContent(indexPath))
+        }
+    }
+    
     
     func scrollViewWillBeginDragging(scrollView: UIScrollView) {
         guard scrollView is UICollectionView else {
@@ -254,7 +270,14 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
     }
     
     func textViewDidChange(textView: UITextView) {
-        textView.invalidateIntrinsicContentSize()
+        let point = collectionView.convertPoint(CGPointZero, fromView: textView)
+        guard let index = collectionView.indexPathForItemAtPoint(point),
+            let cell = collectionView.cellForItemAtIndexPath(index) as? CardCollectionViewCell else {
+                return
+        }
+        
+        presenter.setCardTexts(index, title: cell.title, content: cell.content)
+        
         self.collectionView.collectionViewLayout.invalidateLayout()
         centerTextViewCell(textView)
     }
@@ -262,15 +285,8 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
     func textViewDidBeginEditing(textView: UITextView) {
         centerTextViewCell(textView)
     }
-
+    
     func textViewDidEndEditing(textView: UITextView) {
-        let point = collectionView.convertPoint(CGPointZero, fromView: textView)
-        guard let index = collectionView.indexPathForItemAtPoint(point),
-            let cell = collectionView.cellForItemAtIndexPath(index) as? CardCollectionViewCell else {
-            return
-        }
-        
-        presenter.setCardTexts(index, title: cell.title, content: cell.content)
     }
     
     
@@ -297,19 +313,12 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
             return
         }
         
-        if let articleLayout = collectionView.collectionViewLayout as? ArticleCreationCollectionViewFlowLayout {
-            articleLayout.disablePaging = true
-        }
-        
         var inset = collectionView.contentInset
         inset.bottom = keyboardSize.height
         collectionView.contentInset = inset
     }
     
     func keyboardWillHide(notification: NSNotification) {
-        if let articleLayout = collectionView.collectionViewLayout as? ArticleCreationCollectionViewFlowLayout {
-            articleLayout.disablePaging = false
-        }
         collectionView.contentInset = UIEdgeInsetsZero
     }
     
@@ -409,6 +418,9 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "LocationSegue", let vc = segue.destinationViewController as? SearchArticleLocationViewController {
             vc.handleMapSearchDelegate = self
+        }
+        else if segue.identifier == "viewArticleSegue", let vc = segue.destinationViewController as? ArticlesViewController {
+            vc.articleContent = presenter.articleParts
         }
     }
 }
