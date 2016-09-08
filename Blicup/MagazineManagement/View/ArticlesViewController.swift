@@ -11,7 +11,6 @@ import UIKit
 class ArticlesViewController: UIViewController {
 
     var articleContent : [[String:AnyObject]] = []
-
     var articlesController : ArticlesReadingCollectionViewController?
     
     override func viewDidLoad() {
@@ -36,6 +35,11 @@ class ArticlesViewController: UIViewController {
             articlesPreviewController!.mainController = self
         }
         
+        if segue.identifier == "ArticlePreviewTopControllerSegue" {
+            let articlesPreviewController = segue.destinationViewController as?  ArticlePreviewTopController
+            articlesPreviewController!.mainController = self
+        }
+        
     }
     
     func changeLayout() {
@@ -46,6 +50,17 @@ class ArticlesViewController: UIViewController {
     func doResizeAndRepositioning() {
         
         articlesController!.doResizeAndRepositioning()
+    }
+    
+    
+    func publishArticle() {
+        
+       
+    }
+    
+    func backToEditing() {
+        
+        self.navigationController?.popViewControllerAnimated(true)
     }
 }
 
@@ -71,6 +86,7 @@ class ArticlePreviewController: UIViewController {
     
     @IBAction func sendArticle(sender: AnyObject) {
     
+         mainController!.publishArticle()
     }
     
     private func animateBts() {
@@ -123,5 +139,17 @@ class ArticlePreviewController: UIViewController {
         }
     }
     
+    
+}
+
+
+class ArticlePreviewTopController: UIViewController {
+    var mainController : ArticlesViewController?
+    
+    
+    @IBAction func backToEditing(sender: AnyObject) {
+        
+        mainController!.backToEditing()
+    }
     
 }
