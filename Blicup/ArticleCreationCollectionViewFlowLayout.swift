@@ -14,24 +14,6 @@ class ArticleCreationCollectionViewFlowLayout: UICollectionViewFlowLayout {
     var disablePaging = false
     var editing = false
     
-    override func prepareLayout() {
-        if let collectionView = self.collectionView {
-            let verticalInsets = (collectionView.bounds.height - 330)/2
-            self.sectionInset = UIEdgeInsetsMake(verticalInsets, 20, verticalInsets, 20)
-            let cellWidth = collectionView.bounds.width - (self.sectionInset.left + self.sectionInset.right)
-            self.minimumLineSpacing = 50
-            if editing {
-                self.estimatedItemSize = CGSizeMake(cellWidth/1.5, 330)
-            } else {
-                self.estimatedItemSize = CGSizeMake(cellWidth, 330)
-            }
-        }
-        super.prepareLayout()
-    }
-    
-    override func shouldInvalidateLayoutForPreferredLayoutAttributes(preferredAttributes: UICollectionViewLayoutAttributes, withOriginalAttributes originalAttributes: UICollectionViewLayoutAttributes) -> Bool {
-        return true
-    }
     
     override func shouldInvalidateLayoutForBoundsChange(newBounds: CGRect) -> Bool {
         return !CGSizeEqualToSize(newBounds.size, self.collectionView!.frame.size)
@@ -75,8 +57,6 @@ class ArticleCreationCollectionViewFlowLayout: UICollectionViewFlowLayout {
                     if fabsf(Float(a)) < fabsf(Float(b)) {
                         candidateAttributes = attributes;
                     }
-                    
-                    
                 }
                 
                 if(proposedContentOffset.y == -(cv.contentInset.top) || proposedContentOffset.y == -(cv.contentInset.bottom)) {
@@ -88,10 +68,7 @@ class ArticleCreationCollectionViewFlowLayout: UICollectionViewFlowLayout {
                 }
                 
                 return CGPoint(x: attr.center.x, y: floor(attr.center.y - halfHeight))
-                
             }
-            
-            
         }
         
         return super.targetContentOffsetForProposedContentOffset(proposedContentOffset)

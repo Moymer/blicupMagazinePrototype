@@ -675,7 +675,7 @@
         <!--Navigation Controller Without Line-->
         <scene sceneID="JM5-M6-iHo">
             <objects>
-                <navigationController storyboardIdentifier="initNavController" navigationBarHidden="YES" id="BRJ-H2-Y4z" customClass="BCNavigationControllerWithoutLine" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="initNavController" navigationBarHidden="YES" id="BRJ-H2-Y4z" customClass="BCNavigationControllerWithoutLine" customModule="Blicup" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="oUI-Lr-0M2">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

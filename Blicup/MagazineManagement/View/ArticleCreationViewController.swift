@@ -29,14 +29,6 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
         self.collectionView.addGestureRecognizer(longPressGesture)
     }
     
-    func setFlowLayout() {
-        if let articleFlowLayout = collectionView.collectionViewLayout as? ArticleCreationCollectionViewFlowLayout {
-            let verticalInsets = (collectionView.bounds.height - 330)/2
-            articleFlowLayout.sectionInset = UIEdgeInsetsMake(verticalInsets, 20, verticalInsets, 20)
-//            let cellWidth = collectionView.bounds.width - (articleFlowLayout.sectionInset.left + articleFlowLayout.sectionInset.right)
-//            articleFlowLayout.estimatedItemSize = CGSizeMake(cellWidth, 330)
-        }
-    }
     
     func handleLongGesture(gesture: UILongPressGestureRecognizer) {
         
@@ -50,7 +42,6 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
             }
             
             if centerIndex == selectedIndexPath {
-                self.updateLayout(true)
                 collectionView.beginInteractiveMovementForItemAtIndexPath(selectedIndexPath)
             }
             break
@@ -59,23 +50,12 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
             collectionView.updateInteractiveMovementTargetPosition(frame)
             break
         case UIGestureRecognizerState.Ended:
-            self.updateLayout(false)
             collectionView.endInteractiveMovement()
             
             break
         default:
-            self.updateLayout(false)
             collectionView.cancelInteractiveMovement()
             break
-        }
-    }
-    
-    func updateLayout(editing: Bool){
-        if let articleFlowLayout = collectionView.collectionViewLayout as? ArticleCreationCollectionViewFlowLayout {
-            articleFlowLayout.editing = editing
-            articleFlowLayout.prepareLayout()
-            self.collectionView.collectionViewLayout.invalidateLayout()
-            self.collectionView.setCollectionViewLayout(articleFlowLayout, animated: true)
         }
     }
     
