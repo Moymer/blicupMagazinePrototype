@@ -13,7 +13,7 @@ class PublishArticleViewController: UIViewController {
     private let presenter = PublishArticlePresenter()
     
     let kSpaceBetweenImages: CGFloat = 10
-    let kNumberOfColumns: CGFloat = 3.0
+    let kNumberOfColumns: CGFloat = 3
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var btnPublishArticle: UIButton!
@@ -35,15 +35,21 @@ class PublishArticleViewController: UIViewController {
     
     // MARK: - CollectionView
     
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return presenter.numberOfItems()
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
+        return UIEdgeInsetsMake(kSpaceBetweenImages, kSpaceBetweenImages, kSpaceBetweenImages, kSpaceBetweenImages)
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         
-        let width = (screenWidth - ((kNumberOfColumns + 1) * kSpaceBetweenImages))/kNumberOfColumns
-        
-        return CGSize(width: width, height: width)
+        let sectionInsetLeft = kSpaceBetweenImages
+        let sectionInsetRight = kSpaceBetweenImages
+        let totalSpace = sectionInsetLeft + sectionInsetRight + (kSpaceBetweenImages * CGFloat(kNumberOfColumns - 1))
+        let size = Int((collectionView.bounds.width - totalSpace) / CGFloat(kNumberOfColumns))
+        return CGSize(width: size, height: size)
+    }
+    
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return presenter.numberOfItems()
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
