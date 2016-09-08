@@ -17,7 +17,7 @@ protocol AddAssetsProtocol: class {
 class CameraRollPagerTabStripController: ButtonBarPagerTabStripViewController, CameraRollAssetSelectionDelegate {
     
     var isReload = false
-    let assetSelector = CameraRollAssetSelector()
+    var assetSelector = CameraRollAssetSelector()
     var selectMoreContent: Int?
     
     var delegateAssets: AddAssetsProtocol?
@@ -92,9 +92,7 @@ class CameraRollPagerTabStripController: ButtonBarPagerTabStripViewController, C
         let child_2 = storyboard.instantiateViewControllerWithIdentifier("CameraRollViewController") as! CameraRollCollectionViewController
         let child_3 = storyboard.instantiateViewControllerWithIdentifier("CameraRollViewController") as! CameraRollCollectionViewController
         
-        if let content = selectMoreContent {
-            assetSelector.MAX_MIDIAS = content
-        }
+
         
         child_1.assetSelector = assetSelector
         child_2.assetSelector = assetSelector
@@ -124,7 +122,10 @@ class CameraRollPagerTabStripController: ButtonBarPagerTabStripViewController, C
         return Array(childViewControllers.prefix(Int(nItems)))
     }
     
-    
+    func defineSelection(howManySoFar: Int ){
+        
+        self.assetSelector = CameraRollAssetSelector(howManySoFar: howManySoFar)
+    }
     
     // MARK: - Actions
     
@@ -133,7 +134,7 @@ class CameraRollPagerTabStripController: ButtonBarPagerTabStripViewController, C
         UIView.animateWithDuration(0.2, delay: 0.0, options: [UIViewAnimationOptions.BeginFromCurrentState], animations: {
             self.btnCreateArticle.transform = CGAffineTransformIdentity
         }) { (_) in
-            if let _ = self.selectMoreContent {
+            if self.assetSelector.addingMoreFromPrevious {
                 let assets = self.assetSelector.getSelectedAssetsOrdered()
                 self.delegateAssets?.setAssets(assets)
                 self.dismissViewControllerAnimated(true, completion: nil)

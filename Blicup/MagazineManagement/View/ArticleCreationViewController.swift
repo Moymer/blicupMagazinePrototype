@@ -83,9 +83,11 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        if self.presenter.numberOfMedias() == 6 {
-            self.btnMorePics.hidden = true
-        }
+        updateAddMoreBtn()
+    }
+    
+    private func updateAddMoreBtn() {
+        self.btnMorePics.hidden = self.presenter.numberOfMedias() == MAX_MIDIAS
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -348,7 +350,8 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
             self.returnCellToOriginalPosition(centerPoint)
         }) { (_) in
             if let viewSelectCamera = self.storyboard?.instantiateViewControllerWithIdentifier("CameraRollPager") as? CameraRollPagerTabStripController {
-                viewSelectCamera.selectMoreContent = 6 - self.presenter.numberOfMedias()
+                
+                viewSelectCamera.defineSelection(self.presenter.numberOfMedias())
                 viewSelectCamera.delegateAssets = self
                 self.navigationController?.presentViewController(viewSelectCamera, animated: true, completion: nil)
             }
@@ -387,7 +390,7 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
                                     self.navigationController?.popViewControllerAnimated(true)
                                 }
                         })
-                        
+                        self.updateAddMoreBtn()
                         self.collectionView.reloadData()
                         self.collectionView.reloadSections(NSIndexSet(index: 0))
                     })

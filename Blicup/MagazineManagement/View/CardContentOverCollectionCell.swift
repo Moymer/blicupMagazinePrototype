@@ -37,16 +37,13 @@ class CardContentOverCollectionCell: UICollectionViewCell, ScrollableViewDelegat
     override func prepareForReuse() {
         lblCardTitle.text = nil
         lblCardInfoText.text = nil
-         vTextsContainer.hidden = false
+        vTextsContainer.hidden = false
         stopAssets()
         stopRepositioning()
     }
     
     func stopAssets() {
         vMidia.setAsset(nil)
-        
-        //vVideo.phAsset = nil
-        
     }
     
     func setContentForPreview(card : [String:AnyObject], imageManager:PHCachingImageManager)
