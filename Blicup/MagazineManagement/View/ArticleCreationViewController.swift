@@ -174,7 +174,7 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
         let cellWidth = collectionView.bounds.width - verticalInsets
         
         if indexPath.row == 0 {
-            return CardCollectionViewCell.cellSize(cellWidth, title: presenter.getCardTitle(indexPath), content: presenter.getCardContent(indexPath))
+            return CoverCollectionCell.cellSize(cellWidth, title: presenter.getCardTitle(indexPath), content: presenter.getCardContent(indexPath))
         }
         else {
             return ContentCollectionCell.cellSize(cellWidth, title: presenter.getCardTitle(indexPath), content: presenter.getCardContent(indexPath))
@@ -265,8 +265,13 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
     
     // TextView Delegate
     private func centerTextViewCell(textView:UITextView) {
-        let rect = collectionView.convertRect(textView.bounds, fromView: textView)
+        var rect = collectionView.convertRect(textView.bounds, fromView: textView)
+        rect.size.height = rect.height + 10
         collectionView.scrollRectToVisible(rect, animated: true)
+    }
+    
+    private func centerCell(index:NSIndexPath) {
+        collectionView.scrollToItemAtIndexPath(index, atScrollPosition: UICollectionViewScrollPosition.Bottom, animated: true)
     }
     
     func textViewDidChange(textView: UITextView) {
@@ -279,15 +284,46 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
         presenter.setCardTexts(index, title: cell.title, content: cell.content)
         
         self.collectionView.collectionViewLayout.invalidateLayout()
+//        centerTextViewCell(textView)
+        centerCell(index)
     }
     
     func textViewDidBeginEditing(textView: UITextView) {
         (textView as? ArticleTextView)?.adjustPlaceholder(forceHidde: true)
-        centerTextViewCell(textView)
+        
+        let point = collectionView.convertPoint(CGPointZero, fromView: textView)
+        guard let index = collectionView.indexPathForItemAtPoint(point) else {
+                return
+        }
+        
+//        centerTextViewCell(textView)
+        centerCell(index)
     }
     
     func textViewDidEndEditing(textView: UITextView) {
         (textView as? ArticleTextView)?.adjustPlaceholder(forceHidde: false)
+    }
+    
+    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+        let point = collectionView.convertPoint(CGPointZero, fromView: textView)
+        
+        guard text == "\n",
+            let index = collectionView.indexPathForItemAtPoint(point),
+            let cell = collectionView.cellForItemAtIndexPath(index) as? CardCollectionViewCell else {
+                return true
+        }
+        
+        if cell is CoverCollectionCell {
+            textView.resignFirstResponder()
+            return false
+        }
+        else if let contentCell = cell as? ContentCollectionCell where textView == contentCell.contentTitle {
+            contentCell.contentText.becomeFirstResponder()
+            return false
+        }
+        else {
+            return true
+        }
     }
     
     

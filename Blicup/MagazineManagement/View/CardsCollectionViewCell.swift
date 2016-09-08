@@ -14,12 +14,12 @@ class LocationButton: UIButton {
         self.titleLabel?.textAlignment = NSTextAlignment.Center
     }
     
-    override func intrinsicContentSize() -> CGSize {
-        let labelSize = titleLabel?.sizeThatFits(CGSizeMake(self.frame.size.width, CGFloat.max)) ?? CGSizeZero
-        let desiredButtonSize = CGSizeMake(labelSize.width + titleEdgeInsets.left + titleEdgeInsets.right, labelSize.height + titleEdgeInsets.top + titleEdgeInsets.bottom)
-        
-        return desiredButtonSize
-    }
+//    override func intrinsicContentSize() -> CGSize {
+//        let labelSize = titleLabel?.sizeThatFits(CGSizeMake(self.frame.size.width, CGFloat.max)) ?? CGSizeZero
+//        let desiredButtonSize = CGSizeMake(labelSize.width + titleEdgeInsets.left + titleEdgeInsets.right, labelSize.height + titleEdgeInsets.top + titleEdgeInsets.bottom)
+//        
+//        return desiredButtonSize
+//    }
     
     override func setTitle(title: String?, forState state: UIControlState) {
         if state == UIControlState.Normal && (title==nil || title!.characterCount()==0) {
@@ -52,7 +52,7 @@ class LocationButton: UIButton {
     }
 
     
-    private func initPlaceholder() {        
+    private func initPlaceholder() {   
         lblPlaceholder.frame = self.bounds
         lblPlaceholder.autoresizingMask = [UIViewAutoresizing.FlexibleWidth, UIViewAutoresizing.FlexibleHeight]
         
@@ -130,10 +130,6 @@ class CardCollectionViewCell: UICollectionViewCell {
             return nil
         }
     }
-    
-    class func cellSize(width:CGFloat, title:String?, content: String?)->CGSize {
-        return CGSizeMake(300, 330)
-    }
 }
 
 class ContentCollectionCell: CardCollectionViewCell {
@@ -156,8 +152,8 @@ class ContentCollectionCell: CardCollectionViewCell {
         get { return contentText.text }
     }
     
-    override class func cellSize(width:CGFloat, title:String?, content: String?)->CGSize {
-        let FIXED_HEIGHT: CGFloat = 250.0
+    class func cellSize(width:CGFloat, title:String?, content: String?)->CGSize {
+        let FIXED_HEIGHT: CGFloat = 260.0
         let width = width - 20
         
         let tv = ArticleTextView()
@@ -173,6 +169,8 @@ class ContentCollectionCell: CardCollectionViewCell {
         let totalHeight = FIXED_HEIGHT + titleSize.height + contentSize.height
         return CGSizeMake(width, totalHeight)
     }
+    
+    
 }
 
 class CoverCollectionCell: CardCollectionViewCell {
@@ -190,5 +188,24 @@ class CoverCollectionCell: CardCollectionViewCell {
     override var content: String? {
         set { articleLocation.setTitle(newValue, forState: UIControlState.Normal) }
         get { return articleLocation.titleLabel?.text }
+    }
+    
+    class func cellSize(width:CGFloat, title:String?, content: String?)->CGSize {
+        let FIXED_HEIGHT: CGFloat = 255.0
+        let width = width - 20
+        
+        let tv = ArticleTextView()
+        
+        tv.font = UIFont(name: "Avenir-Black", size: 23.0)
+        tv.text = title
+        let titleSize = tv.sizeThatFits(CGSizeMake(width, CGFloat.max))
+        
+        let button = UIButton()
+        button.titleLabel?.font = UIFont(name: "Avenir-Roman", size: 18.0)
+        button.setTitle(content, forState: UIControlState.Normal)
+        let buttonSize = button.intrinsicContentSize()
+        
+        let totalHeight = FIXED_HEIGHT + titleSize.height + buttonSize.height
+        return CGSizeMake(width, totalHeight)
     }
 }
