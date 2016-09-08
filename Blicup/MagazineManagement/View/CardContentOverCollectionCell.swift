@@ -35,6 +35,9 @@ class CardContentOverCollectionCell: UICollectionViewCell, ScrollableViewDelegat
     }
 
     override func prepareForReuse() {
+        lblCardTitle.text = nil
+        lblCardInfoText.text = nil
+         vTextsContainer.hidden = false
         stopAssets()
         stopRepositioning()
     }
