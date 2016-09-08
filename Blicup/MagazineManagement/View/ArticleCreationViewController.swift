@@ -279,14 +279,15 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
         presenter.setCardTexts(index, title: cell.title, content: cell.content)
         
         self.collectionView.collectionViewLayout.invalidateLayout()
-        centerTextViewCell(textView)
     }
     
     func textViewDidBeginEditing(textView: UITextView) {
+        (textView as? ArticleTextView)?.adjustPlaceholder(forceHidde: true)
         centerTextViewCell(textView)
     }
     
     func textViewDidEndEditing(textView: UITextView) {
+        (textView as? ArticleTextView)?.adjustPlaceholder(forceHidde: false)
     }
     
     
@@ -300,7 +301,6 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
                                                          selector:#selector(self.keyboardWillHide(_:)),
                                                          name:UIKeyboardWillHideNotification,
                                                          object:nil)
-        
     }
     
     private func stopObservingKeyboardEvents() {

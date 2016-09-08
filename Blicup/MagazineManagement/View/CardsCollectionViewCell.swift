@@ -63,6 +63,10 @@ class LocationButton: UIButton {
         lblPlaceholder.textColor = UIColor.lightGrayColor()
         lblPlaceholder.text = placeholder        
     }
+    
+    func adjustPlaceholder(forceHidde shouldHide:Bool) {
+        lblPlaceholder.hidden = (shouldHide || self.text.characterCount() > 0)
+    }
 }
 
 
@@ -139,7 +143,7 @@ class ContentCollectionCell: CardCollectionViewCell {
     override var title: String? {
         set {
             contentTitle.text = newValue
-            contentTitle.invalidateIntrinsicContentSize()
+            contentTitle.adjustPlaceholder(forceHidde: false)
         }
         get { return contentTitle.text }
     }
@@ -147,7 +151,7 @@ class ContentCollectionCell: CardCollectionViewCell {
     override var content: String? {
         set {
             contentText.text = newValue
-            contentText.invalidateIntrinsicContentSize()
+            contentText.adjustPlaceholder(forceHidde: false)
         }
         get { return contentText.text }
     }
@@ -178,7 +182,7 @@ class CoverCollectionCell: CardCollectionViewCell {
     override var title: String? {
         set {
             articleTitle.text = newValue
-            articleTitle.invalidateIntrinsicContentSize()
+            articleTitle.adjustPlaceholder(forceHidde: false)
         }
         get { return articleTitle.text }
     }

@@ -542,7 +542,7 @@
                                                             </constraints>
                                                         </imageView>
                                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="999" bounces="NO" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="NGC-bw-hOl" customClass="ArticleTextView" customModule="Blicup" customModuleProvider="target">
-                                                            <rect key="frame" x="10" y="235" width="315" height="37"/>
+                                                            <rect key="frame" x="10" y="235" width="315" height="42"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                             <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="23"/>
@@ -581,7 +581,7 @@
                                                         <constraint firstItem="hAJ-TL-sdv" firstAttribute="leading" secondItem="edU-TP-24F" secondAttribute="leading" id="kOA-Ie-bek"/>
                                                         <constraint firstItem="NGC-bw-hOl" firstAttribute="leading" secondItem="sZR-cX-1Ix" secondAttribute="leading" constant="10" id="nBm-4C-Njz"/>
                                                         <constraint firstItem="edU-TP-24F" firstAttribute="top" secondItem="sZR-cX-1Ix" secondAttribute="top" id="nDz-QY-Ihh"/>
-                                                        <constraint firstItem="LyJ-o3-li9" firstAttribute="top" secondItem="NGC-bw-hOl" secondAttribute="bottom" constant="5" id="qKh-RT-fBU"/>
+                                                        <constraint firstItem="LyJ-o3-li9" firstAttribute="top" secondItem="NGC-bw-hOl" secondAttribute="bottom" id="qKh-RT-fBU"/>
                                                         <constraint firstItem="hAJ-TL-sdv" firstAttribute="top" secondItem="edU-TP-24F" secondAttribute="top" id="rH2-YH-GBn"/>
                                                         <constraint firstItem="edU-TP-24F" firstAttribute="leading" secondItem="sZR-cX-1Ix" secondAttribute="leading" id="y3f-KX-oBN"/>
                                                     </constraints>
