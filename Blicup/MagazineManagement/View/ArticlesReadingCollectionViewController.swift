@@ -176,7 +176,7 @@ class ArticlesReadingCollectionViewController: UICollectionViewController, Artic
      // MARK: Layout and Design change actions for content
     
     func changeLayoutAndDesign() {
-        if checkIfMoreDesign() {
+        if hasMoreDesignForLayout() {
             changeDesign()
         } else {
             changeLayout()
@@ -217,7 +217,7 @@ class ArticlesReadingCollectionViewController: UICollectionViewController, Artic
         
     }
     
-    private func checkIfMoreDesign() -> Bool {
+    private func hasMoreDesignForLayout() -> Bool {
         var hasMore : Bool = false
         switch articleCardModeLayout {
         case CardMode.OverCellLayout:
