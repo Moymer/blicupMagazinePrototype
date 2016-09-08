@@ -9,7 +9,7 @@
         <scene sceneID="Ls3-9r-Nzh">
             <objects>
                 <collectionViewController storyboardIdentifier="articlesReadingViewController" automaticallyAdjustsScrollViewInsets="NO" id="itD-4Z-n0G" customClass="ArticlesReadingCollectionViewController" customModule="Blicup" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" alwaysBounceVertical="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" id="6r9-Bn-YEy">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" alwaysBounceVertical="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" dataMode="prototypes" id="6r9-Bn-YEy">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="RhU-vO-8gX">
@@ -53,7 +53,7 @@
                                     <constraint firstAttribute="height" constant="82" id="DaT-pD-LkT"/>
                                 </constraints>
                                 <connections>
-                                    <segue destination="lRi-4Q-xYp" kind="embed" id="LLu-KY-QsK"/>
+                                    <segue destination="lRi-4Q-xYp" kind="embed" identifier="ArticlePreviewControllerSegue" id="LLu-KY-QsK"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -73,10 +73,10 @@
             </objects>
             <point key="canvasLocation" x="564" y="231"/>
         </scene>
-        <!--View Controller-->
+        <!--Article Preview Controller-->
         <scene sceneID="AYi-IH-Q24">
             <objects>
-                <viewController id="lRi-4Q-xYp" sceneMemberID="viewController">
+                <viewController id="lRi-4Q-xYp" customClass="ArticlePreviewController" customModule="Blicup" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Q9w-52-iON"/>
                         <viewControllerLayoutGuide type="bottom" id="VeG-En-eqP"/>
@@ -92,6 +92,9 @@
                                     <constraint firstAttribute="width" constant="40" id="OfL-ya-SGi"/>
                                 </constraints>
                                 <state key="normal" image="ChangeDesign"/>
+                                <connections>
+                                    <action selector="changeLayoutDesign:" destination="lRi-4Q-xYp" eventType="touchUpInside" id="8Es-Dt-3nC"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C4R-3M-qiR">
                                 <rect key="frame" x="280" y="21" width="40" height="40"/>
@@ -100,6 +103,9 @@
                                     <constraint firstAttribute="width" constant="40" id="hie-SZ-0Hf"/>
                                 </constraints>
                                 <state key="normal" image="Position"/>
+                                <connections>
+                                    <action selector="changeMidiaPosition:" destination="lRi-4Q-xYp" eventType="touchUpInside" id="myz-0K-ysP"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XjE-rk-6Bw">
                                 <rect key="frame" x="540" y="21" width="40" height="40"/>
@@ -108,6 +114,9 @@
                                     <constraint firstAttribute="height" constant="40" id="7s2-nB-chS"/>
                                 </constraints>
                                 <state key="normal" image="Send"/>
+                                <connections>
+                                    <action selector="sendArticle:" destination="lRi-4Q-xYp" eventType="touchUpInside" id="Eeu-vh-1hC"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -115,18 +124,20 @@
                             <constraint firstAttribute="bottomMargin" secondItem="C4R-3M-qiR" secondAttribute="bottom" constant="21" id="6Ke-zK-cHN"/>
                             <constraint firstAttribute="trailing" secondItem="XjE-rk-6Bw" secondAttribute="trailing" constant="20" id="6tk-gB-okP"/>
                             <constraint firstAttribute="bottom" secondItem="tmK-Ci-geg" secondAttribute="bottom" constant="21" id="9LY-QO-SVy"/>
-                            <constraint firstItem="XjE-rk-6Bw" firstAttribute="top" secondItem="XGj-in-d9e" secondAttribute="top" constant="21" id="9VI-f9-jY5"/>
                             <constraint firstItem="tmK-Ci-geg" firstAttribute="leading" secondItem="XGj-in-d9e" secondAttribute="leading" constant="20" id="Ahv-H2-ZLL"/>
                             <constraint firstAttribute="bottom" secondItem="XjE-rk-6Bw" secondAttribute="bottom" constant="21" id="Fm4-Bc-Zt1"/>
                             <constraint firstItem="C4R-3M-qiR" firstAttribute="centerX" secondItem="XGj-in-d9e" secondAttribute="centerX" id="aa5-iY-Wut"/>
-                            <constraint firstItem="C4R-3M-qiR" firstAttribute="top" secondItem="XGj-in-d9e" secondAttribute="topMargin" constant="21" id="p2m-2N-kGa"/>
-                            <constraint firstItem="tmK-Ci-geg" firstAttribute="top" secondItem="XGj-in-d9e" secondAttribute="top" constant="21" id="wdp-Ec-B2E"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="btnChangeLayout" destination="tmK-Ci-geg" id="rx1-Ob-TjY"/>
+                        <outlet property="btnRepositioningAndResize" destination="C4R-3M-qiR" id="Hf7-3M-MRh"/>
+                        <outlet property="btnSend" destination="XjE-rk-6Bw" id="uRB-h1-IDN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OCR-XT-pWT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="683" y="751"/>
+            <point key="canvasLocation" x="709" y="752"/>
         </scene>
     </scenes>
     <resources>

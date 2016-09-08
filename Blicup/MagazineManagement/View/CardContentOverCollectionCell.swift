@@ -8,33 +8,42 @@
 
 import UIKit
 import Photos
-class CardContentOverCollectionCell: UICollectionViewCell {
-
-
-    @IBOutlet weak var ivPhoto: ScrollableImageView!
+class CardContentOverCollectionCell: UICollectionViewCell, ScrollableViewDelegate {
+    
+    private let bgAlpha : CGFloat = 0.7
+    let dominantBrightness : CGFloat = 0.3
+    var gl:CAGradientLayer?
+ 
+    var repositioningDelegate : ArticlePreviewRepositioningDelegate?
+    private var cardIdentifier : String?
+    
+    @IBOutlet weak var vMidia: ScrollableView!
     @IBOutlet weak var lblCardTitle: UILabel!
     @IBOutlet weak var lblCardInfoText: UILabel!
     @IBOutlet weak var vTextsContainer: UIView!
-    @IBOutlet weak var vVideo: FullscreenVideoView!
+    @IBOutlet weak var allTextView: UIView!
     
+    //just over variables
+    @IBOutlet weak var infoTextLeadingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var infoTextTrailingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var titleLeadingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var titleTrailingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var gradientView: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
         
     }
-    
 
     override func prepareForReuse() {
-        ivPhoto.setImage(nil)
+        stopAssets()
+        stopRepositioning()
     }
     
-    func setTexts(title:String, infoText:String) {
-        lblCardTitle.text = title
+    func stopAssets() {
+        vMidia.setAsset(nil)
         
-        lblCardInfoText.text = infoText
-        lblCardInfoText.sizeToFit()
-        lblCardInfoText.layoutIfNeeded()
-      
-        setMockImage()
+        //vVideo.phAsset = nil
+        
     }
     
     func setContentForPreview(card : [String:AnyObject], imageManager:PHCachingImageManager)
@@ -44,37 +53,137 @@ class CardContentOverCollectionCell: UICollectionViewCell {
         let infoText : String = card["infoText"] as! String
         
         lblCardTitle.text = title
-        
         lblCardInfoText.text = infoText
-        lblCardInfoText.sizeToFit()
-        lblCardInfoText.layoutIfNeeded()
         
-        if asset.mediaType == PHAssetMediaType.Image {
-            vVideo.hidden = true
-            ivPhoto.hidden = false
-            ivPhoto.imageManager = imageManager
-            ivPhoto.setPositioningScale(ScrollableImageViewPosAndScale.ASPECT_FILL)
-            ivPhoto.setImageFromAsset(asset)
-        } else {
-            ivPhoto.hidden = true
-            vVideo.hidden = false
-            vVideo.imageManager = imageManager
-            vVideo.phAsset = asset
+        if  title == "" && infoText == "" {
+            vTextsContainer.hidden = true
         }
         
+        cardIdentifier = asset.localIdentifier
+        
+        vMidia.hidden = false
+        vMidia.imageManager = imageManager
+        vMidia.zoomAndPosDelegate = self
+        //change content midia positioning
+        if let repositioning = repositioningDelegate?.getRepositioningFor(asset.localIdentifier)  {
+            vMidia.setPositioningScale(ScrollableViewPosAndScale.BY_RECT, zoom: repositioning.0, offset: repositioning.1)
+        } else {
+            vMidia.setPositioningScale(ScrollableViewPosAndScale.ASPECT_FILL)
+        }
+        vMidia.setAsset(asset)
+       
     }
+
     
-    private func setMockImage()
+    func setContentForPreview(card : [String:AnyObject], imageManager:PHCachingImageManager, design: Int)
     {
-       ivPhoto.setImageFromUrls(nil, photoUrl: NSURL(string: "http://www.cbc.ca/documentaries/content/images/blog/greatbarrierreef1_1920.jpg")!)
+        
+        setContentForPreview(card, imageManager: imageManager)
+        
+        infoTextLeadingConstraint.constant = 14
+        infoTextTrailingConstraint.constant = 14
+        titleLeadingConstraint.constant = 14
+        titleTrailingConstraint.constant = 14
+        
+        
+        switch design {
+        case CardMode.OverCellDesign.Dark.rawValue:
+            gl?.removeFromSuperlayer()
+            lblCardTitle.textColor = UIColor.whiteColor()
+            lblCardInfoText.textColor = lblCardTitle.textColor
+            vTextsContainer.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(bgAlpha)
+            break
+            
+        case CardMode.OverCellDesign.Light.rawValue:
+            gl?.removeFromSuperlayer()
+            lblCardTitle.textColor = UIColor.blackColor()
+            lblCardInfoText.textColor = lblCardTitle.textColor
+            vTextsContainer.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(bgAlpha)
+            break
+            
+        case CardMode.OverCellDesign.Midia.rawValue:
+            gl?.removeFromSuperlayer()
+            let dominantColor = card["midiaDominantColor"] as! UIColor
+            var hue         : CGFloat = 0
+            var saturation  : CGFloat = 0
+            var brightness  : CGFloat = 0
+            var alpha       : CGFloat = 0
+            
+            if dominantColor.getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: &alpha) {
+                lblCardTitle.textColor =   UIColor.whiteColor()
+                lblCardInfoText.textColor = lblCardTitle.textColor
+                vTextsContainer.backgroundColor =  UIColor( hue: hue, saturation: saturation, brightness: dominantBrightness, alpha: alpha).colorWithAlphaComponent(bgAlpha)
+            }
+            break
+   
+        case CardMode.OverCellDesign.MidiaGradient.rawValue:
+          
+            infoTextLeadingConstraint.constant = 0
+            infoTextTrailingConstraint.constant = 0
+            titleLeadingConstraint.constant = 0
+            titleTrailingConstraint.constant = 0
+            
+            let dominantColor = card["midiaDominantColor"] as! UIColor
+            var hue         : CGFloat = 0
+            var saturation  : CGFloat = 0
+            var brightness  : CGFloat = 0
+            var alpha       : CGFloat = 0
+
+            lblCardTitle.textColor = UIColor.whiteColor()
+            lblCardInfoText.textColor = lblCardTitle.textColor
+            vTextsContainer.backgroundColor = UIColor.clearColor()
+            if dominantColor.getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: &alpha) {
+                addGradient( UIColor( hue: hue, saturation: saturation, brightness: 0.5, alpha: alpha))
+            }
+
+            break
+            
+            
+        default:
+            lblCardTitle.textColor = UIColor.whiteColor()
+            lblCardInfoText.textColor = lblCardTitle.textColor
+            vTextsContainer.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(bgAlpha)
+        }
     }
     
-
-
-
-    /**
-    override func hitTest(point: CGPoint, withEvent event: UIEvent?) -> UIView? {
-        return ivPhoto
+    
+    private func addGradient(dominantColor : UIColor) {
+        gl?.removeFromSuperlayer()
+        gl = CAGradientLayer()
+        gl?.frame = self.bounds
+        gl!.startPoint = CGPoint(x: 0.5, y: 1.0)
+        gl!.endPoint = CGPoint(x: 0.5, y: 0.0)
+        gl!.colors = [ dominantColor.colorWithAlphaComponent(0.9).CGColor,dominantColor.colorWithAlphaComponent(0.5).CGColor,dominantColor.colorWithAlphaComponent(0.1).CGColor]
+        gl!.locations = [ 0.0, 0.6, 1.0]
+        gradientView.layer.addSublayer(gl!)
     }
- **/
+
+
+    //MARK: - Repositioning
+    
+    func startRepositioning() {
+        vMidia.scrollEnabled = true
+        gradientView.hidden = true
+        allTextView.hidden = true
+    }
+    
+    func stopRepositioning() {
+        vMidia.scrollEnabled = false
+        gradientView.hidden = false
+        allTextView.hidden = false
+    }
+    
+    override func hitTest(point: CGPoint, withEvent event: UIEvent?) -> UIView? {
+        if vMidia.scrollEnabled {
+            return vMidia
+        }
+        return super.hitTest(point, withEvent: event)
+    }
+    
+    //scalableView delegate
+    func changeViewScalingOrPositioning( zoom:CGFloat, offset :CGPoint) -> Void {
+        
+        repositioningDelegate?.addImageRepositioning(cardIdentifier!, zoom: zoom, offset: offset)
+    }
+ 
 }
