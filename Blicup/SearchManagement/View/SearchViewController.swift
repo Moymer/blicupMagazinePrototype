@@ -63,23 +63,23 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
-        guard let collectionCell = collectionView.dequeueReusableCellWithReuseIdentifier("collectionCell", forIndexPath: indexPath) as? MagazineCoverCollectionViewCell else {
+        guard let collectionCell = collectionView.dequeueReusableCellWithReuseIdentifier("collectionCell", forIndexPath: indexPath) as? ArticleCoverCollectionViewCell else {
             return UICollectionViewCell()
         }
         
         collectionCell.layer.cornerRadius = 10
         collectionCell.layer.masksToBounds = true
         
-        collectionCell.lblMagazineCoverTitle.text = searchPresenter.titleAtIndex(indexPath.row)
+        collectionCell.lblArticleCoverTitle.text = searchPresenter.titleAtIndex(indexPath.row)
         
         if let image = searchPresenter.coverAtIndex(indexPath.row) {
-            collectionCell.ivMagazineCover.image = image
+            collectionCell.ivArticleCover.image = image
             
             
             let averageColor = image.averageColor()
             if let mainColor = averageColor.rgbToInt() {
                 let color = UIColor.rgbIntToUIColor(mainColor)
-                collectionCell.ivMagazineCover.setMainColor(color.colorWithAlphaComponent(0.5))
+                collectionCell.ivArticleCover.setMainColor(color.colorWithAlphaComponent(0.5))
             }
         }
         

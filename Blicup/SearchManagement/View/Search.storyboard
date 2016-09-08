@@ -207,7 +207,7 @@
                                     <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collectionCell" id="28w-Do-JCx" customClass="MagazineCoverCollectionViewCell" customModule="Blicup" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collectionCell" id="28w-Do-JCx" customClass="ArticleCoverCollectionViewCell">
                                         <rect key="frame" x="10" y="140" width="100" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -237,8 +237,8 @@
                                             <constraint firstItem="60m-ZM-QB3" firstAttribute="top" secondItem="28w-Do-JCx" secondAttribute="top" id="r1o-lh-hc5"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="ivMagazineCover" destination="XmH-Yv-cIA" id="f31-2f-1CE"/>
-                                            <outlet property="lblMagazineCoverTitle" destination="60m-ZM-QB3" id="cGr-bM-E1H"/>
+                                            <outlet property="ivArticleCover" destination="XmH-Yv-cIA" id="082-jr-TxO"/>
+                                            <outlet property="lblArticleCoverTitle" destination="60m-ZM-QB3" id="EYK-wl-8ho"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
