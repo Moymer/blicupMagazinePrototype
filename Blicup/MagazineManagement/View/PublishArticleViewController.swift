@@ -23,7 +23,6 @@ class PublishArticleViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        self.title = "Publish Blic to:"
         btnPublishArticle.layer.cornerRadius = self.btnPublishArticle.frame.height/2
         btnPublishArticle.layer.masksToBounds = true
         btnPublishArticle.hidden = true
@@ -122,6 +121,11 @@ class PublishArticleViewController: UIViewController {
         }
     }
     
+    // MARK: Actions
+    
+    @IBAction func backPressed(sender: AnyObject) {
+        self.navigationController?.popViewControllerAnimated(true)
+    }
     
     func showPublishBlicBtn(show show: Bool) {
         

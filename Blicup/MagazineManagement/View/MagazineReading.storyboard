@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="uLq-zD-xhd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="uLq-zD-xhd">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -152,10 +152,10 @@
             </objects>
             <point key="canvasLocation" x="584" y="922"/>
         </scene>
-        <!--PublishArticleViewControllerNav-->
+        <!--PublishArticleViewController-->
         <scene sceneID="ZkP-0n-e6K">
             <objects>
-                <viewControllerPlaceholder storyboardName="Magazine" referencedIdentifier="PublishArticleViewControllerNav" id="e3M-2M-qqp" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Magazine" referencedIdentifier="PublishArticleViewController" id="e3M-2M-qqp" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ehC-5v-19b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="780" y="1130"/>
@@ -164,6 +164,10 @@
         <scene sceneID="tPH-tz-Cfy">
             <objects>
                 <viewController id="iwa-OR-EvM" customClass="ArticlePreviewTopController" customModule="Blicup" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cOe-HE-dkN"/>
+                        <viewControllerLayoutGuide type="bottom" id="aoS-HD-zYr"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Us8-dd-1SM">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
