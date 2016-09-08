@@ -16,6 +16,7 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
     @IBOutlet weak var btnMorePics: BCCloseButton!
     @IBOutlet weak var btnCloseArticle: BCCloseButton!
     @IBOutlet weak var btnPreviewArticle: BCCloseButton!
+    @IBOutlet weak var articleFlowLayout: ArticleCreationCollectionViewFlowLayout!
     
     
     
@@ -27,15 +28,11 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
         self.collectionView.decelerationRate = UIScrollViewDecelerationRateFast
         longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(ArticleCreationViewController.handleLongGesture(_:)))
         self.collectionView.addGestureRecognizer(longPressGesture)
-    }
-    
-    func setFlowLayout() {
-        if let articleFlowLayout = collectionView.collectionViewLayout as? ArticleCreationCollectionViewFlowLayout {
-            let verticalInsets = (collectionView.bounds.height - 330)/2
-            articleFlowLayout.sectionInset = UIEdgeInsetsMake(verticalInsets, 20, verticalInsets, 20)
-            let cellWidth = collectionView.bounds.width - (articleFlowLayout.sectionInset.left + articleFlowLayout.sectionInset.right)
-            articleFlowLayout.estimatedItemSize = CGSizeMake(cellWidth, 330)
-        }
+        
+        let verticalInsets = (collectionView.bounds.height - 330)/2
+        articleFlowLayout.sectionInset = UIEdgeInsetsMake(verticalInsets, 20, verticalInsets, 20)
+        articleFlowLayout.minimumLineSpacing = 50
+        articleFlowLayout.minimumInteritemSpacing = 10
     }
     
     func handleLongGesture(gesture: UILongPressGestureRecognizer) {
@@ -50,39 +47,39 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
             }
             
             if centerIndex == selectedIndexPath {
-                self.updateLayout(true)
-                collectionView.beginInteractiveMovementForItemAtIndexPath(selectedIndexPath)
+                self.collectionView.beginInteractiveMovementForItemAtIndexPath(selectedIndexPath)
+                animateCollectionViewRearrange(true)
             }
             break
         case UIGestureRecognizerState.Changed:
-            let frame = CGPointMake(collectionView.frame.maxX/2, gesture.locationInView(gesture.view!).y)
+            let frame = CGPointMake(self.collectionView.center.x, gesture.locationInView(gesture.view!).y)
             collectionView.updateInteractiveMovementTargetPosition(frame)
             break
         case UIGestureRecognizerState.Ended:
-            self.updateLayout(false)
-            collectionView.endInteractiveMovement()
-            
+            self.collectionView.endInteractiveMovement()
+            animateCollectionViewRearrange(false)
             break
         default:
-            self.updateLayout(false)
             collectionView.cancelInteractiveMovement()
+            animateCollectionViewRearrange(false)
             break
         }
     }
     
-    func updateLayout(editing: Bool){
-        if let articleFlowLayout = collectionView.collectionViewLayout as? ArticleCreationCollectionViewFlowLayout {
-            articleFlowLayout.editing = editing
-            articleFlowLayout.prepareLayout()
-            self.collectionView.collectionViewLayout.invalidateLayout()
-            self.collectionView.setCollectionViewLayout(articleFlowLayout, animated: true)
-        }
+    private func animateCollectionViewRearrange(rearranging: Bool) {
+        let scale = rearranging ? CGAffineTransformMakeScale(0.6, 0.6) : CGAffineTransformIdentity
+        UIView.animateWithDuration(0.3, delay: 0.0, options: [], animations: {
+            self.collectionView.transform = scale
+            self.collectionView.showsVerticalScrollIndicator = !rearranging
+            if rearranging { self.collectionView.clipsToBounds = false }
+            }, completion: { (_) in
+                self.collectionView.clipsToBounds = !rearranging
+        })
     }
-    
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-
+        
         if self.presenter.numberOfMedias() == 6 {
             self.btnMorePics.hidden = true
         }
@@ -131,6 +128,7 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
         
         self.collectionView.performBatchUpdates({
             self.collectionView.reloadData()
+            self.collectionView.reloadItemsAtIndexPaths([NSIndexPath(forItem: 0, inSection: 0)])
             self.collectionView.reloadItemsAtIndexPaths(self.collectionView.indexPathsForVisibleItems())
             }, completion: nil)
         
@@ -262,12 +260,12 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
     func textViewDidBeginEditing(textView: UITextView) {
         centerTextViewCell(textView)
     }
-
+    
     func textViewDidEndEditing(textView: UITextView) {
         let point = collectionView.convertPoint(CGPointZero, fromView: textView)
         guard let index = collectionView.indexPathForItemAtPoint(point),
             let cell = collectionView.cellForItemAtIndexPath(index) as? CardCollectionViewCell else {
-            return
+                return
         }
         
         presenter.setCardTexts(index, title: cell.title, content: cell.content)
