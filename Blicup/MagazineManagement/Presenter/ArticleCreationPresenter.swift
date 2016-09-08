@@ -10,10 +10,10 @@ import UIKit
 import Photos
 
 class ArticleCreationPresenter: NSObject {
-    private let imageManager = PHCachingImageManager()
+    let imageManager = PHCachingImageManager()
     private let options = PHImageRequestOptions()
     
-    private let ASSET_KEY = "Asset", TITLE_KEY = "Title", CONTENT_KEY = "Content"
+    private let ASSET_KEY = "midia", TITLE_KEY = "title", CONTENT_KEY = "infoText"
     var articleParts = [Dictionary<String,AnyObject>]()
     
     
@@ -71,15 +71,27 @@ class ArticleCreationPresenter: NSObject {
         return (articleDic[CONTENT_KEY] as? String)
     }
     
-    func getImageMedia(index:NSIndexPath, completion:(image:UIImage?)->Void) {
+    func getAsset(index:NSIndexPath)->PHAsset? {
         guard 0 <= index.item && index.item < articleParts.count else {
-            completion(image: nil)
-            return
+            return nil
         }
         
         let part = articleParts[index.row]
         
-        guard let asset = part[ASSET_KEY] as? PHAsset else {
+        let asset = part[ASSET_KEY] as? PHAsset
+        return asset
+    }
+    
+    func mediaIsVideo(index:NSIndexPath)->Bool {
+        guard let asset = getAsset(index) else {
+            return false
+        }
+        
+        return (asset.mediaType == PHAssetMediaType.Video)
+    }
+    
+    func getImageMedia(index:NSIndexPath, completion:(image:UIImage?)->Void) {
+        guard let asset = getAsset(index) else {
             completion(image: nil)
             return
         }
