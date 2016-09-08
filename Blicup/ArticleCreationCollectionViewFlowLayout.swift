@@ -12,7 +12,6 @@ import UIKit
 class ArticleCreationCollectionViewFlowLayout: UICollectionViewFlowLayout {
     
     var disablePaging = false
-    var editing = false
     
     
     override func shouldInvalidateLayoutForBoundsChange(newBounds: CGRect) -> Bool {

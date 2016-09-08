@@ -28,6 +28,13 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
         self.collectionView.decelerationRate = UIScrollViewDecelerationRateFast
         longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(ArticleCreationViewController.handleLongGesture(_:)))
         self.collectionView.addGestureRecognizer(longPressGesture)
+        
+        self.view.layoutIfNeeded()
+        
+        let verticalInsets = (collectionView.bounds.height - 330)/2
+        articleFlowLayout.sectionInset = UIEdgeInsetsMake(verticalInsets, 20, verticalInsets, 20)
+        articleFlowLayout.minimumLineSpacing = 50
+        articleFlowLayout.minimumInteritemSpacing = 10
     }
     
     
@@ -43,7 +50,8 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
             }
             
             if centerIndex == selectedIndexPath {
-                collectionView.beginInteractiveMovementForItemAtIndexPath(selectedIndexPath)
+                self.collectionView.beginInteractiveMovementForItemAtIndexPath(selectedIndexPath)
+                animateCollectionViewRearrange(true)
             }
             break
         case UIGestureRecognizerState.Changed:
@@ -51,8 +59,8 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
             collectionView.updateInteractiveMovementTargetPosition(frame)
             break
         case UIGestureRecognizerState.Ended:
-            collectionView.endInteractiveMovement()
-            
+            self.collectionView.endInteractiveMovement()
+            animateCollectionViewRearrange(false)
             break
         default:
             collectionView.cancelInteractiveMovement()
@@ -61,6 +69,16 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
         }
     }
     
+    private func animateCollectionViewRearrange(rearranging: Bool) {
+        let scale = rearranging ? CGAffineTransformMakeScale(0.6, 0.6) : CGAffineTransformIdentity
+        UIView.animateWithDuration(0.3, delay: 0.0, options: [], animations: {
+            self.collectionView.transform = scale
+            self.collectionView.showsVerticalScrollIndicator = !rearranging
+            if rearranging { self.collectionView.clipsToBounds = false }
+            }, completion: { (_) in
+                self.collectionView.clipsToBounds = !rearranging
+        })
+    }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -261,12 +279,14 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
         presenter.setCardTexts(index, title: cell.title, content: cell.content)
         
         self.collectionView.collectionViewLayout.invalidateLayout()
-        
-//        centerTextViewCell(textView)
+        centerTextViewCell(textView)
     }
     
     func textViewDidBeginEditing(textView: UITextView) {
         centerTextViewCell(textView)
+    }
+    
+    func textViewDidEndEditing(textView: UITextView) {
     }
     
     
