@@ -96,17 +96,4 @@ class FullscreenVideoView: UIImageView {
         self.avPlayer?.play()
     }
 
-
-    
-    /*
-    override func layoutSubviews() {
-        
-        super.layoutSubviews()
-
-        if !hasInit  &&  self.avPlayerLayer != nil {
-             self.superview?.setNeedsLayout()
-        }
- 
-    }*/
-
 }

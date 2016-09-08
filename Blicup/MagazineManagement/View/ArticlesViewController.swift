@@ -50,7 +50,7 @@ class ArticlesViewController: UIViewController {
 }
 
 
-
+//Bottom ViewController for Preview
 class ArticlePreviewController: UIViewController {
     
     var mainController : ArticlesViewController?

@@ -1246,12 +1246,11 @@
 		C97A084E1D776B0300D794EA /* Reading */ = {
 			isa = PBXGroup;
 			children = (
-				C9E4FE981D7E2905005A48B5 /* Cards */,
-				C97A08421D77493500D794EA /* MagazineReading.storyboard */,
 				C97A084F1D77746200D794EA /* ArticlesReadingCollectionViewController.swift */,
-				C9E4FEB11D804203005A48B5 /* ScrollableView.swift */,
-				C991F67C1D7DEBBE00371DE5 /* FullscreenVideoView.swift */,
 				C991F67A1D7DD81100371DE5 /* ArticlesViewController.swift */,
+				C97A08421D77493500D794EA /* MagazineReading.storyboard */,
+				C9E4FE981D7E2905005A48B5 /* Cards */,
+				C9AEF00E1D81B4A100EEA8F8 /* ScrollableImageAndVideo */,
 			);
 			name = Reading;
 			sourceTree = "<group>";
@@ -1295,6 +1294,15 @@
 				C9C606881D06187500F39B15 /* GiphyViewerController.swift */,
 			);
 			name = "ChatRoom Screen";
+			sourceTree = "<group>";
+		};
+		C9AEF00E1D81B4A100EEA8F8 /* ScrollableImageAndVideo */ = {
+			isa = PBXGroup;
+			children = (
+				C9E4FEB11D804203005A48B5 /* ScrollableView.swift */,
+				C991F67C1D7DEBBE00371DE5 /* FullscreenVideoView.swift */,
+			);
+			name = ScrollableImageAndVideo;
 			sourceTree = "<group>";
 		};
 		C9E464901CB83CCB0034853B /* BlicupAPI */ = {
