@@ -50,14 +50,9 @@ class LocationButton: UIButton {
         super.init(coder: aDecoder)
         initPlaceholder()
     }
+
     
-    override func intrinsicContentSize() -> CGSize {
-        lblPlaceholder.hidden = (text.length > 0)
-        let size = self.sizeThatFits(CGSizeMake(self.bounds.width, CGFloat.max))
-        return size
-    }
-    
-    private func initPlaceholder() {
+    private func initPlaceholder() {        
         lblPlaceholder.frame = self.bounds
         lblPlaceholder.autoresizingMask = [UIViewAutoresizing.FlexibleWidth, UIViewAutoresizing.FlexibleHeight]
         
@@ -100,13 +95,6 @@ class CardCollectionViewCell: UICollectionViewCell {
         self.layer.masksToBounds = false
     }
     
-    
-    override func preferredLayoutAttributesFittingAttributes(layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
-        let superAttr = super.preferredLayoutAttributesFittingAttributes(layoutAttributes)
-        superAttr.size = CGSizeMake(layoutAttributes.size.width, superAttr.size.height)
-        return superAttr
-    }
-    
     override func prepareForReuse() {
         super.prepareForReuse()
         self.title = nil
@@ -138,6 +126,10 @@ class CardCollectionViewCell: UICollectionViewCell {
             return nil
         }
     }
+    
+    class func cellSize(width:CGFloat, title:String?, content: String?)->CGSize {
+        return CGSizeMake(300, 330)
+    }
 }
 
 class ContentCollectionCell: CardCollectionViewCell {
@@ -158,6 +150,24 @@ class ContentCollectionCell: CardCollectionViewCell {
             contentText.invalidateIntrinsicContentSize()
         }
         get { return contentText.text }
+    }
+    
+    override class func cellSize(width:CGFloat, title:String?, content: String?)->CGSize {
+        let FIXED_HEIGHT: CGFloat = 250.0
+        let width = width - 20
+        
+        let tv = ArticleTextView()
+        
+        tv.font = UIFont(name: "Avenir-Black", size: 23.0)
+        tv.text = title
+        let titleSize = tv.sizeThatFits(CGSizeMake(width, CGFloat.max))
+        
+        tv.font = UIFont(name: "Avenir-Roman", size: 16.0)
+        tv.text = content
+        let contentSize = tv.sizeThatFits(CGSizeMake(width, CGFloat.max))
+        
+        let totalHeight = FIXED_HEIGHT + titleSize.height + contentSize.height
+        return CGSizeMake(width, totalHeight)
     }
 }
 

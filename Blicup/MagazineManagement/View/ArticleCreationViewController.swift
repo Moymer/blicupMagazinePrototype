@@ -10,7 +10,7 @@ import UIKit
 import Photos
 
 
-class ArticleCreationViewController: UIViewController, UICollectionViewDataSource, UITextViewDelegate, UIGestureRecognizerDelegate, AddAssetsProtocol, SearchArticleLocationViewControllerDelegate {
+class ArticleCreationViewController: UIViewController, UICollectionViewDataSource, UITextViewDelegate, UIGestureRecognizerDelegate, AddAssetsProtocol, SearchArticleLocationViewControllerDelegate, UICollectionViewDelegateFlowLayout {
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var btnMorePics: BCCloseButton!
@@ -27,8 +27,8 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
         if let articleFlowLayout = collectionView.collectionViewLayout as? ArticleCreationCollectionViewFlowLayout {
             let verticalInsets = (collectionView.bounds.height - 330)/2
             articleFlowLayout.sectionInset = UIEdgeInsetsMake(verticalInsets, 20, verticalInsets, 20)
-            let cellWidth = collectionView.bounds.width - (articleFlowLayout.sectionInset.left + articleFlowLayout.sectionInset.right)
-            articleFlowLayout.estimatedItemSize = CGSizeMake(cellWidth, 330)
+//            let cellWidth = collectionView.bounds.width - (articleFlowLayout.sectionInset.left + articleFlowLayout.sectionInset.right)
+//            articleFlowLayout.estimatedItemSize = CGSizeMake(cellWidth, 330)
         }
     }
     
@@ -106,6 +106,19 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
         
         return cell
     }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        let verticalInsets = (collectionViewLayout as! UICollectionViewFlowLayout).sectionInset.left + (collectionViewLayout as! UICollectionViewFlowLayout).sectionInset.right
+        let cellWidth = collectionView.bounds.width - verticalInsets
+        
+        if indexPath.row == 0 {
+            return CardCollectionViewCell.cellSize(cellWidth, title: presenter.getCardTitle(indexPath), content: presenter.getCardContent(indexPath))
+        }
+        else {
+            return ContentCollectionCell.cellSize(cellWidth, title: presenter.getCardTitle(indexPath), content: presenter.getCardContent(indexPath))
+        }
+    }
+    
     
     func scrollViewWillBeginDragging(scrollView: UIScrollView) {
         guard scrollView is UICollectionView else {
@@ -195,31 +208,21 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
     }
     
     func textViewDidChange(textView: UITextView) {
-        textView.invalidateIntrinsicContentSize()
-        textView.superview?.needsUpdateConstraints()
-        
         let point = collectionView.convertPoint(CGPointZero, fromView: textView)
-        if let index = collectionView.indexPathForItemAtPoint(point) {
-            let context = UICollectionViewFlowLayoutInvalidationContext()
-            context.invalidateItemsAtIndexPaths([index])
-            self.collectionView.collectionViewLayout.invalidateLayoutWithContext(context)
+        guard let index = collectionView.indexPathForItemAtPoint(point),
+            let cell = collectionView.cellForItemAtIndexPath(index) as? CardCollectionViewCell else {
+                return
         }
         
-        centerTextViewCell(textView)
+        presenter.setCardTexts(index, title: cell.title, content: cell.content)
+        
+        self.collectionView.collectionViewLayout.invalidateLayout()
+        
+//        centerTextViewCell(textView)
     }
     
     func textViewDidBeginEditing(textView: UITextView) {
         centerTextViewCell(textView)
-    }
-
-    func textViewDidEndEditing(textView: UITextView) {
-        let point = collectionView.convertPoint(CGPointZero, fromView: textView)
-        guard let index = collectionView.indexPathForItemAtPoint(point),
-            let cell = collectionView.cellForItemAtIndexPath(index) as? CardCollectionViewCell else {
-            return
-        }
-        
-        presenter.setCardTexts(index, title: cell.title, content: cell.content)
     }
     
     
@@ -246,19 +249,12 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
             return
         }
         
-        if let articleLayout = collectionView.collectionViewLayout as? ArticleCreationCollectionViewFlowLayout {
-            articleLayout.disablePaging = true
-        }
-        
         var inset = collectionView.contentInset
         inset.bottom = keyboardSize.height
         collectionView.contentInset = inset
     }
     
     func keyboardWillHide(notification: NSNotification) {
-        if let articleLayout = collectionView.collectionViewLayout as? ArticleCreationCollectionViewFlowLayout {
-            articleLayout.disablePaging = false
-        }
         collectionView.contentInset = UIEdgeInsetsZero
     }
     
@@ -358,6 +354,9 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "LocationSegue", let vc = segue.destinationViewController as? SearchArticleLocationViewController {
             vc.handleMapSearchDelegate = self
+        }
+        else if segue.identifier == "viewArticleSegue", let vc = segue.destinationViewController as? ArticlesViewController {
+            vc.articleContent = presenter.articleParts
         }
     }
 }

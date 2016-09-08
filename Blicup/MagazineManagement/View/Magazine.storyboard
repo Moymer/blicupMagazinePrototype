@@ -241,7 +241,6 @@
                         <outlet property="buttonBarView" destination="CNW-yd-Q90" id="7d3-6v-oyx"/>
                         <outlet property="containerView" destination="46e-Ix-olu" id="LNK-Xh-N5Y"/>
                         <segue destination="gs4-Ue-mWh" kind="show" identifier="CreateArticleSegue" id="N0v-1C-Jel"/>
-                        <segue destination="OE6-9E-xJa" kind="show" identifier="viewArticleSegue" id="a8K-TB-1ux"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rtj-Ws-SRS" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -254,7 +253,7 @@
                 <viewControllerPlaceholder storyboardName="MagazineReading" referencedIdentifier="articlesViewController" id="OE6-9E-xJa" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rRF-Vy-bCT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="362.5" y="1458"/>
+            <point key="canvasLocation" x="1665" y="893"/>
         </scene>
         <!--Article Creation View Controller-->
         <scene sceneID="nmo-Ml-bb4">
@@ -405,8 +404,8 @@
                                                                 <constraint firstAttribute="height" constant="225" id="D54-wW-mcd"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" bounces="NO" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="NGC-bw-hOl" customClass="ArticleTextView" customModule="Blicup" customModuleProvider="target">
-                                                            <rect key="frame" x="10" y="235" width="315" height="48"/>
+                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="999" bounces="NO" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="NGC-bw-hOl" customClass="ArticleTextView" customModule="Blicup" customModuleProvider="target">
+                                                            <rect key="frame" x="10" y="235" width="315" height="37"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                             <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="23"/>
@@ -418,8 +417,8 @@
                                                                 <outlet property="delegate" destination="gs4-Ue-mWh" id="CNH-fh-XGj"/>
                                                             </connections>
                                                         </textView>
-                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="999" bounces="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="LyJ-o3-li9" customClass="ArticleTextView" customModule="Blicup" customModuleProvider="target">
-                                                            <rect key="frame" x="10" y="283" width="315" height="32"/>
+                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" bounces="NO" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="LyJ-o3-li9" customClass="ArticleTextView" customModule="Blicup" customModuleProvider="target">
+                                                            <rect key="frame" x="10" y="277" width="315" height="38"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                             <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="16"/>
@@ -439,13 +438,13 @@
                                                         <constraint firstItem="LyJ-o3-li9" firstAttribute="leading" secondItem="sZR-cX-1Ix" secondAttribute="leading" constant="10" id="7e7-3O-akm"/>
                                                         <constraint firstItem="hAJ-TL-sdv" firstAttribute="trailing" secondItem="edU-TP-24F" secondAttribute="trailing" id="DGL-Gx-cIn"/>
                                                         <constraint firstItem="NGC-bw-hOl" firstAttribute="top" secondItem="edU-TP-24F" secondAttribute="bottom" constant="10" id="Fbw-dQ-O6c"/>
+                                                        <constraint firstAttribute="bottom" secondItem="LyJ-o3-li9" secondAttribute="bottom" constant="15" id="WqB-ce-v7N"/>
                                                         <constraint firstAttribute="trailing" secondItem="edU-TP-24F" secondAttribute="trailing" id="dx8-tM-uaT"/>
                                                         <constraint firstAttribute="trailing" secondItem="LyJ-o3-li9" secondAttribute="trailing" constant="10" id="eyd-cZ-mi8"/>
                                                         <constraint firstItem="hAJ-TL-sdv" firstAttribute="leading" secondItem="edU-TP-24F" secondAttribute="leading" id="kOA-Ie-bek"/>
                                                         <constraint firstItem="NGC-bw-hOl" firstAttribute="leading" secondItem="sZR-cX-1Ix" secondAttribute="leading" constant="10" id="nBm-4C-Njz"/>
                                                         <constraint firstItem="edU-TP-24F" firstAttribute="top" secondItem="sZR-cX-1Ix" secondAttribute="top" id="nDz-QY-Ihh"/>
-                                                        <constraint firstItem="LyJ-o3-li9" firstAttribute="top" secondItem="NGC-bw-hOl" secondAttribute="bottom" id="qKh-RT-fBU"/>
-                                                        <constraint firstAttribute="bottom" secondItem="LyJ-o3-li9" secondAttribute="bottom" constant="15" id="qPu-Of-PmD"/>
+                                                        <constraint firstItem="LyJ-o3-li9" firstAttribute="top" secondItem="NGC-bw-hOl" secondAttribute="bottom" constant="5" id="qKh-RT-fBU"/>
                                                         <constraint firstItem="hAJ-TL-sdv" firstAttribute="top" secondItem="edU-TP-24F" secondAttribute="top" id="rH2-YH-GBn"/>
                                                         <constraint firstItem="edU-TP-24F" firstAttribute="leading" secondItem="sZR-cX-1Ix" secondAttribute="leading" id="y3f-KX-oBN"/>
                                                     </constraints>
@@ -507,6 +506,7 @@
                                 <state key="normal" title=" " image="Preview"/>
                                 <connections>
                                     <action selector="btnPreviewArticlePressed:" destination="gs4-Ue-mWh" eventType="touchUpInside" id="VRm-Vp-aqV"/>
+                                    <segue destination="OE6-9E-xJa" kind="show" identifier="viewArticleSegue" id="7en-Xu-FSS"/>
                                 </connections>
                             </button>
                         </subviews>

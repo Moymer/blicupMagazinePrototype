@@ -13,7 +13,7 @@ class ArticleCreationPresenter: NSObject {
     let imageManager = PHCachingImageManager()
     private let options = PHImageRequestOptions()
     
-    private let ASSET_KEY = "Asset", TITLE_KEY = "Title", CONTENT_KEY = "Content"
+    private let ASSET_KEY = "midia", TITLE_KEY = "title", CONTENT_KEY = "infoText"
     var articleParts = [Dictionary<String,AnyObject>]()
     
     
