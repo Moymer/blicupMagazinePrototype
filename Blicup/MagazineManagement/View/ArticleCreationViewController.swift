@@ -16,6 +16,7 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
     @IBOutlet weak var btnMorePics: BCCloseButton!
     @IBOutlet weak var btnCloseArticle: BCCloseButton!
     @IBOutlet weak var btnPreviewArticle: BCCloseButton!
+    @IBOutlet weak var articleFlowLayout: ArticleCreationCollectionViewFlowLayout!
     
     
     
@@ -46,7 +47,7 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
             }
             break
         case UIGestureRecognizerState.Changed:
-            let frame = CGPointMake(collectionView.frame.maxX/2, gesture.locationInView(gesture.view!).y)
+            let frame = CGPointMake(self.collectionView.center.x, gesture.locationInView(gesture.view!).y)
             collectionView.updateInteractiveMovementTargetPosition(frame)
             break
         case UIGestureRecognizerState.Ended:
@@ -55,6 +56,7 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
             break
         default:
             collectionView.cancelInteractiveMovement()
+            animateCollectionViewRearrange(false)
             break
         }
     }
@@ -62,7 +64,7 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-
+        
         if self.presenter.numberOfMedias() == 6 {
             self.btnMorePics.hidden = true
         }
@@ -111,6 +113,7 @@ class ArticleCreationViewController: UIViewController, UICollectionViewDataSourc
         
         self.collectionView.performBatchUpdates({
             self.collectionView.reloadData()
+            self.collectionView.reloadItemsAtIndexPaths([NSIndexPath(forItem: 0, inSection: 0)])
             self.collectionView.reloadItemsAtIndexPaths(self.collectionView.indexPathsForVisibleItems())
             }, completion: nil)
         

@@ -662,6 +662,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="articleFlowLayout" destination="jy5-kl-m9n" id="cYn-Sh-vSx"/>
                         <outlet property="btnCloseArticle" destination="au4-53-Vk1" id="PrB-70-G2B"/>
                         <outlet property="btnMorePics" destination="50g-Ka-Cgn" id="vpQ-cx-ETF"/>
                         <outlet property="btnPreviewArticle" destination="wLm-ty-ude" id="Thn-b4-9IV"/>
