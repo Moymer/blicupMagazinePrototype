@@ -10,10 +10,14 @@ import UIKit
 import Photos
 
 
+protocol ArticlePreviewRepositioningDelegate {
+    func addImageRepositioning(key:String, zoom:CGFloat, offset :CGPoint) -> Void
+    func getRepositioningFor(key:String) -> (CGFloat,CGPoint)?
+}
+
+
 private let reuseIdentifierOver = "CardOverCell"
 private let reuseIdentifierSplited = "CardSplitCell"
-
-
 
 enum CardMode : Int  {
 
@@ -41,7 +45,7 @@ enum CardMode : Int  {
 
 }
 
-class ArticlesReadingCollectionViewController: UICollectionViewController {
+class ArticlesReadingCollectionViewController: UICollectionViewController, ArticlePreviewRepositioningDelegate {
 
     let imageManager = PHCachingImageManager()
     
@@ -49,6 +53,11 @@ class ArticlesReadingCollectionViewController: UICollectionViewController {
     private var articleCardModeOverDesign = CardMode.OverCellDesign.Dark
     private var articleCardModeSplitDesign = CardMode.SplitCellDesign.Dark
 
+    private var focusedIndexPath : NSIndexPath?
+    
+    var presenter : ArticlePreviewPresenter = ArticlePreviewPresenter()
+   
+    
     var articleContent : [[String:AnyObject]] = [] {
         
         didSet{
@@ -110,20 +119,37 @@ class ArticlesReadingCollectionViewController: UICollectionViewController {
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
         let card = articleContent[indexPath.row]
+        focusedIndexPath = indexPath
         
         switch articleCardModeLayout {
         case CardMode.OverCellLayout:
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifierOver, forIndexPath: indexPath) as! CardContentOverCollectionCell
             
+            cell.repositioningDelegate = self
+            
+            if presenter.onRepositioning {
+                cell.startRepositioning()
+            } else {
+                cell.stopRepositioning()
+            }
+           
+            
             cell.layer.shouldRasterize = true;
             cell.layer.rasterizationScale = UIScreen.mainScreen().scale;
-            
             cell.setContentForPreview(card, imageManager: imageManager, design: articleCardModeOverDesign.rawValue)
             
             return cell
             
         case CardMode.SplitCellLayout:
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifierSplited, forIndexPath: indexPath) as! CardContentSplitedCollectionCell
+            
+            cell.repositioningDelegate = self
+            
+            if presenter.onRepositioning {
+                cell.startRepositioning()
+            } else {
+                cell.stopRepositioning()
+            }
             
             cell.layer.shouldRasterize = true;
             cell.layer.rasterizationScale = UIScreen.mainScreen().scale;
@@ -138,6 +164,7 @@ class ArticlesReadingCollectionViewController: UICollectionViewController {
     override func collectionView(collectionView: UICollectionView, didEndDisplayingCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath) {
            let changeCell = cell as! CardContentOverCollectionCell
             changeCell.stopAssets()
+            changeCell.stopRepositioning()
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
@@ -149,14 +176,14 @@ class ArticlesReadingCollectionViewController: UICollectionViewController {
      // MARK: Layout and Design change actions for content
     
     func changeLayoutAndDesign() {
-        if checkIfMoreDesign() {
+        if hasMoreDesignForLayout() {
             changeDesign()
         } else {
             changeLayout()
         }
     }
     
-    func changeLayout() {
+    private func changeLayout() {
         articleCardModeLayout = CardMode(rawValue: (articleCardModeLayout.rawValue + 1 ) % CardMode.count)!
         
         articleCardModeOverDesign = CardMode.OverCellDesign(rawValue:0)!
@@ -170,7 +197,7 @@ class ArticlesReadingCollectionViewController: UICollectionViewController {
     }
     
     
-    func changeDesign()  {
+    private func changeDesign()  {
         
         switch articleCardModeLayout {
         case CardMode.OverCellLayout:
@@ -190,7 +217,7 @@ class ArticlesReadingCollectionViewController: UICollectionViewController {
         
     }
     
-    func checkIfMoreDesign() -> Bool {
+    private func hasMoreDesignForLayout() -> Bool {
         var hasMore : Bool = false
         switch articleCardModeLayout {
         case CardMode.OverCellLayout:
@@ -204,10 +231,33 @@ class ArticlesReadingCollectionViewController: UICollectionViewController {
         return hasMore
     }
 
+    func doResizeAndRepositioning()
+    {
+        presenter.onRepositioning  = !presenter.onRepositioning
+        self.collectionView?.scrollEnabled = !presenter.onRepositioning
+        
+        self.collectionView?.performBatchUpdates({
+            self.collectionView?.reloadSections(NSIndexSet(index: 0))
+            }, completion: nil)
+    }
     
+    //MARK: - Repositioning Delegate
+    func addImageRepositioning(key:String, zoom:CGFloat, offset :CGPoint) -> Void {
+        
+        presenter.addArticleCardMidiaPositioning(ArticleCardMidiaPositioning(z: zoom, o: offset, k: key),cardMode: articleCardModeLayout)
+    }
+    
+    func getRepositioningFor(key:String) -> (CGFloat,CGPoint)? {
+        
+        if let pos = presenter.getArticleCardMidiaPositioning(key,cardMode: articleCardModeLayout) {
+            return (pos.zoom!, pos.offset!)
+        }
+        return nil
+    }
 
     // MARK: UICollectionViewDelegate
-
-
+    override func indexPathForPreferredFocusedViewInCollectionView(collectionView: UICollectionView) -> NSIndexPath? {
+        return focusedIndexPath
+    }
 
 }

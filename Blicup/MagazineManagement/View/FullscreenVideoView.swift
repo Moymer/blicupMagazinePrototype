@@ -10,12 +10,13 @@ import UIKit
 import AVFoundation
 import Photos
 
-class FullscreenVideoView: UIView {
+class FullscreenVideoView: UIImageView {
     var imageManager : PHCachingImageManager?
     let options = PHVideoRequestOptions()
+     let optionsImage = PHImageRequestOptions()
     var avPlayer : AVPlayer?
     var avPlayerLayer : AVPlayerLayer?
-    
+    var hasInit = false
     var phAsset : PHAsset? {
         
         willSet(newPhAsset) {
@@ -26,27 +27,47 @@ class FullscreenVideoView: UIView {
                     options.deliveryMode = PHVideoRequestOptionsDeliveryMode.FastFormat
                     options.version = PHVideoRequestOptionsVersion.Original
                     
-                    imageManager?.requestPlayerItemForVideo(newPhAsset!, options: options, resultHandler: { (avPlayerItem , infoDic) in
-                          dispatch_async(dispatch_get_main_queue()) {
-                            self.avPlayer = AVPlayer(playerItem: avPlayerItem!)
-                            self.avPlayerLayer = AVPlayerLayer(player:self.avPlayer)
-                            self.avPlayerLayer!.videoGravity = AVLayerVideoGravityResizeAspectFill
-                            
-                            NSNotificationCenter.defaultCenter().addObserver(self,selector: #selector(FullscreenVideoView.playerItemDidReachEnd(_:)), name: AVPlayerItemDidPlayToEndTimeNotification, object: avPlayerItem)
-                            
-                            self.avPlayerLayer!.frame = CGRectMake(0,0,self.bounds.size.width,self.bounds.size.height)
-                            self.layer.addSublayer( self.avPlayerLayer!)
-                            
-                            self.avPlayer!.actionAtItemEnd = AVPlayerActionAtItemEnd.None;
-                            self.avPlayer?.seekToTime(kCMTimeZero)
-                            self.avPlayer?.play()
-                            
-                            self.setNeedsLayout()
-                        }
+                    optionsImage.deliveryMode = .FastFormat
+                    optionsImage.synchronous = false
+                    self.imageManager?.requestImageForAsset(newPhAsset!, targetSize: PHImageManagerMaximumSize, contentMode: PHImageContentMode.Default, options: optionsImage) { (resultImage, info) in
                         
-                    })
+                       self.image = resultImage
+                       self.setNeedsLayout()
+                        
+                        
+                        self.imageManager?.requestPlayerItemForVideo(newPhAsset!, options: self.options, resultHandler: { (avPlayerItem , infoDic) in
+                            dispatch_async(dispatch_get_main_queue()) { [weak self]  in
+                                if let weakSelf = self {
+                                    weakSelf.avPlayer = AVPlayer(playerItem: avPlayerItem!)
+                                    weakSelf.avPlayerLayer = AVPlayerLayer(player:weakSelf.avPlayer)
+                                    weakSelf.avPlayerLayer!.videoGravity = AVLayerVideoGravityResizeAspectFill
+                                    
+                                    NSNotificationCenter.defaultCenter().addObserver(weakSelf,selector: #selector(FullscreenVideoView.playerItemDidReachEnd(_:)), name: AVPlayerItemDidPlayToEndTimeNotification, object: avPlayerItem)
+                                    
+                                    
+                                    // self.avPlayerLayer!.frame = CGRectMake(0,0,self.superview!.bounds.size.width,self.superview!.bounds.size.height)
+                                    
+                                    weakSelf.avPlayerLayer!.frame = CGRectMake(0,0, CGFloat((weakSelf.phAsset?.pixelWidth)!), CGFloat((weakSelf.phAsset?.pixelHeight)!))
+                                    
+                                    // self.bounds = self.avPlayerLayer!.bounds
+                                    weakSelf.layer.addSublayer(weakSelf.avPlayerLayer!)
+                                    
+                                    weakSelf.avPlayer!.actionAtItemEnd = AVPlayerActionAtItemEnd.None;
+                                    weakSelf.avPlayer?.seekToTime(kCMTimeZero)
+                                    weakSelf.avPlayer?.play()
+                                    
+                                    
+                                }
+                            }
+                            
+                        })
+                        
+                    }
+                    
+                    
                 } else {
                     removePlayer()
+                    self.image = nil
                 }
                 
             } else {
@@ -75,5 +96,4 @@ class FullscreenVideoView: UIView {
         self.avPlayer?.play()
     }
 
-    
 }

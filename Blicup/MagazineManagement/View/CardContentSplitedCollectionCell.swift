@@ -53,4 +53,16 @@ class CardContentSplitedCollectionCell: CardContentOverCollectionCell {
             
         }
     }
+    
+    override func startRepositioning() {
+        vMidia.scrollEnabled = true
+        lblCardTitle.hidden = true
+        lblCardInfoText.hidden = true
+    }
+    
+    override func stopRepositioning() {
+        vMidia.scrollEnabled = false
+        lblCardTitle.hidden = false
+        lblCardInfoText.hidden = false
+    }
 }

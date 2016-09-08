@@ -9,7 +9,7 @@
         <scene sceneID="Ls3-9r-Nzh">
             <objects>
                 <collectionViewController storyboardIdentifier="articlesReadingViewController" automaticallyAdjustsScrollViewInsets="NO" id="itD-4Z-n0G" customClass="ArticlesReadingCollectionViewController" customModule="Blicup" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" alwaysBounceVertical="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" id="6r9-Bn-YEy">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" alwaysBounceVertical="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" dataMode="prototypes" id="6r9-Bn-YEy">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="RhU-vO-8gX">
@@ -27,7 +27,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lGZ-VK-aR8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1333" y="118"/>
+            <point key="canvasLocation" x="1284" y="734"/>
         </scene>
         <!--Articles View Controller-->
         <scene sceneID="WxD-Jv-2zR">
@@ -56,11 +56,23 @@
                                     <segue destination="lRi-4Q-xYp" kind="embed" identifier="ArticlePreviewControllerSegue" id="LLu-KY-QsK"/>
                                 </connections>
                             </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pNS-c2-xFo">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="wiR-xC-4Tx"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="iwa-OR-EvM" kind="embed" identifier="ArticlePreviewTopControllerSegue" id="bcI-0d-8GZ"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="JYQ-bn-9K5" secondAttribute="trailing" id="9nU-ZW-yvO"/>
+                            <constraint firstItem="pNS-c2-xFo" firstAttribute="top" secondItem="U7N-kl-C2J" secondAttribute="top" id="Iw4-0w-IIn"/>
                             <constraint firstAttribute="bottom" secondItem="JYQ-bn-9K5" secondAttribute="bottom" id="LFS-0j-poX"/>
+                            <constraint firstItem="pNS-c2-xFo" firstAttribute="leading" secondItem="U7N-kl-C2J" secondAttribute="leading" id="SRB-vG-v09"/>
+                            <constraint firstAttribute="trailing" secondItem="pNS-c2-xFo" secondAttribute="trailing" id="aBR-yy-wh6"/>
                             <constraint firstItem="CcZ-mR-Wxp" firstAttribute="leading" secondItem="U7N-kl-C2J" secondAttribute="leading" id="b1Q-8O-euP"/>
                             <constraint firstItem="JYQ-bn-9K5" firstAttribute="leading" secondItem="U7N-kl-C2J" secondAttribute="leading" id="b4c-66-Jrc"/>
                             <constraint firstItem="CcZ-mR-Wxp" firstAttribute="top" secondItem="U7N-kl-C2J" secondAttribute="top" id="eVW-LK-Hhu"/>
@@ -71,7 +83,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gRz-cT-8X8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="564" y="231"/>
+            <point key="canvasLocation" x="403" y="411"/>
         </scene>
         <!--Article Preview Controller-->
         <scene sceneID="AYi-IH-Q24">
@@ -116,6 +128,7 @@
                                 <state key="normal" image="Send"/>
                                 <connections>
                                     <action selector="sendArticle:" destination="lRi-4Q-xYp" eventType="touchUpInside" id="Eeu-vh-1hC"/>
+                                    <segue destination="e3M-2M-qqp" kind="show" identifier="PublishArticleSegue" id="YCO-PL-wdh"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -129,15 +142,52 @@
                             <constraint firstItem="C4R-3M-qiR" firstAttribute="centerX" secondItem="XGj-in-d9e" secondAttribute="centerX" id="aa5-iY-Wut"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="btnChangeLayout" destination="tmK-Ci-geg" id="rx1-Ob-TjY"/>
+                        <outlet property="btnRepositioningAndResize" destination="C4R-3M-qiR" id="Hf7-3M-MRh"/>
+                        <outlet property="btnSend" destination="XjE-rk-6Bw" id="uRB-h1-IDN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OCR-XT-pWT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="709" y="752"/>
+            <point key="canvasLocation" x="584" y="922"/>
+        </scene>
+        <!--PublishArticleViewControllerNav-->
+        <scene sceneID="ZkP-0n-e6K">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Magazine" referencedIdentifier="PublishArticleViewControllerNav" id="e3M-2M-qqp" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ehC-5v-19b" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="780" y="1130"/>
+        </scene>
+        <!--Article Preview Top Controller-->
+        <scene sceneID="tPH-tz-Cfy">
+            <objects>
+                <viewController id="iwa-OR-EvM" customClass="ArticlePreviewTopController" customModule="Blicup" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Us8-dd-1SM">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hGw-h0-s5y">
+                                <rect key="frame" x="20" y="17" width="30" height="30"/>
+                                <state key="normal" image="ic_back_over"/>
+                                <connections>
+                                    <action selector="backToEditing:" destination="iwa-OR-EvM" eventType="touchUpInside" id="iha-FZ-0WH"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZtW-3N-Zhh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1134" y="91"/>
         </scene>
     </scenes>
     <resources>
         <image name="ChangeDesign" width="42" height="42"/>
         <image name="Position" width="42" height="42"/>
         <image name="Send" width="42" height="42"/>
+        <image name="ic_back_over" width="20" height="29"/>
     </resources>
 </document>

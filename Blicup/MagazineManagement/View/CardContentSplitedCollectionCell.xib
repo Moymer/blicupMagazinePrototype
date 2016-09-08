@@ -18,24 +18,16 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kll-di-8Ed" userLabel="MidiaView">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="370"/>
                                 <subviews>
-                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8qs-ZH-wjJ" customClass="ScrollableImageView" customModule="Blicup" customModuleProvider="target">
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8qs-ZH-wjJ" customClass="ScrollableView" customModule="Blicup" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="370"/>
                                     </scrollView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AWQ-pX-8c1" userLabel="View video" customClass="FullscreenVideoView" customModule="Blicup" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="370"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="AWQ-pX-8c1" firstAttribute="top" secondItem="Kll-di-8Ed" secondAttribute="top" id="H2Q-AX-0ck"/>
                                     <constraint firstItem="8qs-ZH-wjJ" firstAttribute="leading" secondItem="Kll-di-8Ed" secondAttribute="leading" id="I3Q-72-b1S"/>
                                     <constraint firstAttribute="trailing" secondItem="8qs-ZH-wjJ" secondAttribute="trailing" id="M3X-Xk-hVL"/>
                                     <constraint firstItem="8qs-ZH-wjJ" firstAttribute="top" secondItem="Kll-di-8Ed" secondAttribute="top" id="Pwl-K2-Pke"/>
-                                    <constraint firstAttribute="bottom" secondItem="AWQ-pX-8c1" secondAttribute="bottom" id="S4A-vP-RPa"/>
-                                    <constraint firstItem="AWQ-pX-8c1" firstAttribute="leading" secondItem="Kll-di-8Ed" secondAttribute="leading" id="U2M-HK-ull"/>
                                     <constraint firstAttribute="bottom" secondItem="8qs-ZH-wjJ" secondAttribute="bottom" id="eBf-GS-WQv"/>
-                                    <constraint firstAttribute="trailing" secondItem="AWQ-pX-8c1" secondAttribute="trailing" id="jww-ed-AyQ"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bnq-xZ-417" userLabel="TextsAndBG" customClass="SpringView" customModule="Spring">
@@ -102,11 +94,10 @@
             </constraints>
             <size key="customSize" width="317" height="167"/>
             <connections>
-                <outlet property="ivPhoto" destination="8qs-ZH-wjJ" id="Nb7-Zi-ovt"/>
                 <outlet property="lblCardInfoText" destination="URP-tg-U04" id="rDh-1P-PCY"/>
                 <outlet property="lblCardTitle" destination="Hm3-aA-4Kt" id="keC-Nk-Wz5"/>
+                <outlet property="vMidia" destination="8qs-ZH-wjJ" id="SB1-aN-Nuy"/>
                 <outlet property="vTextsContainer" destination="Bnq-xZ-417" id="zS9-NV-PW4"/>
-                <outlet property="vVideo" destination="AWQ-pX-8c1" id="JcS-pb-8bJ"/>
             </connections>
             <point key="canvasLocation" x="453" y="408"/>
         </collectionViewCell>
