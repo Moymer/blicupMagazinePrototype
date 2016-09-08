@@ -5,10 +5,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Publish Blic View Controller-->
+        <!--Publish Article View Controller-->
         <scene sceneID="IJh-1N-lj4">
             <objects>
-                <viewController storyboardIdentifier="PublishBlicViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xIX-d1-BeL" customClass="PublishBlicViewController" customModule="Blicup" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PublishArticleViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xIX-d1-BeL" customClass="PublishArticleViewController" customModule="Blicup" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Lgh-O6-Kb3"/>
                         <viewControllerLayoutGuide type="bottom" id="xDK-jC-jzt"/>
@@ -27,7 +27,7 @@
                                     <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="publishBlicCategoryCell" id="7RV-gW-Ch3" customClass="PublishBlicCategoryCollectionViewCell" customModule="Blicup" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="publishArticleCategoryCell" id="7RV-gW-Ch3" customClass="PublishArticleCategoryCollectionViewCell" customModule="Blicup" customModuleProvider="target">
                                         <rect key="frame" x="10" y="74" width="100" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -89,9 +89,9 @@
                                             <constraint firstItem="N6G-u7-B5t" firstAttribute="top" secondItem="7RV-gW-Ch3" secondAttribute="top" id="ybR-lI-fxp"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="ivMagazineCategory" destination="7Yo-py-U9C" id="eUc-un-TCA"/>
+                                            <outlet property="ivArticleCategory" destination="7Yo-py-U9C" id="sGy-yD-oec"/>
                                             <outlet property="ivSelectionCheck" destination="UtP-k8-z21" id="YED-Ak-NSi"/>
-                                            <outlet property="lblMagazineCategoryTitle" destination="N6G-u7-B5t" id="OQt-pu-Evv"/>
+                                            <outlet property="lblArticleCategoryTitle" destination="N6G-u7-B5t" id="XXq-bK-NNr"/>
                                             <outlet property="lblSelectionCategory" destination="cvv-ei-PTC" id="HLb-zy-pTc"/>
                                             <outlet property="selectionView" destination="o3g-lF-771" id="yvX-Df-Ci1"/>
                                         </connections>
@@ -132,7 +132,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="giJ-vy-aiF"/>
                     <connections>
-                        <outlet property="btnPublishBlic" destination="cEU-wq-5kr" id="6rx-WC-ctJ"/>
+                        <outlet property="btnPublishArticle" destination="cEU-wq-5kr" id="twp-F4-Ba0"/>
                         <outlet property="collectionView" destination="5Kv-er-ueX" id="3tD-yL-oeP"/>
                         <outlet property="ivPublishArrow" destination="0dH-kV-7vb" id="pC3-PF-h8E"/>
                     </connections>
@@ -818,7 +818,7 @@
         <!--Navigation Controller Without Line-->
         <scene sceneID="yJt-IS-GN0">
             <objects>
-                <navigationController storyboardIdentifier="PublishBlicViewControllerNav" automaticallyAdjustsScrollViewInsets="NO" id="eom-zI-OzW" customClass="BCNavigationControllerWithoutLine" customModule="Blicup" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="PublishArticleViewControllerNav" automaticallyAdjustsScrollViewInsets="NO" id="eom-zI-OzW" customClass="BCNavigationControllerWithoutLine" customModule="Blicup" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Mpc-oJ-Dax">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

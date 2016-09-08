@@ -64,7 +64,7 @@
 		7D840C181D78669600374C19 /* ChatRoomAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D840C0F1D78669600374C19 /* ChatRoomAnnotationView.swift */; };
 		7D840C191D78669600374C19 /* ChatRoomMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D840C101D78669600374C19 /* ChatRoomMapViewController.swift */; };
 		7D840C1A1D78669600374C19 /* ChatRoomsAndUsersSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D840C111D78669600374C19 /* ChatRoomsAndUsersSearchViewController.swift */; };
-		7D840C1B1D78669600374C19 /* MagazineCoverCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D840C121D78669600374C19 /* MagazineCoverCollectionViewCell.swift */; };
+		7D840C1B1D78669600374C19 /* ArticleCoverCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D840C121D78669600374C19 /* ArticleCoverCollectionViewCell.swift */; };
 		7D840C1C1D78669600374C19 /* MapChatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D840C131D78669600374C19 /* MapChatListViewController.swift */; };
 		7D840C1D1D78669600374C19 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D840C141D78669600374C19 /* Search.storyboard */; };
 		7D840C1E1D78669600374C19 /* SearchLocationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D840C151D78669600374C19 /* SearchLocationTableViewController.swift */; };
@@ -118,9 +118,9 @@
 		7DE78B6D1D78BA660052B56F /* UserTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE78B6C1D78BA660052B56F /* UserTableCell.swift */; };
 		7DE78B6F1D7A1FC70052B56F /* SearchStoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE78B6E1D7A1FC70052B56F /* SearchStoryViewController.swift */; };
 		7DE78B711D7A1FF40052B56F /* SearchStoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE78B701D7A1FF40052B56F /* SearchStoryPresenter.swift */; };
-		7DE78B731D7F5E110052B56F /* PublishBlicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE78B721D7F5E110052B56F /* PublishBlicViewController.swift */; };
-		7DE78B751D7F5E630052B56F /* PublishBlicCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE78B741D7F5E630052B56F /* PublishBlicCategoryCollectionViewCell.swift */; };
-		7DE78B771D7F67B10052B56F /* PublishBlicPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE78B761D7F67B10052B56F /* PublishBlicPresenter.swift */; };
+		7DE78B731D7F5E110052B56F /* PublishArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE78B721D7F5E110052B56F /* PublishArticleViewController.swift */; };
+		7DE78B751D7F5E630052B56F /* PublishArticleCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE78B741D7F5E630052B56F /* PublishArticleCategoryCollectionViewCell.swift */; };
+		7DE78B771D7F67B10052B56F /* PublishArticlePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE78B761D7F67B10052B56F /* PublishArticlePresenter.swift */; };
 		7DF0EC5B1D42B24500DEF902 /* default_tags_es.json in Resources */ = {isa = PBXBuildFile; fileRef = 7DF0EC5A1D42B24500DEF902 /* default_tags_es.json */; };
 		7DF397981D4692C800E279D7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7DF3979A1D4692C800E279D7 /* InfoPlist.strings */; };
 		7DF3BB9A1D38284E002CC8B2 /* BlicupAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF3BB991D38284E002CC8B2 /* BlicupAnalytics.swift */; };
@@ -376,7 +376,7 @@
 		7D840C0F1D78669600374C19 /* ChatRoomAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatRoomAnnotationView.swift; path = SearchManagement/View/ChatRoomAnnotationView.swift; sourceTree = "<group>"; };
 		7D840C101D78669600374C19 /* ChatRoomMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatRoomMapViewController.swift; path = SearchManagement/View/ChatRoomMapViewController.swift; sourceTree = "<group>"; };
 		7D840C111D78669600374C19 /* ChatRoomsAndUsersSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatRoomsAndUsersSearchViewController.swift; path = SearchManagement/View/ChatRoomsAndUsersSearchViewController.swift; sourceTree = "<group>"; };
-		7D840C121D78669600374C19 /* MagazineCoverCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MagazineCoverCollectionViewCell.swift; path = SearchManagement/View/MagazineCoverCollectionViewCell.swift; sourceTree = "<group>"; };
+		7D840C121D78669600374C19 /* ArticleCoverCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArticleCoverCollectionViewCell.swift; path = SearchManagement/View/ArticleCoverCollectionViewCell.swift; sourceTree = "<group>"; };
 		7D840C131D78669600374C19 /* MapChatListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapChatListViewController.swift; path = SearchManagement/View/MapChatListViewController.swift; sourceTree = "<group>"; };
 		7D840C141D78669600374C19 /* Search.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Search.storyboard; path = SearchManagement/View/Search.storyboard; sourceTree = "<group>"; };
 		7D840C151D78669600374C19 /* SearchLocationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchLocationTableViewController.swift; path = SearchManagement/View/SearchLocationTableViewController.swift; sourceTree = "<group>"; };
@@ -437,9 +437,9 @@
 		7DE78B6C1D78BA660052B56F /* UserTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserTableCell.swift; path = SearchManagement/View/UserTableCell.swift; sourceTree = "<group>"; };
 		7DE78B6E1D7A1FC70052B56F /* SearchStoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchStoryViewController.swift; path = SearchManagement/View/SearchStoryViewController.swift; sourceTree = "<group>"; };
 		7DE78B701D7A1FF40052B56F /* SearchStoryPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchStoryPresenter.swift; path = SearchManagement/Presenter/SearchStoryPresenter.swift; sourceTree = "<group>"; };
-		7DE78B721D7F5E110052B56F /* PublishBlicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PublishBlicViewController.swift; path = MagazineManagement/View/PublishBlicViewController.swift; sourceTree = "<group>"; };
-		7DE78B741D7F5E630052B56F /* PublishBlicCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PublishBlicCategoryCollectionViewCell.swift; path = MagazineManagement/View/PublishBlicCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
-		7DE78B761D7F67B10052B56F /* PublishBlicPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PublishBlicPresenter.swift; path = MagazineManagement/Presenter/PublishBlicPresenter.swift; sourceTree = "<group>"; };
+		7DE78B721D7F5E110052B56F /* PublishArticleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PublishArticleViewController.swift; path = MagazineManagement/View/PublishArticleViewController.swift; sourceTree = "<group>"; };
+		7DE78B741D7F5E630052B56F /* PublishArticleCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PublishArticleCategoryCollectionViewCell.swift; path = MagazineManagement/View/PublishArticleCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		7DE78B761D7F67B10052B56F /* PublishArticlePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PublishArticlePresenter.swift; path = MagazineManagement/Presenter/PublishArticlePresenter.swift; sourceTree = "<group>"; };
 		7DF0EC5A1D42B24500DEF902 /* default_tags_es.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = default_tags_es.json; sourceTree = "<group>"; };
 		7DF0EC5C1D42B34900DEF902 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
 		7DF0EC5D1D42B34900DEF902 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Signup.strings; sourceTree = "<group>"; };
@@ -1211,8 +1211,8 @@
 				E56582DC1D75DD8E00309537 /* ArticleCreationCollectionViewFlowLayout.swift */,
 				C9111B731D760D9800673CB6 /* CardsCollectionViewCell.swift */,
 				E516B0661D760ABA00051313 /* SearchArticleLocationViewController.swift */,
-				7DE78B721D7F5E110052B56F /* PublishBlicViewController.swift */,
-				7DE78B741D7F5E630052B56F /* PublishBlicCategoryCollectionViewCell.swift */,
+				7DE78B721D7F5E110052B56F /* PublishArticleViewController.swift */,
+				7DE78B741D7F5E630052B56F /* PublishArticleCategoryCollectionViewCell.swift */,
 				C97A084E1D776B0300D794EA /* Reading */,
 			);
 			name = View;
@@ -1225,7 +1225,7 @@
 				C9569F6F1D74B87100006019 /* CameraRollPresenter.swift */,
 				C91414561D76001C00C574DB /* CameraRollAssetSelector.swift */,
 				C9ACAEFF1D774ECC00031202 /* ArticleCreationPresenter.swift */,
-				7DE78B761D7F67B10052B56F /* PublishBlicPresenter.swift */,
+				7DE78B761D7F67B10052B56F /* PublishArticlePresenter.swift */,
 			);
 			name = Presenter;
 			sourceTree = "<group>";
@@ -1265,7 +1265,7 @@
 				7D840C261D78813200374C19 /* SearchUserViewController.swift */,
 				7DE78B6E1D7A1FC70052B56F /* SearchStoryViewController.swift */,
 				7DE78B6C1D78BA660052B56F /* UserTableCell.swift */,
-				7D840C121D78669600374C19 /* MagazineCoverCollectionViewCell.swift */,
+				7D840C121D78669600374C19 /* ArticleCoverCollectionViewCell.swift */,
 				7D840C171D78669600374C19 /* UserSearchCollectionViewCell.swift */,
 				7D840C111D78669600374C19 /* ChatRoomsAndUsersSearchViewController.swift */,
 				7D840C101D78669600374C19 /* ChatRoomMapViewController.swift */,
@@ -2101,7 +2101,7 @@
 				7D3337A51D1C7AEA00D2EB55 /* FollowListPresenter.swift in Sources */,
 				7D1007221C86059A0076561E /* AppDelegate.swift in Sources */,
 				7D5220AD1D537DAD0041FE46 /* SuggestedUsersViewController.swift in Sources */,
-				7D840C1B1D78669600374C19 /* MagazineCoverCollectionViewCell.swift in Sources */,
+				7D840C1B1D78669600374C19 /* ArticleCoverCollectionViewCell.swift in Sources */,
 				7D840C271D78813200374C19 /* SearchUserViewController.swift in Sources */,
 				C9569F691D74AB7600006019 /* Location+CoreDataProperties.swift in Sources */,
 				C98575E11D0B0C190045CD9D /* BlicupClock.swift in Sources */,
@@ -2109,7 +2109,7 @@
 				C97C005E1D182D9700C16541 /* InfoTableViewController.swift in Sources */,
 				7DD262A71D808DD40058D6F5 /* BCNavigationControllerWithoutLine.swift in Sources */,
 				C9569F4E1D746D3D00006019 /* Caption.swift in Sources */,
-				7DE78B751D7F5E630052B56F /* PublishBlicCategoryCollectionViewCell.swift in Sources */,
+				7DE78B751D7F5E630052B56F /* PublishArticleCategoryCollectionViewCell.swift in Sources */,
 				7D2DBDB11CF7A1170018510A /* ChatRoomGiphySearchPresenter.swift in Sources */,
 				7DD0F7E11C89DEA9001E5780 /* SignupPictureViewController.swift in Sources */,
 				C9569F661D746D3D00006019 /* Content.swift in Sources */,
@@ -2174,7 +2174,7 @@
 				E5D4854F1D215C9500692B36 /* CCHFadeInOutMapAnimator.m in Sources */,
 				C97C00601D18705E00C16541 /* FavoritesViewController.swift in Sources */,
 				C9525DED1CCEBABD0035DE0E /* ChatRoomCoverCell.swift in Sources */,
-				7DE78B731D7F5E110052B56F /* PublishBlicViewController.swift in Sources */,
+				7DE78B731D7F5E110052B56F /* PublishArticleViewController.swift in Sources */,
 				C97C005C1D1821E400C16541 /* SettingsTablePresenter.swift in Sources */,
 				E5D485541D215C9500692B36 /* CCHMapClusterOperation.m in Sources */,
 				7DB5C7C91CF0B90600A5EFF2 /* CollectionViewListFlowLayout.swift in Sources */,
@@ -2215,7 +2215,7 @@
 				7DF8FD9C1C8F0C220058F877 /* SignupTermsPrivacyViewController.swift in Sources */,
 				7DE78B711D7A1FF40052B56F /* SearchStoryPresenter.swift in Sources */,
 				E5C1FAB11CC514010015F3E6 /* AmazonManager.swift in Sources */,
-				7DE78B771D7F67B10052B56F /* PublishBlicPresenter.swift in Sources */,
+				7DE78B771D7F67B10052B56F /* PublishArticlePresenter.swift in Sources */,
 				7D7C73CE1CAC556400DC1164 /* ChatRoomListCollectionViewCell.swift in Sources */,
 				C9569F611D746D3D00006019 /* CTextLD+CoreDataProperties.swift in Sources */,
 				C93AC3FA1D26F9A000ED8046 /* CoverChatRoomsListPresenter.swift in Sources */,

@@ -1,5 +1,5 @@
 //
-//  PublishBlicPresenter.swift
+//  PublishArticlePresenter.swift
 //  Blicup
 //
 //  Created by Guilherme Braga on 06/09/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PublishBlicPresenter: NSObject {
+class PublishArticlePresenter: NSObject {
 
     let covers = CoverMock.createMockObjects()
     var selectedCategoryIndex: NSIndexPath?

@@ -1,5 +1,5 @@
 //
-//  PublishBlicCategoryCollectionViewCell.swift
+//  PublishArticleCategoryCollectionViewCell.swift
 //  Blicup
 //
 //  Created by Guilherme Braga on 06/09/16.
@@ -8,10 +8,10 @@
 
 import UIKit
 
-class PublishBlicCategoryCollectionViewCell: UICollectionViewCell {
+class PublishArticleCategoryCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var ivMagazineCategory: BCGradientImageView!
-    @IBOutlet weak var lblMagazineCategoryTitle: UILabel!
+    @IBOutlet weak var ivArticleCategory: BCGradientImageView!
+    @IBOutlet weak var lblArticleCategoryTitle: UILabel!
     
     //selection
     @IBOutlet weak var selectionView: UIView!
@@ -39,11 +39,11 @@ class PublishBlicCategoryCollectionViewCell: UICollectionViewCell {
             selectionView.alpha = 0.0
             UIView.animateWithDuration(0.2, animations: {
                 self.selectionView.alpha = 1.0
-                self.lblMagazineCategoryTitle.alpha = 0
+                self.lblArticleCategoryTitle.alpha = 0
                 self.ivSelectionCheck.transform = CGAffineTransformMakeScale(1.1, 1.1)
                 
                 }, completion: { (finish) in
-                    self.lblMagazineCategoryTitle.hidden = true
+                    self.lblArticleCategoryTitle.hidden = true
                     UIView.animateWithDuration(0.1, animations: {
                         self.ivSelectionCheck.transform = CGAffineTransformMakeScale(1.25, 1.25)
                         
@@ -65,11 +65,11 @@ class PublishBlicCategoryCollectionViewCell: UICollectionViewCell {
         } else {
             self.selectionView.hidden = false
             self.selectionView.alpha = 1.0
-            self.lblMagazineCategoryTitle.hidden = false
+            self.lblArticleCategoryTitle.hidden = false
             
             UIView.animateWithDuration(0.25, animations: {
                 self.selectionView.alpha = 0.0
-                self.lblMagazineCategoryTitle.alpha = 1
+                self.lblArticleCategoryTitle.alpha = 1
                 }, completion: { (finish) in
                     self.selectionView.alpha = 1.0
                     self.selectionView.hidden = true

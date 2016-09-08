@@ -1,5 +1,5 @@
 //
-//  PublishBlicViewController.swift
+//  PublishArticleViewController.swift
 //  Blicup
 //
 //  Created by Guilherme Braga on 06/09/16.
@@ -8,15 +8,15 @@
 
 import UIKit
 
-class PublishBlicViewController: UIViewController {
+class PublishArticleViewController: UIViewController {
 
-    private let presenter = PublishBlicPresenter()
+    private let presenter = PublishArticlePresenter()
     
     let kSpaceBetweenImages: CGFloat = 10
     let kNumberOfColumns: CGFloat = 3.0
     
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var btnPublishBlic: UIButton!
+    @IBOutlet weak var btnPublishArticle: UIButton!
     @IBOutlet weak var ivPublishArrow: UIImageView!
     
     override func viewDidLoad() {
@@ -24,11 +24,11 @@ class PublishBlicViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         self.title = "Publish Blic to:"
-        btnPublishBlic.layer.cornerRadius = self.btnPublishBlic.frame.height/2
-        btnPublishBlic.layer.masksToBounds = true
-        btnPublishBlic.hidden = true
+        btnPublishArticle.layer.cornerRadius = self.btnPublishArticle.frame.height/2
+        btnPublishArticle.layer.masksToBounds = true
+        btnPublishArticle.hidden = true
         ivPublishArrow.hidden = true
-        btnPublishBlic.alpha = 0
+        btnPublishArticle.alpha = 0
         ivPublishArrow.alpha = 0
     }
     
@@ -48,7 +48,7 @@ class PublishBlicViewController: UIViewController {
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
-        guard let cell = collectionView.dequeueReusableCellWithReuseIdentifier("publishBlicCategoryCell", forIndexPath: indexPath) as? PublishBlicCategoryCollectionViewCell else {
+        guard let cell = collectionView.dequeueReusableCellWithReuseIdentifier("publishArticleCategoryCell", forIndexPath: indexPath) as? PublishArticleCategoryCollectionViewCell else {
             return UICollectionViewCell()
         }
         
@@ -56,26 +56,26 @@ class PublishBlicViewController: UIViewController {
             collectionView.selectItemAtIndexPath(indexPath, animated: false, scrollPosition: UICollectionViewScrollPosition.None)
             cell.selected = true
             cell.selectionView.hidden = false
-            cell.lblMagazineCategoryTitle.hidden = true
-            cell.lblMagazineCategoryTitle.alpha = 0
+            cell.lblArticleCategoryTitle.hidden = true
+            cell.lblArticleCategoryTitle.alpha = 0
             cell.lblSelectionCategory.text = presenter.titleAtIndex(indexPath.row)
         } else {
             collectionView.deselectItemAtIndexPath(indexPath, animated: false)
             cell.selected = false
             cell.selectionView.hidden = true
-            cell.lblMagazineCategoryTitle.hidden = false
-            cell.lblMagazineCategoryTitle.alpha = 1
+            cell.lblArticleCategoryTitle.hidden = false
+            cell.lblArticleCategoryTitle.alpha = 1
         }
         
-        cell.lblMagazineCategoryTitle.text = presenter.titleAtIndex(indexPath.row)
+        cell.lblArticleCategoryTitle.text = presenter.titleAtIndex(indexPath.row)
         
         if let image = presenter.coverAtIndex(indexPath.row) {
-            cell.ivMagazineCategory.image = image
+            cell.ivArticleCategory.image = image
             
             let averageColor = image.averageColor()
             if let mainColor = averageColor.rgbToInt() {
                 let color = UIColor.rgbIntToUIColor(mainColor)
-                cell.ivMagazineCategory.setMainColor(color.colorWithAlphaComponent(0.5))
+                cell.ivArticleCategory.setMainColor(color.colorWithAlphaComponent(0.5))
             }
         }
         
@@ -84,7 +84,7 @@ class PublishBlicViewController: UIViewController {
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
-        let cell : PublishBlicCategoryCollectionViewCell = collectionView.cellForItemAtIndexPath(indexPath)  as!  PublishBlicCategoryCollectionViewCell
+        let cell: PublishArticleCategoryCollectionViewCell = collectionView.cellForItemAtIndexPath(indexPath) as! PublishArticleCategoryCollectionViewCell
         
         
         if let selectedCategoryIndex = presenter.selectedCategoryIndex where selectedCategoryIndex == indexPath {
@@ -108,7 +108,7 @@ class PublishBlicViewController: UIViewController {
         let indexPathsForVisibleItems = collectionView.indexPathsForVisibleItems()
 
         if let selectedCategoryIndex = presenter.selectedCategoryIndex where indexPathsForVisibleItems.contains(selectedCategoryIndex) {
-            let cell : PublishBlicCategoryCollectionViewCell = collectionView.cellForItemAtIndexPath(indexPath)  as!  PublishBlicCategoryCollectionViewCell
+            let cell: PublishArticleCategoryCollectionViewCell = collectionView.cellForItemAtIndexPath(indexPath) as! PublishArticleCategoryCollectionViewCell
             collectionView.deselectItemAtIndexPath(indexPath, animated: false)
             cell.selected = false
             presenter.unselectCategory()
@@ -124,20 +124,20 @@ class PublishBlicViewController: UIViewController {
         
         if show {
             
-            self.btnPublishBlic.hidden = hidden
+            btnPublishArticle.hidden = hidden
             ivPublishArrow.hidden = hidden
             UIView.animateWithDuration(0.3, animations: {
-                self.btnPublishBlic.alpha = alpha
+                self.btnPublishArticle.alpha = alpha
                 self.ivPublishArrow.alpha = alpha
             })
             
         } else {
             
             UIView.animateWithDuration(0.3, animations: {
-                self.btnPublishBlic.alpha = alpha
+                self.btnPublishArticle.alpha = alpha
                 self.ivPublishArrow.alpha = alpha
             }) { (_) in
-                self.btnPublishBlic.hidden = hidden
+                self.btnPublishArticle.hidden = hidden
                 self.ivPublishArrow.hidden = hidden
             }
         }
