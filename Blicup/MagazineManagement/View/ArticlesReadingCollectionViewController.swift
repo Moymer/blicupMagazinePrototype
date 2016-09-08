@@ -75,6 +75,8 @@ class ArticlesReadingCollectionViewController: UICollectionViewController, Artic
             }
             imageManager.startCachingImagesForAssets(assets, targetSize: PHImageManagerMaximumSize, contentMode: PHImageContentMode.AspectFill, options: nil)
             
+
+            
             articleContent = newArticleContent
         }
     }
@@ -96,6 +98,10 @@ class ArticlesReadingCollectionViewController: UICollectionViewController, Artic
         
         UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation:UIStatusBarAnimation.None)
         // Do any additional setup after loading the view.
+        
+        
+        let  nCards : CGFloat = CGFloat(articleContent.count)
+        self.collectionView?.contentSize = CGSize(width: UIScreen.mainScreen().bounds.width, height: (UIScreen.mainScreen().bounds.height * nCards) +  5 * (nCards - 1 ) )
     }
 
     override func prefersStatusBarHidden() -> Bool {
@@ -169,7 +175,10 @@ class ArticlesReadingCollectionViewController: UICollectionViewController, Artic
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
 
-        return CGSize(width: UIScreen.mainScreen().bounds.width, height: UIScreen.mainScreen().bounds.height)
+
+        return CGSize(width: UIScreen.mainScreen().bounds.width, height: UIScreen.mainScreen().bounds.height )
+        
+
     }
     
     

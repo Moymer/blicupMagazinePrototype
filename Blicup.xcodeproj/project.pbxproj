@@ -228,6 +228,7 @@
 		C99D36061CEF840F00B0F889 /* ChatRoomInputAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99D36051CEF840F00B0F889 /* ChatRoomInputAccessoryView.swift */; };
 		C9ACAF001D774ECC00031202 /* ArticleCreationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ACAEFF1D774ECC00031202 /* ArticleCreationPresenter.swift */; };
 		C9AEF00D1D8096C100EEA8F8 /* ArticlePreviewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AEF00C1D8096C100EEA8F8 /* ArticlePreviewPresenter.swift */; };
+		C9AEF0101D81E85C00EEA8F8 /* ArticlesReadingCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AEF00F1D81E85C00EEA8F8 /* ArticlesReadingCollectionViewFlowLayout.swift */; };
 		C9B9DDCB1D2ECAC500B57F62 /* BlicupRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B9DDCA1D2ECAC500B57F62 /* BlicupRouter.swift */; };
 		C9BCFF0D1CF7656F00D498FA /* LDTPNSNotificationCenterControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BCFF0C1CF7656F00D498FA /* LDTPNSNotificationCenterControl.swift */; };
 		C9BCFF0F1CF7721100D498FA /* ToStringArrayTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BCFF0E1CF7721100D498FA /* ToStringArrayTransformer.swift */; };
@@ -590,6 +591,7 @@
 		C99D36051CEF840F00B0F889 /* ChatRoomInputAccessoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatRoomInputAccessoryView.swift; path = ChatRoomManagement/View/ChatRoomInputAccessoryView.swift; sourceTree = "<group>"; };
 		C9ACAEFF1D774ECC00031202 /* ArticleCreationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArticleCreationPresenter.swift; path = MagazineManagement/Presenter/ArticleCreationPresenter.swift; sourceTree = "<group>"; };
 		C9AEF00C1D8096C100EEA8F8 /* ArticlePreviewPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArticlePreviewPresenter.swift; path = MagazineManagement/Presenter/ArticlePreviewPresenter.swift; sourceTree = "<group>"; };
+		C9AEF00F1D81E85C00EEA8F8 /* ArticlesReadingCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArticlesReadingCollectionViewFlowLayout.swift; path = MagazineManagement/View/ArticlesReadingCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		C9B9DDCA1D2ECAC500B57F62 /* BlicupRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BlicupRouter.swift; path = BlicupAPI/BlicupRouter.swift; sourceTree = "<group>"; };
 		C9BCFF0C1CF7656F00D498FA /* LDTPNSNotificationCenterControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDTPNSNotificationCenterControl.swift; sourceTree = "<group>"; };
 		C9BCFF0E1CF7721100D498FA /* ToStringArrayTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ToStringArrayTransformer.swift; path = Utils/ToStringArrayTransformer.swift; sourceTree = "<group>"; };
@@ -1247,6 +1249,7 @@
 			isa = PBXGroup;
 			children = (
 				C97A084F1D77746200D794EA /* ArticlesReadingCollectionViewController.swift */,
+				C9AEF00F1D81E85C00EEA8F8 /* ArticlesReadingCollectionViewFlowLayout.swift */,
 				C991F67A1D7DD81100371DE5 /* ArticlesViewController.swift */,
 				C97A08421D77493500D794EA /* MagazineReading.storyboard */,
 				C9E4FE981D7E2905005A48B5 /* Cards */,
@@ -2022,6 +2025,7 @@
 				E5D485501D215C9500692B36 /* CCHMapClusterAnnotation.m in Sources */,
 				7DF3BB9A1D38284E002CC8B2 /* BlicupAnalytics.swift in Sources */,
 				7DA5A86E1CAF05040019B32D /* ChatRoom+CoreDataProperties.swift in Sources */,
+				C9AEF0101D81E85C00EEA8F8 /* ArticlesReadingCollectionViewFlowLayout.swift in Sources */,
 				C9569F5E1D746D3D00006019 /* ArticleSpecs.swift in Sources */,
 				7D840C231D7866E200374C19 /* SearchPresenter.swift in Sources */,
 				7D840C181D78669600374C19 /* ChatRoomAnnotationView.swift in Sources */,
