@@ -17,11 +17,10 @@ class CardContentOverCollectionCell: UICollectionViewCell, ScrollableViewDelegat
     var repositioningDelegate : ArticlePreviewRepositioningDelegate?
     private var cardIdentifier : String?
     
-    @IBOutlet weak var ivPhoto: ScrollableView!
+    @IBOutlet weak var vMidia: ScrollableView!
     @IBOutlet weak var lblCardTitle: UILabel!
     @IBOutlet weak var lblCardInfoText: UILabel!
     @IBOutlet weak var vTextsContainer: UIView!
-    @IBOutlet weak var vVideo: FullscreenVideoView!
     @IBOutlet weak var allTextView: UIView!
     
     //just over variables
@@ -41,8 +40,9 @@ class CardContentOverCollectionCell: UICollectionViewCell, ScrollableViewDelegat
     }
     
     func stopAssets() {
-        ivPhoto.setImage(nil)
-        vVideo.phAsset = nil
+        vMidia.setAsset(nil)
+        
+        //vVideo.phAsset = nil
         
     }
     
@@ -53,32 +53,25 @@ class CardContentOverCollectionCell: UICollectionViewCell, ScrollableViewDelegat
         let infoText : String = card["infoText"] as! String
         
         lblCardTitle.text = title
-        
         lblCardInfoText.text = infoText
-        lblCardInfoText.sizeToFit()
-        lblCardInfoText.layoutIfNeeded()
-        cardIdentifier = asset.localIdentifier
         
-        if asset.mediaType == PHAssetMediaType.Image {
-            vVideo.hidden = true
-            ivPhoto.hidden = false
-            ivPhoto.imageManager = imageManager
-            
-            ivPhoto.zoomAndPosDelegate = self
-            //change content midia positioning
-            if let repositioning = repositioningDelegate?.getRepositioningFor(asset.localIdentifier)  {
-                ivPhoto.setPositioningScale(ScrollableViewPosAndScale.BY_RECT, zoom: repositioning.0, offset: repositioning.1)
-            } else {
-                ivPhoto.setPositioningScale(ScrollableViewPosAndScale.ASPECT_FILL)
-            }
-            ivPhoto.setImageFromAsset(asset)
-        } else {
-            ivPhoto.hidden = true
-            vVideo.hidden = false
-            vVideo.imageManager = imageManager
-            vVideo.phAsset = asset
+        if  title == "" && infoText == "" {
+            vTextsContainer.hidden = true
         }
         
+        cardIdentifier = asset.localIdentifier
+        
+        vMidia.hidden = false
+        vMidia.imageManager = imageManager
+        vMidia.zoomAndPosDelegate = self
+        //change content midia positioning
+        if let repositioning = repositioningDelegate?.getRepositioningFor(asset.localIdentifier)  {
+            vMidia.setPositioningScale(ScrollableViewPosAndScale.BY_RECT, zoom: repositioning.0, offset: repositioning.1)
+        } else {
+            vMidia.setPositioningScale(ScrollableViewPosAndScale.ASPECT_FILL)
+        }
+        vMidia.setAsset(asset)
+       
     }
 
     
@@ -169,20 +162,20 @@ class CardContentOverCollectionCell: UICollectionViewCell, ScrollableViewDelegat
     //MARK: - Repositioning
     
     func startRepositioning() {
-        ivPhoto.scrollEnabled = true
+        vMidia.scrollEnabled = true
         gradientView.hidden = true
         allTextView.hidden = true
     }
     
     func stopRepositioning() {
-        ivPhoto.scrollEnabled = false
+        vMidia.scrollEnabled = false
         gradientView.hidden = false
         allTextView.hidden = false
     }
     
     override func hitTest(point: CGPoint, withEvent event: UIEvent?) -> UIView? {
-        if ivPhoto.scrollEnabled {
-            return ivPhoto
+        if vMidia.scrollEnabled {
+            return vMidia
         }
         return super.hitTest(point, withEvent: event)
     }

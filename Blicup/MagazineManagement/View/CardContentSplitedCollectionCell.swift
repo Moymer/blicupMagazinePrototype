@@ -55,13 +55,13 @@ class CardContentSplitedCollectionCell: CardContentOverCollectionCell {
     }
     
     override func startRepositioning() {
-        ivPhoto.scrollEnabled = true
+        vMidia.scrollEnabled = true
         lblCardTitle.hidden = true
         lblCardInfoText.hidden = true
     }
     
     override func stopRepositioning() {
-        ivPhoto.scrollEnabled = false
+        vMidia.scrollEnabled = false
         lblCardTitle.hidden = false
         lblCardInfoText.hidden = false
     }

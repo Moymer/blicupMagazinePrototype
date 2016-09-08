@@ -234,7 +234,6 @@ class ArticlesReadingCollectionViewController: UICollectionViewController, Artic
     func doResizeAndRepositioning()
     {
         presenter.onRepositioning  = !presenter.onRepositioning
-        
         self.collectionView?.scrollEnabled = !presenter.onRepositioning
         
         self.collectionView?.performBatchUpdates({

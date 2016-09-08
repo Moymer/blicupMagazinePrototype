@@ -21,20 +21,12 @@
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="84b-CR-ESi" customClass="ScrollableView" customModule="Blicup" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                     </scrollView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gyZ-8u-Qw2" userLabel="View video" customClass="FullscreenVideoView" customModule="Blicup" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="84b-CR-ESi" secondAttribute="trailing" id="3EC-2v-sOI"/>
-                                    <constraint firstItem="gyZ-8u-Qw2" firstAttribute="top" secondItem="kfD-to-u3L" secondAttribute="top" id="8qz-Y8-EF1"/>
-                                    <constraint firstAttribute="bottom" secondItem="gyZ-8u-Qw2" secondAttribute="bottom" id="CeY-wg-sfS"/>
                                     <constraint firstItem="84b-CR-ESi" firstAttribute="leading" secondItem="kfD-to-u3L" secondAttribute="leading" id="SLV-Ba-72B"/>
-                                    <constraint firstItem="gyZ-8u-Qw2" firstAttribute="leading" secondItem="kfD-to-u3L" secondAttribute="leading" id="Vgz-U8-E7l"/>
                                     <constraint firstItem="84b-CR-ESi" firstAttribute="top" secondItem="kfD-to-u3L" secondAttribute="top" id="gc1-y7-T8W"/>
-                                    <constraint firstAttribute="trailing" secondItem="gyZ-8u-Qw2" secondAttribute="trailing" id="pvw-nI-HXq"/>
                                     <constraint firstAttribute="bottom" secondItem="84b-CR-ESi" secondAttribute="bottom" id="xu6-cI-47u"/>
                                 </constraints>
                             </view>
@@ -143,13 +135,12 @@
                 <outlet property="gradientView" destination="xmV-vg-yIw" id="col-6M-J2w"/>
                 <outlet property="infoTextLeadingConstraint" destination="TEn-Vs-XYW" id="i2C-3r-qSa"/>
                 <outlet property="infoTextTrailingConstraint" destination="FgZ-In-Ym8" id="x01-8j-IYs"/>
-                <outlet property="ivPhoto" destination="84b-CR-ESi" id="L9B-3L-gqa"/>
                 <outlet property="lblCardInfoText" destination="XNM-5S-iLY" id="T89-r0-nR5"/>
                 <outlet property="lblCardTitle" destination="5kn-7a-djK" id="yPJ-Mq-XDx"/>
                 <outlet property="titleLeadingConstraint" destination="Fo9-45-uPS" id="gdo-aG-qu1"/>
                 <outlet property="titleTrailingConstraint" destination="CNe-7S-cnM" id="e17-2n-M5Q"/>
+                <outlet property="vMidia" destination="84b-CR-ESi" id="DGb-Rk-Jcg"/>
                 <outlet property="vTextsContainer" destination="Eew-iF-oE6" id="kge-YG-SP9"/>
-                <outlet property="vVideo" destination="gyZ-8u-Qw2" id="mZW-pF-0WG"/>
             </connections>
             <point key="canvasLocation" x="371" y="414"/>
         </collectionViewCell>

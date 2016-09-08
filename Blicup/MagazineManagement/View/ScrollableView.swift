@@ -166,6 +166,9 @@ class ScrollableView: UIScrollView , UIScrollViewDelegate {
         })
     }
     
+   
+    
+    
     private func prepareImageForScaleAnimation(image : UIImage,  completionHandler:(resImage: UIImage) -> Void ) -> Void {
         
         
@@ -203,6 +206,18 @@ class ScrollableView: UIScrollView , UIScrollViewDelegate {
     private func addImageView() {
         
         vScalable = UIImageView()
+        addConstraints()
+    }
+    
+
+    private func addVideoView() {
+        
+        vScalable = FullscreenVideoView()
+        addConstraints()
+    }
+    
+    private func addConstraints() {
+     
         vScalable!.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(vScalable!)
         
@@ -217,9 +232,47 @@ class ScrollableView: UIScrollView , UIScrollViewDelegate {
         
         imageViewLeadingConstraint = NSLayoutConstraint(item: vScalable!, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Leading, multiplier: 1, constant: 0)
         self.addConstraint(imageViewLeadingConstraint!)
-        
     }
     
+    //Video
+    
+    private func setVideoFromAsset(asset:PHAsset)
+    {
+        
+        if  vScalable == nil {
+            addVideoView()
+        }
+        if vScalable is FullscreenVideoView {
+            hasBeenInit = false
+            let videoScalable = vScalable as! FullscreenVideoView
+            videoScalable.imageManager = self.imageManager
+            videoScalable.phAsset = asset
+        }
+    }
+    
+    internal func setAsset(asset : PHAsset? )
+    {
+        if asset == nil {
+            if vScalable != nil {
+                if vScalable is FullscreenVideoView {
+                    let videoScalable = vScalable as! FullscreenVideoView
+                    videoScalable.phAsset = nil
+                }
+                
+                vScalable?.removeFromSuperview()
+                vScalable = nil
+            }
+            
+        } else {
+            if asset!.mediaType == PHAssetMediaType.Image {
+                setImageFromAsset(asset!)
+            } else  {
+                setVideoFromAsset(asset!)
+            }
+        }
+    
+    }
+
     
     
     override func layoutSubviews() {
@@ -274,7 +327,7 @@ class ScrollableView: UIScrollView , UIScrollViewDelegate {
         let minScale = max(widthScale, heightScale)
         
         self.minimumZoomScale = minScale
-        self.maximumZoomScale = 3 * minScale
+        self.maximumZoomScale = max(3 * minScale, 1)
         
     }
     
