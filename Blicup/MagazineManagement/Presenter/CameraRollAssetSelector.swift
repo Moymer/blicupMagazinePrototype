@@ -15,12 +15,29 @@ public protocol CameraRollAssetSelectionDelegate : NSObjectProtocol {
     func selectedAssets(numberSelected: Int)
 }
 
-class CameraRollAssetSelector: NSObject {
+public let MAX_MIDIAS = 6
 
-    var MAX_MIDIAS = 6
+public class CameraRollAssetSelector: NSObject {
+
     let MAX_VIDEO_DURATION_SECS = 61.0
     var assetsSelected : [String:PHAsset] = [:]
     var assetsSelectedListOrdered : [String] = []
+
+    var totalToSelect = 0
+    var selectionOffset = 0
+    var addingMoreFromPrevious = false
+    
+    override init() {
+        super.init()
+        totalToSelect = MAX_MIDIAS
+        selectionOffset = 0
+    }
+    convenience init(howManySoFar: Int ) {
+        self.init()
+        totalToSelect = MAX_MIDIAS - howManySoFar
+        selectionOffset = howManySoFar
+        addingMoreFromPrevious = true
+    }
     
     var delegate:CameraRollAssetSelectionDelegate?
     
@@ -43,14 +60,12 @@ class CameraRollAssetSelector: NSObject {
     }
 
     func getSelectionCount() -> Int {
-        if MAX_MIDIAS != 6 {
-            return (6 - MAX_MIDIAS) + assetsSelectedListOrdered.count
-        }
-        return assetsSelectedListOrdered.count
+
+        return selectionOffset + assetsSelectedListOrdered.count
     }
     
     func hasReachedMidiaLimit() -> Bool {
-        return assetsSelectedListOrdered.count == MAX_MIDIAS
+        return assetsSelectedListOrdered.count == totalToSelect
     }
    
     

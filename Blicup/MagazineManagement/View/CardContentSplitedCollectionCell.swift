@@ -65,4 +65,9 @@ class CardContentSplitedCollectionCell: CardContentOverCollectionCell {
         lblCardTitle.hidden = false
         lblCardInfoText.hidden = false
     }
+    
+    override func defaultTextAnimation() {
+        //no animation
+        
+    }
 }
