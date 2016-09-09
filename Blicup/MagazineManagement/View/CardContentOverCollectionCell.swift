@@ -8,6 +8,7 @@
 
 import UIKit
 import Photos
+import Spring
 class CardContentOverCollectionCell: UICollectionViewCell, ScrollableViewDelegate {
     
     private let bgAlpha : CGFloat = 0.7
@@ -20,7 +21,7 @@ class CardContentOverCollectionCell: UICollectionViewCell, ScrollableViewDelegat
     @IBOutlet weak var vMidia: ScrollableView!
     @IBOutlet weak var lblCardTitle: UILabel!
     @IBOutlet weak var lblCardInfoText: UILabel!
-    @IBOutlet weak var vTextsContainer: UIView!
+    @IBOutlet weak var vTextsContainer: SpringView!
     @IBOutlet weak var allTextView: UIView!
     
     //just over variables
@@ -35,15 +36,16 @@ class CardContentOverCollectionCell: UICollectionViewCell, ScrollableViewDelegat
     }
 
     override func prepareForReuse() {
+        lblCardTitle.text = nil
+        lblCardInfoText.text = nil
+        vTextsContainer.hidden = false
         stopAssets()
         stopRepositioning()
+        
     }
     
     func stopAssets() {
         vMidia.setAsset(nil)
-        
-        //vVideo.phAsset = nil
-        
     }
     
     func setContentForPreview(card : [String:AnyObject], imageManager:PHCachingImageManager)
@@ -57,6 +59,8 @@ class CardContentOverCollectionCell: UICollectionViewCell, ScrollableViewDelegat
         
         if  title == "" && infoText == "" {
             vTextsContainer.hidden = true
+        } else {
+            self.defaultTextAnimation()
         }
         
         cardIdentifier = asset.localIdentifier
@@ -186,4 +190,16 @@ class CardContentOverCollectionCell: UICollectionViewCell, ScrollableViewDelegat
         repositioningDelegate?.addImageRepositioning(cardIdentifier!, zoom: zoom, offset: offset)
     }
  
+    
+    //MARK: - Animation 
+    
+    func defaultTextAnimation() {
+        vTextsContainer.animation = "squeezeUp"
+        vTextsContainer.force = 0.7
+        vTextsContainer.delay = 0.1
+        vTextsContainer.duration = 0.7
+        vTextsContainer.animate()
+        
+
+    }
 }
