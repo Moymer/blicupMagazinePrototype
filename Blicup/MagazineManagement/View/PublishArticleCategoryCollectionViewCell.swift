@@ -37,13 +37,20 @@ class PublishArticleCategoryCollectionViewCell: UICollectionViewCell {
         if selected {
             selectionView.hidden = false
             selectionView.alpha = 0.0
-            UIView.animateWithDuration(0.2, animations: {
-                self.selectionView.alpha = 1.0
+            lblArticleCategoryTitle.hidden = true
+            
+            UIView.animateWithDuration(0.1, animations: {
                 self.lblArticleCategoryTitle.alpha = 0
+            }, completion: { (finish) in
+                self.lblArticleCategoryTitle.hidden = true
+            })
+            
+            UIView.animateWithDuration(0.2, animations: {
+
+                self.selectionView.alpha = 1.0
                 self.ivSelectionCheck.transform = CGAffineTransformMakeScale(1.1, 1.1)
                 
                 }, completion: { (finish) in
-                    self.lblArticleCategoryTitle.hidden = true
                     UIView.animateWithDuration(0.1, animations: {
                         self.ivSelectionCheck.transform = CGAffineTransformMakeScale(1.25, 1.25)
                         
@@ -63,13 +70,15 @@ class PublishArticleCategoryCollectionViewCell: UICollectionViewCell {
                     
             })
         } else {
-            self.selectionView.hidden = false
+
             self.selectionView.alpha = 1.0
-            self.lblArticleCategoryTitle.hidden = false
+            lblArticleCategoryTitle.hidden = false
+            UIView.animateWithDuration(0.1, animations: {
+                self.lblArticleCategoryTitle.alpha = 1
+            })
             
             UIView.animateWithDuration(0.25, animations: {
                 self.selectionView.alpha = 0.0
-                self.lblArticleCategoryTitle.alpha = 1
                 }, completion: { (finish) in
                     self.selectionView.alpha = 1.0
                     self.selectionView.hidden = true
